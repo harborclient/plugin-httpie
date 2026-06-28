@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 1280px;
+      height: 720px;
+      min-height: 720px;
+      max-height: 720px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0c1220;
+      background-image:
+        radial-gradient(ellipse 70% 60% at 85% 10%, rgba(56, 189, 248, 0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 10% 85%, rgba(99, 102, 241, 0.16) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 60%),
+        linear-gradient(160deg, #0c1220 0%, #111827 45%, #0a0f1a 100%);
+      background-repeat: no-repeat;
+      background-size: 1280px 720px;
+    }
+
+    .canvas {
+      position: fixed;
+      inset: 0;
+      width: 1280px;
+      height: 720px;
+      background: transparent;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 32px 48px 20px;
+    }
+
+    .mockup-area {
+      position: absolute;
+      top: 172px;
+      left: 0;
+      width: 1280px;
+      height: 548px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .plugin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .plugin-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #f8fafc;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #64748b;
+      line-height: 1.45;
+      max-width: 560px;
+    }
+
+    .mockup-glow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 4px;
+      bottom: 0;
+      border-radius: 16px 16px 0 0;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(129, 140, 248, 0.14), rgba(52, 211, 153, 0.1));
+      filter: blur(24px);
+      opacity: 0.85;
+    }
+
+    .mockup {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1280px;
+      height: 548px;
+      border-radius: 12px 12px 0 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      background: #1a1f2e;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mockup-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: #141824;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+    }
+
+    .traffic {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .traffic.r {
+      background: #ff5f57;
+    }
+
+    .traffic.y {
+      background: #febc2e;
+    }
+
+    .traffic.g {
+      background: #28c840;
+    }
+
+    .toolbar-title {
+      margin-left: 10px;
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .plugin-panel {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 28px;
+      gap: 18px;
+    }
+
+    .settings-label {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .settings-label .plugin-id {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      color: #e2e8f0;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .checkbox-row input {
+      width: 16px;
+      height: 16px;
+      accent-color: #38bdf8;
+    }
+
+    .toast {
+      position: absolute;
+      top: 36px;
+      right: 56px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(52, 211, 153, 0.12);
+      z-index: 4;
+    }
+
+    .toast-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(52, 211, 153, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .toast-text {
+      font-size: 12px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    Customize this template for your plugin marketing screenshot (1280×720).
+
+    Editable regions:
+    - .plugin-badge          Category label (default: "HarborClient Plugin")
+    - .badge-row .pill       Feature highlight pills (add/remove as needed)
+    - h1 / h1 span           Headline; gradient accent is on the <span>
+    - .subtitle              One-line description
+    - .toolbar-title          Mock HarborClient window title
+    - .plugin-panel           Main UI preview (default: settings panel)
+    - .toast / .toast-text    Optional success banner (delete .toast to hide)
+  -->
+  <div class="canvas">
+    <div class="grid"></div>
+
+    <div class="header">
+      <div class="badge-row">
+        <div class="plugin-badge"><span class="dot"></span> HarborClient Plugin</div>
+        <span class="pill">Request tabs</span>
+        <span class="pill">One-click copy</span>
+        <span class="pill">CLI export</span>
+      </div>
+      <h1>Export requests as — <span>HTTPie commands</span></h1>
+      <p class="subtitle">Adds a read-only HTTPie tab beside Params, Headers, and Body so you can copy a familiar
+        <code style="color:#94a3b8;">http</code> snippet in one click.
+      </p>
+    </div>
+
+    <div class="mockup-area">
+      <div class="mockup-glow"></div>
+      <div class="mockup">
+        <div class="mockup-toolbar">
+          <span class="traffic r"></span>
+          <span class="traffic y"></span>
+          <span class="traffic g"></span>
+          <span class="toolbar-title">HarborClient — POST /auth/apiGrant</span>
+        </div>
+        <div class="plugin-panel">
+          <p class="settings-label" style="margin-bottom: 12px;">
+            Request editor · <span class="plugin-id">HTTPie</span> tab
+          </p>
+          <pre
+            style="margin: 0; padding: 16px 18px; border-radius: 10px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.18); font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; line-height: 1.55; color: #e2e8f0; white-space: pre-wrap;">http POST 'https://api.example.com/v1/auth/apiGrant' \
+  'Authorization: Bearer token-abc' \
+  'Content-Type: application/json' \
+  --raw '{"key": "key-123", "secret": "secret-456"}'</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast">
+      <div class="toast-icon">✓</div>
+      <span class="toast-text">Copied to clipboard</span>
+    </div>
+  </div>
+</body>
+
+</html>
