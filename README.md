@@ -2,6 +2,9 @@
 
 Adds an **HTTPie** tab to the request editor that shows an equivalent `http` command for the configured request and provides a copy button.
 
+![Screenshot](screenshot.png)
+
+
 ## Install
 
 Build the plugin, then install the `.hcp` package or load the project folder unpacked:
