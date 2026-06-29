@@ -1,6 +1,6 @@
 {
   "name": "harborclient-plugin-httpie",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "build": "esbuild src/renderer.tsx --bundle --outfile=dist/renderer.js --format=esm --jsx=automatic --jsx-import-source=@harborclient/sdk --external:react --external:react-dom --alias:react/jsx-runtime=./src/reactJsxRuntimeShim.js",
@@ -16,7 +16,7 @@
     "plugin:verify": "node --experimental-strip-types scripts/plugin-verify.ts"
   },
   "dependencies": {
-    "@harborclient/sdk": "^0.5.0"
+    "@harborclient/sdk": "^0.6.14"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

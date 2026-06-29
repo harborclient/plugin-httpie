@@ -1,4 +1,4 @@
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
 var hostReact = null;
 function setHostReact(react) {
   hostReact = react;
@@ -12,12 +12,12 @@ function requireHostReact() {
   return hostReact;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/runtime/index.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/runtime/index.js
 function installReact(react) {
   setHostReact(react);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/runtime/react.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/runtime/react.js
 function hook(name2) {
   const react = requireHostReact();
   const fn = react[name2];
@@ -35,6 +35,9 @@ function useEffect(effect, deps) {
 function useMemo(factory, deps) {
   return hook("useMemo")(factory, deps);
 }
+function useRef(initialValue) {
+  return hook("useRef")(initialValue);
+}
 function useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot) {
   return hook("useSyncExternalStore")(subscribe, getSnapshot, getServerSnapshot);
 }
@@ -44,11 +47,14 @@ function createContext(defaultValue) {
 function useContext(context) {
   return hook("useContext")(context);
 }
+function useId() {
+  return hook("useId")();
+}
 function createElement(type, props, ...children) {
   return hook("createElement")(type, props, ...children);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/clipboard.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/clipboard.js
 async function copyToClipboard(hc, text, options) {
   await navigator.clipboard.writeText(text);
   if (options?.toast) {
@@ -56,7 +62,7 @@ async function copyToClipboard(hc, text, options) {
   }
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
 var Fragment = Symbol.for("@harborclient/sdk.Fragment");
 function build(type, props, key) {
   const react = requireHostReact();
@@ -70,22 +76,22 @@ function build(type, props, key) {
 var jsx = build;
 var jsxs = build;
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/components/Button/index.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/components/Button/index.js
 var VARIANT_CLASSES = {
-  primary: "cursor-pointer rounded-md border border-transparent bg-accent px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  secondary: "cursor-pointer rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-text shadow-sm hover:bg-selection disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  primaryDanger: "cursor-pointer rounded-md border border-transparent bg-danger px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  secondaryDanger: "cursor-pointer rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-danger shadow-sm hover:bg-danger/15 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  toolbar: "cursor-pointer rounded-md border-none bg-transparent px-2 py-1 text-[15px] hover:bg-selection app-no-drag",
-  icon: "inline-flex h-6 w-6 shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 focus:opacity-100 focus-visible:opacity-100 hover:bg-selection hover:text-text app-no-drag",
-  iconDanger: "inline-flex h-6 w-6 shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 focus:opacity-100 focus-visible:opacity-100 hover:bg-danger/15 hover:text-danger app-no-drag"
+  primary: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-transparent bg-accent px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
+  secondary: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-text shadow-sm hover:bg-selection disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
+  primaryDanger: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-transparent bg-danger px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
+  secondaryDanger: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-danger shadow-sm hover:bg-danger/15 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
+  toolbar: "inline-flex min-h-[34px] cursor-pointer items-center rounded-md border-none bg-transparent px-2 py-1 text-[15px] hover:bg-selection app-no-drag",
+  icon: "inline-flex size-[30px] shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted hover:bg-selection hover:text-text app-no-drag",
+  iconDanger: "inline-flex size-[30px] shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted hover:bg-danger/15 hover:text-danger app-no-drag"
 };
-function Button({ variant = "primary", className, type = "button", ...props }) {
+function Button({ variant = "primary", className, type = "button", innerRef, ...props }) {
   const classes = className ? `${VARIANT_CLASSES[variant]} ${className}` : VARIANT_CLASSES[variant];
-  return jsx("button", { type, className: classes, ...props });
+  return jsx("button", { ref: innerRef, type, className: classes, ...props });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
 function spacingClasses(spacing) {
   switch (spacing) {
     case "section":
@@ -97,7 +103,7 @@ function spacingClasses(spacing) {
       return "mt-1";
   }
 }
-function FieldError({ children, id: id2, spacing = "field", roleAlert = false, className }) {
+function FieldError({ children, id: id2, spacing = "field", roleAlert = true, className }) {
   if (children == null || children === "")
     return null;
   const base2 = `${spacingClasses(spacing)} text-[14px] text-danger`;
@@ -23272,7 +23278,7 @@ function _objectWithoutPropertiesLoose(r3, e3) {
 }
 
 // node_modules/.pnpm/@uiw+react-codemirror@4.25.10_@babel+runtime@8.0.0_@codemirror+autocomplete@6.20.3_@cod_e67f98ff469220c0ad9bb15b36961e8d/node_modules/@uiw/react-codemirror/esm/index.js
-import React2, { useRef, forwardRef, useImperativeHandle, useCallback } from "react";
+import React2, { useRef as useRef2, forwardRef, useImperativeHandle, useCallback } from "react";
 
 // node_modules/.pnpm/@uiw+react-codemirror@4.25.10_@babel+runtime@8.0.0_@codemirror+autocomplete@6.20.3_@cod_e67f98ff469220c0ad9bb15b36961e8d/node_modules/@uiw/react-codemirror/esm/useCodeMirror.js
 import { useEffect as useEffect2, useLayoutEffect, useState as useState2 } from "react";
@@ -26572,7 +26578,7 @@ function useCodeMirror(props) {
 var _excluded = ["className", "value", "selection", "extensions", "onChange", "onStatistics", "onCreateEditor", "onUpdate", "autoFocus", "theme", "height", "minHeight", "maxHeight", "width", "minWidth", "maxWidth", "basicSetup", "placeholder", "indentWithTab", "editable", "readOnly", "root", "initialState"];
 var ReactCodeMirror = /* @__PURE__ */ forwardRef((props, ref) => {
   var className = props.className, _props$value = props.value, value = _props$value === void 0 ? "" : _props$value, selection2 = props.selection, _props$extensions = props.extensions, extensions = _props$extensions === void 0 ? [] : _props$extensions, onChange = props.onChange, onStatistics = props.onStatistics, onCreateEditor = props.onCreateEditor, onUpdate = props.onUpdate, autoFocus = props.autoFocus, _props$theme = props.theme, theme2 = _props$theme === void 0 ? "light" : _props$theme, height = props.height, minHeight = props.minHeight, maxHeight = props.maxHeight, width = props.width, minWidth = props.minWidth, maxWidth = props.maxWidth, basicSetup3 = props.basicSetup, placeholder2 = props.placeholder, indentWithTab2 = props.indentWithTab, editable2 = props.editable, readOnly2 = props.readOnly, root = props.root, initialState = props.initialState, other = _objectWithoutPropertiesLoose(props, _excluded);
-  var editor = useRef(null);
+  var editor = useRef2(null);
   var _useCodeMirror = useCodeMirror({
     root,
     value,
@@ -28500,7 +28506,7 @@ var e2 = { airline: { airline: [{ name: `Aegean Airlines`, iataCode: `A3` }, { n
 // node_modules/.pnpm/@faker-js+faker@10.5.0/node_modules/@faker-js/faker/dist/locale/en.js
 var r2 = new yt({ locale: [e2, Ct] });
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/variables/dynamic.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/variables/dynamic.js
 function categoryImageUrl(category) {
   return r2.image.urlLoremFlickr({ category });
 }
@@ -29007,17 +29013,28 @@ function resolveDynamicVariable(key) {
 }
 var DYNAMIC_VARIABLE_NAMES = Object.keys(DYNAMIC_VARIABLES).sort();
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/variables/tokens.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/variables/tokens.js
 var VARIABLE_NAME_CHARS = "\\w$.-";
 var VARIABLE_TOKEN_PATTERN = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g");
 function variableLookup(variables) {
   return new Map(variables.filter((v2) => v2.key.trim()).map((v2) => [v2.key.trim(), v2.value !== "" ? v2.value : v2.defaultValue]));
 }
+function getVariableTooltipContent(key, variables) {
+  const value = resolveVariable(key, variables);
+  if (value !== void 0) {
+    return { text: value, muted: false };
+  }
+  const dynamicDescription = getDynamicVariableDescription(key);
+  if (dynamicDescription) {
+    return { text: `Dynamic: ${dynamicDescription}`, muted: true };
+  }
+  return { text: "Not defined", muted: true };
+}
 function resolveVariable(key, variables) {
   return variableLookup(variables).get(key);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/runtime/store.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/runtime/store.js
 function createExternalStore(initial) {
   let state = initial;
   const listeners = /* @__PURE__ */ new Set();
@@ -29038,7 +29055,7 @@ function createExternalStore(initial) {
   };
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
 var DEFAULT_CODE_EDITOR_SETUP = {
   lineNumbers: true,
   foldGutter: true,
@@ -29046,7 +29063,7 @@ var DEFAULT_CODE_EDITOR_SETUP = {
   highlightActiveLineGutter: true
 };
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
 var DEFAULT_CODE_EDITOR_CONFIG = {
   theme: "default",
   setup: DEFAULT_CODE_EDITOR_SETUP
@@ -33070,7 +33087,7 @@ var xcodeDarkInit = (options) => {
 };
 var xcodeDark = xcodeDarkInit();
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
 var themeExtensions = {
   dracula,
   githubLight,
@@ -33087,7 +33104,7 @@ function getCodeEditorThemeExtension(value) {
   return themeExtensions[value];
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
 var lightHighlight = HighlightStyle.define([
   { tag: tags.propertyName, color: "#881391" },
   { tag: tags.string, color: "#c41a16" },
@@ -33216,58 +33233,124 @@ var variableHighlighter = ViewPlugin.fromClass(class {
     this.decorations = variableMatcher.updateDeco(update, this.decorations);
   }
 }, { decorations: (v2) => v2.decorations });
-function variableTooltip(variables, onEditVariable) {
-  return hoverTooltip((view, pos) => {
-    const line = view.state.doc.lineAt(pos);
-    const pattern = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g");
-    for (const match of line.text.matchAll(pattern)) {
-      const start = line.from + (match.index ?? 0);
-      const end = start + match[0].length;
-      if (pos < start || pos > end)
-        continue;
-      const key = match[1];
-      const value = resolveVariable(key, variables);
-      const dynamicDescription = getDynamicVariableDescription(key);
-      return {
-        pos: start,
-        end,
-        above: true,
-        create() {
-          const dom = document.createElement("div");
-          dom.className = "cm-variable-tooltip";
-          const valueEl = document.createElement("div");
-          if (value !== void 0) {
-            valueEl.textContent = value;
-          } else if (dynamicDescription) {
-            valueEl.textContent = `Dynamic: ${dynamicDescription}`;
-          } else {
-            valueEl.textContent = "Not defined";
-            valueEl.className = "cm-variable-tooltip-muted";
-          }
-          dom.appendChild(valueEl);
-          if (onEditVariable) {
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.textContent = "Edit value";
-            btn.className = "cm-variable-tooltip-edit";
-            btn.addEventListener("mousedown", (e3) => {
-              e3.preventDefault();
-              onEditVariable();
-            });
-            dom.appendChild(btn);
-          }
-          return { dom };
-        }
-      };
+function findVariableAtPos(doc2, pos) {
+  const line = doc2.lineAt(pos);
+  const pattern = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g");
+  for (const match of line.text.matchAll(pattern)) {
+    const start = line.from + (match.index ?? 0);
+    const end = start + match[0].length;
+    if (pos < start || pos > end)
+      continue;
+    return { key: match[1], start, end };
+  }
+  return null;
+}
+function buildVariableTooltipDom(key, variables, onEditVariable) {
+  const content2 = getVariableTooltipContent(key, variables);
+  const dom = document.createElement("div");
+  dom.className = "cm-variable-tooltip";
+  const valueEl = document.createElement("div");
+  valueEl.textContent = content2.text;
+  if (content2.muted) {
+    valueEl.className = "cm-variable-tooltip-muted";
+  }
+  dom.appendChild(valueEl);
+  if (onEditVariable) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "Edit value";
+    btn.className = "cm-variable-tooltip-edit";
+    btn.setAttribute("aria-label", `Edit value for ${key}`);
+    btn.addEventListener("mousedown", (e3) => {
+      e3.preventDefault();
+      onEditVariable();
+    });
+    dom.appendChild(btn);
+  }
+  return dom;
+}
+function mergeDescribedBy(...ids) {
+  const merged = ids.filter((id2) => id2 != null && id2 !== "");
+  return merged.length > 0 ? merged.join(" ") : void 0;
+}
+function setContentDescribedBy(content2, getValidationDescribedBy, tooltipId) {
+  if (!content2)
+    return;
+  const describedBy = mergeDescribedBy(getValidationDescribedBy(), tooltipId);
+  if (describedBy) {
+    content2.setAttribute("aria-describedby", describedBy);
+  } else {
+    content2.removeAttribute("aria-describedby");
+  }
+}
+function variableSelectionTooltip(tooltipId, onTooltipChange, getValidationDescribedBy) {
+  return EditorView.updateListener.of((update) => {
+    if (!update.selectionSet && !update.docChanged)
+      return;
+    const content2 = update.view.dom.querySelector(".cm-content");
+    const pos = update.state.selection.main.head;
+    const match = findVariableAtPos(update.state.doc, pos);
+    if (!match) {
+      onTooltipChange(null);
+      setContentDescribedBy(content2, getValidationDescribedBy);
+      return;
     }
-    return null;
+    const coords = update.view.coordsAtPos(match.start);
+    if (!coords) {
+      onTooltipChange(null);
+      setContentDescribedBy(content2, getValidationDescribedBy);
+      return;
+    }
+    onTooltipChange({
+      key: match.key,
+      top: coords.top,
+      left: coords.left + (coords.right - coords.left) / 2
+    });
+    setContentDescribedBy(content2, getValidationDescribedBy, tooltipId);
   });
 }
-function CodeEditor({ value, onChange, language: language2 = "text", readOnly: readOnly2 = false, placeholder: placeholder2, minHeight = "144px", className = "", variables, onEditVariable, completionSource, themeOverride, setupOverride, id: id2, "aria-label": ariaLabel, "aria-labelledby": ariaLabelledBy }) {
+function variableTooltipEscapeHandler(isOpen, onDismiss, getValidationDescribedBy) {
+  return EditorView.domEventHandlers({
+    keydown(event, view) {
+      if (event.key === "Escape" && isOpen()) {
+        event.preventDefault();
+        onDismiss(view);
+        setContentDescribedBy(view.dom.querySelector(".cm-content"), getValidationDescribedBy);
+        return true;
+      }
+      return false;
+    }
+  });
+}
+function variableTooltip(variables, onEditVariable) {
+  return hoverTooltip((view, pos) => {
+    const match = findVariableAtPos(view.state.doc, pos);
+    if (!match)
+      return null;
+    return {
+      pos: match.start,
+      end: match.end,
+      above: true,
+      create() {
+        return { dom: buildVariableTooltipDom(match.key, variables, onEditVariable) };
+      }
+    };
+  });
+}
+function CodeEditor({ value, onChange, language: language2 = "text", readOnly: readOnly2 = false, placeholder: placeholder2, minHeight = "144px", className = "", variables, onEditVariable, completionSource, themeOverride, setupOverride, id: id2, "aria-label": ariaLabel, "aria-labelledby": ariaLabelledBy, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy }) {
   const config15 = useCodeEditorConfig();
   const resolvedTheme = themeOverride ?? config15.theme;
   const resolvedSetup = setupOverride ?? (readOnly2 ? null : config15.setup);
   const [isDark, setIsDark] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const [selectionTooltip, setSelectionTooltip] = useState(null);
+  const selectionTooltipRef = useRef(selectionTooltip);
+  selectionTooltipRef.current = selectionTooltip;
+  const setSelectionTooltipRef = useRef(setSelectionTooltip);
+  setSelectionTooltipRef.current = setSelectionTooltip;
+  const ariaDescribedByRef = useRef(ariaDescribedBy);
+  ariaDescribedByRef.current = ariaDescribedBy;
+  const tooltipId = useId();
+  const getValidationDescribedBy = () => ariaDescribedByRef.current;
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => setIsDark(media.matches);
@@ -33298,7 +33381,11 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
       next.push(StreamLanguage.define(shell));
     }
     if (variables) {
-      next.push(variableHighlighter, variableTooltip(variables, onEditVariable));
+      next.push(variableHighlighter, variableTooltip(variables, onEditVariable), variableSelectionTooltip(tooltipId, (state) => {
+        setSelectionTooltipRef.current(state);
+      }, getValidationDescribedBy), variableTooltipEscapeHandler(() => selectionTooltipRef.current != null, () => {
+        setSelectionTooltipRef.current(null);
+      }, getValidationDescribedBy));
     }
     const contentAttrs = {};
     if (id2)
@@ -33307,6 +33394,10 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
       contentAttrs["aria-label"] = ariaLabel;
     if (ariaLabelledBy)
       contentAttrs["aria-labelledby"] = ariaLabelledBy;
+    if (ariaInvalid != null)
+      contentAttrs["aria-invalid"] = String(ariaInvalid);
+    if (ariaDescribedBy)
+      contentAttrs["aria-describedby"] = ariaDescribedBy;
     if (Object.keys(contentAttrs).length > 0) {
       next.push(EditorView.contentAttributes.of(contentAttrs));
     }
@@ -33320,7 +33411,10 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
     completionSource,
     id2,
     ariaLabel,
-    ariaLabelledBy
+    ariaLabelledBy,
+    ariaInvalid,
+    ariaDescribedBy,
+    tooltipId
   ]);
   const basicSetup3 = useMemo(() => {
     if (!resolvedSetup) {
@@ -33355,7 +33449,8 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
     };
   }, [resolvedSetup, readOnly2]);
   const wrapperClassName = readOnly2 ? `overflow-hidden rounded-md bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}` : `min-h-36 resize-y overflow-hidden rounded-md border border-separator bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] focus-within:shadow-[0_0_0_3px_color-mix(in_srgb,var(--mac-accent)_35%,transparent),inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}`;
-  return jsx("div", { className: wrapperClassName, children: createElement(esm_default, {
+  const selectionTooltipContent = selectionTooltip ? getVariableTooltipContent(selectionTooltip.key, variables ?? []) : null;
+  return jsxs("div", { className: wrapperClassName, children: [createElement(esm_default, {
     value,
     onChange: readOnly2 ? void 0 : onChange,
     extensions,
@@ -33365,10 +33460,14 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
     placeholder: placeholder2,
     minHeight,
     basicSetup: basicSetup3
-  }) });
+  }), selectionTooltip && selectionTooltipContent && variables ? jsxs("div", { id: tooltipId, role: "tooltip", className: "pointer-events-auto fixed z-50 flex max-w-sm -translate-x-1/2 -translate-y-full flex-col gap-1.5 rounded-md border border-separator bg-surface px-3 py-2 text-[14px] text-text shadow-md app-no-drag", style: { top: selectionTooltip.top - 4, left: selectionTooltip.left }, children: [jsx("span", { className: selectionTooltipContent.muted ? "text-muted" : void 0, children: selectionTooltipContent.text }), onEditVariable ? jsx("button", { type: "button", className: "self-start text-[14px] text-accent hover:underline", "aria-label": `Edit value for ${selectionTooltip.key}`, onMouseDown: (event) => {
+    event.preventDefault();
+    onEditVariable();
+    setSelectionTooltip(null);
+  }, children: "Edit value" }) : null] }) : null] });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/http/substitute.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/http/substitute.js
 function substituteVariables2(text, runtimeVars) {
   const pattern = new RegExp(VARIABLE_TOKEN_PATTERN.source, "g");
   return text.replace(pattern, (match, key) => {
@@ -33399,7 +33498,7 @@ function substituteKeyValueRows(rows, runtimeVars) {
   }));
 }
 
-// node_modules/.pnpm/@harborclient+sdk@0.5.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_1ce3235504e871aa5dbe742de87ddfcd/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
+// node_modules/.pnpm/@harborclient+sdk@0.6.14_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search_47d90e3f55246fd089138cc6a136d024/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
 function hasUnsafeHeaderFieldChars(value) {
   for (let index = 0; index < value.length; index += 1) {
     const code = value.charCodeAt(index);
