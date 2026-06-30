@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pluginId": "com.harborclient.plugins.httpie",
-  "pluginVersion": "1.0.2",
+  "pluginVersion": "1.0.3",
   "algorithm": "Ed25519",
   "files": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "path": "dist/renderer.js",
-      "sha256": "72507cebb8530293141404aac40fd2ca940c0ca76f6c0741e2c9fa6d05618825"
+      "sha256": "dbbb2ae9242acd3ce6e8087f57be5bf11b43ef68a056a7196c2d7987ec8afdf0"
     },
     {
       "path": "eslint.config.mjs",
@@ -30,7 +30,7 @@
     },
     {
       "path": "manifest.json",
-      "sha256": "e2771f34b6ebf051d707d19724db892f0e2b2654fb3af5a98b3c31310493d46b"
+      "sha256": "ee471a2ce28940d41d86478cb60752fabf463a360f285458b817e9e423a4ee6b"
     },
     {
       "path": "package.json",
@@ -89,5 +89,5 @@
       "sha256": "663c22f2cb634722bc1c1191c4808b53c89d930979d4936cb6d0a539f4476ac9"
     }
   ],
-  "signature": "HNdQGmYqXCvVlEb7HndnBUbqQKBWa2dsuHUY1PaMIr8i2uFvfj7Ybn1r+sI9aeoR+ZFZwpmiqGWb4p3KwAQ8DQ=="
+  "signature": "sDjGsMyeeQR+V+A6CZ3w2CVTQ7M3RwanuKisVvWbmZYU09QqvniOh1iDM7dHSd0+z/zXDLhwOfA9s298D6maCA=="
 }
