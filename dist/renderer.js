@@ -1,4 +1,4 @@
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
 var HOST_REACT_GLOBAL_KEY = "__HARBORCLIENT_HOST_REACT__";
 var hostReact = null;
 function readGlobalHostReact() {
@@ -29,12 +29,12 @@ function requireHostReact() {
   return hostReact;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/index.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/index.js
 function installReact(react) {
   setHostReact(react);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/react.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/react.js
 function hook(name2) {
   const react = requireHostReact();
   const fn = react[name2];
@@ -124,7 +124,7 @@ var defaultExport = new Proxy(reactNamespace, {
   }
 });
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/clipboard.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/clipboard.js
 async function copyToClipboard(hc, text, options) {
   await navigator.clipboard.writeText(text);
   if (options?.toast) {
@@ -132,7 +132,7 @@ async function copyToClipboard(hc, text, options) {
   }
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
 var Fragment = Symbol.for("@harborclient/sdk.Fragment");
 function build(type, props, key) {
   const react = requireHostReact();
@@ -146,22 +146,3281 @@ function build(type, props, key) {
 var jsx = build;
 var jsxs = build;
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/components/Button/index.js
-var VARIANT_CLASSES = {
-  primary: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-transparent bg-accent px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  secondary: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-text shadow-sm hover:bg-selection disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  primaryDanger: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-transparent bg-danger px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  secondaryDanger: "inline-flex min-h-[34px] cursor-pointer items-center justify-center rounded-md border border-separator bg-control px-3 py-1 text-[15px] text-danger shadow-sm hover:bg-danger/15 disabled:cursor-not-allowed disabled:opacity-50 app-no-drag",
-  toolbar: "inline-flex min-h-[34px] cursor-pointer items-center rounded-md border-none bg-transparent px-2 py-1 text-[15px] hover:bg-selection app-no-drag",
-  icon: "inline-flex size-[30px] shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted hover:bg-selection hover:text-text app-no-drag",
-  iconDanger: "inline-flex size-[30px] shrink-0 cursor-pointer items-center justify-center rounded-md border-none bg-transparent text-muted hover:bg-danger/15 hover:text-danger app-no-drag"
-};
-function Button({ variant = "primary", className, type = "button", innerRef, ...props }) {
-  const classes = className ? `${VARIANT_CLASSES[variant]} ${className}` : VARIANT_CLASSES[variant];
-  return jsx("button", { ref: innerRef, type, className: classes, ...props });
+// node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.mjs
+function r(e3) {
+  var t3, f2, n2 = "";
+  if ("string" == typeof e3 || "number" == typeof e3) n2 += e3;
+  else if ("object" == typeof e3) if (Array.isArray(e3)) {
+    var o2 = e3.length;
+    for (t3 = 0; t3 < o2; t3++) e3[t3] && (f2 = r(e3[t3])) && (n2 && (n2 += " "), n2 += f2);
+  } else for (f2 in e3) e3[f2] && (n2 && (n2 += " "), n2 += f2);
+  return n2;
+}
+function clsx() {
+  for (var e3, t3, f2 = 0, n2 = "", o2 = arguments.length; f2 < o2; f2++) (e3 = arguments[f2]) && (t3 = r(e3)) && (n2 && (n2 += " "), n2 += t3);
+  return n2;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
+// node_modules/.pnpm/tailwind-merge@3.6.0/node_modules/tailwind-merge/dist/bundle-mjs.mjs
+var concatArrays = (array1, array2) => {
+  const combinedArray = new Array(array1.length + array2.length);
+  for (let i2 = 0; i2 < array1.length; i2++) {
+    combinedArray[i2] = array1[i2];
+  }
+  for (let i2 = 0; i2 < array2.length; i2++) {
+    combinedArray[array1.length + i2] = array2[i2];
+  }
+  return combinedArray;
+};
+var createClassValidatorObject = (classGroupId, validator) => ({
+  classGroupId,
+  validator
+});
+var createClassPartObject = (nextPart = /* @__PURE__ */ new Map(), validators = null, classGroupId) => ({
+  nextPart,
+  validators,
+  classGroupId
+});
+var CLASS_PART_SEPARATOR = "-";
+var EMPTY_CONFLICTS = [];
+var ARBITRARY_PROPERTY_PREFIX = "arbitrary..";
+var createClassGroupUtils = (config15) => {
+  const classMap = createClassMap(config15);
+  const {
+    conflictingClassGroups,
+    conflictingClassGroupModifiers
+  } = config15;
+  const getClassGroupId = (className) => {
+    if (className.startsWith("[") && className.endsWith("]")) {
+      return getGroupIdForArbitraryProperty(className);
+    }
+    const classParts = className.split(CLASS_PART_SEPARATOR);
+    const startIndex = classParts[0] === "" && classParts.length > 1 ? 1 : 0;
+    return getGroupRecursive(classParts, startIndex, classMap);
+  };
+  const getConflictingClassGroupIds = (classGroupId, hasPostfixModifier) => {
+    if (hasPostfixModifier) {
+      const modifierConflicts = conflictingClassGroupModifiers[classGroupId];
+      const baseConflicts = conflictingClassGroups[classGroupId];
+      if (modifierConflicts) {
+        if (baseConflicts) {
+          return concatArrays(baseConflicts, modifierConflicts);
+        }
+        return modifierConflicts;
+      }
+      return baseConflicts || EMPTY_CONFLICTS;
+    }
+    return conflictingClassGroups[classGroupId] || EMPTY_CONFLICTS;
+  };
+  return {
+    getClassGroupId,
+    getConflictingClassGroupIds
+  };
+};
+var getGroupRecursive = (classParts, startIndex, classPartObject) => {
+  const classPathsLength = classParts.length - startIndex;
+  if (classPathsLength === 0) {
+    return classPartObject.classGroupId;
+  }
+  const currentClassPart = classParts[startIndex];
+  const nextClassPartObject = classPartObject.nextPart.get(currentClassPart);
+  if (nextClassPartObject) {
+    const result = getGroupRecursive(classParts, startIndex + 1, nextClassPartObject);
+    if (result) return result;
+  }
+  const validators = classPartObject.validators;
+  if (validators === null) {
+    return void 0;
+  }
+  const classRest = startIndex === 0 ? classParts.join(CLASS_PART_SEPARATOR) : classParts.slice(startIndex).join(CLASS_PART_SEPARATOR);
+  const validatorsLength = validators.length;
+  for (let i2 = 0; i2 < validatorsLength; i2++) {
+    const validatorObj = validators[i2];
+    if (validatorObj.validator(classRest)) {
+      return validatorObj.classGroupId;
+    }
+  }
+  return void 0;
+};
+var getGroupIdForArbitraryProperty = (className) => className.slice(1, -1).indexOf(":") === -1 ? void 0 : (() => {
+  const content2 = className.slice(1, -1);
+  const colonIndex = content2.indexOf(":");
+  const property = content2.slice(0, colonIndex);
+  return property ? ARBITRARY_PROPERTY_PREFIX + property : void 0;
+})();
+var createClassMap = (config15) => {
+  const {
+    theme: theme2,
+    classGroups
+  } = config15;
+  return processClassGroups(classGroups, theme2);
+};
+var processClassGroups = (classGroups, theme2) => {
+  const classMap = createClassPartObject();
+  for (const classGroupId in classGroups) {
+    const group = classGroups[classGroupId];
+    processClassesRecursively(group, classMap, classGroupId, theme2);
+  }
+  return classMap;
+};
+var processClassesRecursively = (classGroup, classPartObject, classGroupId, theme2) => {
+  const len = classGroup.length;
+  for (let i2 = 0; i2 < len; i2++) {
+    const classDefinition = classGroup[i2];
+    processClassDefinition(classDefinition, classPartObject, classGroupId, theme2);
+  }
+};
+var processClassDefinition = (classDefinition, classPartObject, classGroupId, theme2) => {
+  if (typeof classDefinition === "string") {
+    processStringDefinition(classDefinition, classPartObject, classGroupId);
+    return;
+  }
+  if (typeof classDefinition === "function") {
+    processFunctionDefinition(classDefinition, classPartObject, classGroupId, theme2);
+    return;
+  }
+  processObjectDefinition(classDefinition, classPartObject, classGroupId, theme2);
+};
+var processStringDefinition = (classDefinition, classPartObject, classGroupId) => {
+  const classPartObjectToEdit = classDefinition === "" ? classPartObject : getPart(classPartObject, classDefinition);
+  classPartObjectToEdit.classGroupId = classGroupId;
+};
+var processFunctionDefinition = (classDefinition, classPartObject, classGroupId, theme2) => {
+  if (isThemeGetter(classDefinition)) {
+    processClassesRecursively(classDefinition(theme2), classPartObject, classGroupId, theme2);
+    return;
+  }
+  if (classPartObject.validators === null) {
+    classPartObject.validators = [];
+  }
+  classPartObject.validators.push(createClassValidatorObject(classGroupId, classDefinition));
+};
+var processObjectDefinition = (classDefinition, classPartObject, classGroupId, theme2) => {
+  const entries = Object.entries(classDefinition);
+  const len = entries.length;
+  for (let i2 = 0; i2 < len; i2++) {
+    const [key, value] = entries[i2];
+    processClassesRecursively(value, getPart(classPartObject, key), classGroupId, theme2);
+  }
+};
+var getPart = (classPartObject, path) => {
+  let current = classPartObject;
+  const parts = path.split(CLASS_PART_SEPARATOR);
+  const len = parts.length;
+  for (let i2 = 0; i2 < len; i2++) {
+    const part = parts[i2];
+    let next = current.nextPart.get(part);
+    if (!next) {
+      next = createClassPartObject();
+      current.nextPart.set(part, next);
+    }
+    current = next;
+  }
+  return current;
+};
+var isThemeGetter = (func) => "isThemeGetter" in func && func.isThemeGetter === true;
+var createLruCache = (maxCacheSize) => {
+  if (maxCacheSize < 1) {
+    return {
+      get: () => void 0,
+      set: () => {
+      }
+    };
+  }
+  let cacheSize = 0;
+  let cache2 = /* @__PURE__ */ Object.create(null);
+  let previousCache = /* @__PURE__ */ Object.create(null);
+  const update = (key, value) => {
+    cache2[key] = value;
+    cacheSize++;
+    if (cacheSize > maxCacheSize) {
+      cacheSize = 0;
+      previousCache = cache2;
+      cache2 = /* @__PURE__ */ Object.create(null);
+    }
+  };
+  return {
+    get(key) {
+      let value = cache2[key];
+      if (value !== void 0) {
+        return value;
+      }
+      if ((value = previousCache[key]) !== void 0) {
+        update(key, value);
+        return value;
+      }
+    },
+    set(key, value) {
+      if (key in cache2) {
+        cache2[key] = value;
+      } else {
+        update(key, value);
+      }
+    }
+  };
+};
+var IMPORTANT_MODIFIER = "!";
+var MODIFIER_SEPARATOR = ":";
+var EMPTY_MODIFIERS = [];
+var createResultObject = (modifiers2, hasImportantModifier, baseClassName, maybePostfixModifierPosition, isExternal) => ({
+  modifiers: modifiers2,
+  hasImportantModifier,
+  baseClassName,
+  maybePostfixModifierPosition,
+  isExternal
+});
+var createParseClassName = (config15) => {
+  const {
+    prefix,
+    experimentalParseClassName
+  } = config15;
+  let parseClassName = (className) => {
+    const modifiers2 = [];
+    let bracketDepth = 0;
+    let parenDepth = 0;
+    let modifierStart = 0;
+    let postfixModifierPosition;
+    const len = className.length;
+    for (let index = 0; index < len; index++) {
+      const currentCharacter = className[index];
+      if (bracketDepth === 0 && parenDepth === 0) {
+        if (currentCharacter === MODIFIER_SEPARATOR) {
+          modifiers2.push(className.slice(modifierStart, index));
+          modifierStart = index + 1;
+          continue;
+        }
+        if (currentCharacter === "/") {
+          postfixModifierPosition = index;
+          continue;
+        }
+      }
+      if (currentCharacter === "[") bracketDepth++;
+      else if (currentCharacter === "]") bracketDepth--;
+      else if (currentCharacter === "(") parenDepth++;
+      else if (currentCharacter === ")") parenDepth--;
+    }
+    const baseClassNameWithImportantModifier = modifiers2.length === 0 ? className : className.slice(modifierStart);
+    let baseClassName = baseClassNameWithImportantModifier;
+    let hasImportantModifier = false;
+    if (baseClassNameWithImportantModifier.endsWith(IMPORTANT_MODIFIER)) {
+      baseClassName = baseClassNameWithImportantModifier.slice(0, -1);
+      hasImportantModifier = true;
+    } else if (
+      /**
+       * In Tailwind CSS v3 the important modifier was at the start of the base class name. This is still supported for legacy reasons.
+       * @see https://github.com/dcastil/tailwind-merge/issues/513#issuecomment-2614029864
+       */
+      baseClassNameWithImportantModifier.startsWith(IMPORTANT_MODIFIER)
+    ) {
+      baseClassName = baseClassNameWithImportantModifier.slice(1);
+      hasImportantModifier = true;
+    }
+    const maybePostfixModifierPosition = postfixModifierPosition && postfixModifierPosition > modifierStart ? postfixModifierPosition - modifierStart : void 0;
+    return createResultObject(modifiers2, hasImportantModifier, baseClassName, maybePostfixModifierPosition);
+  };
+  if (prefix) {
+    const fullPrefix = prefix + MODIFIER_SEPARATOR;
+    const parseClassNameOriginal = parseClassName;
+    parseClassName = (className) => className.startsWith(fullPrefix) ? parseClassNameOriginal(className.slice(fullPrefix.length)) : createResultObject(EMPTY_MODIFIERS, false, className, void 0, true);
+  }
+  if (experimentalParseClassName) {
+    const parseClassNameOriginal = parseClassName;
+    parseClassName = (className) => experimentalParseClassName({
+      className,
+      parseClassName: parseClassNameOriginal
+    });
+  }
+  return parseClassName;
+};
+var createSortModifiers = (config15) => {
+  const modifierWeights = /* @__PURE__ */ new Map();
+  config15.orderSensitiveModifiers.forEach((mod, index) => {
+    modifierWeights.set(mod, 1e6 + index);
+  });
+  return (modifiers2) => {
+    const result = [];
+    let currentSegment = [];
+    for (let i2 = 0; i2 < modifiers2.length; i2++) {
+      const modifier = modifiers2[i2];
+      const isArbitrary = modifier[0] === "[";
+      const isOrderSensitive = modifierWeights.has(modifier);
+      if (isArbitrary || isOrderSensitive) {
+        if (currentSegment.length > 0) {
+          currentSegment.sort();
+          result.push(...currentSegment);
+          currentSegment = [];
+        }
+        result.push(modifier);
+      } else {
+        currentSegment.push(modifier);
+      }
+    }
+    if (currentSegment.length > 0) {
+      currentSegment.sort();
+      result.push(...currentSegment);
+    }
+    return result;
+  };
+};
+var createConfigUtils = (config15) => ({
+  cache: createLruCache(config15.cacheSize),
+  parseClassName: createParseClassName(config15),
+  sortModifiers: createSortModifiers(config15),
+  postfixLookupClassGroupIds: createPostfixLookupClassGroupIds(config15),
+  ...createClassGroupUtils(config15)
+});
+var createPostfixLookupClassGroupIds = (config15) => {
+  const lookup = /* @__PURE__ */ Object.create(null);
+  const classGroupIds = config15.postfixLookupClassGroups;
+  if (classGroupIds) {
+    for (let i2 = 0; i2 < classGroupIds.length; i2++) {
+      lookup[classGroupIds[i2]] = true;
+    }
+  }
+  return lookup;
+};
+var SPLIT_CLASSES_REGEX = /\s+/;
+var mergeClassList = (classList, configUtils) => {
+  const {
+    parseClassName,
+    getClassGroupId,
+    getConflictingClassGroupIds,
+    sortModifiers,
+    postfixLookupClassGroupIds
+  } = configUtils;
+  const classGroupsInConflict = [];
+  const classNames = classList.trim().split(SPLIT_CLASSES_REGEX);
+  let result = "";
+  for (let index = classNames.length - 1; index >= 0; index -= 1) {
+    const originalClassName = classNames[index];
+    const {
+      isExternal,
+      modifiers: modifiers2,
+      hasImportantModifier,
+      baseClassName,
+      maybePostfixModifierPosition
+    } = parseClassName(originalClassName);
+    if (isExternal) {
+      result = originalClassName + (result.length > 0 ? " " + result : result);
+      continue;
+    }
+    let hasPostfixModifier = !!maybePostfixModifierPosition;
+    let classGroupId;
+    if (hasPostfixModifier) {
+      const baseClassNameWithoutPostfix = baseClassName.substring(0, maybePostfixModifierPosition);
+      classGroupId = getClassGroupId(baseClassNameWithoutPostfix);
+      const classGroupIdWithPostfix = classGroupId && postfixLookupClassGroupIds[classGroupId] ? getClassGroupId(baseClassName) : void 0;
+      if (classGroupIdWithPostfix && classGroupIdWithPostfix !== classGroupId) {
+        classGroupId = classGroupIdWithPostfix;
+        hasPostfixModifier = false;
+      }
+    } else {
+      classGroupId = getClassGroupId(baseClassName);
+    }
+    if (!classGroupId) {
+      if (!hasPostfixModifier) {
+        result = originalClassName + (result.length > 0 ? " " + result : result);
+        continue;
+      }
+      classGroupId = getClassGroupId(baseClassName);
+      if (!classGroupId) {
+        result = originalClassName + (result.length > 0 ? " " + result : result);
+        continue;
+      }
+      hasPostfixModifier = false;
+    }
+    const variantModifier = modifiers2.length === 0 ? "" : modifiers2.length === 1 ? modifiers2[0] : sortModifiers(modifiers2).join(":");
+    const modifierId = hasImportantModifier ? variantModifier + IMPORTANT_MODIFIER : variantModifier;
+    const classId = modifierId + classGroupId;
+    if (classGroupsInConflict.indexOf(classId) > -1) {
+      continue;
+    }
+    classGroupsInConflict.push(classId);
+    const conflictGroups = getConflictingClassGroupIds(classGroupId, hasPostfixModifier);
+    for (let i2 = 0; i2 < conflictGroups.length; ++i2) {
+      const group = conflictGroups[i2];
+      classGroupsInConflict.push(modifierId + group);
+    }
+    result = originalClassName + (result.length > 0 ? " " + result : result);
+  }
+  return result;
+};
+var twJoin = (...classLists) => {
+  let index = 0;
+  let argument;
+  let resolvedValue;
+  let string2 = "";
+  while (index < classLists.length) {
+    if (argument = classLists[index++]) {
+      if (resolvedValue = toValue(argument)) {
+        string2 && (string2 += " ");
+        string2 += resolvedValue;
+      }
+    }
+  }
+  return string2;
+};
+var toValue = (mix) => {
+  if (typeof mix === "string") {
+    return mix;
+  }
+  let resolvedValue;
+  let string2 = "";
+  for (let k2 = 0; k2 < mix.length; k2++) {
+    if (mix[k2]) {
+      if (resolvedValue = toValue(mix[k2])) {
+        string2 && (string2 += " ");
+        string2 += resolvedValue;
+      }
+    }
+  }
+  return string2;
+};
+var createTailwindMerge = (createConfigFirst, ...createConfigRest) => {
+  let configUtils;
+  let cacheGet;
+  let cacheSet;
+  let functionToCall;
+  const initTailwindMerge = (classList) => {
+    const config15 = createConfigRest.reduce((previousConfig, createConfigCurrent) => createConfigCurrent(previousConfig), createConfigFirst());
+    configUtils = createConfigUtils(config15);
+    cacheGet = configUtils.cache.get;
+    cacheSet = configUtils.cache.set;
+    functionToCall = tailwindMerge;
+    return tailwindMerge(classList);
+  };
+  const tailwindMerge = (classList) => {
+    const cachedResult = cacheGet(classList);
+    if (cachedResult) {
+      return cachedResult;
+    }
+    const result = mergeClassList(classList, configUtils);
+    cacheSet(classList, result);
+    return result;
+  };
+  functionToCall = initTailwindMerge;
+  return (...args) => functionToCall(twJoin(...args));
+};
+var fallbackThemeArr = [];
+var fromTheme = (key) => {
+  const themeGetter = (theme2) => theme2[key] || fallbackThemeArr;
+  themeGetter.isThemeGetter = true;
+  return themeGetter;
+};
+var arbitraryValueRegex = /^\[(?:(\w[\w-]*):)?(.+)\]$/i;
+var arbitraryVariableRegex = /^\((?:(\w[\w-]*):)?(.+)\)$/i;
+var fractionRegex = /^\d+(?:\.\d+)?\/\d+(?:\.\d+)?$/;
+var tshirtUnitRegex = /^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/;
+var lengthUnitRegex = /\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/;
+var colorFunctionRegex = /^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/;
+var shadowRegex = /^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/;
+var imageRegex = /^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/;
+var isFraction = (value) => fractionRegex.test(value);
+var isNumber = (value) => !!value && !Number.isNaN(Number(value));
+var isInteger = (value) => !!value && Number.isInteger(Number(value));
+var isPercent = (value) => value.endsWith("%") && isNumber(value.slice(0, -1));
+var isTshirtSize = (value) => tshirtUnitRegex.test(value);
+var isAny = () => true;
+var isLengthOnly = (value) => (
+  // `colorFunctionRegex` check is necessary because color functions can have percentages in them which which would be incorrectly classified as lengths.
+  // For example, `hsl(0 0% 0%)` would be classified as a length without this check.
+  // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
+  lengthUnitRegex.test(value) && !colorFunctionRegex.test(value)
+);
+var isNever = () => false;
+var isShadow = (value) => shadowRegex.test(value);
+var isImage = (value) => imageRegex.test(value);
+var isAnyNonArbitrary = (value) => !isArbitraryValue(value) && !isArbitraryVariable(value);
+var isNamedContainerQuery = (value) => value.startsWith("@container") && (value[10] === "/" && value[11] !== void 0 || value[11] === "s" && value[16] !== void 0 && value.startsWith("-size/", 10) || value[11] === "n" && value[18] !== void 0 && value.startsWith("-normal/", 10));
+var isArbitrarySize = (value) => getIsArbitraryValue(value, isLabelSize, isNever);
+var isArbitraryValue = (value) => arbitraryValueRegex.test(value);
+var isArbitraryLength = (value) => getIsArbitraryValue(value, isLabelLength, isLengthOnly);
+var isArbitraryNumber = (value) => getIsArbitraryValue(value, isLabelNumber, isNumber);
+var isArbitraryWeight = (value) => getIsArbitraryValue(value, isLabelWeight, isAny);
+var isArbitraryFamilyName = (value) => getIsArbitraryValue(value, isLabelFamilyName, isNever);
+var isArbitraryPosition = (value) => getIsArbitraryValue(value, isLabelPosition, isNever);
+var isArbitraryImage = (value) => getIsArbitraryValue(value, isLabelImage, isImage);
+var isArbitraryShadow = (value) => getIsArbitraryValue(value, isLabelShadow, isShadow);
+var isArbitraryVariable = (value) => arbitraryVariableRegex.test(value);
+var isArbitraryVariableLength = (value) => getIsArbitraryVariable(value, isLabelLength);
+var isArbitraryVariableFamilyName = (value) => getIsArbitraryVariable(value, isLabelFamilyName);
+var isArbitraryVariablePosition = (value) => getIsArbitraryVariable(value, isLabelPosition);
+var isArbitraryVariableSize = (value) => getIsArbitraryVariable(value, isLabelSize);
+var isArbitraryVariableImage = (value) => getIsArbitraryVariable(value, isLabelImage);
+var isArbitraryVariableShadow = (value) => getIsArbitraryVariable(value, isLabelShadow, true);
+var isArbitraryVariableWeight = (value) => getIsArbitraryVariable(value, isLabelWeight, true);
+var getIsArbitraryValue = (value, testLabel, testValue) => {
+  const result = arbitraryValueRegex.exec(value);
+  if (result) {
+    if (result[1]) {
+      return testLabel(result[1]);
+    }
+    return testValue(result[2]);
+  }
+  return false;
+};
+var getIsArbitraryVariable = (value, testLabel, shouldMatchNoLabel = false) => {
+  const result = arbitraryVariableRegex.exec(value);
+  if (result) {
+    if (result[1]) {
+      return testLabel(result[1]);
+    }
+    return shouldMatchNoLabel;
+  }
+  return false;
+};
+var isLabelPosition = (label) => label === "position" || label === "percentage";
+var isLabelImage = (label) => label === "image" || label === "url";
+var isLabelSize = (label) => label === "length" || label === "size" || label === "bg-size";
+var isLabelLength = (label) => label === "length";
+var isLabelNumber = (label) => label === "number";
+var isLabelFamilyName = (label) => label === "family-name";
+var isLabelWeight = (label) => label === "number" || label === "weight";
+var isLabelShadow = (label) => label === "shadow";
+var getDefaultConfig = () => {
+  const themeColor = fromTheme("color");
+  const themeFont = fromTheme("font");
+  const themeText = fromTheme("text");
+  const themeFontWeight = fromTheme("font-weight");
+  const themeTracking = fromTheme("tracking");
+  const themeLeading = fromTheme("leading");
+  const themeBreakpoint = fromTheme("breakpoint");
+  const themeContainer = fromTheme("container");
+  const themeSpacing = fromTheme("spacing");
+  const themeRadius = fromTheme("radius");
+  const themeShadow = fromTheme("shadow");
+  const themeInsetShadow = fromTheme("inset-shadow");
+  const themeTextShadow = fromTheme("text-shadow");
+  const themeDropShadow = fromTheme("drop-shadow");
+  const themeBlur = fromTheme("blur");
+  const themePerspective = fromTheme("perspective");
+  const themeAspect = fromTheme("aspect");
+  const themeEase = fromTheme("ease");
+  const themeAnimate = fromTheme("animate");
+  const scaleBreak = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"];
+  const scalePosition = () => [
+    "center",
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "top-left",
+    // Deprecated since Tailwind CSS v4.1.0, see https://github.com/tailwindlabs/tailwindcss/pull/17378
+    "left-top",
+    "top-right",
+    // Deprecated since Tailwind CSS v4.1.0, see https://github.com/tailwindlabs/tailwindcss/pull/17378
+    "right-top",
+    "bottom-right",
+    // Deprecated since Tailwind CSS v4.1.0, see https://github.com/tailwindlabs/tailwindcss/pull/17378
+    "right-bottom",
+    "bottom-left",
+    // Deprecated since Tailwind CSS v4.1.0, see https://github.com/tailwindlabs/tailwindcss/pull/17378
+    "left-bottom"
+  ];
+  const scalePositionWithArbitrary = () => [...scalePosition(), isArbitraryVariable, isArbitraryValue];
+  const scaleOverflow = () => ["auto", "hidden", "clip", "visible", "scroll"];
+  const scaleOverscroll = () => ["auto", "contain", "none"];
+  const scaleUnambiguousSpacing = () => [isArbitraryVariable, isArbitraryValue, themeSpacing];
+  const scaleInset = () => [isFraction, "full", "auto", ...scaleUnambiguousSpacing()];
+  const scaleGridTemplateColsRows = () => [isInteger, "none", "subgrid", isArbitraryVariable, isArbitraryValue];
+  const scaleGridColRowStartAndEnd = () => ["auto", {
+    span: ["full", isInteger, isArbitraryVariable, isArbitraryValue]
+  }, isInteger, isArbitraryVariable, isArbitraryValue];
+  const scaleGridColRowStartOrEnd = () => [isInteger, "auto", isArbitraryVariable, isArbitraryValue];
+  const scaleGridAutoColsRows = () => ["auto", "min", "max", "fr", isArbitraryVariable, isArbitraryValue];
+  const scaleAlignPrimaryAxis = () => ["start", "end", "center", "between", "around", "evenly", "stretch", "baseline", "center-safe", "end-safe"];
+  const scaleAlignSecondaryAxis = () => ["start", "end", "center", "stretch", "center-safe", "end-safe"];
+  const scaleMargin = () => ["auto", ...scaleUnambiguousSpacing()];
+  const scaleSizing = () => [isFraction, "auto", "full", "dvw", "dvh", "lvw", "lvh", "svw", "svh", "min", "max", "fit", ...scaleUnambiguousSpacing()];
+  const scaleSizingInline = () => [isFraction, "screen", "full", "dvw", "lvw", "svw", "min", "max", "fit", ...scaleUnambiguousSpacing()];
+  const scaleSizingBlock = () => [isFraction, "screen", "full", "lh", "dvh", "lvh", "svh", "min", "max", "fit", ...scaleUnambiguousSpacing()];
+  const scaleColor = () => [themeColor, isArbitraryVariable, isArbitraryValue];
+  const scaleBgPosition = () => [...scalePosition(), isArbitraryVariablePosition, isArbitraryPosition, {
+    position: [isArbitraryVariable, isArbitraryValue]
+  }];
+  const scaleBgRepeat = () => ["no-repeat", {
+    repeat: ["", "x", "y", "space", "round"]
+  }];
+  const scaleBgSize = () => ["auto", "cover", "contain", isArbitraryVariableSize, isArbitrarySize, {
+    size: [isArbitraryVariable, isArbitraryValue]
+  }];
+  const scaleGradientStopPosition = () => [isPercent, isArbitraryVariableLength, isArbitraryLength];
+  const scaleRadius = () => [
+    // Deprecated since Tailwind CSS v4.0.0
+    "",
+    "none",
+    "full",
+    themeRadius,
+    isArbitraryVariable,
+    isArbitraryValue
+  ];
+  const scaleBorderWidth = () => ["", isNumber, isArbitraryVariableLength, isArbitraryLength];
+  const scaleLineStyle = () => ["solid", "dashed", "dotted", "double"];
+  const scaleBlendMode = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"];
+  const scaleMaskImagePosition = () => [isNumber, isPercent, isArbitraryVariablePosition, isArbitraryPosition];
+  const scaleBlur = () => [
+    // Deprecated since Tailwind CSS v4.0.0
+    "",
+    "none",
+    themeBlur,
+    isArbitraryVariable,
+    isArbitraryValue
+  ];
+  const scaleRotate = () => ["none", isNumber, isArbitraryVariable, isArbitraryValue];
+  const scaleScale = () => ["none", isNumber, isArbitraryVariable, isArbitraryValue];
+  const scaleSkew = () => [isNumber, isArbitraryVariable, isArbitraryValue];
+  const scaleTranslate = () => [isFraction, "full", ...scaleUnambiguousSpacing()];
+  return {
+    cacheSize: 500,
+    theme: {
+      animate: ["spin", "ping", "pulse", "bounce"],
+      aspect: ["video"],
+      blur: [isTshirtSize],
+      breakpoint: [isTshirtSize],
+      color: [isAny],
+      container: [isTshirtSize],
+      "drop-shadow": [isTshirtSize],
+      ease: ["in", "out", "in-out"],
+      font: [isAnyNonArbitrary],
+      "font-weight": ["thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black"],
+      "inset-shadow": [isTshirtSize],
+      leading: ["none", "tight", "snug", "normal", "relaxed", "loose"],
+      perspective: ["dramatic", "near", "normal", "midrange", "distant", "none"],
+      radius: [isTshirtSize],
+      shadow: [isTshirtSize],
+      spacing: ["px", isNumber],
+      text: [isTshirtSize],
+      "text-shadow": [isTshirtSize],
+      tracking: ["tighter", "tight", "normal", "wide", "wider", "widest"]
+    },
+    classGroups: {
+      // --------------
+      // --- Layout ---
+      // --------------
+      /**
+       * Aspect Ratio
+       * @see https://tailwindcss.com/docs/aspect-ratio
+       */
+      aspect: [{
+        aspect: ["auto", "square", isFraction, isArbitraryValue, isArbitraryVariable, themeAspect]
+      }],
+      /**
+       * Container
+       * @see https://tailwindcss.com/docs/container
+       * @deprecated since Tailwind CSS v4.0.0
+       */
+      container: ["container"],
+      /**
+       * Container Type
+       * @see https://tailwindcss.com/docs/responsive-design#container-queries
+       */
+      "container-type": [{
+        "@container": ["", "normal", "size", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Container Name
+       * @see https://tailwindcss.com/docs/responsive-design#named-containers
+       */
+      "container-named": [isNamedContainerQuery],
+      /**
+       * Columns
+       * @see https://tailwindcss.com/docs/columns
+       */
+      columns: [{
+        columns: [isNumber, isArbitraryValue, isArbitraryVariable, themeContainer]
+      }],
+      /**
+       * Break After
+       * @see https://tailwindcss.com/docs/break-after
+       */
+      "break-after": [{
+        "break-after": scaleBreak()
+      }],
+      /**
+       * Break Before
+       * @see https://tailwindcss.com/docs/break-before
+       */
+      "break-before": [{
+        "break-before": scaleBreak()
+      }],
+      /**
+       * Break Inside
+       * @see https://tailwindcss.com/docs/break-inside
+       */
+      "break-inside": [{
+        "break-inside": ["auto", "avoid", "avoid-page", "avoid-column"]
+      }],
+      /**
+       * Box Decoration Break
+       * @see https://tailwindcss.com/docs/box-decoration-break
+       */
+      "box-decoration": [{
+        "box-decoration": ["slice", "clone"]
+      }],
+      /**
+       * Box Sizing
+       * @see https://tailwindcss.com/docs/box-sizing
+       */
+      box: [{
+        box: ["border", "content"]
+      }],
+      /**
+       * Display
+       * @see https://tailwindcss.com/docs/display
+       */
+      display: ["block", "inline-block", "inline", "flex", "inline-flex", "table", "inline-table", "table-caption", "table-cell", "table-column", "table-column-group", "table-footer-group", "table-header-group", "table-row-group", "table-row", "flow-root", "grid", "inline-grid", "contents", "list-item", "hidden"],
+      /**
+       * Screen Reader Only
+       * @see https://tailwindcss.com/docs/display#screen-reader-only
+       */
+      sr: ["sr-only", "not-sr-only"],
+      /**
+       * Floats
+       * @see https://tailwindcss.com/docs/float
+       */
+      float: [{
+        float: ["right", "left", "none", "start", "end"]
+      }],
+      /**
+       * Clear
+       * @see https://tailwindcss.com/docs/clear
+       */
+      clear: [{
+        clear: ["left", "right", "both", "none", "start", "end"]
+      }],
+      /**
+       * Isolation
+       * @see https://tailwindcss.com/docs/isolation
+       */
+      isolation: ["isolate", "isolation-auto"],
+      /**
+       * Object Fit
+       * @see https://tailwindcss.com/docs/object-fit
+       */
+      "object-fit": [{
+        object: ["contain", "cover", "fill", "none", "scale-down"]
+      }],
+      /**
+       * Object Position
+       * @see https://tailwindcss.com/docs/object-position
+       */
+      "object-position": [{
+        object: scalePositionWithArbitrary()
+      }],
+      /**
+       * Overflow
+       * @see https://tailwindcss.com/docs/overflow
+       */
+      overflow: [{
+        overflow: scaleOverflow()
+      }],
+      /**
+       * Overflow X
+       * @see https://tailwindcss.com/docs/overflow
+       */
+      "overflow-x": [{
+        "overflow-x": scaleOverflow()
+      }],
+      /**
+       * Overflow Y
+       * @see https://tailwindcss.com/docs/overflow
+       */
+      "overflow-y": [{
+        "overflow-y": scaleOverflow()
+      }],
+      /**
+       * Overscroll Behavior
+       * @see https://tailwindcss.com/docs/overscroll-behavior
+       */
+      overscroll: [{
+        overscroll: scaleOverscroll()
+      }],
+      /**
+       * Overscroll Behavior X
+       * @see https://tailwindcss.com/docs/overscroll-behavior
+       */
+      "overscroll-x": [{
+        "overscroll-x": scaleOverscroll()
+      }],
+      /**
+       * Overscroll Behavior Y
+       * @see https://tailwindcss.com/docs/overscroll-behavior
+       */
+      "overscroll-y": [{
+        "overscroll-y": scaleOverscroll()
+      }],
+      /**
+       * Position
+       * @see https://tailwindcss.com/docs/position
+       */
+      position: ["static", "fixed", "absolute", "relative", "sticky"],
+      /**
+       * Inset
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      inset: [{
+        inset: scaleInset()
+      }],
+      /**
+       * Inset Inline
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      "inset-x": [{
+        "inset-x": scaleInset()
+      }],
+      /**
+       * Inset Block
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      "inset-y": [{
+        "inset-y": scaleInset()
+      }],
+      /**
+       * Inset Inline Start
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       * @todo class group will be renamed to `inset-s` in next major release
+       */
+      start: [{
+        "inset-s": scaleInset(),
+        /**
+         * @deprecated since Tailwind CSS v4.2.0 in favor of `inset-s-*` utilities.
+         * @see https://github.com/tailwindlabs/tailwindcss/pull/19613
+         */
+        start: scaleInset()
+      }],
+      /**
+       * Inset Inline End
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       * @todo class group will be renamed to `inset-e` in next major release
+       */
+      end: [{
+        "inset-e": scaleInset(),
+        /**
+         * @deprecated since Tailwind CSS v4.2.0 in favor of `inset-e-*` utilities.
+         * @see https://github.com/tailwindlabs/tailwindcss/pull/19613
+         */
+        end: scaleInset()
+      }],
+      /**
+       * Inset Block Start
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      "inset-bs": [{
+        "inset-bs": scaleInset()
+      }],
+      /**
+       * Inset Block End
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      "inset-be": [{
+        "inset-be": scaleInset()
+      }],
+      /**
+       * Top
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      top: [{
+        top: scaleInset()
+      }],
+      /**
+       * Right
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      right: [{
+        right: scaleInset()
+      }],
+      /**
+       * Bottom
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      bottom: [{
+        bottom: scaleInset()
+      }],
+      /**
+       * Left
+       * @see https://tailwindcss.com/docs/top-right-bottom-left
+       */
+      left: [{
+        left: scaleInset()
+      }],
+      /**
+       * Visibility
+       * @see https://tailwindcss.com/docs/visibility
+       */
+      visibility: ["visible", "invisible", "collapse"],
+      /**
+       * Z-Index
+       * @see https://tailwindcss.com/docs/z-index
+       */
+      z: [{
+        z: [isInteger, "auto", isArbitraryVariable, isArbitraryValue]
+      }],
+      // ------------------------
+      // --- Flexbox and Grid ---
+      // ------------------------
+      /**
+       * Flex Basis
+       * @see https://tailwindcss.com/docs/flex-basis
+       */
+      basis: [{
+        basis: [isFraction, "full", "auto", themeContainer, ...scaleUnambiguousSpacing()]
+      }],
+      /**
+       * Flex Direction
+       * @see https://tailwindcss.com/docs/flex-direction
+       */
+      "flex-direction": [{
+        flex: ["row", "row-reverse", "col", "col-reverse"]
+      }],
+      /**
+       * Flex Wrap
+       * @see https://tailwindcss.com/docs/flex-wrap
+       */
+      "flex-wrap": [{
+        flex: ["nowrap", "wrap", "wrap-reverse"]
+      }],
+      /**
+       * Flex
+       * @see https://tailwindcss.com/docs/flex
+       */
+      flex: [{
+        flex: [isNumber, isFraction, "auto", "initial", "none", isArbitraryValue]
+      }],
+      /**
+       * Flex Grow
+       * @see https://tailwindcss.com/docs/flex-grow
+       */
+      grow: [{
+        grow: ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Flex Shrink
+       * @see https://tailwindcss.com/docs/flex-shrink
+       */
+      shrink: [{
+        shrink: ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Order
+       * @see https://tailwindcss.com/docs/order
+       */
+      order: [{
+        order: [isInteger, "first", "last", "none", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Grid Template Columns
+       * @see https://tailwindcss.com/docs/grid-template-columns
+       */
+      "grid-cols": [{
+        "grid-cols": scaleGridTemplateColsRows()
+      }],
+      /**
+       * Grid Column Start / End
+       * @see https://tailwindcss.com/docs/grid-column
+       */
+      "col-start-end": [{
+        col: scaleGridColRowStartAndEnd()
+      }],
+      /**
+       * Grid Column Start
+       * @see https://tailwindcss.com/docs/grid-column
+       */
+      "col-start": [{
+        "col-start": scaleGridColRowStartOrEnd()
+      }],
+      /**
+       * Grid Column End
+       * @see https://tailwindcss.com/docs/grid-column
+       */
+      "col-end": [{
+        "col-end": scaleGridColRowStartOrEnd()
+      }],
+      /**
+       * Grid Template Rows
+       * @see https://tailwindcss.com/docs/grid-template-rows
+       */
+      "grid-rows": [{
+        "grid-rows": scaleGridTemplateColsRows()
+      }],
+      /**
+       * Grid Row Start / End
+       * @see https://tailwindcss.com/docs/grid-row
+       */
+      "row-start-end": [{
+        row: scaleGridColRowStartAndEnd()
+      }],
+      /**
+       * Grid Row Start
+       * @see https://tailwindcss.com/docs/grid-row
+       */
+      "row-start": [{
+        "row-start": scaleGridColRowStartOrEnd()
+      }],
+      /**
+       * Grid Row End
+       * @see https://tailwindcss.com/docs/grid-row
+       */
+      "row-end": [{
+        "row-end": scaleGridColRowStartOrEnd()
+      }],
+      /**
+       * Grid Auto Flow
+       * @see https://tailwindcss.com/docs/grid-auto-flow
+       */
+      "grid-flow": [{
+        "grid-flow": ["row", "col", "dense", "row-dense", "col-dense"]
+      }],
+      /**
+       * Grid Auto Columns
+       * @see https://tailwindcss.com/docs/grid-auto-columns
+       */
+      "auto-cols": [{
+        "auto-cols": scaleGridAutoColsRows()
+      }],
+      /**
+       * Grid Auto Rows
+       * @see https://tailwindcss.com/docs/grid-auto-rows
+       */
+      "auto-rows": [{
+        "auto-rows": scaleGridAutoColsRows()
+      }],
+      /**
+       * Gap
+       * @see https://tailwindcss.com/docs/gap
+       */
+      gap: [{
+        gap: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Gap X
+       * @see https://tailwindcss.com/docs/gap
+       */
+      "gap-x": [{
+        "gap-x": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Gap Y
+       * @see https://tailwindcss.com/docs/gap
+       */
+      "gap-y": [{
+        "gap-y": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Justify Content
+       * @see https://tailwindcss.com/docs/justify-content
+       */
+      "justify-content": [{
+        justify: [...scaleAlignPrimaryAxis(), "normal"]
+      }],
+      /**
+       * Justify Items
+       * @see https://tailwindcss.com/docs/justify-items
+       */
+      "justify-items": [{
+        "justify-items": [...scaleAlignSecondaryAxis(), "normal"]
+      }],
+      /**
+       * Justify Self
+       * @see https://tailwindcss.com/docs/justify-self
+       */
+      "justify-self": [{
+        "justify-self": ["auto", ...scaleAlignSecondaryAxis()]
+      }],
+      /**
+       * Align Content
+       * @see https://tailwindcss.com/docs/align-content
+       */
+      "align-content": [{
+        content: ["normal", ...scaleAlignPrimaryAxis()]
+      }],
+      /**
+       * Align Items
+       * @see https://tailwindcss.com/docs/align-items
+       */
+      "align-items": [{
+        items: [...scaleAlignSecondaryAxis(), {
+          baseline: ["", "last"]
+        }]
+      }],
+      /**
+       * Align Self
+       * @see https://tailwindcss.com/docs/align-self
+       */
+      "align-self": [{
+        self: ["auto", ...scaleAlignSecondaryAxis(), {
+          baseline: ["", "last"]
+        }]
+      }],
+      /**
+       * Place Content
+       * @see https://tailwindcss.com/docs/place-content
+       */
+      "place-content": [{
+        "place-content": scaleAlignPrimaryAxis()
+      }],
+      /**
+       * Place Items
+       * @see https://tailwindcss.com/docs/place-items
+       */
+      "place-items": [{
+        "place-items": [...scaleAlignSecondaryAxis(), "baseline"]
+      }],
+      /**
+       * Place Self
+       * @see https://tailwindcss.com/docs/place-self
+       */
+      "place-self": [{
+        "place-self": ["auto", ...scaleAlignSecondaryAxis()]
+      }],
+      // Spacing
+      /**
+       * Padding
+       * @see https://tailwindcss.com/docs/padding
+       */
+      p: [{
+        p: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Inline
+       * @see https://tailwindcss.com/docs/padding
+       */
+      px: [{
+        px: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Block
+       * @see https://tailwindcss.com/docs/padding
+       */
+      py: [{
+        py: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Inline Start
+       * @see https://tailwindcss.com/docs/padding
+       */
+      ps: [{
+        ps: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Inline End
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pe: [{
+        pe: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Block Start
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pbs: [{
+        pbs: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Block End
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pbe: [{
+        pbe: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Top
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pt: [{
+        pt: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Right
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pr: [{
+        pr: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Bottom
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pb: [{
+        pb: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Padding Left
+       * @see https://tailwindcss.com/docs/padding
+       */
+      pl: [{
+        pl: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Margin
+       * @see https://tailwindcss.com/docs/margin
+       */
+      m: [{
+        m: scaleMargin()
+      }],
+      /**
+       * Margin Inline
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mx: [{
+        mx: scaleMargin()
+      }],
+      /**
+       * Margin Block
+       * @see https://tailwindcss.com/docs/margin
+       */
+      my: [{
+        my: scaleMargin()
+      }],
+      /**
+       * Margin Inline Start
+       * @see https://tailwindcss.com/docs/margin
+       */
+      ms: [{
+        ms: scaleMargin()
+      }],
+      /**
+       * Margin Inline End
+       * @see https://tailwindcss.com/docs/margin
+       */
+      me: [{
+        me: scaleMargin()
+      }],
+      /**
+       * Margin Block Start
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mbs: [{
+        mbs: scaleMargin()
+      }],
+      /**
+       * Margin Block End
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mbe: [{
+        mbe: scaleMargin()
+      }],
+      /**
+       * Margin Top
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mt: [{
+        mt: scaleMargin()
+      }],
+      /**
+       * Margin Right
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mr: [{
+        mr: scaleMargin()
+      }],
+      /**
+       * Margin Bottom
+       * @see https://tailwindcss.com/docs/margin
+       */
+      mb: [{
+        mb: scaleMargin()
+      }],
+      /**
+       * Margin Left
+       * @see https://tailwindcss.com/docs/margin
+       */
+      ml: [{
+        ml: scaleMargin()
+      }],
+      /**
+       * Space Between X
+       * @see https://tailwindcss.com/docs/margin#adding-space-between-children
+       */
+      "space-x": [{
+        "space-x": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Space Between X Reverse
+       * @see https://tailwindcss.com/docs/margin#adding-space-between-children
+       */
+      "space-x-reverse": ["space-x-reverse"],
+      /**
+       * Space Between Y
+       * @see https://tailwindcss.com/docs/margin#adding-space-between-children
+       */
+      "space-y": [{
+        "space-y": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Space Between Y Reverse
+       * @see https://tailwindcss.com/docs/margin#adding-space-between-children
+       */
+      "space-y-reverse": ["space-y-reverse"],
+      // --------------
+      // --- Sizing ---
+      // --------------
+      /**
+       * Size
+       * @see https://tailwindcss.com/docs/width#setting-both-width-and-height
+       */
+      size: [{
+        size: scaleSizing()
+      }],
+      /**
+       * Inline Size
+       * @see https://tailwindcss.com/docs/width
+       */
+      "inline-size": [{
+        inline: ["auto", ...scaleSizingInline()]
+      }],
+      /**
+       * Min-Inline Size
+       * @see https://tailwindcss.com/docs/min-width
+       */
+      "min-inline-size": [{
+        "min-inline": ["auto", ...scaleSizingInline()]
+      }],
+      /**
+       * Max-Inline Size
+       * @see https://tailwindcss.com/docs/max-width
+       */
+      "max-inline-size": [{
+        "max-inline": ["none", ...scaleSizingInline()]
+      }],
+      /**
+       * Block Size
+       * @see https://tailwindcss.com/docs/height
+       */
+      "block-size": [{
+        block: ["auto", ...scaleSizingBlock()]
+      }],
+      /**
+       * Min-Block Size
+       * @see https://tailwindcss.com/docs/min-height
+       */
+      "min-block-size": [{
+        "min-block": ["auto", ...scaleSizingBlock()]
+      }],
+      /**
+       * Max-Block Size
+       * @see https://tailwindcss.com/docs/max-height
+       */
+      "max-block-size": [{
+        "max-block": ["none", ...scaleSizingBlock()]
+      }],
+      /**
+       * Width
+       * @see https://tailwindcss.com/docs/width
+       */
+      w: [{
+        w: [themeContainer, "screen", ...scaleSizing()]
+      }],
+      /**
+       * Min-Width
+       * @see https://tailwindcss.com/docs/min-width
+       */
+      "min-w": [{
+        "min-w": [
+          themeContainer,
+          "screen",
+          /** Deprecated. @see https://github.com/tailwindlabs/tailwindcss.com/issues/2027#issuecomment-2620152757 */
+          "none",
+          ...scaleSizing()
+        ]
+      }],
+      /**
+       * Max-Width
+       * @see https://tailwindcss.com/docs/max-width
+       */
+      "max-w": [{
+        "max-w": [
+          themeContainer,
+          "screen",
+          "none",
+          /** Deprecated since Tailwind CSS v4.0.0. @see https://github.com/tailwindlabs/tailwindcss.com/issues/2027#issuecomment-2620152757 */
+          "prose",
+          /** Deprecated since Tailwind CSS v4.0.0. @see https://github.com/tailwindlabs/tailwindcss.com/issues/2027#issuecomment-2620152757 */
+          {
+            screen: [themeBreakpoint]
+          },
+          ...scaleSizing()
+        ]
+      }],
+      /**
+       * Height
+       * @see https://tailwindcss.com/docs/height
+       */
+      h: [{
+        h: ["screen", "lh", ...scaleSizing()]
+      }],
+      /**
+       * Min-Height
+       * @see https://tailwindcss.com/docs/min-height
+       */
+      "min-h": [{
+        "min-h": ["screen", "lh", "none", ...scaleSizing()]
+      }],
+      /**
+       * Max-Height
+       * @see https://tailwindcss.com/docs/max-height
+       */
+      "max-h": [{
+        "max-h": ["screen", "lh", ...scaleSizing()]
+      }],
+      // ------------------
+      // --- Typography ---
+      // ------------------
+      /**
+       * Font Size
+       * @see https://tailwindcss.com/docs/font-size
+       */
+      "font-size": [{
+        text: ["base", themeText, isArbitraryVariableLength, isArbitraryLength]
+      }],
+      /**
+       * Font Smoothing
+       * @see https://tailwindcss.com/docs/font-smoothing
+       */
+      "font-smoothing": ["antialiased", "subpixel-antialiased"],
+      /**
+       * Font Style
+       * @see https://tailwindcss.com/docs/font-style
+       */
+      "font-style": ["italic", "not-italic"],
+      /**
+       * Font Weight
+       * @see https://tailwindcss.com/docs/font-weight
+       */
+      "font-weight": [{
+        font: [themeFontWeight, isArbitraryVariableWeight, isArbitraryWeight]
+      }],
+      /**
+       * Font Stretch
+       * @see https://tailwindcss.com/docs/font-stretch
+       */
+      "font-stretch": [{
+        "font-stretch": ["ultra-condensed", "extra-condensed", "condensed", "semi-condensed", "normal", "semi-expanded", "expanded", "extra-expanded", "ultra-expanded", isPercent, isArbitraryValue]
+      }],
+      /**
+       * Font Family
+       * @see https://tailwindcss.com/docs/font-family
+       */
+      "font-family": [{
+        font: [isArbitraryVariableFamilyName, isArbitraryFamilyName, themeFont]
+      }],
+      /**
+       * Font Feature Settings
+       * @see https://tailwindcss.com/docs/font-feature-settings
+       */
+      "font-features": [{
+        "font-features": [isArbitraryValue]
+      }],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-normal": ["normal-nums"],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-ordinal": ["ordinal"],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-slashed-zero": ["slashed-zero"],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-figure": ["lining-nums", "oldstyle-nums"],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-spacing": ["proportional-nums", "tabular-nums"],
+      /**
+       * Font Variant Numeric
+       * @see https://tailwindcss.com/docs/font-variant-numeric
+       */
+      "fvn-fraction": ["diagonal-fractions", "stacked-fractions"],
+      /**
+       * Letter Spacing
+       * @see https://tailwindcss.com/docs/letter-spacing
+       */
+      tracking: [{
+        tracking: [themeTracking, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Line Clamp
+       * @see https://tailwindcss.com/docs/line-clamp
+       */
+      "line-clamp": [{
+        "line-clamp": [isNumber, "none", isArbitraryVariable, isArbitraryNumber]
+      }],
+      /**
+       * Line Height
+       * @see https://tailwindcss.com/docs/line-height
+       */
+      leading: [{
+        leading: [
+          /** Deprecated since Tailwind CSS v4.0.0. @see https://github.com/tailwindlabs/tailwindcss.com/issues/2027#issuecomment-2620152757 */
+          themeLeading,
+          ...scaleUnambiguousSpacing()
+        ]
+      }],
+      /**
+       * List Style Image
+       * @see https://tailwindcss.com/docs/list-style-image
+       */
+      "list-image": [{
+        "list-image": ["none", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * List Style Position
+       * @see https://tailwindcss.com/docs/list-style-position
+       */
+      "list-style-position": [{
+        list: ["inside", "outside"]
+      }],
+      /**
+       * List Style Type
+       * @see https://tailwindcss.com/docs/list-style-type
+       */
+      "list-style-type": [{
+        list: ["disc", "decimal", "none", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Text Alignment
+       * @see https://tailwindcss.com/docs/text-align
+       */
+      "text-alignment": [{
+        text: ["left", "center", "right", "justify", "start", "end"]
+      }],
+      /**
+       * Placeholder Color
+       * @deprecated since Tailwind CSS v3.0.0
+       * @see https://v3.tailwindcss.com/docs/placeholder-color
+       */
+      "placeholder-color": [{
+        placeholder: scaleColor()
+      }],
+      /**
+       * Text Color
+       * @see https://tailwindcss.com/docs/text-color
+       */
+      "text-color": [{
+        text: scaleColor()
+      }],
+      /**
+       * Text Decoration
+       * @see https://tailwindcss.com/docs/text-decoration
+       */
+      "text-decoration": ["underline", "overline", "line-through", "no-underline"],
+      /**
+       * Text Decoration Style
+       * @see https://tailwindcss.com/docs/text-decoration-style
+       */
+      "text-decoration-style": [{
+        decoration: [...scaleLineStyle(), "wavy"]
+      }],
+      /**
+       * Text Decoration Thickness
+       * @see https://tailwindcss.com/docs/text-decoration-thickness
+       */
+      "text-decoration-thickness": [{
+        decoration: [isNumber, "from-font", "auto", isArbitraryVariable, isArbitraryLength]
+      }],
+      /**
+       * Text Decoration Color
+       * @see https://tailwindcss.com/docs/text-decoration-color
+       */
+      "text-decoration-color": [{
+        decoration: scaleColor()
+      }],
+      /**
+       * Text Underline Offset
+       * @see https://tailwindcss.com/docs/text-underline-offset
+       */
+      "underline-offset": [{
+        "underline-offset": [isNumber, "auto", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Text Transform
+       * @see https://tailwindcss.com/docs/text-transform
+       */
+      "text-transform": ["uppercase", "lowercase", "capitalize", "normal-case"],
+      /**
+       * Text Overflow
+       * @see https://tailwindcss.com/docs/text-overflow
+       */
+      "text-overflow": ["truncate", "text-ellipsis", "text-clip"],
+      /**
+       * Text Wrap
+       * @see https://tailwindcss.com/docs/text-wrap
+       */
+      "text-wrap": [{
+        text: ["wrap", "nowrap", "balance", "pretty"]
+      }],
+      /**
+       * Text Indent
+       * @see https://tailwindcss.com/docs/text-indent
+       */
+      indent: [{
+        indent: scaleUnambiguousSpacing()
+      }],
+      /**
+       * Tab Size
+       * @see https://tailwindcss.com/docs/tab-size
+       */
+      "tab-size": [{
+        tab: [isInteger, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Vertical Alignment
+       * @see https://tailwindcss.com/docs/vertical-align
+       */
+      "vertical-align": [{
+        align: ["baseline", "top", "middle", "bottom", "text-top", "text-bottom", "sub", "super", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Whitespace
+       * @see https://tailwindcss.com/docs/whitespace
+       */
+      whitespace: [{
+        whitespace: ["normal", "nowrap", "pre", "pre-line", "pre-wrap", "break-spaces"]
+      }],
+      /**
+       * Word Break
+       * @see https://tailwindcss.com/docs/word-break
+       */
+      break: [{
+        break: ["normal", "words", "all", "keep"]
+      }],
+      /**
+       * Overflow Wrap
+       * @see https://tailwindcss.com/docs/overflow-wrap
+       */
+      wrap: [{
+        wrap: ["break-word", "anywhere", "normal"]
+      }],
+      /**
+       * Hyphens
+       * @see https://tailwindcss.com/docs/hyphens
+       */
+      hyphens: [{
+        hyphens: ["none", "manual", "auto"]
+      }],
+      /**
+       * Content
+       * @see https://tailwindcss.com/docs/content
+       */
+      content: [{
+        content: ["none", isArbitraryVariable, isArbitraryValue]
+      }],
+      // -------------------
+      // --- Backgrounds ---
+      // -------------------
+      /**
+       * Background Attachment
+       * @see https://tailwindcss.com/docs/background-attachment
+       */
+      "bg-attachment": [{
+        bg: ["fixed", "local", "scroll"]
+      }],
+      /**
+       * Background Clip
+       * @see https://tailwindcss.com/docs/background-clip
+       */
+      "bg-clip": [{
+        "bg-clip": ["border", "padding", "content", "text"]
+      }],
+      /**
+       * Background Origin
+       * @see https://tailwindcss.com/docs/background-origin
+       */
+      "bg-origin": [{
+        "bg-origin": ["border", "padding", "content"]
+      }],
+      /**
+       * Background Position
+       * @see https://tailwindcss.com/docs/background-position
+       */
+      "bg-position": [{
+        bg: scaleBgPosition()
+      }],
+      /**
+       * Background Repeat
+       * @see https://tailwindcss.com/docs/background-repeat
+       */
+      "bg-repeat": [{
+        bg: scaleBgRepeat()
+      }],
+      /**
+       * Background Size
+       * @see https://tailwindcss.com/docs/background-size
+       */
+      "bg-size": [{
+        bg: scaleBgSize()
+      }],
+      /**
+       * Background Image
+       * @see https://tailwindcss.com/docs/background-image
+       */
+      "bg-image": [{
+        bg: ["none", {
+          linear: [{
+            to: ["t", "tr", "r", "br", "b", "bl", "l", "tl"]
+          }, isInteger, isArbitraryVariable, isArbitraryValue],
+          radial: ["", isArbitraryVariable, isArbitraryValue],
+          conic: [isInteger, isArbitraryVariable, isArbitraryValue]
+        }, isArbitraryVariableImage, isArbitraryImage]
+      }],
+      /**
+       * Background Color
+       * @see https://tailwindcss.com/docs/background-color
+       */
+      "bg-color": [{
+        bg: scaleColor()
+      }],
+      /**
+       * Gradient Color Stops From Position
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-from-pos": [{
+        from: scaleGradientStopPosition()
+      }],
+      /**
+       * Gradient Color Stops Via Position
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-via-pos": [{
+        via: scaleGradientStopPosition()
+      }],
+      /**
+       * Gradient Color Stops To Position
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-to-pos": [{
+        to: scaleGradientStopPosition()
+      }],
+      /**
+       * Gradient Color Stops From
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-from": [{
+        from: scaleColor()
+      }],
+      /**
+       * Gradient Color Stops Via
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-via": [{
+        via: scaleColor()
+      }],
+      /**
+       * Gradient Color Stops To
+       * @see https://tailwindcss.com/docs/gradient-color-stops
+       */
+      "gradient-to": [{
+        to: scaleColor()
+      }],
+      // ---------------
+      // --- Borders ---
+      // ---------------
+      /**
+       * Border Radius
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      rounded: [{
+        rounded: scaleRadius()
+      }],
+      /**
+       * Border Radius Start
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-s": [{
+        "rounded-s": scaleRadius()
+      }],
+      /**
+       * Border Radius End
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-e": [{
+        "rounded-e": scaleRadius()
+      }],
+      /**
+       * Border Radius Top
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-t": [{
+        "rounded-t": scaleRadius()
+      }],
+      /**
+       * Border Radius Right
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-r": [{
+        "rounded-r": scaleRadius()
+      }],
+      /**
+       * Border Radius Bottom
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-b": [{
+        "rounded-b": scaleRadius()
+      }],
+      /**
+       * Border Radius Left
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-l": [{
+        "rounded-l": scaleRadius()
+      }],
+      /**
+       * Border Radius Start Start
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-ss": [{
+        "rounded-ss": scaleRadius()
+      }],
+      /**
+       * Border Radius Start End
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-se": [{
+        "rounded-se": scaleRadius()
+      }],
+      /**
+       * Border Radius End End
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-ee": [{
+        "rounded-ee": scaleRadius()
+      }],
+      /**
+       * Border Radius End Start
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-es": [{
+        "rounded-es": scaleRadius()
+      }],
+      /**
+       * Border Radius Top Left
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-tl": [{
+        "rounded-tl": scaleRadius()
+      }],
+      /**
+       * Border Radius Top Right
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-tr": [{
+        "rounded-tr": scaleRadius()
+      }],
+      /**
+       * Border Radius Bottom Right
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-br": [{
+        "rounded-br": scaleRadius()
+      }],
+      /**
+       * Border Radius Bottom Left
+       * @see https://tailwindcss.com/docs/border-radius
+       */
+      "rounded-bl": [{
+        "rounded-bl": scaleRadius()
+      }],
+      /**
+       * Border Width
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w": [{
+        border: scaleBorderWidth()
+      }],
+      /**
+       * Border Width Inline
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-x": [{
+        "border-x": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Block
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-y": [{
+        "border-y": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Inline Start
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-s": [{
+        "border-s": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Inline End
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-e": [{
+        "border-e": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Block Start
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-bs": [{
+        "border-bs": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Block End
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-be": [{
+        "border-be": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Top
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-t": [{
+        "border-t": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Right
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-r": [{
+        "border-r": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Bottom
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-b": [{
+        "border-b": scaleBorderWidth()
+      }],
+      /**
+       * Border Width Left
+       * @see https://tailwindcss.com/docs/border-width
+       */
+      "border-w-l": [{
+        "border-l": scaleBorderWidth()
+      }],
+      /**
+       * Divide Width X
+       * @see https://tailwindcss.com/docs/border-width#between-children
+       */
+      "divide-x": [{
+        "divide-x": scaleBorderWidth()
+      }],
+      /**
+       * Divide Width X Reverse
+       * @see https://tailwindcss.com/docs/border-width#between-children
+       */
+      "divide-x-reverse": ["divide-x-reverse"],
+      /**
+       * Divide Width Y
+       * @see https://tailwindcss.com/docs/border-width#between-children
+       */
+      "divide-y": [{
+        "divide-y": scaleBorderWidth()
+      }],
+      /**
+       * Divide Width Y Reverse
+       * @see https://tailwindcss.com/docs/border-width#between-children
+       */
+      "divide-y-reverse": ["divide-y-reverse"],
+      /**
+       * Border Style
+       * @see https://tailwindcss.com/docs/border-style
+       */
+      "border-style": [{
+        border: [...scaleLineStyle(), "hidden", "none"]
+      }],
+      /**
+       * Divide Style
+       * @see https://tailwindcss.com/docs/border-style#setting-the-divider-style
+       */
+      "divide-style": [{
+        divide: [...scaleLineStyle(), "hidden", "none"]
+      }],
+      /**
+       * Border Color
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color": [{
+        border: scaleColor()
+      }],
+      /**
+       * Border Color Inline
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-x": [{
+        "border-x": scaleColor()
+      }],
+      /**
+       * Border Color Block
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-y": [{
+        "border-y": scaleColor()
+      }],
+      /**
+       * Border Color Inline Start
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-s": [{
+        "border-s": scaleColor()
+      }],
+      /**
+       * Border Color Inline End
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-e": [{
+        "border-e": scaleColor()
+      }],
+      /**
+       * Border Color Block Start
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-bs": [{
+        "border-bs": scaleColor()
+      }],
+      /**
+       * Border Color Block End
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-be": [{
+        "border-be": scaleColor()
+      }],
+      /**
+       * Border Color Top
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-t": [{
+        "border-t": scaleColor()
+      }],
+      /**
+       * Border Color Right
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-r": [{
+        "border-r": scaleColor()
+      }],
+      /**
+       * Border Color Bottom
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-b": [{
+        "border-b": scaleColor()
+      }],
+      /**
+       * Border Color Left
+       * @see https://tailwindcss.com/docs/border-color
+       */
+      "border-color-l": [{
+        "border-l": scaleColor()
+      }],
+      /**
+       * Divide Color
+       * @see https://tailwindcss.com/docs/divide-color
+       */
+      "divide-color": [{
+        divide: scaleColor()
+      }],
+      /**
+       * Outline Style
+       * @see https://tailwindcss.com/docs/outline-style
+       */
+      "outline-style": [{
+        outline: [...scaleLineStyle(), "none", "hidden"]
+      }],
+      /**
+       * Outline Offset
+       * @see https://tailwindcss.com/docs/outline-offset
+       */
+      "outline-offset": [{
+        "outline-offset": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Outline Width
+       * @see https://tailwindcss.com/docs/outline-width
+       */
+      "outline-w": [{
+        outline: ["", isNumber, isArbitraryVariableLength, isArbitraryLength]
+      }],
+      /**
+       * Outline Color
+       * @see https://tailwindcss.com/docs/outline-color
+       */
+      "outline-color": [{
+        outline: scaleColor()
+      }],
+      // ---------------
+      // --- Effects ---
+      // ---------------
+      /**
+       * Box Shadow
+       * @see https://tailwindcss.com/docs/box-shadow
+       */
+      shadow: [{
+        shadow: [
+          // Deprecated since Tailwind CSS v4.0.0
+          "",
+          "none",
+          themeShadow,
+          isArbitraryVariableShadow,
+          isArbitraryShadow
+        ]
+      }],
+      /**
+       * Box Shadow Color
+       * @see https://tailwindcss.com/docs/box-shadow#setting-the-shadow-color
+       */
+      "shadow-color": [{
+        shadow: scaleColor()
+      }],
+      /**
+       * Inset Box Shadow
+       * @see https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow
+       */
+      "inset-shadow": [{
+        "inset-shadow": ["none", themeInsetShadow, isArbitraryVariableShadow, isArbitraryShadow]
+      }],
+      /**
+       * Inset Box Shadow Color
+       * @see https://tailwindcss.com/docs/box-shadow#setting-the-inset-shadow-color
+       */
+      "inset-shadow-color": [{
+        "inset-shadow": scaleColor()
+      }],
+      /**
+       * Ring Width
+       * @see https://tailwindcss.com/docs/box-shadow#adding-a-ring
+       */
+      "ring-w": [{
+        ring: scaleBorderWidth()
+      }],
+      /**
+       * Ring Width Inset
+       * @see https://v3.tailwindcss.com/docs/ring-width#inset-rings
+       * @deprecated since Tailwind CSS v4.0.0
+       * @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+       */
+      "ring-w-inset": ["ring-inset"],
+      /**
+       * Ring Color
+       * @see https://tailwindcss.com/docs/box-shadow#setting-the-ring-color
+       */
+      "ring-color": [{
+        ring: scaleColor()
+      }],
+      /**
+       * Ring Offset Width
+       * @see https://v3.tailwindcss.com/docs/ring-offset-width
+       * @deprecated since Tailwind CSS v4.0.0
+       * @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+       */
+      "ring-offset-w": [{
+        "ring-offset": [isNumber, isArbitraryLength]
+      }],
+      /**
+       * Ring Offset Color
+       * @see https://v3.tailwindcss.com/docs/ring-offset-color
+       * @deprecated since Tailwind CSS v4.0.0
+       * @see https://github.com/tailwindlabs/tailwindcss/blob/v4.0.0/packages/tailwindcss/src/utilities.ts#L4158
+       */
+      "ring-offset-color": [{
+        "ring-offset": scaleColor()
+      }],
+      /**
+       * Inset Ring Width
+       * @see https://tailwindcss.com/docs/box-shadow#adding-an-inset-ring
+       */
+      "inset-ring-w": [{
+        "inset-ring": scaleBorderWidth()
+      }],
+      /**
+       * Inset Ring Color
+       * @see https://tailwindcss.com/docs/box-shadow#setting-the-inset-ring-color
+       */
+      "inset-ring-color": [{
+        "inset-ring": scaleColor()
+      }],
+      /**
+       * Text Shadow
+       * @see https://tailwindcss.com/docs/text-shadow
+       */
+      "text-shadow": [{
+        "text-shadow": ["none", themeTextShadow, isArbitraryVariableShadow, isArbitraryShadow]
+      }],
+      /**
+       * Text Shadow Color
+       * @see https://tailwindcss.com/docs/text-shadow#setting-the-shadow-color
+       */
+      "text-shadow-color": [{
+        "text-shadow": scaleColor()
+      }],
+      /**
+       * Opacity
+       * @see https://tailwindcss.com/docs/opacity
+       */
+      opacity: [{
+        opacity: [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Mix Blend Mode
+       * @see https://tailwindcss.com/docs/mix-blend-mode
+       */
+      "mix-blend": [{
+        "mix-blend": [...scaleBlendMode(), "plus-darker", "plus-lighter"]
+      }],
+      /**
+       * Background Blend Mode
+       * @see https://tailwindcss.com/docs/background-blend-mode
+       */
+      "bg-blend": [{
+        "bg-blend": scaleBlendMode()
+      }],
+      /**
+       * Mask Clip
+       * @see https://tailwindcss.com/docs/mask-clip
+       */
+      "mask-clip": [{
+        "mask-clip": ["border", "padding", "content", "fill", "stroke", "view"]
+      }, "mask-no-clip"],
+      /**
+       * Mask Composite
+       * @see https://tailwindcss.com/docs/mask-composite
+       */
+      "mask-composite": [{
+        mask: ["add", "subtract", "intersect", "exclude"]
+      }],
+      /**
+       * Mask Image
+       * @see https://tailwindcss.com/docs/mask-image
+       */
+      "mask-image-linear-pos": [{
+        "mask-linear": [isNumber]
+      }],
+      "mask-image-linear-from-pos": [{
+        "mask-linear-from": scaleMaskImagePosition()
+      }],
+      "mask-image-linear-to-pos": [{
+        "mask-linear-to": scaleMaskImagePosition()
+      }],
+      "mask-image-linear-from-color": [{
+        "mask-linear-from": scaleColor()
+      }],
+      "mask-image-linear-to-color": [{
+        "mask-linear-to": scaleColor()
+      }],
+      "mask-image-t-from-pos": [{
+        "mask-t-from": scaleMaskImagePosition()
+      }],
+      "mask-image-t-to-pos": [{
+        "mask-t-to": scaleMaskImagePosition()
+      }],
+      "mask-image-t-from-color": [{
+        "mask-t-from": scaleColor()
+      }],
+      "mask-image-t-to-color": [{
+        "mask-t-to": scaleColor()
+      }],
+      "mask-image-r-from-pos": [{
+        "mask-r-from": scaleMaskImagePosition()
+      }],
+      "mask-image-r-to-pos": [{
+        "mask-r-to": scaleMaskImagePosition()
+      }],
+      "mask-image-r-from-color": [{
+        "mask-r-from": scaleColor()
+      }],
+      "mask-image-r-to-color": [{
+        "mask-r-to": scaleColor()
+      }],
+      "mask-image-b-from-pos": [{
+        "mask-b-from": scaleMaskImagePosition()
+      }],
+      "mask-image-b-to-pos": [{
+        "mask-b-to": scaleMaskImagePosition()
+      }],
+      "mask-image-b-from-color": [{
+        "mask-b-from": scaleColor()
+      }],
+      "mask-image-b-to-color": [{
+        "mask-b-to": scaleColor()
+      }],
+      "mask-image-l-from-pos": [{
+        "mask-l-from": scaleMaskImagePosition()
+      }],
+      "mask-image-l-to-pos": [{
+        "mask-l-to": scaleMaskImagePosition()
+      }],
+      "mask-image-l-from-color": [{
+        "mask-l-from": scaleColor()
+      }],
+      "mask-image-l-to-color": [{
+        "mask-l-to": scaleColor()
+      }],
+      "mask-image-x-from-pos": [{
+        "mask-x-from": scaleMaskImagePosition()
+      }],
+      "mask-image-x-to-pos": [{
+        "mask-x-to": scaleMaskImagePosition()
+      }],
+      "mask-image-x-from-color": [{
+        "mask-x-from": scaleColor()
+      }],
+      "mask-image-x-to-color": [{
+        "mask-x-to": scaleColor()
+      }],
+      "mask-image-y-from-pos": [{
+        "mask-y-from": scaleMaskImagePosition()
+      }],
+      "mask-image-y-to-pos": [{
+        "mask-y-to": scaleMaskImagePosition()
+      }],
+      "mask-image-y-from-color": [{
+        "mask-y-from": scaleColor()
+      }],
+      "mask-image-y-to-color": [{
+        "mask-y-to": scaleColor()
+      }],
+      "mask-image-radial": [{
+        "mask-radial": [isArbitraryVariable, isArbitraryValue]
+      }],
+      "mask-image-radial-from-pos": [{
+        "mask-radial-from": scaleMaskImagePosition()
+      }],
+      "mask-image-radial-to-pos": [{
+        "mask-radial-to": scaleMaskImagePosition()
+      }],
+      "mask-image-radial-from-color": [{
+        "mask-radial-from": scaleColor()
+      }],
+      "mask-image-radial-to-color": [{
+        "mask-radial-to": scaleColor()
+      }],
+      "mask-image-radial-shape": [{
+        "mask-radial": ["circle", "ellipse"]
+      }],
+      "mask-image-radial-size": [{
+        "mask-radial": [{
+          closest: ["side", "corner"],
+          farthest: ["side", "corner"]
+        }]
+      }],
+      "mask-image-radial-pos": [{
+        "mask-radial-at": scalePosition()
+      }],
+      "mask-image-conic-pos": [{
+        "mask-conic": [isNumber]
+      }],
+      "mask-image-conic-from-pos": [{
+        "mask-conic-from": scaleMaskImagePosition()
+      }],
+      "mask-image-conic-to-pos": [{
+        "mask-conic-to": scaleMaskImagePosition()
+      }],
+      "mask-image-conic-from-color": [{
+        "mask-conic-from": scaleColor()
+      }],
+      "mask-image-conic-to-color": [{
+        "mask-conic-to": scaleColor()
+      }],
+      /**
+       * Mask Mode
+       * @see https://tailwindcss.com/docs/mask-mode
+       */
+      "mask-mode": [{
+        mask: ["alpha", "luminance", "match"]
+      }],
+      /**
+       * Mask Origin
+       * @see https://tailwindcss.com/docs/mask-origin
+       */
+      "mask-origin": [{
+        "mask-origin": ["border", "padding", "content", "fill", "stroke", "view"]
+      }],
+      /**
+       * Mask Position
+       * @see https://tailwindcss.com/docs/mask-position
+       */
+      "mask-position": [{
+        mask: scaleBgPosition()
+      }],
+      /**
+       * Mask Repeat
+       * @see https://tailwindcss.com/docs/mask-repeat
+       */
+      "mask-repeat": [{
+        mask: scaleBgRepeat()
+      }],
+      /**
+       * Mask Size
+       * @see https://tailwindcss.com/docs/mask-size
+       */
+      "mask-size": [{
+        mask: scaleBgSize()
+      }],
+      /**
+       * Mask Type
+       * @see https://tailwindcss.com/docs/mask-type
+       */
+      "mask-type": [{
+        "mask-type": ["alpha", "luminance"]
+      }],
+      /**
+       * Mask Image
+       * @see https://tailwindcss.com/docs/mask-image
+       */
+      "mask-image": [{
+        mask: ["none", isArbitraryVariable, isArbitraryValue]
+      }],
+      // ---------------
+      // --- Filters ---
+      // ---------------
+      /**
+       * Filter
+       * @see https://tailwindcss.com/docs/filter
+       */
+      filter: [{
+        filter: [
+          // Deprecated since Tailwind CSS v3.0.0
+          "",
+          "none",
+          isArbitraryVariable,
+          isArbitraryValue
+        ]
+      }],
+      /**
+       * Blur
+       * @see https://tailwindcss.com/docs/blur
+       */
+      blur: [{
+        blur: scaleBlur()
+      }],
+      /**
+       * Brightness
+       * @see https://tailwindcss.com/docs/brightness
+       */
+      brightness: [{
+        brightness: [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Contrast
+       * @see https://tailwindcss.com/docs/contrast
+       */
+      contrast: [{
+        contrast: [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Drop Shadow
+       * @see https://tailwindcss.com/docs/drop-shadow
+       */
+      "drop-shadow": [{
+        "drop-shadow": [
+          // Deprecated since Tailwind CSS v4.0.0
+          "",
+          "none",
+          themeDropShadow,
+          isArbitraryVariableShadow,
+          isArbitraryShadow
+        ]
+      }],
+      /**
+       * Drop Shadow Color
+       * @see https://tailwindcss.com/docs/filter-drop-shadow#setting-the-shadow-color
+       */
+      "drop-shadow-color": [{
+        "drop-shadow": scaleColor()
+      }],
+      /**
+       * Grayscale
+       * @see https://tailwindcss.com/docs/grayscale
+       */
+      grayscale: [{
+        grayscale: ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Hue Rotate
+       * @see https://tailwindcss.com/docs/hue-rotate
+       */
+      "hue-rotate": [{
+        "hue-rotate": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Invert
+       * @see https://tailwindcss.com/docs/invert
+       */
+      invert: [{
+        invert: ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Saturate
+       * @see https://tailwindcss.com/docs/saturate
+       */
+      saturate: [{
+        saturate: [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Sepia
+       * @see https://tailwindcss.com/docs/sepia
+       */
+      sepia: [{
+        sepia: ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Filter
+       * @see https://tailwindcss.com/docs/backdrop-filter
+       */
+      "backdrop-filter": [{
+        "backdrop-filter": [
+          // Deprecated since Tailwind CSS v3.0.0
+          "",
+          "none",
+          isArbitraryVariable,
+          isArbitraryValue
+        ]
+      }],
+      /**
+       * Backdrop Blur
+       * @see https://tailwindcss.com/docs/backdrop-blur
+       */
+      "backdrop-blur": [{
+        "backdrop-blur": scaleBlur()
+      }],
+      /**
+       * Backdrop Brightness
+       * @see https://tailwindcss.com/docs/backdrop-brightness
+       */
+      "backdrop-brightness": [{
+        "backdrop-brightness": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Contrast
+       * @see https://tailwindcss.com/docs/backdrop-contrast
+       */
+      "backdrop-contrast": [{
+        "backdrop-contrast": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Grayscale
+       * @see https://tailwindcss.com/docs/backdrop-grayscale
+       */
+      "backdrop-grayscale": [{
+        "backdrop-grayscale": ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Hue Rotate
+       * @see https://tailwindcss.com/docs/backdrop-hue-rotate
+       */
+      "backdrop-hue-rotate": [{
+        "backdrop-hue-rotate": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Invert
+       * @see https://tailwindcss.com/docs/backdrop-invert
+       */
+      "backdrop-invert": [{
+        "backdrop-invert": ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Opacity
+       * @see https://tailwindcss.com/docs/backdrop-opacity
+       */
+      "backdrop-opacity": [{
+        "backdrop-opacity": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Saturate
+       * @see https://tailwindcss.com/docs/backdrop-saturate
+       */
+      "backdrop-saturate": [{
+        "backdrop-saturate": [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Backdrop Sepia
+       * @see https://tailwindcss.com/docs/backdrop-sepia
+       */
+      "backdrop-sepia": [{
+        "backdrop-sepia": ["", isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      // --------------
+      // --- Tables ---
+      // --------------
+      /**
+       * Border Collapse
+       * @see https://tailwindcss.com/docs/border-collapse
+       */
+      "border-collapse": [{
+        border: ["collapse", "separate"]
+      }],
+      /**
+       * Border Spacing
+       * @see https://tailwindcss.com/docs/border-spacing
+       */
+      "border-spacing": [{
+        "border-spacing": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Border Spacing X
+       * @see https://tailwindcss.com/docs/border-spacing
+       */
+      "border-spacing-x": [{
+        "border-spacing-x": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Border Spacing Y
+       * @see https://tailwindcss.com/docs/border-spacing
+       */
+      "border-spacing-y": [{
+        "border-spacing-y": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Table Layout
+       * @see https://tailwindcss.com/docs/table-layout
+       */
+      "table-layout": [{
+        table: ["auto", "fixed"]
+      }],
+      /**
+       * Caption Side
+       * @see https://tailwindcss.com/docs/caption-side
+       */
+      caption: [{
+        caption: ["top", "bottom"]
+      }],
+      // ---------------------------------
+      // --- Transitions and Animation ---
+      // ---------------------------------
+      /**
+       * Transition Property
+       * @see https://tailwindcss.com/docs/transition-property
+       */
+      transition: [{
+        transition: ["", "all", "colors", "opacity", "shadow", "transform", "none", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Transition Behavior
+       * @see https://tailwindcss.com/docs/transition-behavior
+       */
+      "transition-behavior": [{
+        transition: ["normal", "discrete"]
+      }],
+      /**
+       * Transition Duration
+       * @see https://tailwindcss.com/docs/transition-duration
+       */
+      duration: [{
+        duration: [isNumber, "initial", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Transition Timing Function
+       * @see https://tailwindcss.com/docs/transition-timing-function
+       */
+      ease: [{
+        ease: ["linear", "initial", themeEase, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Transition Delay
+       * @see https://tailwindcss.com/docs/transition-delay
+       */
+      delay: [{
+        delay: [isNumber, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Animation
+       * @see https://tailwindcss.com/docs/animation
+       */
+      animate: [{
+        animate: ["none", themeAnimate, isArbitraryVariable, isArbitraryValue]
+      }],
+      // ------------------
+      // --- Transforms ---
+      // ------------------
+      /**
+       * Backface Visibility
+       * @see https://tailwindcss.com/docs/backface-visibility
+       */
+      backface: [{
+        backface: ["hidden", "visible"]
+      }],
+      /**
+       * Perspective
+       * @see https://tailwindcss.com/docs/perspective
+       */
+      perspective: [{
+        perspective: [themePerspective, isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Perspective Origin
+       * @see https://tailwindcss.com/docs/perspective-origin
+       */
+      "perspective-origin": [{
+        "perspective-origin": scalePositionWithArbitrary()
+      }],
+      /**
+       * Rotate
+       * @see https://tailwindcss.com/docs/rotate
+       */
+      rotate: [{
+        rotate: scaleRotate()
+      }],
+      /**
+       * Rotate X
+       * @see https://tailwindcss.com/docs/rotate
+       */
+      "rotate-x": [{
+        "rotate-x": scaleRotate()
+      }],
+      /**
+       * Rotate Y
+       * @see https://tailwindcss.com/docs/rotate
+       */
+      "rotate-y": [{
+        "rotate-y": scaleRotate()
+      }],
+      /**
+       * Rotate Z
+       * @see https://tailwindcss.com/docs/rotate
+       */
+      "rotate-z": [{
+        "rotate-z": scaleRotate()
+      }],
+      /**
+       * Scale
+       * @see https://tailwindcss.com/docs/scale
+       */
+      scale: [{
+        scale: scaleScale()
+      }],
+      /**
+       * Scale X
+       * @see https://tailwindcss.com/docs/scale
+       */
+      "scale-x": [{
+        "scale-x": scaleScale()
+      }],
+      /**
+       * Scale Y
+       * @see https://tailwindcss.com/docs/scale
+       */
+      "scale-y": [{
+        "scale-y": scaleScale()
+      }],
+      /**
+       * Scale Z
+       * @see https://tailwindcss.com/docs/scale
+       */
+      "scale-z": [{
+        "scale-z": scaleScale()
+      }],
+      /**
+       * Scale 3D
+       * @see https://tailwindcss.com/docs/scale
+       */
+      "scale-3d": ["scale-3d"],
+      /**
+       * Skew
+       * @see https://tailwindcss.com/docs/skew
+       */
+      skew: [{
+        skew: scaleSkew()
+      }],
+      /**
+       * Skew X
+       * @see https://tailwindcss.com/docs/skew
+       */
+      "skew-x": [{
+        "skew-x": scaleSkew()
+      }],
+      /**
+       * Skew Y
+       * @see https://tailwindcss.com/docs/skew
+       */
+      "skew-y": [{
+        "skew-y": scaleSkew()
+      }],
+      /**
+       * Transform
+       * @see https://tailwindcss.com/docs/transform
+       */
+      transform: [{
+        transform: [isArbitraryVariable, isArbitraryValue, "", "none", "gpu", "cpu"]
+      }],
+      /**
+       * Transform Origin
+       * @see https://tailwindcss.com/docs/transform-origin
+       */
+      "transform-origin": [{
+        origin: scalePositionWithArbitrary()
+      }],
+      /**
+       * Transform Style
+       * @see https://tailwindcss.com/docs/transform-style
+       */
+      "transform-style": [{
+        transform: ["3d", "flat"]
+      }],
+      /**
+       * Translate
+       * @see https://tailwindcss.com/docs/translate
+       */
+      translate: [{
+        translate: scaleTranslate()
+      }],
+      /**
+       * Translate X
+       * @see https://tailwindcss.com/docs/translate
+       */
+      "translate-x": [{
+        "translate-x": scaleTranslate()
+      }],
+      /**
+       * Translate Y
+       * @see https://tailwindcss.com/docs/translate
+       */
+      "translate-y": [{
+        "translate-y": scaleTranslate()
+      }],
+      /**
+       * Translate Z
+       * @see https://tailwindcss.com/docs/translate
+       */
+      "translate-z": [{
+        "translate-z": scaleTranslate()
+      }],
+      /**
+       * Translate None
+       * @see https://tailwindcss.com/docs/translate
+       */
+      "translate-none": ["translate-none"],
+      /**
+       * Zoom
+       * @see https://tailwindcss.com/docs/zoom
+       */
+      zoom: [{
+        zoom: [isInteger, isArbitraryVariable, isArbitraryValue]
+      }],
+      // ---------------------
+      // --- Interactivity ---
+      // ---------------------
+      /**
+       * Accent Color
+       * @see https://tailwindcss.com/docs/accent-color
+       */
+      accent: [{
+        accent: scaleColor()
+      }],
+      /**
+       * Appearance
+       * @see https://tailwindcss.com/docs/appearance
+       */
+      appearance: [{
+        appearance: ["none", "auto"]
+      }],
+      /**
+       * Caret Color
+       * @see https://tailwindcss.com/docs/just-in-time-mode#caret-color-utilities
+       */
+      "caret-color": [{
+        caret: scaleColor()
+      }],
+      /**
+       * Color Scheme
+       * @see https://tailwindcss.com/docs/color-scheme
+       */
+      "color-scheme": [{
+        scheme: ["normal", "dark", "light", "light-dark", "only-dark", "only-light"]
+      }],
+      /**
+       * Cursor
+       * @see https://tailwindcss.com/docs/cursor
+       */
+      cursor: [{
+        cursor: ["auto", "default", "pointer", "wait", "text", "move", "help", "not-allowed", "none", "context-menu", "progress", "cell", "crosshair", "vertical-text", "alias", "copy", "no-drop", "grab", "grabbing", "all-scroll", "col-resize", "row-resize", "n-resize", "e-resize", "s-resize", "w-resize", "ne-resize", "nw-resize", "se-resize", "sw-resize", "ew-resize", "ns-resize", "nesw-resize", "nwse-resize", "zoom-in", "zoom-out", isArbitraryVariable, isArbitraryValue]
+      }],
+      /**
+       * Field Sizing
+       * @see https://tailwindcss.com/docs/field-sizing
+       */
+      "field-sizing": [{
+        "field-sizing": ["fixed", "content"]
+      }],
+      /**
+       * Pointer Events
+       * @see https://tailwindcss.com/docs/pointer-events
+       */
+      "pointer-events": [{
+        "pointer-events": ["auto", "none"]
+      }],
+      /**
+       * Resize
+       * @see https://tailwindcss.com/docs/resize
+       */
+      resize: [{
+        resize: ["none", "", "y", "x"]
+      }],
+      /**
+       * Scroll Behavior
+       * @see https://tailwindcss.com/docs/scroll-behavior
+       */
+      "scroll-behavior": [{
+        scroll: ["auto", "smooth"]
+      }],
+      /**
+       * Scrollbar Thumb Color
+       * @see https://tailwindcss.com/docs/scrollbar-color
+       */
+      "scrollbar-thumb-color": [{
+        "scrollbar-thumb": scaleColor()
+      }],
+      /**
+       * Scrollbar Track Color
+       * @see https://tailwindcss.com/docs/scrollbar-color
+       */
+      "scrollbar-track-color": [{
+        "scrollbar-track": scaleColor()
+      }],
+      /**
+       * Scrollbar Gutter
+       * @see https://tailwindcss.com/docs/scrollbar-gutter
+       */
+      "scrollbar-gutter": [{
+        "scrollbar-gutter": ["auto", "stable", "both"]
+      }],
+      /**
+       * Scrollbar Width
+       * @see https://tailwindcss.com/docs/scrollbar-width
+       */
+      "scrollbar-w": [{
+        scrollbar: ["auto", "thin", "none"]
+      }],
+      /**
+       * Scroll Margin
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-m": [{
+        "scroll-m": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Inline
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mx": [{
+        "scroll-mx": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Block
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-my": [{
+        "scroll-my": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Inline Start
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-ms": [{
+        "scroll-ms": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Inline End
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-me": [{
+        "scroll-me": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Block Start
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mbs": [{
+        "scroll-mbs": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Block End
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mbe": [{
+        "scroll-mbe": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Top
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mt": [{
+        "scroll-mt": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Right
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mr": [{
+        "scroll-mr": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Bottom
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-mb": [{
+        "scroll-mb": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Margin Left
+       * @see https://tailwindcss.com/docs/scroll-margin
+       */
+      "scroll-ml": [{
+        "scroll-ml": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-p": [{
+        "scroll-p": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Inline
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-px": [{
+        "scroll-px": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Block
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-py": [{
+        "scroll-py": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Inline Start
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-ps": [{
+        "scroll-ps": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Inline End
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pe": [{
+        "scroll-pe": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Block Start
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pbs": [{
+        "scroll-pbs": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Block End
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pbe": [{
+        "scroll-pbe": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Top
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pt": [{
+        "scroll-pt": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Right
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pr": [{
+        "scroll-pr": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Bottom
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pb": [{
+        "scroll-pb": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Padding Left
+       * @see https://tailwindcss.com/docs/scroll-padding
+       */
+      "scroll-pl": [{
+        "scroll-pl": scaleUnambiguousSpacing()
+      }],
+      /**
+       * Scroll Snap Align
+       * @see https://tailwindcss.com/docs/scroll-snap-align
+       */
+      "snap-align": [{
+        snap: ["start", "end", "center", "align-none"]
+      }],
+      /**
+       * Scroll Snap Stop
+       * @see https://tailwindcss.com/docs/scroll-snap-stop
+       */
+      "snap-stop": [{
+        snap: ["normal", "always"]
+      }],
+      /**
+       * Scroll Snap Type
+       * @see https://tailwindcss.com/docs/scroll-snap-type
+       */
+      "snap-type": [{
+        snap: ["none", "x", "y", "both"]
+      }],
+      /**
+       * Scroll Snap Type Strictness
+       * @see https://tailwindcss.com/docs/scroll-snap-type
+       */
+      "snap-strictness": [{
+        snap: ["mandatory", "proximity"]
+      }],
+      /**
+       * Touch Action
+       * @see https://tailwindcss.com/docs/touch-action
+       */
+      touch: [{
+        touch: ["auto", "none", "manipulation"]
+      }],
+      /**
+       * Touch Action X
+       * @see https://tailwindcss.com/docs/touch-action
+       */
+      "touch-x": [{
+        "touch-pan": ["x", "left", "right"]
+      }],
+      /**
+       * Touch Action Y
+       * @see https://tailwindcss.com/docs/touch-action
+       */
+      "touch-y": [{
+        "touch-pan": ["y", "up", "down"]
+      }],
+      /**
+       * Touch Action Pinch Zoom
+       * @see https://tailwindcss.com/docs/touch-action
+       */
+      "touch-pz": ["touch-pinch-zoom"],
+      /**
+       * User Select
+       * @see https://tailwindcss.com/docs/user-select
+       */
+      select: [{
+        select: ["none", "text", "all", "auto"]
+      }],
+      /**
+       * Will Change
+       * @see https://tailwindcss.com/docs/will-change
+       */
+      "will-change": [{
+        "will-change": ["auto", "scroll", "contents", "transform", isArbitraryVariable, isArbitraryValue]
+      }],
+      // -----------
+      // --- SVG ---
+      // -----------
+      /**
+       * Fill
+       * @see https://tailwindcss.com/docs/fill
+       */
+      fill: [{
+        fill: ["none", ...scaleColor()]
+      }],
+      /**
+       * Stroke Width
+       * @see https://tailwindcss.com/docs/stroke-width
+       */
+      "stroke-w": [{
+        stroke: [isNumber, isArbitraryVariableLength, isArbitraryLength, isArbitraryNumber]
+      }],
+      /**
+       * Stroke
+       * @see https://tailwindcss.com/docs/stroke
+       */
+      stroke: [{
+        stroke: ["none", ...scaleColor()]
+      }],
+      // ---------------------
+      // --- Accessibility ---
+      // ---------------------
+      /**
+       * Forced Color Adjust
+       * @see https://tailwindcss.com/docs/forced-color-adjust
+       */
+      "forced-color-adjust": [{
+        "forced-color-adjust": ["auto", "none"]
+      }]
+    },
+    conflictingClassGroups: {
+      "container-named": ["container-type"],
+      overflow: ["overflow-x", "overflow-y"],
+      overscroll: ["overscroll-x", "overscroll-y"],
+      inset: ["inset-x", "inset-y", "inset-bs", "inset-be", "start", "end", "top", "right", "bottom", "left"],
+      "inset-x": ["right", "left"],
+      "inset-y": ["top", "bottom"],
+      flex: ["basis", "grow", "shrink"],
+      gap: ["gap-x", "gap-y"],
+      p: ["px", "py", "ps", "pe", "pbs", "pbe", "pt", "pr", "pb", "pl"],
+      px: ["pr", "pl"],
+      py: ["pt", "pb"],
+      m: ["mx", "my", "ms", "me", "mbs", "mbe", "mt", "mr", "mb", "ml"],
+      mx: ["mr", "ml"],
+      my: ["mt", "mb"],
+      size: ["w", "h"],
+      "font-size": ["leading"],
+      "fvn-normal": ["fvn-ordinal", "fvn-slashed-zero", "fvn-figure", "fvn-spacing", "fvn-fraction"],
+      "fvn-ordinal": ["fvn-normal"],
+      "fvn-slashed-zero": ["fvn-normal"],
+      "fvn-figure": ["fvn-normal"],
+      "fvn-spacing": ["fvn-normal"],
+      "fvn-fraction": ["fvn-normal"],
+      "line-clamp": ["display", "overflow"],
+      rounded: ["rounded-s", "rounded-e", "rounded-t", "rounded-r", "rounded-b", "rounded-l", "rounded-ss", "rounded-se", "rounded-ee", "rounded-es", "rounded-tl", "rounded-tr", "rounded-br", "rounded-bl"],
+      "rounded-s": ["rounded-ss", "rounded-es"],
+      "rounded-e": ["rounded-se", "rounded-ee"],
+      "rounded-t": ["rounded-tl", "rounded-tr"],
+      "rounded-r": ["rounded-tr", "rounded-br"],
+      "rounded-b": ["rounded-br", "rounded-bl"],
+      "rounded-l": ["rounded-tl", "rounded-bl"],
+      "border-spacing": ["border-spacing-x", "border-spacing-y"],
+      "border-w": ["border-w-x", "border-w-y", "border-w-s", "border-w-e", "border-w-bs", "border-w-be", "border-w-t", "border-w-r", "border-w-b", "border-w-l"],
+      "border-w-x": ["border-w-r", "border-w-l"],
+      "border-w-y": ["border-w-t", "border-w-b"],
+      "border-color": ["border-color-x", "border-color-y", "border-color-s", "border-color-e", "border-color-bs", "border-color-be", "border-color-t", "border-color-r", "border-color-b", "border-color-l"],
+      "border-color-x": ["border-color-r", "border-color-l"],
+      "border-color-y": ["border-color-t", "border-color-b"],
+      translate: ["translate-x", "translate-y", "translate-none"],
+      "translate-none": ["translate", "translate-x", "translate-y", "translate-z"],
+      "scroll-m": ["scroll-mx", "scroll-my", "scroll-ms", "scroll-me", "scroll-mbs", "scroll-mbe", "scroll-mt", "scroll-mr", "scroll-mb", "scroll-ml"],
+      "scroll-mx": ["scroll-mr", "scroll-ml"],
+      "scroll-my": ["scroll-mt", "scroll-mb"],
+      "scroll-p": ["scroll-px", "scroll-py", "scroll-ps", "scroll-pe", "scroll-pbs", "scroll-pbe", "scroll-pt", "scroll-pr", "scroll-pb", "scroll-pl"],
+      "scroll-px": ["scroll-pr", "scroll-pl"],
+      "scroll-py": ["scroll-pt", "scroll-pb"],
+      touch: ["touch-x", "touch-y", "touch-pz"],
+      "touch-x": ["touch"],
+      "touch-y": ["touch"],
+      "touch-pz": ["touch"]
+    },
+    conflictingClassGroupModifiers: {
+      "font-size": ["leading"]
+    },
+    postfixLookupClassGroups: ["container-type"],
+    orderSensitiveModifiers: ["*", "**", "after", "backdrop", "before", "details-content", "file", "first-letter", "first-line", "marker", "placeholder", "selection"]
+  };
+};
+var twMerge = /* @__PURE__ */ createTailwindMerge(getDefaultConfig);
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/utils.js
+function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
 function spacingClasses(spacing) {
   switch (spacing) {
     case "section":
@@ -173,15 +3432,28 @@ function spacingClasses(spacing) {
       return "mt-1";
   }
 }
-function FieldError({ children, id: id2, spacing = "field", roleAlert = true, className }) {
+function FieldError({ children, spacing = "field", roleAlert = true, className, ...props }) {
   if (children == null || children === "")
     return null;
-  const base2 = `${spacingClasses(spacing)} text-[14px] text-danger`;
-  const classes = className ? `${base2} ${className}` : base2;
-  return jsx("p", { id: id2, className: classes, role: roleAlert ? "alert" : void 0, children });
+  return jsx("p", { ...props, className: cn("hc-field-error text-[14px] text-danger", spacingClasses(spacing), className), role: roleAlert ? "alert" : void 0, children });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime-host.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/Button/index.js
+var BUTTON_BASE = "inline-flex cursor-pointer items-center rounded-full app-no-drag";
+var VARIANT_CLASSES = {
+  primary: cn(BUTTON_BASE, "min-h-[32px] justify-center border border-transparent bg-accent px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"),
+  secondary: cn(BUTTON_BASE, "min-h-[32px] justify-center border border-separator bg-control px-3 py-1 text-[15px] text-text shadow-sm hover:bg-selection disabled:cursor-not-allowed disabled:opacity-50"),
+  primaryDanger: cn(BUTTON_BASE, "min-h-[32px] justify-center border border-transparent bg-danger px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"),
+  secondaryDanger: cn(BUTTON_BASE, "min-h-[32px] justify-center border border-separator bg-control px-3 py-1 text-[15px] text-danger shadow-sm hover:bg-danger/15 disabled:cursor-not-allowed disabled:opacity-50"),
+  toolbar: cn(BUTTON_BASE, "min-h-[32px] border-none bg-transparent px-2 py-1 text-[15px] hover:bg-selection"),
+  icon: cn(BUTTON_BASE, "size-[30px] shrink-0 justify-center border-none bg-transparent text-muted hover:bg-selection hover:text-text"),
+  iconDanger: cn(BUTTON_BASE, "size-[30px] shrink-0 justify-center border-none bg-transparent text-muted hover:bg-danger/15 hover:text-danger")
+};
+function Button({ variant = "primary", className, type = "button", innerRef, ...props }) {
+  return jsx("button", { ref: innerRef, type, className: cn("hc-button", VARIANT_CLASSES[variant], className), ...props });
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime-host.js
 import * as React from "react";
 function build2(type, props, key) {
   const { children, ...rest } = props ?? {};
@@ -1553,7 +4825,7 @@ var EditorSelection = class _EditorSelection {
   map(change, assoc = -1) {
     if (change.empty)
       return this;
-    return _EditorSelection.create(this.ranges.map((r3) => r3.map(change, assoc)), this.mainIndex);
+    return _EditorSelection.create(this.ranges.map((r4) => r4.map(change, assoc)), this.mainIndex);
   }
   /**
   Compare this selection to another selection. By default, ranges
@@ -1604,7 +4876,7 @@ var EditorSelection = class _EditorSelection {
   JSON.
   */
   toJSON() {
-    return { ranges: this.ranges.map((r3) => r3.toJSON()), main: this.mainIndex };
+    return { ranges: this.ranges.map((r4) => r4.toJSON()), main: this.mainIndex };
   }
   /**
   Create a selection from a JSON representation.
@@ -1612,7 +4884,7 @@ var EditorSelection = class _EditorSelection {
   static fromJSON(json2) {
     if (!json2 || !Array.isArray(json2.ranges) || typeof json2.main != "number" || json2.main >= json2.ranges.length)
       throw new RangeError("Invalid JSON representation for EditorSelection");
-    return new _EditorSelection(json2.ranges.map((r3) => SelectionRange.fromJSON(r3)), json2.main);
+    return new _EditorSelection(json2.ranges.map((r4) => SelectionRange.fromJSON(r4)), json2.main);
   }
   /**
   Create a selection holding a single range.
@@ -4651,9 +7923,9 @@ var ArabicTypes = /* @__PURE__ */ dec("44444488266272889999999999922222222222222
 var Brackets = /* @__PURE__ */ Object.create(null);
 var BracketStack = [];
 for (let p2 of ["()", "[]", "{}"]) {
-  let l2 = /* @__PURE__ */ p2.charCodeAt(0), r3 = /* @__PURE__ */ p2.charCodeAt(1);
-  Brackets[l2] = r3;
-  Brackets[r3] = -l2;
+  let l2 = /* @__PURE__ */ p2.charCodeAt(0), r4 = /* @__PURE__ */ p2.charCodeAt(1);
+  Brackets[l2] = r4;
+  Brackets[r4] = -l2;
 }
 function charType(ch) {
   return ch <= 247 ? LowTypes[ch] : 1424 <= ch && ch <= 1524 ? 2 : 1536 <= ch && ch <= 1785 ? ArabicTypes[ch - 1536] : 1774 <= ch && ch <= 2220 ? 4 : 8192 <= ch && ch <= 8204 ? 256 : 64336 <= ch && ch <= 65023 ? 4 : 1;
@@ -5738,7 +9010,7 @@ var TextTile = class _TextTile extends Tile {
       return null;
     let rect = rects[(flatten2 ? flatten2 < 0 : side >= 0) ? 0 : rects.length - 1];
     if (browser.safari && !flatten2 && rect.width == 0)
-      rect = Array.prototype.find.call(rects, (r3) => r3.width) || rect;
+      rect = Array.prototype.find.call(rects, (r4) => r4.width) || rect;
     return flatten2 ? flattenRect(rect, flatten2 < 0) : rect || null;
   }
   static of(text, dom) {
@@ -6602,7 +9874,7 @@ var DocView = class {
     let blockDiff = findChangedWrappers(prevWrappers, this.blockWrappers, update.changes);
     if (blockDiff.length)
       changedRanges = ChangedRange.extendWithRanges(changedRanges, blockDiff);
-    if (composition && !changedRanges.some((r3) => r3.fromA <= composition.range.fromA && r3.toA >= composition.range.toA))
+    if (composition && !changedRanges.some((r4) => r4.fromA <= composition.range.fromA && r4.toA >= composition.range.toA))
       changedRanges = composition.range.addToSet(changedRanges.slice());
     if (this.tile.flags & 2 && changedRanges.length == 0) {
       return false;
@@ -7070,9 +10342,9 @@ var DocView = class {
   }
 };
 function destroyDropped(tile, reused) {
-  let r3 = reused === null || reused === void 0 ? void 0 : reused.get(tile);
-  if (r3 != 1) {
-    if (r3 == null)
+  let r4 = reused === null || reused === void 0 ? void 0 : reused.get(tile);
+  if (r4 != 1) {
+    if (r4 == null)
       tile.destroy();
     for (let ch of tile.children)
       destroyDropped(ch, reused);
@@ -8331,7 +11603,7 @@ function doPaste(view, input) {
   input = textFilter(view.state, clipboardInputFilter, input);
   let { state } = view, changes, i2 = 1, text = state.toText(input);
   let byLine = text.lines == state.selection.ranges.length;
-  let linewise = lastLinewiseCopy != null && state.selection.ranges.every((r3) => r3.empty) && lastLinewiseCopy == text.toString();
+  let linewise = lastLinewiseCopy != null && state.selection.ranges.every((r4) => r4.empty) && lastLinewiseCopy == text.toString();
   if (linewise) {
     let lastLine = -1;
     changes = state.changeByRange((range) => {
@@ -8700,8 +11972,8 @@ handlers.beforeinput = (view, event) => {
   if (event.inputType == "insertReplacementText" && view.observer.editContext) {
     let text = (_a2 = event.dataTransfer) === null || _a2 === void 0 ? void 0 : _a2.getData("text/plain"), ranges = event.getTargetRanges();
     if (text && ranges.length) {
-      let r3 = ranges[0];
-      let from = view.posAtDOM(r3.startContainer, r3.startOffset), to = view.posAtDOM(r3.endContainer, r3.endOffset);
+      let r4 = ranges[0];
+      let from = view.posAtDOM(r4.startContainer, r4.startOffset), to = view.posAtDOM(r4.endContainer, r4.endOffset);
       applyDOMChangeInner(view, { from, to, insert: view.state.toText(text) }, null);
       return true;
     }
@@ -9832,7 +13104,7 @@ var ViewState = class {
       }
       let gap = find(current, (gap2) => gap2.from >= line.from && gap2.to <= line.to && Math.abs(gap2.from - from) < halfMargin && Math.abs(gap2.to - to) < halfMargin && !avoid.some((pos) => gap2.from < pos && gap2.to > pos));
       if (!gap) {
-        if (to < line.to && mayMeasure && wrapping && mayMeasure.visibleRanges.some((r3) => r3.from <= to && r3.to >= to)) {
+        if (to < line.to && mayMeasure && wrapping && mayMeasure.visibleRanges.some((r4) => r4.from <= to && r4.to >= to)) {
           let lineStart = mayMeasure.moveToLineBoundary(EditorSelection.cursor(to), false, true).head;
           if (lineStart > from)
             to = lineStart;
@@ -12350,9 +15622,9 @@ function rectanglesForRange(view, className, range) {
         horizontal.push(!ltr && toOpen ? leftSide : toCoords.left, !ltr && fromOpen ? rightSide : fromCoords.right);
     }
     let start = from2 !== null && from2 !== void 0 ? from2 : line.from, end = to2 !== null && to2 !== void 0 ? to2 : line.to;
-    for (let r3 of view.visibleRanges)
-      if (r3.to > start && r3.from < end) {
-        for (let pos = Math.max(r3.from, start), endPos = Math.min(r3.to, end); ; ) {
+    for (let r4 of view.visibleRanges)
+      if (r4.to > start && r4.from < end) {
+        for (let pos = Math.max(r4.from, start), endPos = Math.min(r4.to, end); ; ) {
           let docLine = view.state.doc.lineAt(pos);
           for (let span of view.bidiSpans(docLine)) {
             let spanFrom = span.from + docLine.from, spanTo = span.to + docLine.from;
@@ -12491,11 +15763,11 @@ var cursorLayer = /* @__PURE__ */ layer({
   markers(view) {
     let { state } = view, conf = state.facet(selectionConfig);
     let cursors = [];
-    for (let r3 of state.selection.ranges) {
-      let prim = r3 == state.selection.main;
-      if (r3.empty || conf.drawRangeCursor && !(prim && browser.ios && conf.iosSelectionHandles)) {
+    for (let r4 of state.selection.ranges) {
+      let prim = r4 == state.selection.main;
+      if (r4.empty || conf.drawRangeCursor && !(prim && browser.ios && conf.iosSelectionHandles)) {
         let className = prim ? "cm-cursor cm-cursor-primary" : "cm-cursor cm-cursor-secondary";
-        let cursor2 = r3.empty ? r3 : EditorSelection.cursor(r3.head, r3.assoc);
+        let cursor2 = r4.empty ? r4 : EditorSelection.cursor(r4.head, r4.assoc);
         for (let piece of RectangleMarker.forRange(view, className, cursor2))
           cursors.push(piece);
       }
@@ -12522,9 +15794,9 @@ var selectionLayer = /* @__PURE__ */ layer({
   above: false,
   markers(view) {
     let markers = [], { main, ranges } = view.state.selection;
-    for (let r3 of ranges)
-      if (!r3.empty) {
-        for (let marker of RectangleMarker.forRange(view, "cm-selectionBackground", r3))
+    for (let r4 of ranges)
+      if (!r4.empty) {
+        for (let marker of RectangleMarker.forRange(view, "cm-selectionBackground", r4))
           markers.push(marker);
       }
     if (browser.ios && !main.empty && view.state.facet(selectionConfig).iosSelectionHandles) {
@@ -12726,11 +15998,11 @@ var MatchDecorator = class {
     return deco;
   }
   updateRange(view, deco, updateFrom, updateTo) {
-    for (let r3 of view.visibleRanges) {
-      let from = Math.max(r3.from, updateFrom), to = Math.min(r3.to, updateTo);
+    for (let r4 of view.visibleRanges) {
+      let from = Math.max(r4.from, updateFrom), to = Math.min(r4.to, updateTo);
       if (to >= from) {
         let fromLine = view.state.doc.lineAt(from), toLine = fromLine.to < to ? view.state.doc.lineAt(to) : fromLine;
-        let start = Math.max(r3.from, fromLine.from), end = Math.min(r3.to, toLine.to);
+        let start = Math.max(r4.from, fromLine.from), end = Math.min(r4.to, toLine.to);
         if (this.boundary) {
           for (; from > fromLine.from; from--)
             if (this.boundary.test(fromLine.text[from - 1 - fromLine.from])) {
@@ -12917,8 +16189,8 @@ var activeLineHighlighter = /* @__PURE__ */ ViewPlugin.fromClass(class {
   }
   getDeco(view) {
     let lastLineStart = -1, deco = [];
-    for (let r3 of view.state.selection.ranges) {
-      let line = view.lineBlockAt(r3.head);
+    for (let r4 of view.state.selection.ranges) {
+      let line = view.lineBlockAt(r4.head);
       if (line.from > lastLineStart) {
         deco.push(lineDeco.range(line.from));
         lastLineStart = line.from;
@@ -13348,9 +16620,9 @@ var tooltipPlugin = /* @__PURE__ */ ViewPlugin.fromClass(class {
       let top2 = above ? pos.top - height - arrowHeight - offset.y : pos.bottom + arrowHeight + offset.y;
       let right = left + width;
       if (tView.overlap !== true) {
-        for (let r3 of others)
-          if (r3.left < right && r3.right > left && r3.top < top2 + height && r3.bottom > top2)
-            top2 = above ? r3.top - height - 2 - arrowHeight : r3.bottom + arrowHeight + 2;
+        for (let r4 of others)
+          if (r4.left < right && r4.right > left && r4.top < top2 + height && r4.bottom > top2)
+            top2 = above ? r4.top - height - 2 - arrowHeight : r4.bottom + arrowHeight + 2;
       }
       if (this.position == "absolute") {
         dom.style.top = (top2 - measured.parent.top) / scaleY + "px";
@@ -13930,7 +17202,7 @@ var showPanel = /* @__PURE__ */ Facet.define({
 });
 function showDialog(view, config15) {
   let resolve;
-  let promise = new Promise((r3) => resolve = r3);
+  let promise = new Promise((r4) => resolve = r4);
   let panelCtor = (view2) => createDialog(view2, config15, resolve);
   if (view.state.field(dialogField, false)) {
     view.dispatch({ effects: openDialogEffect.of(panelCtor) });
@@ -15028,8 +18300,8 @@ var BaseNode = class {
     return new TreeCursor(this, mode);
   }
   getChild(type, before = null, after = null) {
-    let r3 = getChildren(this, type, before, after);
-    return r3.length ? r3[0] : null;
+    let r4 = getChildren(this, type, before, after);
+    return r4.length ? r4[0] : null;
   }
   getChildren(type, before = null, after = null) {
     return getChildren(this, type, before, after);
@@ -16142,7 +19414,7 @@ var Parser = class {
   startParse(input, fragments, ranges) {
     if (typeof input == "string")
       input = new StringInput(input);
-    ranges = !ranges ? [new Range2(0, input.length)] : ranges.length ? ranges.map((r3) => new Range2(r3.from, r3.to)) : [new Range2(0, 0)];
+    ranges = !ranges ? [new Range2(0, input.length)] : ranges.length ? ranges.map((r4) => new Range2(r4.from, r4.to)) : [new Range2(0, 0)];
     return this.createParse(input, fragments || [], ranges);
   }
   /**
@@ -16971,8 +20243,8 @@ var Language = class {
       if (mount) {
         if (mount.tree.prop(languageDataProp) == this.data) {
           if (mount.overlay)
-            for (let r3 of mount.overlay)
-              result.push({ from: r3.from + from, to: r3.to + from });
+            for (let r4 of mount.overlay)
+              result.push({ from: r4.from + from, to: r4.to + from });
           else
             result.push({ from, to: from + tree.length });
           return;
@@ -17160,8 +20432,8 @@ var ParseContext = class _ParseContext {
     }
   }
   withoutTempSkipped(fragments) {
-    for (let r3; r3 = this.tempSkipped.pop(); )
-      fragments = cutFragments(fragments, r3.from, r3.to);
+    for (let r4; r4 = this.tempSkipped.pop(); )
+      fragments = cutFragments(fragments, r4.from, r4.to);
     return fragments;
   }
   /**
@@ -17179,8 +20451,8 @@ var ParseContext = class _ParseContext {
       viewport = { from: changes.mapPos(viewport.from, -1), to: changes.mapPos(viewport.to, 1) };
       if (this.skipped.length) {
         skipped = [];
-        for (let r3 of this.skipped) {
-          let from = changes.mapPos(r3.from, 1), to = changes.mapPos(r3.to, -1);
+        for (let r4 of this.skipped) {
+          let from = changes.mapPos(r4.from, 1), to = changes.mapPos(r4.to, -1);
           if (from < to)
             skipped.push({ from, to });
         }
@@ -17243,8 +20515,8 @@ var ParseContext = class _ParseContext {
           advance() {
             let cx = currentContext;
             if (cx) {
-              for (let r3 of ranges)
-                cx.tempSkipped.push(r3);
+              for (let r4 of ranges)
+                cx.tempSkipped.push(r4);
               if (until)
                 cx.scheduleOn = cx.scheduleOn ? Promise.all([cx.scheduleOn, until]) : until;
             }
@@ -17708,7 +20980,7 @@ function indentOnInput() {
     if (head > line.from + DontIndentBeyond)
       return tr;
     let lineStart = doc2.sliceString(line.from, head);
-    if (!rules.some((r3) => r3.test(lineStart)))
+    if (!rules.some((r4) => r4.test(lineStart)))
       return tr;
     let { state } = tr, last = -1, changes = [];
     for (let { head: head2 } of state.selection.ranges) {
@@ -18718,7 +21990,7 @@ var Parse = class {
       this.chunks.push(tree.children[i2]);
       this.chunkPos.push(tree.positions[i2]);
     }
-    if (context && this.parsedPos < context.viewport.from - 1e5 && ranges.some((r3) => r3.from <= context.viewport.from && r3.to >= context.viewport.from)) {
+    if (context && this.parsedPos < context.viewport.from - 1e5 && ranges.some((r4) => r4.from <= context.viewport.from && r4.to >= context.viewport.from)) {
       this.state = this.lang.streamParser.startState(getIndentUnit(context.state));
       context.skipUntilInView(this.parsedPos, context.viewport.from);
       this.parsedPos = context.viewport.from;
@@ -20060,7 +23332,7 @@ var completionPlugin = /* @__PURE__ */ ViewPlugin.fromClass(class {
     this.pendingStart = false;
     let { state } = this.view, cState = state.field(completionState);
     for (let active of cState.active) {
-      if (active.isPending && !this.running.some((r3) => r3.active.source == active.source))
+      if (active.isPending && !this.running.some((r4) => r4.active.source == active.source))
         this.startQuery(active);
     }
     if (this.running.length && cState.open && cState.open.disabled)
@@ -20394,12 +23666,12 @@ var ActiveSnippet = class _ActiveSnippet {
   constructor(ranges, active) {
     this.ranges = ranges;
     this.active = active;
-    this.deco = Decoration.set(ranges.map((r3) => (r3.from == r3.to ? fieldMarker : fieldRange).range(r3.from, r3.to)), true);
+    this.deco = Decoration.set(ranges.map((r4) => (r4.from == r4.to ? fieldMarker : fieldRange).range(r4.from, r4.to)), true);
   }
   map(changes) {
     let ranges = [];
-    for (let r3 of this.ranges) {
-      let mapped = r3.map(changes);
+    for (let r4 of this.ranges) {
+      let mapped = r4.map(changes);
       if (!mapped)
         return null;
       ranges.push(mapped);
@@ -20407,7 +23679,7 @@ var ActiveSnippet = class _ActiveSnippet {
     return new _ActiveSnippet(ranges, this.active);
   }
   selectionInsideField(sel) {
-    return sel.ranges.every((range) => this.ranges.some((r3) => r3.field == this.active && r3.from <= range.from && r3.to >= range.to));
+    return sel.ranges.every((range) => this.ranges.some((r4) => r4.field == this.active && r4.from <= range.from && r4.to >= range.to));
   }
 };
 var setActive = /* @__PURE__ */ StateEffect.define({
@@ -20436,7 +23708,7 @@ var snippetState = /* @__PURE__ */ StateField.define({
   provide: (f2) => EditorView.decorations.from(f2, (val) => val ? val.deco : Decoration.none)
 });
 function fieldSelection(ranges, field) {
-  return EditorSelection.create(ranges.filter((r3) => r3.field == field).map((r3) => EditorSelection.range(r3.from, r3.to)));
+  return EditorSelection.create(ranges.filter((r4) => r4.field == field).map((r4) => EditorSelection.range(r4.from, r4.to)));
 }
 function snippet(template) {
   let snippet2 = Snippet.parse(template);
@@ -20450,7 +23722,7 @@ function snippet(template) {
     };
     if (ranges.length)
       spec.selection = fieldSelection(ranges, 0);
-    if (ranges.some((r3) => r3.field > 0)) {
+    if (ranges.some((r4) => r4.field > 0)) {
       let active = new ActiveSnippet(ranges, 0);
       let effects = spec.effects = [setActive.of(active)];
       if (editor.state.field(snippetState, false) === void 0)
@@ -20464,7 +23736,7 @@ function moveField(dir) {
     let active = state.field(snippetState, false);
     if (!active || dir < 0 && active.active == 0)
       return false;
-    let next = active.active + dir, last = dir > 0 && !active.ranges.some((r3) => r3.field == next + dir);
+    let next = active.active + dir, last = dir > 0 && !active.ranges.some((r4) => r4.field == next + dir);
     dispatch(state.update({
       selection: fieldSelection(active.ranges, next),
       effects: setActive.of(last ? null : new ActiveSnippet(active.ranges, next)),
@@ -20500,12 +23772,12 @@ var snippetPointerHandler = /* @__PURE__ */ EditorView.domEventHandlers({
     let active = view.state.field(snippetState, false), pos;
     if (!active || (pos = view.posAtCoords({ x: event.clientX, y: event.clientY })) == null)
       return false;
-    let match = active.ranges.find((r3) => r3.from <= pos && r3.to >= pos);
+    let match = active.ranges.find((r4) => r4.from <= pos && r4.to >= pos);
     if (!match || match.field == active.active)
       return false;
     view.dispatch({
       selection: fieldSelection(active.ranges, match.field),
-      effects: setActive.of(active.ranges.some((r3) => r3.field > match.field) ? new ActiveSnippet(active.ranges, match.field) : null),
+      effects: setActive.of(active.ranges.some((r4) => r4.field > match.field) ? new ActiveSnippet(active.ranges, match.field) : null),
       scrollIntoView: true
     });
     return true;
@@ -21558,11 +24830,11 @@ var InputStream = class {
     if (from >= this.range.from && to <= this.range.to)
       return this.input.read(from, to);
     let result = "";
-    for (let r3 of this.ranges) {
-      if (r3.from >= to)
+    for (let r4 of this.ranges) {
+      if (r4.from >= to)
         break;
-      if (r3.to > from)
-        result += this.input.read(Math.max(r3.from, from), Math.min(r3.to, to));
+      if (r4.to > from)
+        result += this.input.read(Math.max(r4.from, from), Math.min(r4.to, to));
     }
     return result;
   }
@@ -22216,7 +25488,7 @@ var LRParser = class _LRParser extends Parser {
     this.minRepeatTerm = nodeNames.length;
     for (let i2 = 0; i2 < spec.repeatNodeCount; i2++)
       nodeNames.push("");
-    let topTerms = Object.keys(spec.topRules).map((r3) => spec.topRules[r3][1]);
+    let topTerms = Object.keys(spec.topRules).map((r4) => spec.topRules[r4][1]);
     let nodeProps = [];
     for (let i2 = 0; i2 < nodeNames.length; i2++)
       nodeProps.push([]);
@@ -22412,13 +25684,13 @@ var LRParser = class _LRParser extends Parser {
     }
     if (config15.tokenizers)
       copy.tokenizers = this.tokenizers.map((t3) => {
-        let found = config15.tokenizers.find((r3) => r3.from == t3);
+        let found = config15.tokenizers.find((r4) => r4.from == t3);
         return found ? found.to : t3;
       });
     if (config15.specializers) {
       copy.specializers = this.specializers.slice();
       copy.specializerSpecs = this.specializerSpecs.map((s2, i2) => {
-        let found = config15.specializers.find((r3) => r3.from == s2.external);
+        let found = config15.specializers.find((r4) => r4.from == s2.external);
         if (!found)
           return s2;
         let spec = Object.assign(Object.assign({}, s2), { external: found.to });
@@ -23082,6 +26354,30 @@ var parser2 = LRParser.deserialize({
 });
 
 // node_modules/.pnpm/@codemirror+lang-json@6.0.2/node_modules/@codemirror/lang-json/dist/index.js
+var jsonParseLinter = () => (view) => {
+  try {
+    JSON.parse(view.state.doc.toString());
+  } catch (e3) {
+    if (!(e3 instanceof SyntaxError))
+      throw e3;
+    const pos = getErrorPosition(e3, view.state.doc);
+    return [{
+      from: pos,
+      message: e3.message,
+      severity: "error",
+      to: pos
+    }];
+  }
+  return [];
+};
+function getErrorPosition(error, doc2) {
+  let m2;
+  if (m2 = error.message.match(/at position (\d+)/))
+    return Math.min(+m2[1], doc2.length);
+  if (m2 = error.message.match(/at line (\d+) column (\d+)/))
+    return Math.min(doc2.line(+m2[1]).from + +m2[2] - 1, doc2.length);
+  return 0;
+}
 var jsonLanguage = /* @__PURE__ */ LRLanguage.define({
   name: "json",
   parser: /* @__PURE__ */ parser2.configure({
@@ -23330,19 +26626,19 @@ function _extends() {
   return _extends = Object.assign ? Object.assign.bind() : function(n2) {
     for (var e3 = 1; e3 < arguments.length; e3++) {
       var t3 = arguments[e3];
-      for (var r3 in t3) ({}).hasOwnProperty.call(t3, r3) && (n2[r3] = t3[r3]);
+      for (var r4 in t3) ({}).hasOwnProperty.call(t3, r4) && (n2[r4] = t3[r4]);
     }
     return n2;
   }, _extends.apply(null, arguments);
 }
 
 // node_modules/.pnpm/@babel+runtime@8.0.0/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-function _objectWithoutPropertiesLoose(r3, e3) {
-  if (null == r3) return {};
+function _objectWithoutPropertiesLoose(r4, e3) {
+  if (null == r4) return {};
   var t3 = {};
-  for (var n2 in r3) if ({}.hasOwnProperty.call(r3, n2)) {
+  for (var n2 in r4) if ({}.hasOwnProperty.call(r4, n2)) {
     if (-1 !== e3.indexOf(n2)) continue;
-    t3[n2] = r3[n2];
+    t3[n2] = r4[n2];
   }
   return t3;
 }
@@ -23425,11 +26721,11 @@ function findBlockComment(state, { open, close }, from, to) {
 }
 function selectedLineRanges(state) {
   let ranges = [];
-  for (let r3 of state.selection.ranges) {
-    let fromLine = state.doc.lineAt(r3.from);
-    let toLine = r3.to <= fromLine.to ? fromLine : state.doc.lineAt(r3.to);
-    if (toLine.from > fromLine.from && toLine.from == r3.to)
-      toLine = r3.to == fromLine.to + 1 ? fromLine : state.doc.lineAt(r3.to - 1);
+  for (let r4 of state.selection.ranges) {
+    let fromLine = state.doc.lineAt(r4.from);
+    let toLine = r4.to <= fromLine.to ? fromLine : state.doc.lineAt(r4.to);
+    if (toLine.from > fromLine.from && toLine.from == r4.to)
+      toLine = r4.to == fromLine.to + 1 ? fromLine : state.doc.lineAt(r4.to - 1);
     let last = ranges.length - 1;
     if (last >= 0 && ranges[last].to > fromLine.from)
       ranges[last].to = toLine.to;
@@ -23439,10 +26735,10 @@ function selectedLineRanges(state) {
   return ranges;
 }
 function changeBlockComment(option, state, ranges = state.selection.ranges) {
-  let tokens = ranges.map((r3) => getConfig(state, r3.from).block);
+  let tokens = ranges.map((r4) => getConfig(state, r4.from).block);
   if (!tokens.every((c2) => c2))
     return null;
-  let comments = ranges.map((r3, i2) => findBlockComment(state, tokens[i2], r3.from, r3.to));
+  let comments = ranges.map((r4, i2) => findBlockComment(state, tokens[i2], r4.from, r4.to));
   if (option != 2 && !comments.every((c2) => c2)) {
     return { changes: state.changes(ranges.map((range, i2) => {
       if (comments[i2])
@@ -23658,7 +26954,7 @@ function isAdjacent(a2, b2) {
   return isAdjacent2;
 }
 function eqSelectionShape(a2, b2) {
-  return a2.ranges.length == b2.ranges.length && a2.ranges.filter((r3, i2) => r3.empty != b2.ranges[i2].empty).length === 0;
+  return a2.ranges.length == b2.ranges.length && a2.ranges.filter((r4, i2) => r4.empty != b2.ranges[i2].empty).length === 0;
 }
 function conc(a2, b2) {
   return !a2.length ? b2 : !b2.length ? a2 : a2.concat(b2);
@@ -24023,7 +27319,7 @@ function addCursorVertically(view, forward) {
       for (let cur2 = range; ; ) {
         let next = view.moveVertically(cur2, forward);
         if (next.head < line.from || next.head > line.to) {
-          if (!ranges.some((r3) => r3.head == next.head))
+          if (!ranges.some((r4) => r4.head == next.head))
             ranges.push(next);
           break;
         } else if (next.head == cur2.head) {
@@ -24205,12 +27501,12 @@ function moveLine(state, dispatch, forward) {
     let size = nextLine.length + 1;
     if (forward) {
       changes.push({ from: block.to, to: nextLine.to }, { from: block.from, insert: nextLine.text + state.lineBreak });
-      for (let r3 of block.ranges)
-        ranges.push(EditorSelection.range(Math.min(state.doc.length, r3.anchor + size), Math.min(state.doc.length, r3.head + size)));
+      for (let r4 of block.ranges)
+        ranges.push(EditorSelection.range(Math.min(state.doc.length, r4.anchor + size), Math.min(state.doc.length, r4.head + size)));
     } else {
       changes.push({ from: nextLine.from, to: block.from }, { from: block.to, insert: state.lineBreak + nextLine.text });
-      for (let r3 of block.ranges)
-        ranges.push(EditorSelection.range(r3.anchor - size, r3.head - size));
+      for (let r4 of block.ranges)
+        ranges.push(EditorSelection.range(r4.anchor - size, r4.head - size));
     }
   }
   if (!changes.length)
@@ -24867,7 +28163,7 @@ function findNextOccurrence(state, query) {
       cursor2 = new SearchCursor(state.doc, query, 0, Math.max(0, ranges[ranges.length - 1].from - 1));
       cycled = true;
     } else {
-      if (cycled && ranges.some((r3) => r3.from == cursor2.value.from))
+      if (cycled && ranges.some((r4) => r4.from == cursor2.value.from))
         continue;
       if (fullWord) {
         let word2 = state.wordAt(cursor2.value.from);
@@ -24883,7 +28179,7 @@ var selectNextOccurrence = ({ state, dispatch }) => {
   if (ranges.some((sel) => sel.from === sel.to))
     return selectWord({ state, dispatch });
   let searchedText = state.sliceDoc(ranges[0].from, ranges[0].to);
-  if (state.selection.ranges.some((r3) => state.sliceDoc(r3.from, r3.to) != searchedText))
+  if (state.selection.ranges.some((r4) => state.sliceDoc(r4.from, r4.to) != searchedText))
     return false;
   let range = findNextOccurrence(state, searchedText);
   if (!range)
@@ -25158,7 +28454,7 @@ var searchHighlighter = /* @__PURE__ */ ViewPlugin.fromClass(class {
       while (i2 < l2 - 1 && to > ranges[i2 + 1].from - 2 * 250)
         to = ranges[++i2].to;
       query.highlight(view.state, from, to, (from2, to2) => {
-        let selected = view.state.selection.ranges.some((r3) => r3.from == from2 && r3.to == to2);
+        let selected = view.state.selection.ranges.some((r4) => r4.from == from2 && r4.to == to2);
         builder.add(from2, to2, selected ? selectedMatchMark : matchMark);
       });
     }
@@ -25208,7 +28504,7 @@ var selectMatches = /* @__PURE__ */ searchCommand((view, { query }) => {
   if (!ranges || !ranges.length)
     return false;
   view.dispatch({
-    selection: EditorSelection.create(ranges.map((r3) => EditorSelection.range(r3.from, r3.to))),
+    selection: EditorSelection.create(ranges.map((r4) => EditorSelection.range(r4.from, r4.to))),
     userEvent: "select.search.matches"
   });
   return true;
@@ -25651,6 +28947,11 @@ function hideTooltip(tr, tooltip) {
 function maybeEnableLint(state, effects) {
   return state.field(lintState, false) ? effects : effects.concat(StateEffect.appendConfig.of(lintExtensions));
 }
+function setDiagnostics(state, diagnostics) {
+  return {
+    effects: maybeEnableLint(state, [setDiagnosticsEffect.of(diagnostics)])
+  };
+}
 var setDiagnosticsEffect = /* @__PURE__ */ StateEffect.define();
 var togglePanel2 = /* @__PURE__ */ StateEffect.define();
 var movePanelSelection = /* @__PURE__ */ StateEffect.define();
@@ -25752,6 +29053,65 @@ var lintKeymap = [
   { key: "Mod-Shift-m", run: openLintPanel, preventDefault: true },
   { key: "F8", run: nextDiagnostic }
 ];
+var lintPlugin = /* @__PURE__ */ ViewPlugin.fromClass(class {
+  constructor(view) {
+    this.view = view;
+    this.timeout = -1;
+    this.set = true;
+    let { delay } = view.state.facet(lintConfig);
+    this.lintTime = Date.now() + delay;
+    this.run = this.run.bind(this);
+    this.timeout = setTimeout(this.run, delay);
+  }
+  run() {
+    clearTimeout(this.timeout);
+    let now = Date.now();
+    if (now < this.lintTime - 10) {
+      this.timeout = setTimeout(this.run, this.lintTime - now);
+    } else {
+      this.set = false;
+      let { state } = this.view, { sources } = state.facet(lintConfig);
+      if (sources.length)
+        batchResults(sources.map((s2) => Promise.resolve(s2(this.view))), (annotations) => {
+          if (this.view.state.doc == state.doc)
+            this.view.dispatch(setDiagnostics(this.view.state, annotations.reduce((a2, b2) => a2.concat(b2))));
+        }, (error) => {
+          logException(this.view.state, error);
+        });
+    }
+  }
+  update(update) {
+    let config15 = update.state.facet(lintConfig);
+    if (update.docChanged || config15 != update.startState.facet(lintConfig) || config15.needsRefresh && config15.needsRefresh(update)) {
+      this.lintTime = Date.now() + config15.delay;
+      if (!this.set) {
+        this.set = true;
+        this.timeout = setTimeout(this.run, config15.delay);
+      }
+    }
+  }
+  force() {
+    if (this.set) {
+      this.lintTime = Date.now();
+      this.run();
+    }
+  }
+  destroy() {
+    clearTimeout(this.timeout);
+  }
+});
+function batchResults(promises, sink, error) {
+  let collected = [], timeout = -1;
+  for (let p2 of promises)
+    p2.then((value) => {
+      collected.push(value);
+      clearTimeout(timeout);
+      if (collected.length == promises.length)
+        sink(collected);
+      else
+        timeout = setTimeout(() => sink(collected), 200);
+    }, error);
+}
 var lintConfig = /* @__PURE__ */ Facet.define({
   combine(input) {
     return {
@@ -25775,6 +29135,13 @@ var lintConfig = /* @__PURE__ */ Facet.define({
 });
 function combineFilter(a2, b2) {
   return !a2 ? b2 : !b2 ? a2 : (d2, s2) => b2(a2(d2, s2), s2);
+}
+function linter(source, config15 = {}) {
+  return [
+    lintConfig.of({ source, config: config15 }),
+    lintPlugin,
+    lintExtensions
+  ];
 }
 function assignKeys(actions) {
   let assigned = [];
@@ -26399,8 +29766,8 @@ var getStatistics = (view) => {
     selectionAsSingle: view.state.selection.asSingle().main,
     ranges: view.state.selection.ranges,
     selectionCode: view.state.sliceDoc(view.state.selection.main.from, view.state.selection.main.to),
-    selections: view.state.selection.ranges.map((r3) => view.state.sliceDoc(r3.from, r3.to)),
-    selectedText: view.state.selection.ranges.some((r3) => !r3.empty)
+    selections: view.state.selection.ranges.map((r4) => view.state.sliceDoc(r4.from, r4.to)),
+    selectedText: view.state.selection.ranges.some((r4) => !r4.empty)
   };
 };
 
@@ -26694,6 +30061,42 @@ var ReactCodeMirror = /* @__PURE__ */ forwardRef2((props, ref) => {
 ReactCodeMirror.displayName = "CodeMirror";
 var esm_default = ReactCodeMirror;
 
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
+var DEFAULT_CODE_EDITOR_FONT_SIZE = "16px";
+var MIN_CODE_EDITOR_FONT_SIZE_PX = 14;
+var DEFAULT_CODE_EDITOR_SETUP = {
+  lineNumbers: true,
+  foldGutter: true,
+  highlightActiveLine: true,
+  highlightActiveLineGutter: true
+};
+function normalizeCodeEditorFontSize(value) {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    const clamped = Math.max(MIN_CODE_EDITOR_FONT_SIZE_PX, Math.round(value));
+    return `${clamped}px`;
+  }
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    const pxMatch = trimmed.match(/^(\d+(?:\.\d+)?)px$/i);
+    if (pxMatch) {
+      const parsed = Number(pxMatch[1]);
+      if (Number.isFinite(parsed)) {
+        const clamped = Math.max(MIN_CODE_EDITOR_FONT_SIZE_PX, Math.round(parsed));
+        return `${clamped}px`;
+      }
+    }
+    const integerMatch = trimmed.match(/^(\d+)$/);
+    if (integerMatch) {
+      const parsed = Number(integerMatch[1]);
+      if (Number.isFinite(parsed)) {
+        const clamped = Math.max(MIN_CODE_EDITOR_FONT_SIZE_PX, parsed);
+        return `${clamped}px`;
+      }
+    }
+  }
+  return DEFAULT_CODE_EDITOR_FONT_SIZE;
+}
+
 // node_modules/.pnpm/@faker-js+faker@10.5.0/node_modules/@faker-js/faker/dist/base-DzmKJ9Qc.js
 var e = class extends Error {
 };
@@ -26701,11 +30104,11 @@ var t2 = Symbol(`FakerLocaleProxy`);
 var n = () => {
   throw new e(`You cannot edit the locale data on the faker instance`);
 };
-function r(e3) {
+function r2(e3) {
   return typeof e3 == `object` && !!e3 && e3?.[t2] === true;
 }
 function i(e3) {
-  if (r(e3)) return e3;
+  if (r2(e3)) return e3;
   let i2 = { raw: e3 };
   return new Proxy(e3, { has() {
     return true;
@@ -26725,15 +30128,15 @@ function o(e3, t3 = {}) {
   return new Proxy(t3, { has(e4, t4) {
     return e4[t4] != null;
   }, get(t4, n2) {
-    let r3 = t4[n2];
-    return typeof n2 == `symbol` || n2 === `nodeType` || a(r3, e3, n2.toString()), r3;
+    let r4 = t4[n2];
+    return typeof n2 == `symbol` || n2 === `nodeType` || a(r4, e3, n2.toString()), r4;
   }, set: n, deleteProperty: n });
 }
 function s(e3) {
   let t3 = {};
   for (let n2 of e3) for (let e4 in n2) {
-    let r3 = n2[e4];
-    t3[e4] === void 0 ? t3[e4] = { ...r3 } : t3[e4] = { ...r3, ...t3[e4] };
+    let r4 = n2[e4];
+    t3[e4] === void 0 ? t3[e4] = { ...r4 } : t3[e4] = { ...r4, ...t3[e4] };
   }
   return t3;
 }
@@ -26751,10 +30154,10 @@ function m(e3) {
   return t3;
 }
 function h(e3) {
-  let t3 = m(19650218), n2 = 1, r3 = 0;
+  let t3 = m(19650218), n2 = 1, r4 = 0;
   for (let i2 = Math.max(624, e3.length); i2 !== 0; --i2) {
     let i3 = t3[n2 - 1] ^ t3[n2 - 1] >>> 30;
-    t3[n2] = f((t3[n2] ^ d(i3, 1664525)) + e3[r3] + r3), n2++, r3++, n2 >= 624 && (t3[0] = t3[623], n2 = 1), r3 >= e3.length && (r3 = 0);
+    t3[n2] = f((t3[n2] ^ d(i3, 1664525)) + e3[r4] + r4), n2++, r4++, n2 >= 624 && (t3[0] = t3[623], n2 = 1), r4 >= e3.length && (r4 = 0);
   }
   for (let e4 = 623; e4 !== 0; e4--) t3[n2] = f((t3[n2] ^ d(t3[n2 - 1] ^ t3[n2 - 1] >>> 30, 1566083941)) - n2), n2++, n2 >= 624 && (t3[0] = t3[623], n2 = 1);
   return t3[0] = 2147483648, t3;
@@ -26807,8 +30210,8 @@ function y(e3 = v()) {
   } };
 }
 function te(e3 = {}) {
-  let { locale: t3 = {}, randomizer: n2 = y(), config: r3 = {}, seed: a2 } = e3;
-  return n2 != null && a2 != null && n2.seed(a2), { locale: i(Array.isArray(t3) ? s(t3) : t3), randomizer: n2, config: r3 };
+  let { locale: t3 = {}, randomizer: n2 = y(), config: r4 = {}, seed: a2 } = e3;
+  return n2 != null && a2 != null && n2.seed(a2), { locale: i(Array.isArray(t3) ? s(t3) : t3), randomizer: n2, config: r4 };
 }
 function b() {
   return ne;
@@ -26851,19 +30254,19 @@ var ce = class extends S {
     return this.faker.helpers.arrayElement(this.faker.definitions.airline.airplane);
   }
   recordLocator(e3 = {}) {
-    let { allowNumerics: t3 = false, allowVisuallySimilarCharacters: n2 = false } = e3, r3 = [];
-    return t3 || r3.push(...ie3), n2 || r3.push(...ae), this.faker.string.alphanumeric({ length: 6, casing: `upper`, exclude: r3 });
+    let { allowNumerics: t3 = false, allowVisuallySimilarCharacters: n2 = false } = e3, r4 = [];
+    return t3 || r4.push(...ie3), n2 || r4.push(...ae), this.faker.string.alphanumeric({ length: 6, casing: `upper`, exclude: r4 });
   }
   seat(e3 = {}) {
-    let { aircraftType: t3 = `narrowbody` } = e3, n2 = oe[t3], r3 = se[t3];
-    return `${this.faker.number.int({ min: 1, max: n2 })}${this.faker.helpers.arrayElement(r3)}`;
+    let { aircraftType: t3 = `narrowbody` } = e3, n2 = oe[t3], r4 = se[t3];
+    return `${this.faker.number.int({ min: 1, max: n2 })}${this.faker.helpers.arrayElement(r4)}`;
   }
   aircraftType() {
     return this.faker.helpers.enumValue(C2);
   }
   flightNumber(e3 = {}) {
-    let { length: t3 = { min: 1, max: 4 }, addLeadingZeros: n2 = false } = e3, r3 = this.faker.string.numeric({ length: t3, allowLeadingZeros: false });
-    return n2 ? r3.padStart(4, `0`) : r3;
+    let { length: t3 = { min: 1, max: 4 }, addLeadingZeros: n2 = false } = e3, r4 = this.faker.string.numeric({ length: t3, allowLeadingZeros: false });
+    return n2 ? r4.padStart(4, `0`) : r4;
   }
 };
 var le = class extends S {
@@ -26943,8 +30346,8 @@ var T = (function(e3) {
   return e3.RGB = `rgb`, e3.RGBA = `rgba`, e3.HSL = `hsl`, e3.HSLA = `hsla`, e3.HWB = `hwb`, e3.CMYK = `cmyk`, e3.LAB = `lab`, e3.LCH = `lch`, e3.COLOR = `color`, e3;
 })({});
 function de(e3, t3) {
-  let { prefix: n2, casing: r3 } = t3;
-  switch (r3) {
+  let { prefix: n2, casing: r4 } = t3;
+  switch (r4) {
     case `upper`:
       e3 = e3.toUpperCase();
       break;
@@ -26989,10 +30392,10 @@ function fe(e3, t3 = `rgb`, n2 = `sRGB`) {
       return `rgb(${e3[0]}, ${e3[1]}, ${e3[2]})`;
   }
 }
-function O(e3, t3, n2 = `rgb`, r3 = `sRGB`) {
+function O(e3, t3, n2 = `rgb`, r4 = `sRGB`) {
   switch (t3) {
     case `css`:
-      return fe(e3, n2, r3);
+      return fe(e3, n2, r4);
     case `binary`:
       return E(e3);
     case `decimal`:
@@ -27013,17 +30416,17 @@ var pe = class extends S {
     return this.faker.helpers.enumValue(w);
   }
   rgb(e3 = {}) {
-    let { format: t3 = `hex`, includeAlpha: n2 = false, prefix: r3 = `#`, casing: i2 = `lower` } = e3, a2, o2 = `rgb`;
-    return t3 === `hex` ? (a2 = this.faker.string.hexadecimal({ length: n2 ? 8 : 6, prefix: `` }), a2 = de(a2, { prefix: r3, casing: i2 }), a2) : (a2 = Array.from({ length: 3 }, () => this.faker.number.int(255)), n2 && (a2.push(this.faker.number.float({ multipleOf: 0.01 })), o2 = `rgba`), O(a2, t3, o2));
+    let { format: t3 = `hex`, includeAlpha: n2 = false, prefix: r4 = `#`, casing: i2 = `lower` } = e3, a2, o2 = `rgb`;
+    return t3 === `hex` ? (a2 = this.faker.string.hexadecimal({ length: n2 ? 8 : 6, prefix: `` }), a2 = de(a2, { prefix: r4, casing: i2 }), a2) : (a2 = Array.from({ length: 3 }, () => this.faker.number.int(255)), n2 && (a2.push(this.faker.number.float({ multipleOf: 0.01 })), o2 = `rgba`), O(a2, t3, o2));
   }
   cmyk(e3 = {}) {
     let { format: t3 = `decimal` } = e3;
     return O(Array.from({ length: 4 }, () => this.faker.number.float({ multipleOf: 0.01 })), t3, `cmyk`);
   }
   hsl(e3 = {}) {
-    let { format: t3 = `decimal`, includeAlpha: n2 = false } = e3, r3 = [this.faker.number.int(360)];
-    for (let t4 = 0; t4 < (e3?.includeAlpha ? 3 : 2); t4++) r3.push(this.faker.number.float({ multipleOf: 0.01 }));
-    return O(r3, t3, n2 ? `hsla` : `hsl`);
+    let { format: t3 = `decimal`, includeAlpha: n2 = false } = e3, r4 = [this.faker.number.int(360)];
+    for (let t4 = 0; t4 < (e3?.includeAlpha ? 3 : 2); t4++) r4.push(this.faker.number.float({ multipleOf: 0.01 }));
+    return O(r4, t3, n2 ? `hsla` : `hsl`);
   }
   hwb(e3 = {}) {
     let { format: t3 = `decimal` } = e3, n2 = [this.faker.number.int(360)];
@@ -27047,8 +30450,8 @@ var pe = class extends S {
 };
 function me(t3) {
   if (!/^\d{11}$/.test(t3)) throw new e(`calculateUPCCheckDigit expects exactly 11 numeric digits`);
-  let n2 = 0, r3 = 0;
-  for (let e3 of t3) n2 += Number.parseInt(e3, 10) * (r3 % 2 == 0 ? 3 : 1), r3++;
+  let n2 = 0, r4 = 0;
+  for (let e3 of t3) n2 += Number.parseInt(e3, 10) * (r4 % 2 == 0 ? 3 : 1), r4++;
   return (10 - n2 % 10) % 10;
 }
 var he = { 0: [[1999999, 2], [2279999, 3], [2289999, 4], [3689999, 3], [3699999, 4], [6389999, 3], [6397999, 4], [6399999, 7], [6449999, 3], [6459999, 7], [6479999, 3], [6489999, 7], [6549999, 3], [6559999, 4], [6999999, 3], [8499999, 4], [8999999, 5], [9499999, 6], [9999999, 7]], 1: [[99999, 3], [299999, 2], [349999, 3], [399999, 4], [499999, 3], [699999, 2], [999999, 4], [3979999, 3], [5499999, 4], [6499999, 5], [6799999, 4], [6859999, 5], [7139999, 4], [7169999, 3], [7319999, 4], [7399999, 7], [7749999, 5], [7753999, 7], [7763999, 5], [7764999, 7], [7769999, 5], [7782999, 7], [7899999, 5], [7999999, 4], [8004999, 5], [8049999, 5], [8379999, 5], [8384999, 7], [8671999, 5], [8675999, 4], [8697999, 5], [9159999, 6], [9165059, 7], [9168699, 6], [9169079, 7], [9195999, 6], [9196549, 7], [9729999, 6], [9877999, 4], [9911499, 6], [9911999, 7], [9989899, 6], [9999999, 7]] };
@@ -27061,13 +30464,13 @@ var ge = class extends S {
     return this.faker.helpers.fake(e3);
   }
   price(e3 = {}) {
-    let { dec: t3 = 2, max: n2 = 1e3, min: r3 = 1, symbol: i2 = `` } = e3;
-    if (r3 < 0 || n2 < 0) return `${i2}0`;
-    if (r3 === n2) return `${i2}${r3.toFixed(t3)}`;
-    let a2 = this.faker.number.float({ min: r3, max: n2, fractionDigits: t3 });
+    let { dec: t3 = 2, max: n2 = 1e3, min: r4 = 1, symbol: i2 = `` } = e3;
+    if (r4 < 0 || n2 < 0) return `${i2}0`;
+    if (r4 === n2) return `${i2}${r4.toFixed(t3)}`;
+    let a2 = this.faker.number.float({ min: r4, max: n2, fractionDigits: t3 });
     if (t3 === 0) return `${i2}${a2.toFixed(t3)}`;
     let o2 = a2 * 10 ** t3 % 10, s2 = this.faker.helpers.weightedArrayElement([{ weight: 5, value: 9 }, { weight: 3, value: 5 }, { weight: 1, value: 0 }, { weight: 1, value: this.faker.number.int({ min: 0, max: 9 }) }]), c2 = (1 / 10) ** t3, l2 = o2 * c2, u2 = s2 * c2, d2 = a2 - l2 + u2;
-    return r3 <= d2 && d2 <= n2 ? `${i2}${d2.toFixed(t3)}` : `${i2}${a2.toFixed(t3)}`;
+    return r4 <= d2 && d2 <= n2 ? `${i2}${d2.toFixed(t3)}` : `${i2}${a2.toFixed(t3)}`;
   }
   productAdjective() {
     return this.faker.helpers.arrayElement(this.faker.definitions.commerce.product_name.adjective);
@@ -27083,7 +30486,7 @@ var ge = class extends S {
   }
   isbn(t3 = {}) {
     typeof t3 == `number` && (t3 = { variant: t3 });
-    let { variant: n2 = 13, separator: r3 = `-` } = t3, [i2, a2] = this.faker.helpers.objectEntry(he), o2 = this.faker.string.numeric(8), s2 = Number.parseInt(o2.slice(0, -1)), c2 = a2.find(([e3]) => s2 <= e3)?.[1];
+    let { variant: n2 = 13, separator: r4 = `-` } = t3, [i2, a2] = this.faker.helpers.objectEntry(he), o2 = this.faker.string.numeric(8), s2 = Number.parseInt(o2.slice(0, -1)), c2 = a2.find(([e3]) => s2 <= e3)?.[1];
     if (!c2) throw new e(`Unable to find a registrant length for the group ${i2}`);
     let l2 = [`978`, i2, o2.slice(0, c2), o2.slice(c2)];
     n2 === 10 && l2.shift();
@@ -27092,13 +30495,13 @@ var ge = class extends S {
       let t4 = n2 === 10 ? e3 + 1 : e3 % 2 ? 3 : 1;
       d2 += t4 * Number.parseInt(u2[e3]);
     }
-    return d2 = n2 === 10 ? d2 % 11 : (10 - d2 % 10) % 10, l2.push(d2 === 10 ? `X` : d2.toString()), l2.join(r3);
+    return d2 = n2 === 10 ? d2 % 11 : (10 - d2 % 10) % 10, l2.push(d2 === 10 ? `X` : d2.toString()), l2.join(r4);
   }
   upc(t3 = {}) {
     let { prefix: n2 = `` } = t3;
     if (n2 && /\D/.test(n2)) throw new e(`Prefix must contain only numeric digits`);
     if (n2.length > 11) throw new e(`Prefix must be at most 11 numeric digits`);
-    let r3 = 11 - n2.length, i2 = `${n2}${this.faker.string.numeric({ length: r3, allowLeadingZeros: true })}`;
+    let r4 = 11 - n2.length, i2 = `${n2}${this.faker.string.numeric({ length: r4, allowLeadingZeros: true })}`;
     return `${i2}${me(i2)}`;
   }
 };
@@ -27149,9 +30552,9 @@ var ve = class extends S {
   }
 };
 function k(t3, n2 = `refDate`) {
-  let r3 = new Date(t3);
-  if (Number.isNaN(r3.valueOf())) throw new e(`Invalid ${n2} date: ${t3.toString()}`);
-  return r3;
+  let r4 = new Date(t3);
+  if (Number.isNaN(r4.valueOf())) throw new e(`Invalid ${n2} date: ${t3.toString()}`);
+  return r4;
 }
 var A = class extends x {
   anytime(e3 = {}) {
@@ -27159,61 +30562,61 @@ var A = class extends x {
     return this.between({ from: n2 - 1e3 * 60 * 60 * 24 * 365, to: n2 + 1e3 * 60 * 60 * 24 * 365 });
   }
   past(t3 = {}) {
-    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { years: r3 = 1 } = t3;
-    if (typeof r3 == `number` && (r3 = { min: 0, max: r3 }), r3.max <= 0) throw new e(`Years must be greater than 0.`);
-    if (r3.min >= r3.max) throw new e(`The maximum amount of years must be greater than the minimum amount of years.`);
+    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { years: r4 = 1 } = t3;
+    if (typeof r4 == `number` && (r4 = { min: 0, max: r4 }), r4.max <= 0) throw new e(`Years must be greater than 0.`);
+    if (r4.min >= r4.max) throw new e(`The maximum amount of years must be greater than the minimum amount of years.`);
     let i2 = k(n2), a2 = new Date(i2);
-    a2.setUTCFullYear(a2.getUTCFullYear() - r3.max);
+    a2.setUTCFullYear(a2.getUTCFullYear() - r4.max);
     let o2 = new Date(i2);
-    return o2.setUTCFullYear(o2.getUTCFullYear() - r3.min), this.between({ from: a2, to: o2.getTime() - 1e3 });
+    return o2.setUTCFullYear(o2.getUTCFullYear() - r4.min), this.between({ from: a2, to: o2.getTime() - 1e3 });
   }
   future(t3 = {}) {
-    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { years: r3 = 1 } = t3;
-    if (typeof r3 == `number` && (r3 = { min: 0, max: r3 }), r3.max <= 0) throw new e(`Years must be greater than 0.`);
-    if (r3.min >= r3.max) throw new e(`The maximum amount of years must be greater than the minimum amount of years.`);
+    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { years: r4 = 1 } = t3;
+    if (typeof r4 == `number` && (r4 = { min: 0, max: r4 }), r4.max <= 0) throw new e(`Years must be greater than 0.`);
+    if (r4.min >= r4.max) throw new e(`The maximum amount of years must be greater than the minimum amount of years.`);
     let i2 = k(n2), a2 = new Date(i2);
-    a2.setUTCFullYear(a2.getUTCFullYear() + r3.min);
+    a2.setUTCFullYear(a2.getUTCFullYear() + r4.min);
     let o2 = new Date(i2);
-    return o2.setUTCFullYear(o2.getUTCFullYear() + r3.max), this.between({ from: a2.getTime() + 1e3, to: o2 });
+    return o2.setUTCFullYear(o2.getUTCFullYear() + r4.max), this.between({ from: a2.getTime() + 1e3, to: o2 });
   }
   between(t3) {
-    let { from: n2, to: r3 } = t3, i2 = k(n2, `from`).getTime(), a2 = k(r3, `to`).getTime();
+    let { from: n2, to: r4 } = t3, i2 = k(n2, `from`).getTime(), a2 = k(r4, `to`).getTime();
     if (i2 > a2) throw new e("`from` date must be before `to` date.");
     return new Date(this.faker.number.int({ min: i2, max: a2 }));
   }
   betweens(e3) {
-    let { from: t3, to: n2, count: r3 = 3 } = e3;
-    return this.faker.helpers.multiple(() => this.between({ from: t3, to: n2 }), { count: r3 }).toSorted((e4, t4) => e4.getTime() - t4.getTime());
+    let { from: t3, to: n2, count: r4 = 3 } = e3;
+    return this.faker.helpers.multiple(() => this.between({ from: t3, to: n2 }), { count: r4 }).toSorted((e4, t4) => e4.getTime() - t4.getTime());
   }
   recent(t3 = {}) {
-    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { days: r3 = 1 } = t3;
-    if (typeof r3 == `number` && (r3 = { min: 0, max: r3 }), r3.max <= 0) throw new e(`Days must be greater than 0.`);
-    if (r3.min >= r3.max) throw new e(`The maximum amount of days must be greater than the minimum amount of days.`);
+    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { days: r4 = 1 } = t3;
+    if (typeof r4 == `number` && (r4 = { min: 0, max: r4 }), r4.max <= 0) throw new e(`Days must be greater than 0.`);
+    if (r4.min >= r4.max) throw new e(`The maximum amount of days must be greater than the minimum amount of days.`);
     let i2 = k(n2), a2 = new Date(i2);
-    a2.setUTCDate(a2.getUTCDate() - r3.max);
+    a2.setUTCDate(a2.getUTCDate() - r4.max);
     let o2 = new Date(i2);
-    return o2.setUTCDate(o2.getUTCDate() - r3.min), this.between({ from: a2, to: o2.getTime() - 1e3 });
+    return o2.setUTCDate(o2.getUTCDate() - r4.min), this.between({ from: a2, to: o2.getTime() - 1e3 });
   }
   soon(t3 = {}) {
-    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { days: r3 = 1 } = t3;
-    if (typeof r3 == `number` && (r3 = { min: 0, max: r3 }), r3.max <= 0) throw new e(`Days must be greater than 0.`);
-    if (r3.min >= r3.max) throw new e(`The maximum amount of days must be greater than the minimum amount of days.`);
+    let { refDate: n2 = this.faker.defaultRefDate() } = t3, { days: r4 = 1 } = t3;
+    if (typeof r4 == `number` && (r4 = { min: 0, max: r4 }), r4.max <= 0) throw new e(`Days must be greater than 0.`);
+    if (r4.min >= r4.max) throw new e(`The maximum amount of days must be greater than the minimum amount of days.`);
     let i2 = k(n2), a2 = new Date(i2);
-    a2.setUTCDate(a2.getUTCDate() + r3.min);
+    a2.setUTCDate(a2.getUTCDate() + r4.min);
     let o2 = new Date(i2);
-    return o2.setUTCDate(o2.getUTCDate() + r3.max), this.between({ from: a2.getTime() + 1e3, to: o2 });
+    return o2.setUTCDate(o2.getUTCDate() + r4.max), this.between({ from: a2.getTime() + 1e3, to: o2 });
   }
   birthdate(t3 = {}) {
-    let { mode: n2 = `age`, min: r3 = 18, max: i2 = 80, refDate: a2 = this.faker.defaultRefDate() } = t3, o2 = k(a2), s2 = o2.getUTCFullYear();
+    let { mode: n2 = `age`, min: r4 = 18, max: i2 = 80, refDate: a2 = this.faker.defaultRefDate() } = t3, o2 = k(a2), s2 = o2.getUTCFullYear();
     switch (n2) {
       case `age`: {
-        let t4 = new Date(o2).setUTCFullYear(s2 - i2 - 1) + 1440 * 60 * 1e3, n3 = new Date(o2).setUTCFullYear(s2 - r3);
-        if (t4 > n3) throw new e(`Max age ${i2} should be greater than or equal to min age ${r3}.`);
+        let t4 = new Date(o2).setUTCFullYear(s2 - i2 - 1) + 1440 * 60 * 1e3, n3 = new Date(o2).setUTCFullYear(s2 - r4);
+        if (t4 > n3) throw new e(`Max age ${i2} should be greater than or equal to min age ${r4}.`);
         return this.between({ from: t4, to: n3 });
       }
       case `year`: {
-        let t4 = new Date(Date.UTC(0, 0, 2)).setUTCFullYear(r3), n3 = new Date(Date.UTC(0, 11, 30)).setUTCFullYear(i2);
-        if (t4 > n3) throw new e(`Max year ${i2} should be greater than or equal to min year ${r3}.`);
+        let t4 = new Date(Date.UTC(0, 0, 2)).setUTCFullYear(r4), n3 = new Date(Date.UTC(0, 11, 30)).setUTCFullYear(i2);
+        if (t4 > n3) throw new e(`Max year ${i2} should be greater than or equal to min year ${r4}.`);
         return this.between({ from: t4, to: n3 });
       }
     }
@@ -27225,15 +30628,15 @@ var ye = class extends A {
     super(e3), this.faker = e3;
   }
   month(e3 = {}) {
-    let { abbreviated: t3 = false, context: n2 = false } = e3, r3 = this.faker.definitions.date.month, i2;
-    i2 = t3 ? n2 && r3.abbr_context != null ? `abbr_context` : `abbr` : n2 && r3.wide_context != null ? `wide_context` : `wide`;
-    let o2 = r3[i2];
+    let { abbreviated: t3 = false, context: n2 = false } = e3, r4 = this.faker.definitions.date.month, i2;
+    i2 = t3 ? n2 && r4.abbr_context != null ? `abbr_context` : `abbr` : n2 && r4.wide_context != null ? `wide_context` : `wide`;
+    let o2 = r4[i2];
     return a(o2, `date.month`, i2), this.faker.helpers.arrayElement(o2);
   }
   weekday(e3 = {}) {
-    let { abbreviated: t3 = false, context: n2 = false } = e3, r3 = this.faker.definitions.date.weekday, i2;
-    i2 = t3 ? n2 && r3.abbr_context != null ? `abbr_context` : `abbr` : n2 && r3.wide_context != null ? `wide_context` : `wide`;
-    let o2 = r3[i2];
+    let { abbreviated: t3 = false, context: n2 = false } = e3, r4 = this.faker.definitions.date.weekday, i2;
+    i2 = t3 ? n2 && r4.abbr_context != null ? `abbr_context` : `abbr` : n2 && r4.wide_context != null ? `wide_context` : `wide`;
+    let o2 = r4[i2];
     return a(o2, `date.weekday`, i2), this.faker.helpers.arrayElement(o2);
   }
   timeZone() {
@@ -27272,7 +30675,7 @@ var Ce = class extends S {
     return `${e3}${Math.ceil(t3 / 10) * 10 - t3}`;
   }
   amount(e3 = {}) {
-    let { autoFormat: t3 = false, dec: n2 = 2, max: r3 = 1e3, min: i2 = 0, symbol: a2 = `` } = e3, o2 = this.faker.number.float({ max: r3, min: i2, fractionDigits: n2 });
+    let { autoFormat: t3 = false, dec: n2 = 2, max: r4 = 1e3, min: i2 = 0, symbol: a2 = `` } = e3, o2 = this.faker.number.float({ max: r4, min: i2, fractionDigits: n2 });
     return a2 + (t3 ? o2.toLocaleString(void 0, { minimumFractionDigits: n2 }) : o2.toFixed(n2));
   }
   transactionType() {
@@ -27298,8 +30701,8 @@ var Ce = class extends S {
     return this.currency().numericCode;
   }
   bitcoinAddress(e3 = {}) {
-    let { type: t3 = this.faker.helpers.enumValue(j), network: n2 = `mainnet` } = e3, r3 = xe[t3], i2 = r3.prefix[n2], a2 = this.faker.number.int(r3.length);
-    return i2 + this.faker.string.alphanumeric({ length: a2 - i2.length, casing: r3.casing, exclude: r3.exclude });
+    let { type: t3 = this.faker.helpers.enumValue(j), network: n2 = `mainnet` } = e3, r4 = xe[t3], i2 = r4.prefix[n2], a2 = this.faker.number.int(r4.length);
+    return i2 + this.faker.string.alphanumeric({ length: a2 - i2.length, casing: r4.casing, exclude: r4.exclude });
   }
   litecoinAddress() {
     let e3 = this.faker.number.int({ min: 26, max: 33 });
@@ -27307,11 +30710,11 @@ var Ce = class extends S {
   }
   creditCardNumber(e3 = {}) {
     typeof e3 == `string` && (e3 = { issuer: e3 });
-    let { issuer: t3 = `` } = e3, n2, r3 = this.faker.definitions.finance.credit_card, i2 = t3.toLowerCase();
-    if (i2 in r3) n2 = this.faker.helpers.arrayElement(r3[i2]);
+    let { issuer: t3 = `` } = e3, n2, r4 = this.faker.definitions.finance.credit_card, i2 = t3.toLowerCase();
+    if (i2 in r4) n2 = this.faker.helpers.arrayElement(r4[i2]);
     else if (t3.includes(`#`)) n2 = t3;
     else {
-      let e4 = this.faker.helpers.objectValue(r3);
+      let e4 = this.faker.helpers.objectValue(r4);
       n2 = this.faker.helpers.arrayElement(e4);
     }
     return n2 = n2.replaceAll(`/`, ``), this.faker.helpers.replaceCreditCardSymbols(n2);
@@ -27332,7 +30735,7 @@ var Ce = class extends S {
     return this.faker.string.hexadecimal({ length: 40, casing: `lower` });
   }
   iban(t3 = {}) {
-    let { countryCode: n2, formatted: r3 = false } = t3, i2 = n2 ? M.formats.find((e3) => e3.country === n2) : this.faker.helpers.arrayElement(M.formats);
+    let { countryCode: n2, formatted: r4 = false } = t3, i2 = n2 ? M.formats.find((e3) => e3.country === n2) : this.faker.helpers.arrayElement(M.formats);
     if (!i2) throw new e(`Country code ${n2} not supported.`);
     let a2 = ``, o2 = 0;
     for (let e3 of i2.bban) {
@@ -27343,7 +30746,7 @@ var Ce = class extends S {
     let s2 = 98 - M.mod97(M.toDigitString(`${a2}${i2.country}00`));
     s2 < 10 && (s2 = `0${s2}`);
     let c2 = `${i2.country}${s2}${a2}`;
-    return r3 ? Se(c2) : c2;
+    return r4 ? Se(c2) : c2;
   }
   bic(e3 = {}) {
     let { includeBranchCode: t3 = this.faker.datatype.boolean() } = e3;
@@ -27390,10 +30793,10 @@ var Te = class extends S {
     return `${this.faker.hacker.noun().replace(` `, `-`)}-${this.faker.hacker.verb().replace(` `, `-`)}`;
   }
   commitEntry(e3 = {}) {
-    let { merge: t3 = this.faker.datatype.boolean({ probability: 0.2 }), eol: n2 = `CRLF`, refDate: r3 } = e3, i2 = [`commit ${this.faker.git.commitSha()}`];
+    let { merge: t3 = this.faker.datatype.boolean({ probability: 0.2 }), eol: n2 = `CRLF`, refDate: r4 } = e3, i2 = [`commit ${this.faker.git.commitSha()}`];
     t3 && i2.push(`Merge: ${this.commitSha({ length: 7 })} ${this.commitSha({ length: 7 })}`);
     let a2 = this.faker.person.firstName(), o2 = this.faker.person.lastName(), s2 = this.faker.person.fullName({ firstName: a2, lastName: o2 }), c2 = this.faker.internet.username({ firstName: a2, lastName: o2 }), l2 = this.faker.helpers.arrayElement([s2, c2]), u2 = this.faker.internet.email({ firstName: a2, lastName: o2 });
-    l2 = l2.replaceAll(/^[.,:;"\\']|[<>\n]|[.,:;"\\']$/g, ``), i2.push(`Author: ${l2} <${u2}>`, `Date: ${this.commitDate({ refDate: r3 })}`, ``, `${`\xA0`.repeat(4)}${this.commitMessage()}`, ``);
+    l2 = l2.replaceAll(/^[.,:;"\\']|[<>\n]|[.,:;"\\']$/g, ``), i2.push(`Author: ${l2} <${u2}>`, `Date: ${this.commitDate({ refDate: r4 })}`, ``, `${`\xA0`.repeat(4)}${this.commitMessage()}`, ``);
     let d2 = n2 === `CRLF` ? `\r
 ` : `
 `;
@@ -27403,7 +30806,7 @@ var Te = class extends S {
     return `${this.faker.hacker.verb()} ${this.faker.hacker.adjective()} ${this.faker.hacker.noun()}`;
   }
   commitDate(e3 = {}) {
-    let { refDate: t3 = this.faker.defaultRefDate() } = e3, n2 = [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`], r3 = [`Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`], i2 = this.faker.date.recent({ days: 1, refDate: t3 }), a2 = n2[i2.getUTCDay()], o2 = r3[i2.getUTCMonth()], s2 = i2.getUTCDate(), c2 = i2.getUTCHours().toString().padStart(2, `0`), l2 = i2.getUTCMinutes().toString().padStart(2, `0`), u2 = i2.getUTCSeconds().toString().padStart(2, `0`), d2 = i2.getUTCFullYear(), f2 = this.faker.number.int({ min: -11, max: 12 }), p2 = Math.abs(f2).toString().padStart(2, `0`);
+    let { refDate: t3 = this.faker.defaultRefDate() } = e3, n2 = [`Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`], r4 = [`Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`], i2 = this.faker.date.recent({ days: 1, refDate: t3 }), a2 = n2[i2.getUTCDay()], o2 = r4[i2.getUTCMonth()], s2 = i2.getUTCDate(), c2 = i2.getUTCHours().toString().padStart(2, `0`), l2 = i2.getUTCMinutes().toString().padStart(2, `0`), u2 = i2.getUTCSeconds().toString().padStart(2, `0`), d2 = i2.getUTCFullYear(), f2 = this.faker.number.int({ min: -11, max: 12 }), p2 = Math.abs(f2).toString().padStart(2, `0`);
     return `${a2} ${o2} ${s2} ${c2}:${l2}:${u2} ${d2} ${f2 >= 0 ? `+` : `-`}${p2}00`;
   }
   commitSha(e3 = {}) {
@@ -27432,10 +30835,10 @@ var Ee = class extends S {
   }
 };
 var De = /\.|\(/;
-function Oe(t3, n2, r3 = [n2, n2.definitions.raw]) {
+function Oe(t3, n2, r4 = [n2, n2.definitions.raw]) {
   if (t3.length === 0) throw new e(`Eval expression cannot be empty.`);
-  if (r3.length === 0) throw new e(`Eval entrypoints cannot be empty.`);
-  let i2 = r3, a2 = t3;
+  if (r4.length === 0) throw new e(`Eval entrypoints cannot be empty.`);
+  let i2 = r4, a2 = t3;
   do {
     let e3;
     a2.startsWith(`(`) ? [e3, i2] = ke(a2, i2) : [e3, i2] = je(a2, i2), a2 = a2.substring(e3), i2 = i2.filter((e4) => e4 != null).map((e4) => Array.isArray(e4) ? n2.helpers.arrayElement(e4) : e4);
@@ -27445,7 +30848,7 @@ function Oe(t3, n2, r3 = [n2, n2.definitions.raw]) {
   return typeof o2 == `function` ? o2() : o2;
 }
 function ke(t3, n2) {
-  let [r3, i2] = Ae(t3), a2 = t3[r3 + 1];
+  let [r4, i2] = Ae(t3), a2 = t3[r4 + 1];
   switch (a2) {
     case `.`:
     case `(`:
@@ -27454,7 +30857,7 @@ function ke(t3, n2) {
     default:
       throw new e(`Expected dot ('.'), open parenthesis ('('), or nothing after function call but got '${a2}'`);
   }
-  return [r3 + (a2 === `.` ? 2 : 1), n2.map((e3) => typeof e3 == `function` ? e3(...i2) : void 0)];
+  return [r4 + (a2 === `.` ? 2 : 1), n2.map((e3) => typeof e3 == `function` ? e3(...i2) : void 0)];
 }
 function Ae(t3) {
   let n2 = t3.indexOf(`)`, 1);
@@ -27472,11 +30875,11 @@ function Ae(t3) {
     n2 = t3.indexOf(`)`, n2 + 1);
   }
   n2 = t3.lastIndexOf(`)`);
-  let r3 = t3.substring(1, n2);
-  return [n2, [r3]];
+  let r4 = t3.substring(1, n2);
+  return [n2, [r4]];
 }
 function je(t3, n2) {
-  let r3 = De.exec(t3), i2 = (r3?.[0] ?? ``) === `.`, a2 = r3?.index ?? t3.length, o2 = t3.substring(0, a2);
+  let r4 = De.exec(t3), i2 = (r4?.[0] ?? ``) === `.`, a2 = r4?.index ?? t3.length, o2 = t3.substring(0, a2);
   if (o2.length === 0) throw new e(`Expression parts cannot be empty in '${t3}'`);
   let s2 = t3[a2 + 1];
   if (i2 && (s2 == null || s2 === `.` || s2 === `(`)) throw new e(`Found dot without property name in '${t3}'`);
@@ -27504,13 +30907,13 @@ function Me(e3) {
 function Ne(e3) {
   e3 = e3.replaceAll(/[\s-]/g, ``);
   let t3 = 0, n2 = false;
-  for (let r3 = e3.length - 1; r3 >= 0; r3--) {
-    let i2 = Number.parseInt(e3[r3]);
+  for (let r4 = e3.length - 1; r4 >= 0; r4--) {
+    let i2 = Number.parseInt(e3[r4]);
     n2 && (i2 *= 2, i2 > 9 && (i2 = i2 % 10 + 1)), t3 += i2, n2 = !n2;
   }
   return t3 % 10;
 }
-function F(t3, n2, r3, i2) {
+function F(t3, n2, r4, i2) {
   let a2 = 1;
   if (n2) switch (n2) {
     case `?`:
@@ -27531,49 +30934,49 @@ function F(t3, n2, r3, i2) {
     default:
       throw new e(`Unknown quantifier symbol provided.`);
   }
-  else r3 != null && i2 != null ? a2 = t3.number.int({ min: Number.parseInt(r3), max: Number.parseInt(i2) }) : r3 != null && i2 == null && (a2 = Number.parseInt(r3));
+  else r4 != null && i2 != null ? a2 = t3.number.int({ min: Number.parseInt(r4), max: Number.parseInt(i2) }) : r4 != null && i2 == null && (a2 = Number.parseInt(r4));
   return a2;
 }
 function Pe(e3, t3 = ``) {
-  let n2 = /(.)\{(\d+),(\d+)\}/, r3 = /(.)\{(\d+)\}/, i2 = /\[(\d+)-(\d+)\]/, a2, o2, s2, c2, l2 = n2.exec(t3);
+  let n2 = /(.)\{(\d+),(\d+)\}/, r4 = /(.)\{(\d+)\}/, i2 = /\[(\d+)-(\d+)\]/, a2, o2, s2, c2, l2 = n2.exec(t3);
   for (; l2 != null; ) a2 = Number.parseInt(l2[2]), o2 = Number.parseInt(l2[3]), a2 > o2 && (s2 = o2, o2 = a2, a2 = s2), c2 = e3.number.int({ min: a2, max: o2 }), t3 = t3.slice(0, l2.index) + l2[1].repeat(c2) + t3.slice(l2.index + l2[0].length), l2 = n2.exec(t3);
-  for (l2 = r3.exec(t3); l2 != null; ) c2 = Number.parseInt(l2[2]), t3 = t3.slice(0, l2.index) + l2[1].repeat(c2) + t3.slice(l2.index + l2[0].length), l2 = r3.exec(t3);
+  for (l2 = r4.exec(t3); l2 != null; ) c2 = Number.parseInt(l2[2]), t3 = t3.slice(0, l2.index) + l2[1].repeat(c2) + t3.slice(l2.index + l2[0].length), l2 = r4.exec(t3);
   for (l2 = i2.exec(t3); l2 != null; ) a2 = Number.parseInt(l2[1]), o2 = Number.parseInt(l2[2]), a2 > o2 && (s2 = o2, o2 = a2, a2 = s2), t3 = t3.slice(0, l2.index) + e3.number.int({ min: a2, max: o2 }).toString() + t3.slice(l2.index + l2[0].length), l2 = i2.exec(t3);
   return t3;
 }
 function Fe(e3, t3, n2) {
-  let r3 = ``, i2 = false;
+  let r4 = ``, i2 = false;
   for (let a2 = 0; a2 < t3.length; a2++) {
     let o2 = t3[a2];
     if (o2 === `\\`) {
-      r3 += o2, a2 + 1 < t3.length && (r3 += t3[++a2]);
+      r4 += o2, a2 + 1 < t3.length && (r4 += t3[++a2]);
       continue;
     }
     if (o2 === `[`) {
-      i2 = true, r3 += o2;
+      i2 = true, r4 += o2;
       continue;
     }
     if (o2 === `]`) {
-      i2 = false, r3 += o2;
+      i2 = false, r4 += o2;
       continue;
     }
     let s2 = t3[a2 + 1], c2 = [`?`, `*`, `+`, `{`].includes(s2);
     if (!i2 && !c2 && o2 === `.`) {
-      r3 += e3.string.alphanumeric();
+      r4 += e3.string.alphanumeric();
       continue;
     }
     if (!i2 && !c2 && n2 && /^[a-z]$/i.test(o2)) {
-      r3 += e3.string.fromCharacters([o2.toLowerCase(), o2.toUpperCase()]);
+      r4 += e3.string.fromCharacters([o2.toLowerCase(), o2.toUpperCase()]);
       continue;
     }
-    r3 += o2;
+    r4 += o2;
   }
-  return r3;
+  return r4;
 }
 function I(e3, t3 = ``, n2 = `#`) {
-  let r3 = ``;
-  for (let i2 = 0; i2 < t3.length; i2++) t3.charAt(i2) === n2 ? r3 += e3.number.int(9) : t3.charAt(i2) === `!` ? r3 += e3.number.int({ min: 2, max: 9 }) : r3 += t3.charAt(i2);
-  return r3;
+  let r4 = ``;
+  for (let i2 = 0; i2 < t3.length; i2++) t3.charAt(i2) === n2 ? r4 += e3.number.int(9) : t3.charAt(i2) === `!` ? r4 += e3.number.int({ min: 2, max: 9 }) : r4 += t3.charAt(i2);
+  return r4;
 }
 var L = class extends x {
   slugify(e3 = ``) {
@@ -27581,7 +30984,7 @@ var L = class extends x {
   }
   replaceSymbols(e3 = ``) {
     let t3 = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`.split(``), n2 = ``;
-    for (let r3 = 0; r3 < e3.length; r3++) e3.charAt(r3) === `#` ? n2 += this.faker.number.int(9) : e3.charAt(r3) === `?` ? n2 += this.arrayElement(t3) : e3.charAt(r3) === `*` ? n2 += this.faker.datatype.boolean() ? this.arrayElement(t3) : this.faker.number.int(9) : n2 += e3.charAt(r3);
+    for (let r4 = 0; r4 < e3.length; r4++) e3.charAt(r4) === `#` ? n2 += this.faker.number.int(9) : e3.charAt(r4) === `?` ? n2 += this.arrayElement(t3) : e3.charAt(r4) === `*` ? n2 += this.faker.datatype.boolean() ? this.arrayElement(t3) : this.faker.number.int(9) : n2 += e3.charAt(r4);
     return n2;
   }
   replaceCreditCardSymbols(e3 = `6453-####-####-####-###L`, t3 = `#`) {
@@ -27594,10 +30997,10 @@ var L = class extends x {
     if (t3 instanceof RegExp && (n2 = t3.flags.includes(`i`), t3 = t3.source.replace(/^\^+/, ``).replace(/\$+$/, ``)), t3 === `.`) return this.faker.string.alphanumeric();
     if (n2 && /^[a-z]$/i.test(t3)) return this.faker.string.fromCharacters([t3.toLowerCase(), t3.toUpperCase()]);
     t3 = Fe(this.faker, t3, n2);
-    let r3, i2, a2, o2 = /([.A-Za-z0-9])(?:\{(\d+)(?:,(\d+)|)\}|(\?|\*|\+))(?![^[]*]|[^{]*})/, s2 = o2.exec(t3);
+    let r4, i2, a2, o2 = /([.A-Za-z0-9])(?:\{(\d+)(?:,(\d+)|)\}|(\?|\*|\+))(?![^[]*]|[^{]*})/, s2 = o2.exec(t3);
     for (; s2 != null; ) {
-      let e3 = s2[2], r4 = s2[3], i3 = s2[4];
-      a2 = F(this.faker, i3, e3, r4);
+      let e3 = s2[2], r5 = s2[3], i3 = s2[4];
+      a2 = F(this.faker, i3, e3, r5);
       let c3;
       c3 = s2[1] === `.` ? this.faker.string.alphanumeric(a2) : n2 ? this.faker.string.fromCharacters([s2[1].toLowerCase(), s2[1].toUpperCase()], a2) : s2[1].repeat(a2), t3 = t3.slice(0, s2.index) + c3 + t3.slice(s2.index + s2[0].length), s2 = o2.exec(t3);
     }
@@ -27607,8 +31010,8 @@ var L = class extends x {
       for (u3 && m2.push(45); g2 != null; ) {
         if (g2[0].includes(`-`)) {
           let t4 = g2[0].split(`-`).map((e3) => e3.codePointAt(0) ?? NaN);
-          if (r3 = t4[0], i2 = t4[1], r3 > i2) throw new e(`Character range provided is out of order.`);
-          for (let e3 = r3; e3 <= i2; e3++) if (n2 && Number.isNaN(Number(String.fromCodePoint(e3)))) {
+          if (r4 = t4[0], i2 = t4[1], r4 > i2) throw new e(`Character range provided is out of order.`);
+          for (let e3 = r4; e3 <= i2; e3++) if (n2 && Number.isNaN(Number(String.fromCodePoint(e3)))) {
             let t5 = String.fromCodePoint(e3);
             m2.push(t5.toUpperCase().codePointAt(0) ?? NaN, t5.toLowerCase().codePointAt(0) ?? NaN);
           } else m2.push(e3);
@@ -27644,8 +31047,8 @@ var L = class extends x {
     }
     let u2 = /(.)\{(\d+),(\d+)\}/;
     for (s2 = u2.exec(t3); s2 != null; ) {
-      if (r3 = Number.parseInt(s2[2]), i2 = Number.parseInt(s2[3]), r3 > i2) throw new e(`Numbers out of order in {} quantifier.`);
-      a2 = this.faker.number.int({ min: r3, max: i2 }), t3 = t3.slice(0, s2.index) + s2[1].repeat(a2) + t3.slice(s2.index + s2[0].length), s2 = u2.exec(t3);
+      if (r4 = Number.parseInt(s2[2]), i2 = Number.parseInt(s2[3]), r4 > i2) throw new e(`Numbers out of order in {} quantifier.`);
+      a2 = this.faker.number.int({ min: r4, max: i2 }), t3 = t3.slice(0, s2.index) + s2[1].repeat(a2) + t3.slice(s2.index + s2[0].length), s2 = u2.exec(t3);
     }
     let d2 = /(.)\{(\d+)\}/;
     for (s2 = d2.exec(t3); s2 != null; ) a2 = Number.parseInt(s2[2]), t3 = t3.slice(0, s2.index) + s2[1].repeat(a2) + t3.slice(s2.index + s2[0].length), s2 = d2.exec(t3);
@@ -27668,8 +31071,8 @@ var L = class extends x {
     let n2 = /* @__PURE__ */ new Set();
     try {
       if (typeof e3 == `function`) {
-        let r3 = 1e3 * t3, i2 = 0;
-        for (; n2.size < t3 && i2 < r3; ) n2.add(e3()), i2++;
+        let r4 = 1e3 * t3, i2 = 0;
+        for (; n2.size < t3 && i2 < r4; ) n2.add(e3()), i2++;
       }
     } catch {
     }
@@ -27678,8 +31081,8 @@ var L = class extends x {
   mustache(e3, t3) {
     if (e3 == null) return ``;
     for (let n2 in t3) {
-      let r3 = RegExp(`{{${n2}}}`, `g`), i2 = t3[n2];
-      typeof i2 == `string` && (i2 = i2.replaceAll(`$`, `$$$$`)), e3 = e3.replace(r3, i2);
+      let r4 = RegExp(`{{${n2}}}`, `g`), i2 = t3[n2];
+      typeof i2 == `string` && (i2 = i2.replaceAll(`$`, `$$$$`)), e3 = e3.replace(r4, i2);
     }
     return e3;
   }
@@ -27704,8 +31107,8 @@ var L = class extends x {
   weightedArrayElement(t3) {
     if (t3.length === 0) throw new e(`weightedArrayElement expects an array with at least one element`);
     if (!t3.every((e3) => e3.weight > 0)) throw new e(`weightedArrayElement expects an array of { weight, value } objects where weight is a positive number`);
-    let n2 = t3.reduce((e3, { weight: t4 }) => e3 + t4, 0), r3 = this.faker.number.float({ min: 0, max: n2 }), i2 = 0;
-    for (let { weight: e3, value: n3 } of t3) if (i2 += e3, r3 < i2) return n3;
+    let n2 = t3.reduce((e3, { weight: t4 }) => e3 + t4, 0), r4 = this.faker.number.float({ min: 0, max: n2 }), i2 = 0;
+    for (let { weight: e3, value: n3 } of t3) if (i2 += e3, r4 < i2) return n3;
     return t3.at(-1).value;
   }
   arrayElements(e3, t3) {
@@ -27713,9 +31116,9 @@ var L = class extends x {
     let n2 = this.rangeToNumber(t3 ?? { min: 1, max: e3.length });
     if (n2 >= e3.length) return this.shuffle(e3);
     if (n2 <= 0) return [];
-    let r3 = [...e3], i2 = e3.length, a2 = i2 - n2, o2, s2;
-    for (; i2-- > a2; ) s2 = this.faker.number.int(i2), o2 = r3[s2], r3[s2] = r3[i2], r3[i2] = o2;
-    return r3.slice(a2);
+    let r4 = [...e3], i2 = e3.length, a2 = i2 - n2, o2, s2;
+    for (; i2-- > a2; ) s2 = this.faker.number.int(i2), o2 = r4[s2], r4[s2] = r4[i2], r4[i2] = o2;
+    return r4.slice(a2);
   }
   enumValue(e3) {
     let t3 = Object.keys(e3).filter((e4) => Number.isNaN(Number(e4)));
@@ -27738,7 +31141,7 @@ var Ie = class extends L {
     e3 = typeof e3 == `string` ? e3 : this.arrayElement(e3);
     let t3 = e3.search(/{{[a-z]/), n2 = e3.indexOf(`}}`, t3);
     if (t3 === -1 || n2 === -1) return e3;
-    let r3 = Oe(e3.substring(t3 + 2, n2 + 2).replace(`}}`, ``).replace(`{{`, ``), this.faker), i2 = String(r3), a2 = e3.substring(0, t3) + i2 + e3.substring(n2 + 2);
+    let r4 = Oe(e3.substring(t3 + 2, n2 + 2).replace(`}}`, ``).replace(`{{`, ``), this.faker), i2 = String(r4), a2 = e3.substring(0, t3) + i2 + e3.substring(n2 + 2);
     return this.fake(a2);
   }
 };
@@ -27755,8 +31158,8 @@ function B(e3) {
   }
 }
 function Le(e3) {
-  let { deprecated: t3, since: n2, until: r3, proposed: i2 } = e3, a2 = `[@faker-js/faker]: ${t3} is deprecated`;
-  n2 && (a2 += ` since v${n2}`), r3 && (a2 += ` and will be removed in v${r3}`), i2 && (a2 += `. Please use ${i2} instead`), console.warn(`${a2}.`);
+  let { deprecated: t3, since: n2, until: r4, proposed: i2 } = e3, a2 = `[@faker-js/faker]: ${t3} is deprecated`;
+  n2 && (a2 += ` since v${n2}`), r4 && (a2 += ` and will be removed in v${r4}`), i2 && (a2 += `. Please use ${i2} instead`), console.warn(`${a2}.`);
 }
 var Re = class extends S {
   avatar() {
@@ -27775,15 +31178,15 @@ var Re = class extends S {
   }
   urlLoremFlickr(e3 = {}) {
     Le({ deprecated: `faker.image.urlLoremFlickr()`, proposed: `faker.image.url()`, since: `10.1.0`, until: `11.0.0` });
-    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), category: r3 } = e3;
-    return `https://loremflickr.com/${t3}/${n2}${r3 == null ? `` : `/${r3}`}?lock=${this.faker.number.int()}`;
+    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), category: r4 } = e3;
+    return `https://loremflickr.com/${t3}/${n2}${r4 == null ? `` : `/${r4}`}?lock=${this.faker.number.int()}`;
   }
   urlPicsumPhotos(e3 = {}) {
-    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), grayscale: r3 = this.faker.datatype.boolean(), blur: i2 = this.faker.number.int({ max: 10 }) } = e3, a2 = `https://picsum.photos/seed/${this.faker.string.alphanumeric({ length: { min: 5, max: 10 } })}/${t3}/${n2}`, o2 = typeof i2 == `number` && i2 >= 1 && i2 <= 10;
-    return (r3 || o2) && (a2 += `?`, r3 && (a2 += `grayscale`), r3 && o2 && (a2 += `&`), o2 && (a2 += `blur=${i2}`)), a2;
+    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), grayscale: r4 = this.faker.datatype.boolean(), blur: i2 = this.faker.number.int({ max: 10 }) } = e3, a2 = `https://picsum.photos/seed/${this.faker.string.alphanumeric({ length: { min: 5, max: 10 } })}/${t3}/${n2}`, o2 = typeof i2 == `number` && i2 >= 1 && i2 <= 10;
+    return (r4 || o2) && (a2 += `?`, r4 && (a2 += `grayscale`), r4 && o2 && (a2 += `&`), o2 && (a2 += `blur=${i2}`)), a2;
   }
   dataUri(e3 = {}) {
-    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), color: r3 = this.faker.color.rgb(), type: i2 = this.faker.helpers.arrayElement([`svg-uri`, `svg-base64`]) } = e3, a2 = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="${t3}" height="${n2}"><rect width="100%" height="100%" fill="${r3}"/><text x="${t3 / 2}" y="${n2 / 2}" font-size="20" alignment-baseline="middle" text-anchor="middle" fill="white">${t3}x${n2}</text></svg>`;
+    let { width: t3 = this.faker.number.int({ min: 1, max: 3999 }), height: n2 = this.faker.number.int({ min: 1, max: 3999 }), color: r4 = this.faker.color.rgb(), type: i2 = this.faker.helpers.arrayElement([`svg-uri`, `svg-base64`]) } = e3, a2 = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="${t3}" height="${n2}"><rect width="100%" height="100%" fill="${r4}"/><text x="${t3 / 2}" y="${n2 / 2}" font-size="20" alignment-baseline="middle" text-anchor="middle" fill="white">${t3}x${n2}</text></svg>`;
     return i2 === `svg-uri` ? `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(a2)}` : `data:image/svg+xml;base64,${R(a2)}`;
   }
 };
@@ -27804,25 +31207,25 @@ function H(e3) {
 function U(e3, t3) {
   let n2 = e3.helpers.slugify(t3);
   if (H(n2)) return n2;
-  let r3 = e3.helpers.slugify(e3.lorem.word());
-  return H(r3) ? r3 : e3.string.alpha({ casing: `lower`, length: e3.number.int({ min: 4, max: 8 }) });
+  let r4 = e3.helpers.slugify(e3.lorem.word());
+  return H(r4) ? r4 : e3.string.alpha({ casing: `lower`, length: e3.number.int({ min: 4, max: 8 }) });
 }
 var qe = class extends S {
   email(e3 = {}) {
-    let { firstName: t3, lastName: n2, provider: r3 = this.faker.helpers.arrayElement(this.faker.definitions.internet.free_email), allowSpecialCharacters: i2 = false } = e3, a2 = this.username({ firstName: t3, lastName: n2 });
+    let { firstName: t3, lastName: n2, provider: r4 = this.faker.helpers.arrayElement(this.faker.definitions.internet.free_email), allowSpecialCharacters: i2 = false } = e3, a2 = this.username({ firstName: t3, lastName: n2 });
     if (a2 = a2.replaceAll(/[^A-Za-z0-9._+-]+/g, ``), a2 = a2.substring(0, 50), i2) {
       let e4 = [...`._-`], t4 = [...".!#$%&'*+-/=?^_`{|}~"];
       a2 = a2.replace(this.faker.helpers.arrayElement(e4), this.faker.helpers.arrayElement(t4));
     }
-    return a2 = a2.replaceAll(/\.{2,}/g, `.`), a2 = a2.replace(/^\./, ``), a2 = a2.replace(/\.$/, ``), `${a2}@${r3}`;
+    return a2 = a2.replaceAll(/\.{2,}/g, `.`), a2 = a2.replace(/^\./, ``), a2 = a2.replace(/\.$/, ``), `${a2}@${r4}`;
   }
   exampleEmail(e3 = {}) {
-    let { firstName: t3, lastName: n2, allowSpecialCharacters: r3 = false } = e3, i2 = this.faker.helpers.arrayElement(this.faker.definitions.internet.example_email);
-    return this.email({ firstName: t3, lastName: n2, provider: i2, allowSpecialCharacters: r3 });
+    let { firstName: t3, lastName: n2, allowSpecialCharacters: r4 = false } = e3, i2 = this.faker.helpers.arrayElement(this.faker.definitions.internet.example_email);
+    return this.email({ firstName: t3, lastName: n2, provider: i2, allowSpecialCharacters: r4 });
   }
   username(e3 = {}) {
-    let { firstName: t3 = this.faker.person.firstName(), lastName: n2 = this.faker.person.lastName(), lastName: r3 } = e3, i2 = this.faker.helpers.arrayElement([`.`, `_`]), a2 = this.faker.number.int(99), o2 = [() => `${t3}${i2}${n2}${a2}`, () => `${t3}${i2}${n2}`];
-    r3 || o2.push(() => `${t3}${a2}`);
+    let { firstName: t3 = this.faker.person.firstName(), lastName: n2 = this.faker.person.lastName(), lastName: r4 } = e3, i2 = this.faker.helpers.arrayElement([`.`, `_`]), a2 = this.faker.number.int(99), o2 = [() => `${t3}${i2}${n2}${a2}`, () => `${t3}${i2}${n2}`];
+    r4 || o2.push(() => `${t3}${a2}`);
     let s2 = this.faker.helpers.arrayElement(o2)();
     return s2 = s2.normalize(`NFKD`).replaceAll(/[\u0300-\u036F]/g, ``), s2 = [...s2].map((e4) => {
       if (V[e4]) return V[e4];
@@ -27831,7 +31234,7 @@ var qe = class extends S {
     }).join(``), s2 = s2.replaceAll(`'`, ``), s2 = s2.replaceAll(` `, ``), s2;
   }
   displayName(e3 = {}) {
-    let { firstName: t3 = this.faker.person.firstName(), lastName: n2 = this.faker.person.lastName() } = e3, r3 = this.faker.helpers.arrayElement([`.`, `_`]), i2 = this.faker.number.int(99), a2 = this.faker.helpers.arrayElement([() => `${t3}${i2}`, () => `${t3}${r3}${n2}`, () => `${t3}${r3}${n2}${i2}`])();
+    let { firstName: t3 = this.faker.person.firstName(), lastName: n2 = this.faker.person.lastName() } = e3, r4 = this.faker.helpers.arrayElement([`.`, `_`]), i2 = this.faker.number.int(99), a2 = this.faker.helpers.arrayElement([() => `${t3}${i2}`, () => `${t3}${r4}${n2}`, () => `${t3}${r4}${n2}${i2}`])();
     return a2 = a2.replaceAll(`'`, ``), a2 = a2.replaceAll(` `, ``), a2;
   }
   protocol() {
@@ -27861,9 +31264,9 @@ var qe = class extends S {
     return this.faker.datatype.boolean() ? this.ipv4() : this.ipv6();
   }
   ipv4(t3 = {}) {
-    let { network: n2 = `any`, cidrBlock: r3 = Ke[n2] } = t3;
-    if (!/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}$/.test(r3)) throw new e(`Invalid CIDR block provided: ${r3}. Must be in the format x.x.x.x/y.`);
-    let [i2, a2] = r3.split(`/`), o2 = 4294967295 >>> Number.parseInt(a2), [s2, c2, l2, u2] = i2.split(`.`).map(Number), d2 = (s2 << 24 | c2 << 16 | l2 << 8 | u2) & ~o2 | this.faker.number.int(o2);
+    let { network: n2 = `any`, cidrBlock: r4 = Ke[n2] } = t3;
+    if (!/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/\d{1,2}$/.test(r4)) throw new e(`Invalid CIDR block provided: ${r4}. Must be in the format x.x.x.x/y.`);
+    let [i2, a2] = r4.split(`/`), o2 = 4294967295 >>> Number.parseInt(a2), [s2, c2, l2, u2] = i2.split(`.`).map(Number), d2 = (s2 << 24 | c2 << 16 | l2 << 8 | u2) & ~o2 | this.faker.number.int(o2);
     return [d2 >>> 24 & 255, d2 >>> 16 & 255, d2 >>> 8 & 255, d2 & 255].join(`.`);
   }
   ipv6() {
@@ -27877,18 +31280,18 @@ var qe = class extends S {
   }
   mac(e3 = {}) {
     typeof e3 == `string` && (e3 = { separator: e3 });
-    let { separator: t3 = `:` } = e3, n2, r3 = ``;
-    for ([`:`, `-`, ``].includes(t3) || (t3 = `:`), n2 = 0; n2 < 12; n2++) r3 += this.faker.number.hex(15), n2 % 2 == 1 && n2 !== 11 && (r3 += t3);
-    return r3;
+    let { separator: t3 = `:` } = e3, n2, r4 = ``;
+    for ([`:`, `-`, ``].includes(t3) || (t3 = `:`), n2 = 0; n2 < 12; n2++) r4 += this.faker.number.hex(15), n2 % 2 == 1 && n2 !== 11 && (r4 += t3);
+    return r4;
   }
   password(e3 = {}) {
-    let t3 = /[aeiouAEIOU]$/, n2 = /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]$/, r3 = (e4, i3, a3, o3) => {
+    let t3 = /[aeiouAEIOU]$/, n2 = /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]$/, r4 = (e4, i3, a3, o3) => {
       if (o3.length >= e4) return o3;
       i3 && (a3 = n2.test(o3) ? t3 : n2);
       let s3 = this.faker.number.int(94) + 33, c2 = String.fromCodePoint(s3);
-      return i3 && (c2 = c2.toLowerCase()), a3.test(c2) ? r3(e4, i3, a3, o3 + c2) : r3(e4, i3, a3, o3);
+      return i3 && (c2 = c2.toLowerCase()), a3.test(c2) ? r4(e4, i3, a3, o3 + c2) : r4(e4, i3, a3, o3);
     }, { length: i2 = 15, memorable: a2 = false, pattern: o2 = /\w/, prefix: s2 = `` } = e3;
-    return r3(i2, a2, o2, s2);
+    return r4(i2, a2, o2, s2);
   }
   emoji(e3 = {}) {
     let { types: t3 = Object.keys(this.faker.definitions.internet.emoji) } = e3, n2 = this.faker.helpers.arrayElement(t3);
@@ -27898,23 +31301,23 @@ var qe = class extends S {
     return this.faker.helpers.arrayElement(this.faker.definitions.internet.jwt_algorithm);
   }
   jwt(e3 = {}) {
-    let { refDate: t3 = this.faker.defaultRefDate() } = e3, n2 = this.faker.date.recent({ refDate: t3 }), { header: r3 = { alg: this.jwtAlgorithm(), typ: `JWT` }, payload: i2 = { iat: Math.round(n2.valueOf() / 1e3), exp: Math.round(this.faker.date.soon({ refDate: n2 }).valueOf() / 1e3), nbf: Math.round(this.faker.date.anytime({ refDate: t3 }).valueOf() / 1e3), iss: this.faker.company.name(), sub: this.faker.string.uuid(), aud: this.faker.string.uuid(), jti: this.faker.string.uuid() } } = e3;
-    return `${z(JSON.stringify(r3))}.${z(JSON.stringify(i2))}.${this.faker.string.alphanumeric(64)}`;
+    let { refDate: t3 = this.faker.defaultRefDate() } = e3, n2 = this.faker.date.recent({ refDate: t3 }), { header: r4 = { alg: this.jwtAlgorithm(), typ: `JWT` }, payload: i2 = { iat: Math.round(n2.valueOf() / 1e3), exp: Math.round(this.faker.date.soon({ refDate: n2 }).valueOf() / 1e3), nbf: Math.round(this.faker.date.anytime({ refDate: t3 }).valueOf() / 1e3), iss: this.faker.company.name(), sub: this.faker.string.uuid(), aud: this.faker.string.uuid(), jti: this.faker.string.uuid() } } = e3;
+    return `${z(JSON.stringify(r4))}.${z(JSON.stringify(i2))}.${this.faker.string.alphanumeric(64)}`;
   }
 };
 var W = class extends x {
   latitude(e3 = {}) {
-    let { max: t3 = 90, min: n2 = -90, precision: r3 = 4 } = e3;
-    return this.faker.number.float({ min: n2, max: t3, fractionDigits: r3 });
+    let { max: t3 = 90, min: n2 = -90, precision: r4 = 4 } = e3;
+    return this.faker.number.float({ min: n2, max: t3, fractionDigits: r4 });
   }
   longitude(e3 = {}) {
-    let { max: t3 = 180, min: n2 = -180, precision: r3 = 4 } = e3;
-    return this.faker.number.float({ max: t3, min: n2, fractionDigits: r3 });
+    let { max: t3 = 180, min: n2 = -180, precision: r4 = 4 } = e3;
+    return this.faker.number.float({ max: t3, min: n2, fractionDigits: r4 });
   }
   nearbyGPSCoordinate(e3 = {}) {
-    let { origin: t3, radius: n2 = 10, isMetric: r3 = false } = e3;
+    let { origin: t3, radius: n2 = 10, isMetric: r4 = false } = e3;
     if (t3 == null) return [this.latitude(), this.longitude()];
-    let i2 = this.faker.number.float({ max: 2 * Math.PI, fractionDigits: 5 }), a2 = r3 ? n2 : n2 * 1.60934, o2 = this.faker.number.float({ max: a2, fractionDigits: 3 }) * 0.995 / (4e4 / 360), s2 = [t3[0] + Math.sin(i2) * o2, t3[1] + Math.cos(i2) * o2];
+    let i2 = this.faker.number.float({ max: 2 * Math.PI, fractionDigits: 5 }), a2 = r4 ? n2 : n2 * 1.60934, o2 = this.faker.number.float({ max: a2, fractionDigits: 3 }) * 0.995 / (4e4 / 360), s2 = [t3[0] + Math.sin(i2) * o2, t3[1] + Math.cos(i2) * o2];
     return s2[0] %= 180, Math.abs(s2[0]) > 90 && (s2[0] = Math.sign(s2[0]) * 180 - s2[0], s2[1] += 180), s2[1] = (s2[1] % 360 + 540) % 360 - 180, [s2[0], s2[1]];
   }
 };
@@ -27931,8 +31334,8 @@ var Je = class extends W {
       if (t4 == null) throw new e(`No zip code definition found for state "${n2}"`);
       return this.faker.helpers.fake(t4);
     }
-    let { format: r3 = this.faker.definitions.location.postcode } = t3;
-    return typeof r3 == `string` && (r3 = [r3]), r3 = this.faker.helpers.arrayElement(r3), this.faker.helpers.replaceSymbols(r3);
+    let { format: r4 = this.faker.definitions.location.postcode } = t3;
+    return typeof r4 == `string` && (r4 = [r4]), r4 = this.faker.helpers.arrayElement(r4), this.faker.helpers.replaceSymbols(r4);
   }
   city() {
     return this.faker.helpers.fake(this.faker.definitions.location.city_pattern);
@@ -27982,16 +31385,16 @@ var Je = class extends W {
     return this.faker.helpers.arrayElement(n2);
   }
   direction(e3 = {}) {
-    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r3 = t3 ? [...n2.cardinal_abbr, ...n2.ordinal_abbr] : [...n2.cardinal, ...n2.ordinal];
-    return this.faker.helpers.arrayElement(r3);
+    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r4 = t3 ? [...n2.cardinal_abbr, ...n2.ordinal_abbr] : [...n2.cardinal, ...n2.ordinal];
+    return this.faker.helpers.arrayElement(r4);
   }
   cardinalDirection(e3 = {}) {
-    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r3 = t3 ? n2.cardinal_abbr : n2.cardinal;
-    return this.faker.helpers.arrayElement(r3);
+    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r4 = t3 ? n2.cardinal_abbr : n2.cardinal;
+    return this.faker.helpers.arrayElement(r4);
   }
   ordinalDirection(e3 = {}) {
-    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r3 = t3 ? n2.ordinal_abbr : n2.ordinal;
-    return this.faker.helpers.arrayElement(r3);
+    let { abbreviated: t3 = false } = e3, n2 = this.faker.definitions.location.direction, r4 = t3 ? n2.ordinal_abbr : n2.ordinal;
+    return this.faker.helpers.arrayElement(r4);
   }
   timeZone() {
     return this.faker.helpers.arrayElement(this.faker.definitions.location.time_zone);
@@ -28001,17 +31404,17 @@ var Je = class extends W {
   }
 };
 function Ye(e3, t3, n2 = (e4) => e4) {
-  let r3 = {};
+  let r4 = {};
   for (let i2 of e3) {
     let e4 = t3(i2);
-    r3[e4] === void 0 && (r3[e4] = []), r3[e4].push(n2(i2));
+    r4[e4] === void 0 && (r4[e4] = []), r4[e4].push(n2(i2));
   }
-  return r3;
+  return r4;
 }
 var G = { fail: () => {
   throw new e(`No words found that match the given length.`);
 }, closest: (e3, t3) => {
-  let n2 = Ye(e3, (e4) => e4.length), r3 = Object.keys(n2).map(Number), i2 = Math.min(...r3), a2 = Math.max(...r3), o2 = Math.min(t3.min - i2, a2 - t3.max);
+  let n2 = Ye(e3, (e4) => e4.length), r4 = Object.keys(n2).map(Number), i2 = Math.min(...r4), a2 = Math.max(...r4), o2 = Math.min(t3.min - i2, a2 - t3.max);
   return e3.filter((e4) => e4.length === t3.min - o2 || e4.length === t3.max + o2);
 }, shortest: (e3) => {
   let t3 = Math.min(...e3.map((e4) => e4.length));
@@ -28021,11 +31424,11 @@ var G = { fail: () => {
   return e3.filter((e4) => e4.length === t3);
 }, "any-length": (e3) => [...e3] };
 function K(e3) {
-  let { wordList: t3, length: n2, strategy: r3 = `fail` } = e3;
+  let { wordList: t3, length: n2, strategy: r4 = `fail` } = e3;
   if (n2 != null) {
     let e4 = typeof n2 == `number` ? (e5) => e5.length === n2 : (e5) => e5.length >= n2.min && e5.length <= n2.max, i2 = t3.filter(e4);
-    return i2.length > 0 ? i2 : typeof n2 == `number` ? G[r3](t3, { min: n2, max: n2 }) : G[r3](t3, n2);
-  } else if (r3 === `shortest` || r3 === `longest`) return G[r3](t3);
+    return i2.length > 0 ? i2 : typeof n2 == `number` ? G[r4](t3, { min: n2, max: n2 }) : G[r4](t3, n2);
+  } else if (r4 === `shortest` || r4 === `longest`) return G[r4](t3);
   return [...t3];
 }
 var Xe = class extends S {
@@ -28080,10 +31483,10 @@ var q = (function(e3) {
   return e3.Female = `female`, e3.Generic = `generic`, e3.Male = `male`, e3;
 })({});
 function J(e3, t3 = e3.person.sexType(), n2) {
-  let { generic: r3, female: i2, male: a2 } = n2;
-  if (t3 === `generic`) return r3 ?? e3.helpers.arrayElement([i2, a2]) ?? [];
+  let { generic: r4, female: i2, male: a2 } = n2;
+  if (t3 === `generic`) return r4 ?? e3.helpers.arrayElement([i2, a2]) ?? [];
   let o2 = t3 === `female` ? i2 : a2;
-  return o2 == null ? r3 ?? [] : r3 == null ? o2 : e3.helpers.weightedArrayElement([{ weight: 3 * Math.sqrt(o2.length), value: o2 }, { weight: Math.sqrt(r3.length), value: r3 }]);
+  return o2 == null ? r4 ?? [] : r4 == null ? o2 : e3.helpers.weightedArrayElement([{ weight: 3 * Math.sqrt(o2.length), value: o2 }, { weight: Math.sqrt(r4.length), value: r4 }]);
 }
 var Qe = class extends S {
   firstName(e3) {
@@ -28101,8 +31504,8 @@ var Qe = class extends S {
     return this.faker.helpers.arrayElement(J(this.faker, e3, this.faker.definitions.person.middle_name));
   }
   fullName(e3 = {}) {
-    let { sex: t3 = this.faker.helpers.arrayElement([`female`, `male`]), firstName: n2 = this.firstName(t3), lastName: r3 = this.lastName(t3) } = e3, i2 = this.faker.helpers.weightedArrayElement(this.faker.definitions.person.name);
-    return this.faker.helpers.mustache(i2, { "person.prefix": () => this.prefix(t3), "person.firstName": () => n2, "person.middleName": () => this.middleName(t3), "person.lastName": () => r3, "person.suffix": () => this.suffix() });
+    let { sex: t3 = this.faker.helpers.arrayElement([`female`, `male`]), firstName: n2 = this.firstName(t3), lastName: r4 = this.lastName(t3) } = e3, i2 = this.faker.helpers.weightedArrayElement(this.faker.definitions.person.name);
+    return this.faker.helpers.mustache(i2, { "person.prefix": () => this.prefix(t3), "person.firstName": () => n2, "person.middleName": () => this.middleName(t3), "person.lastName": () => r4, "person.suffix": () => this.suffix() });
   }
   gender() {
     return this.faker.helpers.arrayElement(this.faker.definitions.person.gender);
@@ -28143,8 +31546,8 @@ var $e = class extends S {
   number(e3 = {}) {
     let { style: t3 = `human` } = e3, n2 = this.faker.definitions.phone_number.format[t3];
     if (!n2) throw Error(`No definitions for ${t3} in this locale`);
-    let r3 = this.faker.helpers.arrayElement(n2);
-    return I(this.faker, r3);
+    let r4 = this.faker.helpers.arrayElement(n2);
+    return I(this.faker, r4);
   }
   imei() {
     return this.faker.helpers.replaceCreditCardSymbols(`##-######-######-L`, `#`);
@@ -28165,8 +31568,8 @@ var Y = { index: `o`, slot: `s`, mac: `x`, pci: `p` };
 var it = [`SUN`, `MON`, `TUE`, `WED`, `THU`, `FRI`, `SAT`];
 var at = class extends S {
   fileName(e3 = {}) {
-    let { extensionCount: t3 = 1 } = e3, n2 = this.faker.word.words().toLowerCase().replaceAll(/\W/g, `_`), r3 = this.faker.helpers.multiple(() => this.fileExt(), { count: t3 }).join(`.`);
-    return r3.length === 0 ? n2 : `${n2}.${r3}`;
+    let { extensionCount: t3 = 1 } = e3, n2 = this.faker.word.words().toLowerCase().replaceAll(/\W/g, `_`), r4 = this.faker.helpers.multiple(() => this.fileExt(), { count: t3 }).join(`.`);
+    return r4.length === 0 ? n2 : `${n2}.${r4}`;
   }
   commonFileName(e3) {
     return `${this.fileName({ extensionCount: 0 })}.${e3 || this.commonFileExt()}`;
@@ -28188,12 +31591,12 @@ var at = class extends S {
   fileExt(t3) {
     let n2 = this.faker.definitions.system.mime_type;
     if (typeof t3 == `string`) {
-      let r4 = n2[t3];
-      if (r4 == null) throw new e(`MIME type ${t3} is not supported.`);
-      return this.faker.helpers.arrayElement(r4.extensions);
+      let r5 = n2[t3];
+      if (r5 == null) throw new e(`MIME type ${t3} is not supported.`);
+      return this.faker.helpers.arrayElement(r5.extensions);
     }
-    let r3 = new Set(Object.values(n2).flatMap(({ extensions: e3 }) => e3));
-    return this.faker.helpers.arrayElement([...r3]);
+    let r4 = new Set(Object.values(n2).flatMap(({ extensions: e3 }) => e3));
+    return this.faker.helpers.arrayElement([...r4]);
   }
   directoryPath() {
     let e3 = this.faker.definitions.system.directory_path;
@@ -28206,25 +31609,25 @@ var at = class extends S {
     return [this.faker.number.int(9), this.faker.number.int(20), this.faker.number.int(20)].join(`.`);
   }
   networkInterface(e3 = {}) {
-    let { interfaceType: t3 = this.faker.helpers.arrayElement(rt), interfaceSchema: n2 = this.faker.helpers.objectKey(Y) } = e3, r3, i2 = ``;
+    let { interfaceType: t3 = this.faker.helpers.arrayElement(rt), interfaceSchema: n2 = this.faker.helpers.objectKey(Y) } = e3, r4, i2 = ``;
     switch (n2) {
       case `index`:
-        r3 = this.faker.string.numeric();
+        r4 = this.faker.string.numeric();
         break;
       case `slot`:
-        r3 = `${this.faker.string.numeric()}${this.faker.helpers.maybe(() => `f${this.faker.string.numeric()}`) ?? ``}${this.faker.helpers.maybe(() => `d${this.faker.string.numeric()}`) ?? ``}`;
+        r4 = `${this.faker.string.numeric()}${this.faker.helpers.maybe(() => `f${this.faker.string.numeric()}`) ?? ``}${this.faker.helpers.maybe(() => `d${this.faker.string.numeric()}`) ?? ``}`;
         break;
       case `mac`:
-        r3 = this.faker.internet.mac(``);
+        r4 = this.faker.internet.mac(``);
         break;
       case `pci`:
-        i2 = this.faker.helpers.maybe(() => `P${this.faker.string.numeric()}`) ?? ``, r3 = `${this.faker.string.numeric()}s${this.faker.string.numeric()}${this.faker.helpers.maybe(() => `f${this.faker.string.numeric()}`) ?? ``}${this.faker.helpers.maybe(() => `d${this.faker.string.numeric()}`) ?? ``}`;
+        i2 = this.faker.helpers.maybe(() => `P${this.faker.string.numeric()}`) ?? ``, r4 = `${this.faker.string.numeric()}s${this.faker.string.numeric()}${this.faker.helpers.maybe(() => `f${this.faker.string.numeric()}`) ?? ``}${this.faker.helpers.maybe(() => `d${this.faker.string.numeric()}`) ?? ``}`;
         break;
     }
-    return `${i2}${t3}${Y[n2]}${r3}`;
+    return `${i2}${t3}${Y[n2]}${r4}`;
   }
   cron(e3 = {}) {
-    let { includeYear: t3 = false, includeNonStandard: n2 = false } = e3, r3 = [this.faker.number.int(59), `*`], i2 = [this.faker.number.int(23), `*`], a2 = [this.faker.number.int({ min: 1, max: 31 }), `*`, `?`], o2 = [this.faker.number.int({ min: 1, max: 12 }), `*`], s2 = [this.faker.number.int(6), this.faker.helpers.arrayElement(it), `*`, `?`], c2 = [this.faker.number.int({ min: 1970, max: 2099 }), `*`], l2 = this.faker.helpers.arrayElement(r3), u2 = this.faker.helpers.arrayElement(i2), d2 = this.faker.helpers.arrayElement(a2), f2 = this.faker.helpers.arrayElement(o2), p2 = this.faker.helpers.arrayElement(s2), m2 = this.faker.helpers.arrayElement(c2), h2 = `${l2} ${u2} ${d2} ${f2} ${p2}`;
+    let { includeYear: t3 = false, includeNonStandard: n2 = false } = e3, r4 = [this.faker.number.int(59), `*`], i2 = [this.faker.number.int(23), `*`], a2 = [this.faker.number.int({ min: 1, max: 31 }), `*`, `?`], o2 = [this.faker.number.int({ min: 1, max: 12 }), `*`], s2 = [this.faker.number.int(6), this.faker.helpers.arrayElement(it), `*`, `?`], c2 = [this.faker.number.int({ min: 1970, max: 2099 }), `*`], l2 = this.faker.helpers.arrayElement(r4), u2 = this.faker.helpers.arrayElement(i2), d2 = this.faker.helpers.arrayElement(a2), f2 = this.faker.helpers.arrayElement(o2), p2 = this.faker.helpers.arrayElement(s2), m2 = this.faker.helpers.arrayElement(c2), h2 = `${l2} ${u2} ${d2} ${f2} ${p2}`;
     return t3 && (h2 += ` ${m2}`), !n2 || this.faker.datatype.boolean() ? h2 : this.faker.helpers.arrayElement([`@annually`, `@daily`, `@hourly`, `@monthly`, `@reboot`, `@weekly`, `@yearly`]);
   }
 };
@@ -28305,19 +31708,19 @@ var ct = class extends x {
 var lt2 = class extends x {
   int(t3 = {}) {
     typeof t3 == `number` && (t3 = { max: t3 });
-    let { min: n2 = 0, max: r3 = 2 ** 53 - 1, multipleOf: i2 = 1, distributor: a2 = b() } = t3;
+    let { min: n2 = 0, max: r4 = 2 ** 53 - 1, multipleOf: i2 = 1, distributor: a2 = b() } = t3;
     if (!Number.isInteger(i2)) throw new e(`multipleOf should be an integer.`);
     if (i2 <= 0) throw new e(`multipleOf should be greater than 0.`);
-    let o2 = Math.ceil(n2 / i2), s2 = Math.floor(r3 / i2);
+    let o2 = Math.ceil(n2 / i2), s2 = Math.floor(r4 / i2);
     if (o2 === s2) return o2 * i2;
-    if (s2 < o2) throw r3 >= n2 ? new e(`No suitable integer value between ${n2} and ${r3} found.`) : new e(`Max ${r3} should be greater than min ${n2}.`);
+    if (s2 < o2) throw r4 >= n2 ? new e(`No suitable integer value between ${n2} and ${r4} found.`) : new e(`Max ${r4} should be greater than min ${n2}.`);
     let c2 = a2(this.faker.fakerCore.randomizer), l2 = s2 - o2 + 1;
     return Math.floor(c2 * l2 + o2) * i2;
   }
   float(t3 = {}) {
     typeof t3 == `number` && (t3 = { max: t3 });
-    let { min: n2 = 0, max: r3 = 1, fractionDigits: i2, multipleOf: a2, multipleOf: o2 = i2 == null ? void 0 : 10 ** -i2, distributor: s2 = b() } = t3;
-    if (r3 < n2) throw new e(`Max ${r3} should be greater than min ${n2}.`);
+    let { min: n2 = 0, max: r4 = 1, fractionDigits: i2, multipleOf: a2, multipleOf: o2 = i2 == null ? void 0 : 10 ** -i2, distributor: s2 = b() } = t3;
+    if (r4 < n2) throw new e(`Max ${r4} should be greater than min ${n2}.`);
     if (i2 != null) {
       if (a2 != null) throw new e(`multipleOf and fractionDigits cannot be set at the same time.`);
       if (!Number.isInteger(i2)) throw new e(`fractionDigits should be an integer.`);
@@ -28326,9 +31729,9 @@ var lt2 = class extends x {
     if (o2 != null) {
       if (o2 <= 0) throw new e(`multipleOf should be greater than 0.`);
       let t4 = Math.log10(o2), i3 = o2 < 1 && Number.isInteger(t4) ? 10 ** -t4 : 1 / o2;
-      return this.int({ min: n2 * i3, max: r3 * i3, distributor: s2 }) / i3;
+      return this.int({ min: n2 * i3, max: r4 * i3, distributor: s2 }) / i3;
     }
-    return s2(this.faker.fakerCore.randomizer) * (r3 - n2) + n2;
+    return s2(this.faker.fakerCore.randomizer) * (r4 - n2) + n2;
   }
   binary(e3 = {}) {
     typeof e3 == `number` && (e3 = { max: e3 });
@@ -28347,22 +31750,22 @@ var lt2 = class extends x {
   }
   bigInt(t3 = {}) {
     (typeof t3 == `bigint` || typeof t3 == `number` || typeof t3 == `string` || typeof t3 == `boolean`) && (t3 = { max: t3 });
-    let n2 = BigInt(t3.min ?? 0), r3 = BigInt(t3.max ?? n2 + BigInt(999999999999999)), i2 = BigInt(t3.multipleOf ?? 1);
-    if (r3 < n2) throw new e(`Max ${r3} should be larger than min ${n2}.`);
+    let n2 = BigInt(t3.min ?? 0), r4 = BigInt(t3.max ?? n2 + BigInt(999999999999999)), i2 = BigInt(t3.multipleOf ?? 1);
+    if (r4 < n2) throw new e(`Max ${r4} should be larger than min ${n2}.`);
     if (i2 <= BigInt(0)) throw new e(`multipleOf should be greater than 0.`);
-    let a2 = n2 / i2 + (n2 % i2 > 0n ? 1n : 0n), o2 = r3 / i2 - (r3 % i2 < 0n ? 1n : 0n);
+    let a2 = n2 / i2 + (n2 % i2 > 0n ? 1n : 0n), o2 = r4 / i2 - (r4 % i2 < 0n ? 1n : 0n);
     if (a2 === o2) return a2 * i2;
-    if (o2 < a2) throw new e(`No suitable bigint value between ${n2} and ${r3} found.`);
+    if (o2 < a2) throw new e(`No suitable bigint value between ${n2} and ${r4} found.`);
     let s2 = o2 - a2 + 1n;
     return (a2 + BigInt(this.faker.string.numeric({ length: s2.toString(10).length, allowLeadingZeros: true })) % s2) * i2;
   }
   romanNumeral(t3 = {}) {
     let n2 = 3999;
     typeof t3 == `number` && (t3 = { max: t3 });
-    let { min: r3 = 1, max: i2 = n2 } = t3;
-    if (r3 < 1) throw new e(`Min value ${r3} should be 1 or greater.`);
+    let { min: r4 = 1, max: i2 = n2 } = t3;
+    if (r4 < 1) throw new e(`Min value ${r4} should be 1 or greater.`);
     if (i2 > n2) throw new e(`Max value ${i2} should be ${n2} or less.`);
-    let a2 = this.int({ min: r3, max: i2 }), o2 = [[`M`, 1e3], [`CM`, 900], [`D`, 500], [`CD`, 400], [`C`, 100], [`XC`, 90], [`L`, 50], [`XL`, 40], [`X`, 10], [`IX`, 9], [`V`, 5], [`IV`, 4], [`I`, 1]], s2 = ``;
+    let a2 = this.int({ min: r4, max: i2 }), o2 = [[`M`, 1e3], [`CM`, 900], [`D`, 500], [`CD`, 400], [`C`, 100], [`XC`, 90], [`L`, 50], [`XL`, 40], [`X`, 10], [`IX`, 9], [`V`, 5], [`IV`, 4], [`I`, 1]], s2 = ``;
     for (let [e3, t4] of o2) s2 += e3.repeat(Math.floor(a2 / t4)), a2 %= t4;
     return s2;
   }
@@ -28380,8 +31783,8 @@ function dt(e3) {
   return `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`.replaceAll(`x`, () => e3.number.hex({ min: 0, max: 15 })).replaceAll(`y`, () => e3.number.hex({ min: 8, max: 11 }));
 }
 function ft(e3, t3) {
-  let n2 = t3.valueOf(), r3 = Math.max(n2, 0).toString(16).padStart(12, `0`).slice(-12);
-  return `${[r3.substring(0, 8), r3.substring(8)].join(`-`)}-${`7xxx-yxxx-xxxxxxxxxxxx`.replaceAll(`x`, () => e3.number.hex({ min: 0, max: 15 })).replaceAll(`y`, () => e3.number.hex({ min: 8, max: 11 }))}`;
+  let n2 = t3.valueOf(), r4 = Math.max(n2, 0).toString(16).padStart(12, `0`).slice(-12);
+  return `${[r4.substring(0, 8), r4.substring(8)].join(`-`)}-${`7xxx-yxxx-xxxxxxxxxxxx`.replaceAll(`x`, () => e3.number.hex({ min: 0, max: 15 })).replaceAll(`y`, () => e3.number.hex({ min: 8, max: 11 }))}`;
 }
 var Z = [...`ABCDEFGHIJKLMNOPQRSTUVWXYZ`];
 var Q = [...`abcdefghijklmnopqrstuvwxyz`];
@@ -28396,8 +31799,8 @@ var mt = class extends x {
     typeof e3 == `number` && (e3 = { length: e3 });
     let t3 = this.faker.helpers.rangeToNumber(e3.length ?? 1);
     if (t3 <= 0) return ``;
-    let { casing: n2 = `mixed` } = e3, { exclude: r3 = [] } = e3;
-    typeof r3 == `string` && (r3 = [...r3]);
+    let { casing: n2 = `mixed` } = e3, { exclude: r4 = [] } = e3;
+    typeof r4 == `string` && (r4 = [...r4]);
     let i2;
     switch (n2) {
       case `upper`:
@@ -28410,14 +31813,14 @@ var mt = class extends x {
         i2 = [...Q, ...Z];
         break;
     }
-    return i2 = i2.filter((e4) => !r3.includes(e4)), this.fromCharacters(i2, t3);
+    return i2 = i2.filter((e4) => !r4.includes(e4)), this.fromCharacters(i2, t3);
   }
   alphanumeric(e3 = {}) {
     typeof e3 == `number` && (e3 = { length: e3 });
     let t3 = this.faker.helpers.rangeToNumber(e3.length ?? 1);
     if (t3 <= 0) return ``;
-    let { casing: n2 = `mixed` } = e3, { exclude: r3 = [] } = e3;
-    typeof r3 == `string` && (r3 = [...r3]);
+    let { casing: n2 = `mixed` } = e3, { exclude: r4 = [] } = e3;
+    typeof r4 == `string` && (r4 = [...r4]);
     let i2 = [...pt];
     switch (n2) {
       case `upper`:
@@ -28430,7 +31833,7 @@ var mt = class extends x {
         i2.push(...Q, ...Z);
         break;
     }
-    return i2 = i2.filter((e4) => !r3.includes(e4)), this.fromCharacters(i2, t3);
+    return i2 = i2.filter((e4) => !r4.includes(e4)), this.fromCharacters(i2, t3);
   }
   binary(e3 = {}) {
     let { prefix: t3 = `0b` } = e3, n2 = t3;
@@ -28441,21 +31844,21 @@ var mt = class extends x {
     return n2 += this.fromCharacters([`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`], e3.length ?? 1), n2;
   }
   hexadecimal(e3 = {}) {
-    let { casing: t3 = `mixed`, prefix: n2 = `0x` } = e3, r3 = this.faker.helpers.rangeToNumber(e3.length ?? 1);
-    if (r3 <= 0) return n2;
-    let i2 = this.fromCharacters([`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `a`, `b`, `c`, `d`, `e`, `f`, `A`, `B`, `C`, `D`, `E`, `F`], r3);
+    let { casing: t3 = `mixed`, prefix: n2 = `0x` } = e3, r4 = this.faker.helpers.rangeToNumber(e3.length ?? 1);
+    if (r4 <= 0) return n2;
+    let i2 = this.fromCharacters([`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `a`, `b`, `c`, `d`, `e`, `f`, `A`, `B`, `C`, `D`, `E`, `F`], r4);
     return t3 === `upper` ? i2 = i2.toUpperCase() : t3 === `lower` && (i2 = i2.toLowerCase()), `${n2}${i2}`;
   }
   numeric(t3 = {}) {
     typeof t3 == `number` && (t3 = { length: t3 });
     let n2 = this.faker.helpers.rangeToNumber(t3.length ?? 1);
     if (n2 <= 0) return ``;
-    let { allowLeadingZeros: r3 = true } = t3, { exclude: i2 = [] } = t3;
+    let { allowLeadingZeros: r4 = true } = t3, { exclude: i2 = [] } = t3;
     typeof i2 == `string` && (i2 = [...i2]);
     let a2 = pt.filter((e3) => !i2.includes(e3));
-    if (a2.length === 0 || a2.length === 1 && !r3 && a2[0] === `0`) throw new e(`Unable to generate numeric string, because all possible digits are excluded.`);
+    if (a2.length === 0 || a2.length === 1 && !r4 && a2[0] === `0`) throw new e(`Unable to generate numeric string, because all possible digits are excluded.`);
     let o2 = ``;
-    return !r3 && !i2.includes(`0`) && (o2 += this.faker.helpers.arrayElement(a2.filter((e3) => e3 !== `0`))), o2 += this.fromCharacters(a2, n2 - o2.length), o2;
+    return !r4 && !i2.includes(`0`) && (o2 += this.faker.helpers.arrayElement(a2.filter((e3) => e3 !== `0`))), o2 += this.fromCharacters(a2, n2 - o2.length), o2;
   }
   sample(e3 = 10) {
     e3 = this.faker.helpers.rangeToNumber(e3);
@@ -28574,17 +31977,17 @@ var e2 = { airline: { airline: [{ name: `Aegean Airlines`, iataCode: `A3` }, { n
 {{location.zipCode}}`], postcode: [`#####`, `#####-####`], secondary_address: [`Apt. ###`, `Suite ###`], state: `Alabama.Alaska.Arizona.Arkansas.California.Colorado.Connecticut.Delaware.Florida.Georgia.Hawaii.Idaho.Illinois.Indiana.Iowa.Kansas.Kentucky.Louisiana.Maine.Maryland.Massachusetts.Michigan.Minnesota.Mississippi.Missouri.Montana.Nebraska.Nevada.New Hampshire.New Jersey.New Mexico.New York.North Carolina.North Dakota.Ohio.Oklahoma.Oregon.Pennsylvania.Rhode Island.South Carolina.South Dakota.Tennessee.Texas.Utah.Vermont.Virginia.Washington.West Virginia.Wisconsin.Wyoming`.split(`.`), state_abbr: `AL.AK.AZ.AR.CA.CO.CT.DE.FL.GA.HI.ID.IL.IN.IA.KS.KY.LA.ME.MD.MA.MI.MN.MS.MO.MT.NE.NV.NH.NJ.NM.NY.NC.ND.OH.OK.OR.PA.RI.SC.SD.TN.TX.UT.VT.VA.WA.WV.WI.WY`.split(`.`), street_address: { normal: `{{location.buildingNumber}} {{location.street}}`, full: `{{location.buildingNumber}} {{location.street}} {{location.secondaryAddress}}` }, street_name: `10th Street.11th Street.12th Street.13th Street.14th Street.15th Street.16th Street.1st Avenue.1st Street.2nd Avenue.2nd Street.3rd Avenue.3rd Street.4th Avenue.4th Street.5th Avenue.5th Street.6th Avenue.6th Street.7th Avenue.7th Street.8th Avenue.8th Street.9th Street.A Street.Abbey Road.Adams Avenue.Adams Street.Airport Road.Albany Road.Albert Road.Albion Street.Alexandra Road.Alfred Street.Alma Street.Ash Close.Ash Grove.Ash Road.Ash Street.Aspen Close.Atlantic Avenue.Avenue Road.Back Lane.Baker Street.Balmoral Road.Barn Close.Barton Road.Bath Road.Bath Street.Bay Street.Beach Road.Bedford Road.Beech Close.Beech Drive.Beech Grove.Beech Road.Beechwood Avenue.Bell Lane.Belmont Road.Birch Avenue.Birch Close.Birch Grove.Birch Road.Blind Lane.Bluebell Close.Boundary Road.Bramble Close.Bramley Close.Bridge Road.Bridge Street.Broad Lane.Broad Street.Broadway.Broadway Avenue.Broadway Street.Brook Lane.Brook Road.Brook Street.Brookside.Buckingham Road.Cambridge Street.Canal Street.Castle Close.Castle Lane.Castle Road.Castle Street.Cavendish Road.Cedar Avenue.Cedar Close.Cedar Grove.Cedar Road.Cedar Street.Cemetery Road.Center Avenue.Center Road.Center Street.Central Avenue.Central Street.Chapel Close.Chapel Hill.Chapel Road.Chapel Street.Charles Street.Cherry Close.Cherry Street.Cherry Tree Close.Chester Road.Chestnut Close.Chestnut Drive.Chestnut Grove.Chestnut Street.Church Avenue.Church Close.Church Hill.Church Lane.Church Path.Church Road.Church Street.Church View.Church Walk.Claremont Road.Clarence Road.Clarence Street.Clarendon Road.Clark Street.Clay Lane.Cleveland Street.Cliff Road.Clifton Road.Clinton Street.College Avenue.College Street.Columbia Avenue.Commerce Street.Commercial Road.Commercial Street.Common Lane.Coronation Avenue.Coronation Road.County Line Road.County Road.Court Street.Cow Lane.Crescent Road.Cromwell Road.Cross Lane.Cross Street.Crown Street.Cumberland Street.Dale Street.Dark Lane.Davis Street.Depot Street.Derby Road.Derwent Close.Devonshire Road.Division Street.Douglas Road.Duke Street.E 10th Street.E 11th Street.E 12th Street.E 14th Street.E 1st Street.E 2nd Street.E 3rd Street.E 4th Avenue.E 4th Street.E 5th Street.E 6th Avenue.E 6th Street.E 7th Street.E 8th Street.E 9th Street.E Bridge Street.E Broad Street.E Broadway.E Broadway Street.E Cedar Street.E Center Street.E Central Avenue.E Church Street.E Elm Street.E Franklin Street.E Front Street.E Grand Avenue.E High Street.E Jackson Street.E Jefferson Street.E Main.E Main Street.E Maple Street.E Market Street.E North Street.E Oak Street.E Park Avenue.E Pine Street.E River Road.E South Street.E State Street.E Union Street.E Walnut Street.E Washington Avenue.E Washington Street.E Water Street.East Avenue.East Road.East Street.Edward Street.Elm Close.Elm Grove.Elm Road.Elm Street.Euclid Avenue.Fairfield Road.Farm Close.Ferry Road.Field Close.Field Lane.First Avenue.First Street.Fore Street.Forest Avenue.Forest Road.Fourth Avenue.Franklin Avenue.Franklin Road.Franklin Street.Front Street.Frontage Road.Garden Close.Garden Street.George Street.Gladstone Road.Glebe Close.Gloucester Road.Gordon Road.Gordon Street.Grand Avenue.Grange Avenue.Grange Close.Grange Road.Grant Street.Green Close.Green Lane.Green Street.Greenville Road.Greenway.Greenwood Road.Grove Lane.Grove Road.Grove Street.Hall Lane.Hall Street.Harrison Avenue.Harrison Street.Hawthorn Avenue.Hawthorn Close.Hazel Close.Hazel Grove.Heath Road.Heather Close.Henry Street.Heron Close.Hickory Street.High Road.High Street.Highfield Avenue.Highfield Close.Highfield Road.Highland Avenue.Hill Road.Hill Street.Hillside.Hillside Avenue.Hillside Close.Hillside Road.Holly Close.Honeysuckle Close.Howard Road.Howard Street.Jackson Avenue.Jackson Street.James Street.Jefferson Avenue.Jefferson Street.Johnson Street.Jubilee Close.Juniper Close.Kent Road.Kestrel Close.King Street.King's Road.Kingfisher Close.Kings Highway.Kingsway.Laburnum Grove.Lafayette Street.Lake Avenue.Lake Drive.Lake Road.Lake Street.Lancaster Road.Lansdowne Road.Larch Close.Laurel Close.Lawrence Street.Lee Street.Liberty Street.Lime Grove.Lincoln Avenue.Lincoln Highway.Lincoln Road.Lincoln Street.Locust Street.Lodge Close.Lodge Lane.London Road.Long Lane.Low Road.Madison Avenue.Madison Street.Main.Main Avenue.Main Road.Main Street.Main Street E.Main Street N.Main Street S.Main Street W.Manchester Road.Manor Close.Manor Drive.Manor Gardens.Manor Road.Manor Way.Maple Avenue.Maple Close.Maple Drive.Maple Road.Maple Street.Market Place.Market Square.Market Street.Marlborough Road.Marsh Lane.Martin Luther King Boulevard.Martin Luther King Drive.Martin Luther King Jr Boulevard.Mary Street.Mayfield Road.Meadow Close.Meadow Drive.Meadow Lane.Meadow View.Meadow Way.Memorial Drive.Middle Street.Mill Close.Mill Lane.Mill Road.Mill Street.Milton Road.Milton Street.Monroe Street.Moor Lane.Moss Lane.Mount Pleasant.Mount Street.Mulberry Street.N 1st Street.N 2nd Street.N 3rd Street.N 4th Street.N 5th Street.N 6th Street.N 7th Street.N 8th Street.N 9th Street.N Bridge Street.N Broad Street.N Broadway.N Broadway Street.N Cedar Street.N Center Street.N Central Avenue.N Chestnut Street.N Church Street.N College Street.N Court Street.N Division Street.N East Street.N Elm Street.N Franklin Street.N Front Street.N Harrison Street.N High Street.N Jackson Street.N Jefferson Street.N Lincoln Street.N Locust Street.N Main.N Main Avenue.N Main Street.N Maple Street.N Market Street.N Monroe Street.N Oak Street.N Park Street.N Pearl Street.N Pine Street.N Poplar Street.N Railroad Street.N State Street.N Union Street.N Walnut Street.N Washington Avenue.N Washington Street.N Water Street.Nelson Road.Nelson Street.New Lane.New Road.New Street.Newton Road.Nightingale Close.Norfolk Road.North Avenue.North Lane.North Road.North Street.Northfield Road.Oak Avenue.Oak Drive.Oak Lane.Oak Road.Oak Street.Oakfield Road.Oaklands.Old Lane.Old Military Road.Old Road.Old State Road.Orchard Drive.Orchard Lane.Orchard Road.Orchard Street.Oxford Road.Oxford Street.Park Avenue.Park Crescent.Park Drive.Park Lane.Park Place.Park Road.Park Street.Park View.Parkside.Pearl Street.Pennsylvania Avenue.Pine Close.Pine Grove.Pine Street.Pinfold Lane.Pleasant Street.Poplar Avenue.Poplar Close.Poplar Road.Poplar Street.Post Road.Pound Lane.Princes Street.Princess Street.Priory Close.Priory Road.Prospect Avenue.Prospect Place.Prospect Road.Prospect Street.Quarry Lane.Quarry Road.Queen's Road.Railroad Avenue.Railroad Street.Railway Street.Rectory Close.Rectory Lane.Richmond Close.Richmond Road.Ridge Road.River Road.River Street.Riverside.Riverside Avenue.Riverside Drive.Roman Road.Roman Way.Rowan Close.Russell Street.S 10th Street.S 14th Street.S 1st Avenue.S 1st Street.S 2nd Street.S 3rd Street.S 4th Street.S 5th Street.S 6th Street.S 7th Street.S 8th Street.S 9th Street.S Bridge Street.S Broad Street.S Broadway.S Broadway Street.S Center Street.S Central Avenue.S Chestnut Street.S Church Street.S College Street.S Division Street.S East Street.S Elm Street.S Franklin Street.S Front Street.S Grand Avenue.S High Street.S Jackson Street.S Jefferson Street.S Lincoln Street.S Main.S Main Avenue.S Main Street.S Maple Street.S Market Street.S Mill Street.S Monroe Street.S Oak Street.S Park Street.S Pine Street.S Railroad Street.S State Street.S Union Street.S Walnut Street.S Washington Avenue.S Washington Street.S Water Street.S West Street.Salisbury Road.Sandringham Road.Sandy Lane.School Close.School Lane.School Road.School Street.Second Avenue.Silver Street.Skyline Drive.Smith Street.Somerset Road.South Avenue.South Drive.South Road.South Street.South View.Spring Gardens.Spring Street.Springfield Close.Springfield Road.Spruce Street.St Andrew's Road.St Andrews Close.St George's Road.St John's Road.St Mary's Close.St Mary's Road.Stanley Road.Stanley Street.State Avenue.State Line Road.State Road.State Street.Station Road.Station Street.Stoney Lane.Sycamore Avenue.Sycamore Close.Sycamore Drive.Sycamore Street.Talbot Road.Tennyson Road.The Avenue.The Beeches.The Causeway.The Chase.The Coppice.The Copse.The Crescent.The Croft.The Dell.The Drive.The Fairway.The Glebe.The Grange.The Green.The Grove.The Hawthorns.The Lane.The Laurels.The Limes.The Maltings.The Meadows.The Mews.The Mount.The Oaks.The Orchard.The Oval.The Paddock.The Paddocks.The Poplars.The Ridgeway.The Ridings.The Rise.The Sidings.The Spinney.The Square.The Willows.The Woodlands.Third Avenue.Third Street.Tower Road.Trinity Road.Tudor Close.Union Avenue.Union Street.University Avenue.University Drive.Valley Road.Veterans Memorial Drive.Veterans Memorial Highway.Vicarage Close.Vicarage Lane.Vicarage Road.Victoria Place.Victoria Road.Victoria Street.Vine Street.W 10th Street.W 11th Street.W 12th Street.W 14th Street.W 1st Street.W 2nd Street.W 3rd Street.W 4th Avenue.W 4th Street.W 5th Street.W 6th Avenue.W 6th Street.W 7th Street.W 8th Street.W 9th Street.W Bridge Street.W Broad Street.W Broadway.W Broadway Avenue.W Broadway Street.W Center Street.W Central Avenue.W Chestnut Street.W Church Street.W Division Street.W Elm Street.W Franklin Street.W Front Street.W Grand Avenue.W High Street.W Jackson Street.W Jefferson Street.W Lake Street.W Main.W Main Street.W Maple Street.W Market Street.W Monroe Street.W North Street.W Oak Street.W Park Street.W Pine Street.W River Road.W South Street.W State Street.W Union Street.W Walnut Street.W Washington Avenue.W Washington Street.Walnut Close.Walnut Street.Warren Close.Warren Road.Washington Avenue.Washington Boulevard.Washington Road.Washington Street.Water Lane.Water Street.Waterloo Road.Waterside.Watery Lane.Waverley Road.Well Lane.Wellington Road.Wellington Street.West Avenue.West End.West Lane.West Road.West Street.West View.Western Avenue.Western Road.Westfield Road.Westgate.William Street.Willow Close.Willow Drive.Willow Grove.Willow Road.Willow Street.Windermere Road.Windmill Close.Windmill Lane.Windsor Avenue.Windsor Close.Windsor Drive.Wood Lane.Wood Street.Woodland Close.Woodland Road.Woodlands.Woodlands Avenue.Woodlands Close.Woodlands Road.Woodside.Woodside Road.Wren Close.Yew Tree Close.York Road.York Street`.split(`.`), street_pattern: [`{{person.firstName}} {{location.street_suffix}}`, `{{person.lastName}} {{location.street_suffix}}`, `{{location.street_name}}`], street_suffix: `Alley.Avenue.Branch.Bridge.Brook.Brooks.Burg.Burgs.Bypass.Camp.Canyon.Cape.Causeway.Center.Centers.Circle.Circles.Cliff.Cliffs.Club.Common.Corner.Corners.Course.Court.Courts.Cove.Coves.Creek.Crescent.Crest.Crossing.Crossroad.Curve.Dale.Dam.Divide.Drive.Drives.Estate.Estates.Expressway.Extension.Extensions.Fall.Falls.Ferry.Field.Fields.Flat.Flats.Ford.Fords.Forest.Forge.Forges.Fork.Forks.Fort.Freeway.Garden.Gardens.Gateway.Glen.Glens.Green.Greens.Grove.Groves.Harbor.Harbors.Haven.Heights.Highway.Hill.Hills.Hollow.Inlet.Island.Islands.Isle.Junction.Junctions.Key.Keys.Knoll.Knolls.Lake.Lakes.Land.Landing.Lane.Light.Lights.Loaf.Lock.Locks.Lodge.Loop.Mall.Manor.Manors.Meadow.Meadows.Mews.Mill.Mills.Mission.Motorway.Mount.Mountain.Mountains.Neck.Orchard.Oval.Overpass.Park.Parks.Parkway.Parkways.Pass.Passage.Path.Pike.Pine.Pines.Place.Plain.Plains.Plaza.Point.Points.Port.Ports.Prairie.Radial.Ramp.Ranch.Rapid.Rapids.Rest.Ridge.Ridges.River.Road.Roads.Route.Row.Rue.Run.Shoal.Shoals.Shore.Shores.Skyway.Spring.Springs.Spur.Spurs.Square.Squares.Station.Stravenue.Stream.Street.Streets.Summit.Terrace.Throughway.Trace.Track.Trafficway.Trail.Tunnel.Turnpike.Underpass.Union.Unions.Valley.Valleys.Via.Viaduct.View.Views.Village.Villages.Ville.Vista.Walk.Walks.Wall.Way.Ways.Well.Wells`.split(`.`) }, lorem: { word: `a.ab.abbas.abduco.abeo.abscido.absconditus.absens.absorbeo.absque.abstergo.absum.abundans.abutor.accedo.accendo.acceptus.accommodo.accusamus.accusantium.accusator.acer.acerbitas.acervus.acidus.acies.acquiro.acsi.ad.adamo.adaugeo.addo.adduco.ademptio.adeo.adeptio.adfectus.adfero.adficio.adflicto.adhaero.adhuc.adicio.adimpleo.adinventitias.adipisci.adipiscor.adiuvo.administratio.admiratio.admitto.admoneo.admoveo.adnuo.adopto.adsidue.adstringo.adsuesco.adsum.adulatio.adulescens.aduro.advenio.adversus.advoco.aedificium.aeger.aegre.aegrotatio.aegrus.aeneus.aequitas.aequus.aer.aestas.aestivus.aestus.aetas.aeternus.ager.aggero.aggredior.agnitio.agnosco.ago.ait.aiunt.alias.alienus.alii.alioqui.aliqua.aliquam.aliquid.alius.allatus.alo.alter.altus.alveus.amaritudo.ambitus.ambulo.amet.amicitia.amiculum.amissio.amita.amitto.amo.amor.amoveo.amplexus.amplitudo.amplus.ancilla.angelus.angulus.angustus.animadverto.animi.animus.annus.anser.ante.antea.antepono.antiquus.aperiam.aperio.aperte.apostolus.apparatus.appello.appono.appositus.approbo.apto.aptus.apud.aqua.ara.aranea.arbitro.arbor.arbustum.arca.arceo.arcesso.architecto.arcus.argentum.argumentum.arguo.arma.armarium.aro.ars.articulus.artificiose.arto.arx.ascisco.ascit.asper.asperiores.aspernatur.aspicio.asporto.assentator.assumenda.astrum.at.atavus.ater.atque.atqui.atrocitas.atrox.attero.attollo.attonbitus.auctor.auctus.audacia.audax.audentia.audeo.audio.auditor.aufero.aureus.aurum.aut.autem.autus.auxilium.avaritia.avarus.aveho.averto.baiulus.balbus.barba.bardus.basium.beatae.beatus.bellicus.bellum.bene.beneficium.benevolentia.benigne.bestia.bibo.bis.blandior.blanditiis.bonus.bos.brevis.cado.caecus.caelestis.caelum.calamitas.calcar.calco.calculus.callide.campana.candidus.canis.canonicus.canto.capillus.capio.capitulus.capto.caput.carbo.carcer.careo.caries.cariosus.caritas.carmen.carpo.carus.casso.caste.casus.catena.caterva.cattus.cauda.causa.caute.caveo.cavus.cedo.celebrer.celer.celo.cena.cenaculum.ceno.censura.centum.cerno.cernuus.certe.certus.cervus.cetera.charisma.chirographum.cibo.cibus.cicuta.cilicium.cimentarius.ciminatio.cinis.circumvenio.cito.civis.civitas.clam.clamo.claro.clarus.claudeo.claustrum.clementia.clibanus.coadunatio.coaegresco.coepi.coerceo.cogito.cognatus.cognomen.cogo.cohaero.cohibeo.cohors.colligo.collum.colo.color.coma.combibo.comburo.comedo.comes.cometes.comis.comitatus.commemoro.comminor.commodi.commodo.communis.comparo.compello.complectus.compono.comprehendo.comptus.conatus.concedo.concido.conculco.condico.conduco.confero.confido.conforto.confugo.congregatio.conicio.coniecto.conitor.coniuratio.conor.conqueror.conscendo.consectetur.consequatur.consequuntur.conservo.considero.conspergo.constans.consuasor.contabesco.contego.contigo.contra.conturbo.conventus.convoco.copia.copiose.cornu.corona.corporis.corpus.correptius.corrigo.corroboro.corrumpo.corrupti.coruscus.cotidie.crapula.cras.crastinus.creator.creber.crebro.credo.creo.creptio.crepusculum.cresco.creta.cribro.crinis.cruciamentum.crudelis.cruentus.crur.crustulum.crux.cubicularis.cubitum.cubo.cui.cuius.culpa.culpo.cultellus.cultura.cum.cumque.cunabula.cunae.cunctatio.cupiditas.cupiditate.cupio.cuppedia.cupressus.cur.cura.curatio.curia.curiositas.curis.curo.curriculum.currus.cursim.curso.cursus.curto.curtus.curvo.custodia.damnatio.damno.dapifer.debeo.debilito.debitis.decens.decerno.decet.decimus.decipio.decor.decretum.decumbo.dedecor.dedico.deduco.defaeco.defendo.defero.defessus.defetiscor.deficio.defleo.defluo.defungo.degenero.degero.degusto.deinde.delectatio.delectus.delego.deleniti.deleo.delibero.delicate.delinquo.deludo.demens.demergo.demitto.demo.demonstro.demoror.demulceo.demum.denego.denique.dens.denuncio.denuo.deorsum.depereo.depono.depopulo.deporto.depraedor.deprecator.deprimo.depromo.depulso.deputo.derelinquo.derideo.deripio.deserunt.desidero.desino.desipio.desolo.desparatus.despecto.dicta.dignissimos.distinctio.dolor.dolore.dolorem.doloremque.dolores.doloribus.dolorum.ducimus.ea.eaque.earum.eius.eligendi.enim.eos.error.esse.est.et.eum.eveniet.ex.excepturi.exercitationem.expedita.explicabo.facere.facilis.fuga.fugiat.fugit.harum.hic.id.illo.illum.impedit.in.incidunt.infit.inflammatio.inventore.ipsa.ipsam.ipsum.iste.itaque.iure.iusto.labore.laboriosam.laborum.laudantium.libero.magnam.magni.maiores.maxime.minima.minus.modi.molestiae.molestias.mollitia.nam.natus.necessitatibus.nemo.neque.nesciunt.nihil.nisi.nobis.non.nostrum.nulla.numquam.occaecati.ocer.odio.odit.officia.officiis.omnis.optio.paens.pariatur.patior.patria.patrocinor.patruus.pauci.paulatim.pauper.pax.peccatus.pecco.pecto.pectus.pecus.peior.pel.perferendis.perspiciatis.placeat.porro.possimus.praesentium.provident.quae.quaerat.quam.quas.quasi.qui.quia.quibusdam.quidem.quis.quisquam.quo.quod.quos.ratione.recusandae.reiciendis.rem.repellat.repellendus.reprehenderit.repudiandae.rerum.saepe.sapiente.sed.sequi.similique.sint.sit.socius.sodalitas.sol.soleo.solio.solitudo.solium.sollers.sollicito.solum.solus.soluta.solutio.solvo.somniculosus.somnus.sonitus.sono.sophismata.sopor.sordeo.sortitus.spargo.speciosus.spectaculum.speculum.sperno.spero.spes.spiculum.spiritus.spoliatio.sponte.stabilis.statim.statua.stella.stillicidium.stipes.stips.sto.strenuus.strues.studio.stultus.suadeo.suasoria.sub.subito.subiungo.sublime.subnecto.subseco.substantia.subvenio.succedo.succurro.sufficio.suffoco.suffragium.suggero.sui.sulum.sum.summa.summisse.summopere.sumo.sumptus.sunt.supellex.super.suppellex.supplanto.suppono.supra.surculus.surgo.sursum.suscipio.suscipit.suspendo.sustineo.suus.synagoga.tabella.tabernus.tabesco.tabgo.tabula.taceo.tactus.taedium.talio.talis.talus.tam.tamdiu.tamen.tametsi.tamisium.tamquam.tandem.tantillus.tantum.tardus.tego.temeritas.temperantia.templum.tempora.tempore.temporibus.temptatio.tempus.tenax.tendo.teneo.tener.tenetur.tenuis.tenus.tepesco.tepidus.ter.terebro.teres.terga.tergeo.tergiversatio.tergo.tergum.termes.terminatio.tero.terra.terreo.territo.terror.tersus.tertius.testimonium.texo.textilis.textor.textus.thalassinus.theatrum.theca.thema.theologus.thermae.thesaurus.thesis.thorax.thymbra.thymum.tibi.timidus.timor.titulus.tolero.tollo.tondeo.tonsor.torqueo.torrens.tot.totam.totidem.toties.totus.tracto.trado.traho.trans.tredecim.tremo.trepide.tres.tribuo.tricesimus.triduana.tripudio.tristis.triumphus.trucido.truculenter.tubineus.tui.tum.tumultus.tunc.turba.turbo.turpis.tutamen.tutis.tyrannus.uberrime.ubi.ulciscor.ullam.ullus.ulterius.ultio.ultra.umbra.umerus.umquam.una.unde.undique.universe.unus.urbanus.urbs.uredo.usitas.usque.ustilo.ustulo.usus.ut.uter.uterque.utilis.utique.utor.utpote.utrimque.utroque.utrum.uxor.vaco.vacuus.vado.vae.valde.valens.valeo.valetudo.validus.vallum.vapulus.varietas.varius.vehemens.vel.velit.velociter.velum.velut.venia.veniam.venio.ventito.ventosus.ventus.venustas.ver.verbera.verbum.vere.verecundia.vereor.vergo.veritas.veritatis.vero.versus.verto.verumtamen.verus.vesco.vesica.vesper.vespillo.vester.vestigium.vestrum.vetus.via.vicinus.vicissitudo.victoria.victus.videlicet.video.viduo.vigilo.vigor.vilicus.vilis.vilitas.villa.vinco.vinculum.vindico.vinitor.vinum.vir.virga.virgo.viridis.viriliter.virtus.vis.viscus.vita.vitae.vitiosus.vitium.vito.vivo.vix.vobis.vociferor.voco.volaticus.volo.volubilis.voluntarius.volup.voluptas.voluptate.voluptatem.voluptates.voluptatibus.voluptatum.volutabrum.volva.vomer.vomica.vomito.vorago.vorax.voro.vos.votum.voveo.vox.vulariter.vulgaris.vulgivagus.vulgo.vulgus.vulnero.vulnus.vulpes.vulticulus.xiphias`.split(`.`) }, metadata: { title: `English`, code: `en`, language: `en`, endonym: `English`, dir: `ltr`, script: `Latn` }, music: { album: [`"Awaken, My Love!"`, `(What's The Story) Morning Glory?`, `- Tragedy +`, `13 Reasons Why (Season 3)`, `21st Century Breakdown`, `30 De Febrero`, `432 Hz Deep Healing`, `5-Star`, `528 Hz Meditation Music`, `54+1`, `8 Mile`, `808s & Heartbreak`, `9 To 5 And Odd Jobs`, `A Beautiful Lie`, `A Day At The Races`, `A Day Without Rain`, `A Fever You Can't Sweat Out`, `A Gangsta's Pain`, `A Gift & A Curse`, `A Hard Day's Night`, `A Head Full Of Dreams`, `A Kind Of Magic`, `A Million Ways To Murder`, `A Moment Apart`, `A Song For Every Moon`, `A Thousand Suns`, `A Winter Romance`, `ABBA`, `AI YoungBoy`, `AJ Tracey`, `Act One`, `After Hours`, `Agent Provocateur`, `All About You`, `All I Know So Far: Setlist`, `All Or Nothing`, `All Out`, `All Over The Place`, `All Stand Together`, `All The Lost Souls`, `All The Things I Never Said`, `All Things Must Pass`, `Alleen`, `Alright, Still`, `Alta Suciedad`, `America`, `American Heartbreak`, `American Teen`, `And Justice For None`, `Animal Songs`, `Another Friday Night`, `Anything Goes`, `Ao Vivo Em S\xE3o Paulo`, `Ao Vivo No Ibirapuera`, `Apricot Princess`, `Aqui E Agora (Ao Vivo)`, `Arcane League Of Legends`, `Ardipithecus`, `Aretha Now`, `Around The Fur`, `Arrival`, `Artist 2.0`, `As She Pleases`, `Ascend`, `Ashlyn`, `Astro Lounge`, `At Night, Alone.`, `At. Long. Last. ASAP`, `Atlas`, `Audioslave`, `Aura`, `Austin`, `Awake`, `Away From The Sun`, `Ayayay!`, `Baby On Baby`, `Back For Everything`, `Back From The Edge`, `Back In Black`, `Back To Black`, `Back To The Game`, `Bad`, `Bah\xEDa Ducati`, `Baila`, `Barbie The Album`, `Battleground`, `Bayou Country`, `Bcos U Will Never B Free`, `Be`, `Be Here Now`, `Beautiful Mind`, `Beautiful Thugger Girls`, `Beautiful Trauma`, `Beauty And The Beast`, `Beggars Banquet`, `Being Funny In A Foreign Language`, `Berlin Lebt`, `Berry Is On Top`, `Best White Noise For Baby Sleep - Loopable With No Fade`, `Big Baby DRAM`, `Bigger, Better, Faster, More!`, `Billy Talent II`, `Black Star Elephant`, `Blackout`, `Blank Face LP`, `Bleach`, `Blizzard Of Ozz`, `Blonde`, `Blood Sugar Sex Magik`, `Bloom`, `Blowin' Your Mind!`, `Blu Celeste`, `Blue`, `Blue Banisters`, `Blue Hawaii`, `Blue Neighbourhood`, `Bluebird Days`, `Bobby Tarantino`, `Bobby Tarantino II`, `Bon Iver`, `Born Pink`, `Born To Run`, `Brand New Eyes`, `Break The Cycle`, `Breakfast In America`, `Breakthrough`, `Brett Young`, `Bridge Over Troubled Water`, `Bright: The Album`, `Brol`, `Buds`, `Buena Vista Social Club`, `Built On Glass`, `Bury Me At Makeout Creek`, `Busyhead`, `By The Way`, `CB6`, `CNCO`, `California Sunrise`, `Californication`, `Call Me Irresponsible`, `Calm`, `Camino Palmero`, `Camp`, `Caracal`, `Carbon Fiber Hits`, `Carnival`, `Carry On`, `Cartel De Santa`, `Certified Lover Boy`, `Chaaama`, `Chama Meu Nome`, `Chapter 1: Snake Oil`, `Chapter 2: Swamp Savant`, `Chapter One`, `Charlie's Angels`, `Cherry Bomb`, `Chief`, `Chocolate Factory`, `Chosen`, `Chris Brown`, `Christina Aguilera`, `Chromatica`, `Church`, `City Of Evil`, `Clandestino`, `Clouds`, `Coco`, `Collision Course`, `Colour Vision`, `Combat Rock`, `Come Around Sundown`, `Come Away With Me`, `Come Home The Kids Miss You`, `Come What(ever) May`, `Commando`, `Common Sense`, `Communion`, `Conditions`, `Confident`, `Confrontation`, `Control The Streets, Volume 2`, `Corinne Bailey Rae`, `Costello Music`, `Cottonwood`, `Covers, Vol. 2`, `Cozy Tapes Vol. 2: Too Cozy`, `Crash Talk`, `Crazy Love`, `Crazysexycool`, `Crowded House`, `Cruisin' With Junior H`, `Culture`, `Current Mood`, `DS2`, `Dale`, `Danger Days: The True Lives Of The Fabulous Killjoys`, `Dangerous Woman`, `Dangerous: The Double Album`, `Dark Horse`, `Day69`, `Daydream`, `De Fiesta`, `De Viaje`, `DeAnn`, `Death Race For Love`, `Delirium`, `Delta`, `Demidevil`, `Depression Cherry`, `Descendants`, `Desgenerados Mixtape`, `Destin`, `Destiny Fulfilled`, `Desvelado`, `Detroit 2`, `Dex Meets Dexter`, `Dharma`, `Die A Legend`, `Different World`, `Dig Your Roots`, `Digital Druglord`, `Dirt`, `Disclaimer I / II`, `Discovery`, `Disraeli Gears`, `Disumano`, `Dizzy Up The Girl`, `Don't Play That Song`, `Donda`, `Donde Quiero Estar`, `Doo-Wops & Hooligans`, `Down The Way`, `Dr. Feelgood`, `Dream Your Life Away`, `Dreaming Out Loud`, `Drip Harder`, `Drive`, `Drones`, `Dropped Outta College`, `Drowning`, `Dua Warna Cinta`, `Dulce Beat`, `Dusty In Memphis`, `Dutty Rock`, `Dying To Live`, `ENR`, `East Atlanta Love Letter`, `Editorial`, `Edna`, `El Abayarde`, `El Amor En Los Tiempos Del Perreo`, `El Camino`, `El Comienzo`, `El Dorado`, `El Karma`, `El Mal Querer`, `El Malo`, `El Trabajo Es La Suerte`, `El Viaje De Copperpot`, `Electric Ladyland`, `Emotion`, `En Tus Planes`, `Endless Summer Vacation`, `Enter The Wu-Tang (36 Chambers)`, `Equals (=)`, `Estrella`, `Euphoria`, `Europop`, `Evermore`, `Every Kingdom`, `Everyday Life`, `Evolve`, `Expectations`, `Face Yourself`, `Facelift`, `Fallin'`, `Fancy You`, `Fantas\xEDa`, `Favourite Worst Nightmare`, `Fear Of The Dark`, `Fearless`, `Feel Something`, `Feels Like Home`, `Femme Fatale`, `Ferxxocalipsis`, `Fifty Shades Darker`, `Fifty Shades Freed`, `Fifty Shades Of Grey`, `Final (Vol.1)`, `Finding Beauty In Negative Spaces`, `Fine Line`, `First Impressions Of Earth`, `First Steps`, `Five Seconds Flat`, `Folklore`, `For Emma, Forever Ago`, `Forajido EP 1`, `Forever`, `Forever Young`, `Formula Of Love: O+T=<3`, `Free 6lack`, `Freudian`, `Frozen II`, `Full Moon Fever`, `Funhouse`, `Funk Wav Bounces Vol.1`, `Future History`, `FutureSex/LoveSounds`, `Fuzzybrain`, `Gallery`, `Gangsta's Paradise`, `Gemini`, `Gemini Rights`, `Generationwhy`, `Get A Grip`, `Get Up`, `Gettin' Old`, `Girl`, `Gladiator`, `Glisten`, `Globalization`, `Gloria`, `Glory Days`, `God's Project`, `Gold Skies`, `Golden`, `Good Evening`, `Good Thing`, `Goodbye Yellow Brick Road`, `Gossip Columns`, `Got Your Six`, `Graceland`, `Graduation`, `Grand Champ`, `Grandson, Vol. 1`, `Green River`, `Guerra`, `Ha*Ash Primera Fila - Hecho Realidad`, `Haiz`, `Hamilton`, `Happy Endings`, `Harry Styles`, `Hasta La Ra\xEDz`, `Hatful Of Hollow`, `Head In The Clouds`, `Heard It In A Past Life`, `Heart Shaped World`, `Heartbeat City`, `Heartbreak On A Full Moon / Cuffing Season - 12 Days Of Christmas`, `Heaven Or Hell`, `Heaven knows`, `Hellbilly Deluxe`, `Hellboy`, `Help!`, `Her Loss`, `Here Comes The Cowboy`, `Hey World`, `High School Musical`, `High Tide In The Snake's Nest`, `Historias De Un Capricornio`, `Hndrxx`, `Hombres G (Devu\xE9lveme A Mi Chica)`, `Homerun`, `Homework`, `Hot Fuss`, `Hot Pink`, `Hot Sauce / Hello Future`, `Hot Space`, `Hotel Diablo`, `Houses Of The Holy`, `How Big, How Blue, How Beautiful`, `How I'm Feeling`, `How To Be Human`, `How To Save A Life`, `How To: Friend, Love, Freefall`, `Hozier`, `Human`, `Huncho Jack, Jack Huncho`, `Hunter Hayes`, `Hysteria`, `I Am...Sasha Fierce`, `I Can't Handle Change`, `I Met You When I Was 18. (The Playlist)`, `I Never Liked You`, `I Never Loved A Man The Way I Love You`, `I See You`, `I Think You Think Too Much Of Me`, `I Used To Know Her`, `I Used To Think I Could Fly`, `I'm Comin' Over`, `Ich & Keine Maske`, `If You Can Believe Your Eyes & Ears`, `Il Ballo Della Vita`, `Ill Communication`, `Imagination & The Misfit Kid`, `Imagine`, `Immortalized`, `In A Perfect World...`, `In Colour`, `In My Own Words`, `In Rainbows`, `In Return`, `In The Lonely Hour`, `Infest`, `Innuendo`, `Inter Shibuya - La Mafia`, `Interstellar`, `Is This It`, `It Was Written`, `It's Not Me, It's You`, `It's Only Me`, `Ivory`, `JackBoys`, `Jamie`, `Jazz`, `Jibrail & Iblis`, `Jordi`, `Jordin Sparks`, `Jose`, `Just As I Am`, `Just Cause Y'all Waited 2`, `Just Like You`, `Justified`, `K-12 / After School`, `K.I.D.S.`, `K.O.`, `K.O.B. Live`, `KG0516`, `KOD`, `Kane Brown`, `Kid A`, `Kid Krow`, `Kids See Ghosts`, `Kids in Love`, `Kinks (You Really Got Me)`, `Know-It-All`, `Konvicted`, `Kring`, `LANY`, `LM5`, `La Criatura`, `La Flaca`, `La Melodia De La Calle`, `La Revolucion`, `Lady Lady`, `Lady Wood`, `Langit Mong Bughaw`, `Las Que No Iban A Salir`, `Last Day Of Summer`, `Last Year Was Complicated`, `Layers`, `Layover`, `Lazarus`, `Led Zeppelin`, `Left Of The Middle`, `Leftoverture`, `Legends Never Die`, `Let's Skip To The Wedding`, `Let's Talk About Love`, `Licensed To Ill`, `Life In Cartoon Motion`, `Life Thru A Lens`, `Lifelines`, `Like..?`, `Lil Big Pac`, `Lil Boat`, `Lil Boat 2`, `Lil Boat 3.5`, `Lil Kiwi`, `Lil Pump`, `Limon Y Sal`, `Listen Without Prejudice`, `Little Voice`, `Live On Red Barn Radio I & II`, `Lo Que And\xE1bamos Buscando`, `Lofi Fruits Music 2021`, `London Calling`, `Los Campeones Del Pueblo`, `Los Extraterrestres`, `Los Favoritos 2`, `Lost`, `Lost In Love`, `Loud`, `Love Sick`, `Love Story`, `Love Stuff`, `Love Yourself: Tear`, `Lover`, `Luca Brasi 2: Gangsta Grillz`, `Lust For Life`, `Luv Is Rage`, `M!ssundaztood`, `Ma Fleur`, `Made In Lagos`, `Mafia Bidness`, `Magazines Or Novels`, `Mainstream Sellout`, `Majestic`, `Make It Big`, `Make Yourself`, `Making Mirrors`, `Mamma Mia! Here We Go Again`, `Man Of The Woods`, `Manic`, `Me And My Gang`, `Meduza`, `Meet The Orphans`, `Meet The Woo`, `Melim`, `Mellon Collie And The Infinite Sadness`, `Melly vs. Melvin`, `Memories...Do Not Open`, `Menagerie`, `Midnights`, `Minecraft - Volume Alpha`, `Minutes To Midnight`, `Mix Pa Llorar En Tu Cuarto`, `Modo Avi\xF3n`, `Monkey Business`, `Mono.`, `Montana`, `Montevallo`, `Moosetape`, `Morning View`, `Motivan2`, `Moving Pictures`, `Mr. Davis`, `Mr. Misunderstood`, `Mulan`, `Mura Masa`, `Music From The Edge Of Heaven`, `Music Of The Sun`, `My House`, `My Kinda Party`, `My Krazy Life`, `My Liver Will Handle What My Heart Can't`, `My Moment`, `My Own Lane`, `My Turn`, `My Worlds`, `Na Praia (Ao Vivo)`, `Nakamura`, `Nation Of Two`, `Navegando`, `Need You Now`, `Neon Future III`, `Neotheater`, `Never Trust A Happy Song`, `New English`, `News Of The World`, `Nicole`, `Night & Day`, `Nimmerland`, `Nimrod`, `Nine Track Mind`, `No Angel`, `No Me Pidas Perd\xF3n`, `No More Drama`, `No Protection`, `No Strings Attached`, `No Time To Die`, `Nobody Is Listening`, `Non Stop Erotic Cabaret`, `Non-Fiction`, `Northsbest`, `Nostalgia`, `Nostalgia, Ultra`, `Notes On A Conditional Form`, `Now Or Never`, `O Embaixador (Ao Vivo)`, `O My Heart`, `OK Computer`, `Ocean`, `Ocean Avenue`, `Ocean Eyes`, `Odisea`, `Oh My My`, `Oh, What A Life`, `On The 6`, `One In A Million`, `One More Light`, `One Of These Nights`, `Open Up And Say...Ahh!`, `Ordinary Man`, `Origins`, `Out Of The Blue`, `Over It`, `OzuTochi`, `PTSD`, `Pa Las Baby's Y Belikeada`, `Pa Que Hablen`, `Pa' Luego Es Tarde`, `Pa' Otro La 'O`, `Pablo Honey`, `Pain Is Love`, `Pain Is Temporary`, `Painting Pictures`, `Palmen Aus Plastik 2`, `Para Mi Ex`, `Para Siempre`, `Partners In Crime`, `Pawn Shop`, `Pegasus / Neon Shark VS Pegasus`, `Pet Sounds`, `Piece By Piece`, `Pier Pressure`, `Pineapple Sunrise`, `Piseiro 2020 Ao Vivo`, `Planet Pit`, `Plans`, `Play Deep`, `Playa Saturno`, `Por Primera Vez`, `Por Vida`, `Positions`, `Post Human: Survival Horror`, `Poster Girl`, `Prazer, Eu Sou Ferrugem (Ao Vivo)`, `Pretty Girls Like Trap Music`, `Pretty. Odd.`, `Prince Royce`, `Prisma`, `Prometo`, `Providence`, `Puberty 2`, `Punisher`, `Purgatory`, `Purple Rain`, `Que Bendici\xF3n`, `Queen Of The Clouds`, `Quiero Volver`, `R&G (Rhythm & Gangsta): The Masterpiece`, `Raise!`, `Ransom 2`, `Rapunzel`, `Rare`, `Re Mida`, `Ready To Die`, `Realer`, `Rebelde`, `Reclassified`, `Recovery`, `Recuerden Mi Estilo`, `Reggatta De Blanc`, `Regulate\u2026 G Funk Era`, `Reik`, `Reise, Reise`, `Relapse`, `Relaxing Piano Lullabies And Natural Sleep Aid For Baby Sleep Music`, `Religiously. The Album.`, `Replay`, `Results May Vary`, `Revenge`, `Revolve`, `Revolver`, `Ricky Martin`, `Rien 100 Rien`, `Ripcord`, `Rise And Fall, Rage And Grace`, `Rise Of An Empire`, `Robin Hood: Prince Of Thieves`, `Rock N Roll Jesus`, `Romance`, `Romances`, `Ronan`, `Royal Blood`, `Rumours`, `Sad Boyz 4 Life II`, `San Lucas`, `Santana World`, `Saturation III`, `Sauce Boyz`, `Savage Mode`, `Saxobeats`, `Scarlet`, `Schwarzes Herz`, `Seal The Deal & Let's Boogie`, `Section.80`, `Segundo Romance`, `Sehnsucht`, `Shake The Snow Globe`, `Shang-Chi And The Legend Of The Ten Rings: The Album`, `Sheer Heart Attack`, `Shiesty Season`, `Shock Value`, `Shoot For The Stars, Aim For The Moon`, `Signed Sealed And Delivered`, `Signos`, `Silent Alarm`, `Simplemente Gracias`, `Sin Bandera`, `Sing Me A Lullaby, My Sweet Temptation`, `Sinner`, `Sirio`, `Sit Still, Look Pretty`, `Skin`, `Slowhand`, `Smash`, `Smithereens`, `Snow Cougar`, `Social Cues`, `Some Girls`, `Song Hits From Holiday Inn`, `Songs For Dads`, `Songs For The Deaf`, `Songs For You, Truths For Me`, `Songs In The Key Of Life`, `Souled Out`, `Sounds Of Silence`, `Soy Como Quiero Ser`, `Speak Now`, `Speak Your Mind`, `Speakerboxxx/The Love Below`, `Spider-Man: Into The Spider-Verse`, `Split Decision`, `Square Up`, `SremmLife`, `Starboy`, `Stay +`, `Stay Dangerous`, `Staying At Tamara's`, `Steppenwolf`, `Stick Season`, `Still Bill`, `Straight Outta Compton`, `Strange Trails`, `Stronger`, `Suavemente`, `Sublime`, `Suck It and See`, `Sucker`, `Sue\xF1os`, `Sugar`, `Summer Forever`, `Summer,`, `Sunset Season`, `Sunshine On Leith`, `Surfer Rosa`, `Sweet Talker`, `SweetSexySavage`, `System Of A Down`, `TA13OO`, `Talk That Talk`, `Talking Heads: 77`, `Tangled Up`, `Tango In The Night`, `Taxi Driver`, `Taylor Swift`, `Tell Me It's Real`, `Ten`, `Ten Summoner's Tales`, `Terra Sem Cep (Ao Vivo)`, `Terral`, `Testing`, `Tha Carter III`, `Thank Me Later`, `That's Christmas To Me`, `The Academy`, `The Adventures Of Bobby Ray`, `The Album`, `The Andy Williams Christmas Album`, `The Aviary`, `The Balcony`, `The Battle Of Los Angeles`, `The Beatles (White Album)`, `The Beginning`, `The Better Life`, `The Big Day`, `The Book`, `The Breakfast Club`, `The Cars`, `The Colour And The Shape`, `The Death Of Peace Of Mind`, `The Diary Of Alicia Keys`, `The Documentary`, `The Emancipation Of Mimi`, `The Eminem Show`, `The End Of Everything`, `The Final Countdown`, `The Forever Story`, `The Foundation`, `The Goat`, `The Golden Child`, `The Good Parts`, `The Greatest Showman: Reimagined`, `The Green Trip`, `The Hardest Love`, `The Head And The Heart`, `The Human Condition`, `The Infamous`, `The Lady Killer`, `The Last Don II`, `The Lion King`, `The Lockdown Sessions`, `The London Sessions`, `The Lord Of The Rings: The Fellowship Of The Ring`, `The Lost Boy`, `The Magic Of Christmas / The Christmas Song`, `The Marshall Mathers LP`, `The Martin Garrix Collection`, `The Melodic Blue`, `The Mockingbird & The Crow`, `The Pains Of Growing`, `The Papercut Chronicles`, `The Perfect Luv Tape`, `The Pinkprint`, `The Predator`, `The Queen Is Dead`, `The ReVe Festival: Finale`, `The Rise And Fall Of Ziggy Stardust And The Spiders From Mars`, `The Rising Tied`, `The River`, `The Stone Roses`, `The Story Of Us`, `The Stranger`, `The Sufferer & The Witness`, `The Sun's Tirade`, `The Temptations Sing Smokey`, `The Time Of Our Lives`, `The Way It Is`, `The Wonderful World Of Sam Cooke`, `The Writing's On The Wall`, `The Young And The Hopeless`, `Therapy`, `Therapy Session`, `There Is More (Live)`, `There Is Nothing Left To Lose`, `These Things Happen`, `Third Eye Blind`, `This Is Me...Then`, `This Unruly Mess I've Made`, `Threat to Survival`, `Thrill Of The Chase`, `Time`, `Timelezz`, `To Let A Good Thing Die`, `To Pimp A Butterfly`, `Toast To Our Differences`, `Todos Os Cantos, Vol. 1 (Ao Vivo)`, `Too Hard`, `Torches X`, `Total Xanarchy`, `Toto IV`, `Toulouse Street`, `Tourist History`, `Toxicity`, `Tragic Kingdom`, `Tranquility Base Hotel & Casino`, `Traumazine`, `Traveler`, `Tres Hombres`, `Trip At Knight`, `Tron: Legacy`, `True Blue`, `True Colors`, `Trustfall`, `Tu Veneno Mortal`, `Tudo Em Paz`, `Ubuntu`, `Ugly Is Beautiful`, `Ultra 2021`, `Una Mattina`, `Unbroken`, `Uncovered`, `Under Pressure`, `Unsponsored Content`, `Unstoppable`, `Unwritten`, `Urban Flora`, `Urban Hymns`, `Use Your Illusion I`, `Veneer`, `Versions Of Me`, `Vibes`, `Vice Versa`, `Vices & Virtues`, `Victory`, `Vida`, `Viejo Marihuano`, `Visual\xEDzate`, `Walk Away`, `Walk Me Home...`, `Watch The Throne`, `Wave`, `We Broke The Rules`, `We Love You Tecca`, `We Love You Tecca 2`, `Weezer (Green Album)`, `Welcome To The Madhouse`, `Westlife`, `What A Time To Be Alive`, `What Do You Think About The Car?`, `What Is Love?`, `What Makes You Country`, `What Separates Me From You`, `What You See Is What You Get / What You See Ain't Always What You Get`, `When It's Dark Out`, `When We All Fall Asleep, Where Do We Go?`, `Where The Light Is`, `While The World Was Burning`, `White Pony`, `Whitney`, `Who Really Cares`, `Who You Are`, `Who's Next`, `Wide Open`, `Wilder Mind`, `Wildfire`, `Willy And The Poor Boys`, `Wings / You Never Walk Alone`, `Wish`, `Wish You Were Here`, `Without Warning`, `Wonder`, `X&Y`, `XOXO`, `Y Que Quede Claro`, `YBN: The Mixtape`, `Yo Creo`, `You Will Regret`, `Youngblood`, `Younger Now`, `Youth`], artist: [`$NOT`, `$uicideboy$`, `(G)I-DLE`, `*NSYNC`, `2 Chainz`, `21 Savage`, `6LACK`, `? & The Mysterians`, `A Boogie Wit da Hoodie`, `A Taste of Honey`, `A Tribe Called Quest`, `A-Ha`, `ABBA`, `AC/DC`, `AJ Tracey`, `ATEEZ`, `Ace of Base`, `Adele`, `Ado`, `Aerosmith`, `Agust D`, `Aitana`, `Al Dexter & his Troopers`, `Al Green`, `Al Jolson`, `Al Martino`, `Alan Jackson`, `Alannah Myles`, `Alec Benjamin`, `Alejandro Sanz`, `Alesso`, `Alfredo Olivas`, `Ali Gatie`, `Alice In Chains`, `Alina Baraz`, `All Time Low`, `All-4-One`, `All-American Rejects`, `Alok`, `America`, `American Quartet`, `Amii Stewart`, `Amitabh Bhattacharya`, `Ana Castela`, `Anderson .Paak`, `Andy Grammer`, `Angus & Julia Stone`, `Anirudh Ravichander`, `Anita Ward`, `Anitta`, `Anton Karas`, `Anuel AA`, `Arcade Fire`, `Archie Bell & The Drells`, `Archies`, `Aretha Franklin`, `Arizona Zervas`, `Armin van Buuren`, `Arthur Conley`, `Artie Shaw`, `Asake`, `Asees Kaur`, `Association`, `Atif Aslam`, `Audioslave`, `Aventura`, `Avril Lavigne`, `Aya Nakamura`, `B J Thomas`, `B.o.B`, `BLACKPINK`, `BONES`, `BROCKHAMPTON`, `BTS`, `Baby Keem`, `Bachman-Turner Overdrive`, `Backstreet Boys`, `Bad Bunny`, `Badshah`, `Bailey Zimmerman`, `Banda El Recodo`, `Barbra Streisand`, `Barry White`, `Bazzi`, `Bebe Rexha`, `Becky G`, `Becky Hill`, `Bee Gees`, `Ben Bernie`, `Ben Howard`, `Ben Selvin`, `Berlin`, `Bessie Smith`, `Bethel Music`, `Bette Midler`, `Beyonce`, `Bibi Blocksberg`, `Bibi und Tina`, `BigXthaPlug`, `Bill Doggett`, `Bill Haley & his Comets`, `Bill Withers`, `Billy Davis Jr`, `Billy Joel`, `Billy Paul`, `Billy Preston`, `Billy Swan`, `Birdy`, `Bizarrap`, `Blake Shelton`, `Blur`, `Bob Marley & The Wailers`, `Bob Seger`, `Bobby Darin`, `Bobby Lewis`, `Bobby McFerrin`, `Bobby Vinton`, `Boney M.`, `Bonez MC`, `Bonnie Tyler`, `Booba`, `Boston`, `BoyWithUke`, `Boyce Avenue`, `Bradley Cooper`, `Bread`, `Brent Faiyaz`, `Brett Young`, `Bring Me The Horizon`, `Britney Spears`, `Brooks & Dunn`, `Bruce Channel`, `Bruno & Marrone`, `Bryan Adams`, `Bryce Vine`, `Buddy Holly`, `Burna Boy`, `C. Tangana`, `CKay`, `CRO`, `Camilo`, `Capital Bra`, `Captain & Tennille`, `Cardi B`, `Carin Leon`, `Carlos Vives`, `Carly Simon`, `Carpenters`, `Cavetown`, `Celine Dion`, `Central Cee`, `Chaka Khan`, `Champs`, `Charlie Rich`, `Chayanne`, `Cheat Codes`, `Cher`, `Chic`, `Chicago`, `Chris Brown`, `Chris Isaak`, `Chris Young`, `Christina Aguilera`, `Christina Perri`, `Christopher Cross`, `Chuck Berry`, `Ciara`, `Cigarettes After Sex`, `Cliff Edwards (Ukelele Ike)`, `Cody Johnson`, `Colbie Caillat`, `Colby O'Donis`, `Cole Swindell`, `Coleman Hawkins`, `Contours`, `Coolio`, `Count Basie`, `Cris Mj`, `Culture Club`, `Cyndi Lauper`, `D-Block Europe`, `DAY6`, `DJ Khaled`, `DJ Luian`, `DJ Nelson`, `DMX`, `DNCE`, `DaVido`, `Dadju`, `Daft Punk`, `Dan + Shay`, `Daniel Powter`, `Danny Ocean`, `Darius Rucker`, `Dave`, `David Bowie`, `David Guetta`, `Daya`, `Dean Martin`, `Deee-Lite`, `Deep Purple`, `Deftones`, `Demi Lovato`, `Dennis Lloyd`, `Denzel Curry`, `Dermot Kennedy`, `Desiigner`, `Devo`, `Dewa 19`, `Dexys Midnight Runners`, `Diddy`, `Dido`, `Die drei !!!`, `Diego & Victor Hugo`, `Diljit Dosanjh`, `Dimitri Vegas & Like Mike`, `Dinah Shore`, `Dionne Warwick`, `Dire Straits`, `Disclosure`, `Dixie Cups`, `Doja Cat`, `Dolly Parton`, `Don Diablo`, `Don Henley`, `Don McLean`, `Don Omar`, `Donna Summer`, `Donovan`, `Dr. Dre`, `Drake`, `Dreamville`, `Dua Lipa`, `EMF`, `ENHYPEN`, `Earth, Wind & Fire`, `Ed Sheeran`, `Eddie Cantor`, `Eddie Cochran`, `Eddy Howard`, `Edgar Winter Group`, `Edwin Hawkins Singers`, `Edwin Starr`, `El Alfa`, `Eladio Carrion`, `Electric Light Orchestra`, `Elevation Worship`, `Ella Henderson`, `Ellie Goulding`, `Elton John`, `Elvis Presley`, `Empire of the Sun`, `En Vogue`, `Enrique Iglesias`, `Eslabon Armado`, `Ethel Waters`, `Etta James`, `Evanescence`, `Exile`, `Extreme`, `Faith Hill`, `Fall Out Boy`, `Fanny Brice`, `Farruko`, `Fats Domino`, `Fats Waller`, `Feid`, `Felix Jaehn`, `Fergie`, `Fetty Wap`, `Fiersa Besari`, `Fifth Harmony`, `Fine Young Cannibals`, `Five Finger Death Punch`, `Fleetwood Mac`, `Flo-Rida`, `Florence + The Machine`, `Flume`, `Foo Fighters`, `Foreigner`, `Foster The People`, `Four Aces`, `Frank Ocean`, `Frank Sinatra`, `Frankie Avalon`, `Frankie Valli`, `Fred Astaire`, `Freda Payne`, `Freddie Dredd`, `Freddy Fender`, `French Montana`, `Fuerza Regida`, `Fujii Kaze`, `Future`, `G-Eazy`, `Garfunkel and Oates`, `Gary Lewis & The Playboys`, `Gary Numan`, `Gene Autry`, `Gene Chandler`, `Gene Vincent`, `George Michael`, `George Strait`, `Gera MX`, `Ghost`, `Ghostemane`, `Gigi D'Agostino`, `Gladys Knight & The Pips`, `Glass Animals`, `Glee Cast`, `Gloria Gaynor`, `Godsmack`, `Gorillaz`, `Gotye`, `Grand Funk Railroad`, `Green Day`, `Grouplove`, `Grupo Firme`, `Grupo Marca Registrada`, `Gryffin`, `Gucci Mane`, `Guess Who`, `Gunna`, `Gusttavo Lima`, `Guy Mitchell`, `Gwen Stefani`, `Gzuz`, `H.E.R.`, `HARDY`, `Hailee Steinfeld`, `Halsey`, `Hans Zimmer`, `Harris Jayaraj`, `Harry Chapin`, `Harry James`, `Harry Nilsson`, `Harry Styles`, `Hayley Williams`, `Herb Alpert`, `Herman's Hermits`, `Hillsong UNITED`, `Hillsong Worship`, `Hollywood Undead`, `Honey Cone`, `Hoobastank`, `Hues Corporation`, `I Prevail`, `ITZY`, `IVE`, `Ice Cube`, `Ice Spice`, `Iggy Azalea`, `Imagine Dragons`, `Incubus`, `Internet Money`, `Isaac Hayes`, `J Geils Band`, `J. Cole`, `JAY-Z`, `JJ Lin`, `JP Saxe`, `JVKE`, `Jack Harlow`, `Jack Johnson`, `Jackie Wilson`, `Jacquees`, `James Arthur`, `James Brown`, `James TW`, `James Taylor`, `Jamie Foxx`, `Janet Jackson`, `Janis Joplin`, `Jason Aldean`, `Jason Mraz`, `Jay Chou`, `Jay Sean`, `Jay Wheeler`, `Jaymes Young`, `Jean Knight`, `Jeezy`, `Jennifer Lopez`, `Jennifer Warnes`, `Jeremih`, `Jeremy Zucker`, `Jerry Lee Lewis`, `Jerry Murad's Harmonicats`, `Jess Glynne`, `Jessie J`, `Jewel`, `Jimi Hendrix`, `Jimin`, `Jimmie Rodgers`, `Jimmy Dean`, `Jo Stafford`, `Joan Jett & The Blackhearts`, `Joao Gilberto`, `Joel Corry`, `John Fred & The Playboy Band`, `John Legend`, `John Mayer`, `John Williams`, `Johnnie Ray`, `Johnnie Taylor`, `Johnny Cash`, `Johnny Horton`, `Johnny Mathis`, `Johnny Mercer`, `Johnny Nash`, `Joji`, `Jon Bellion`, `Jonas Blue`, `Jonas Brothers`, `Joni James`, `Jorja Smith`, `Juan Gabriel`, `Juan Luis Guerra 4.40`, `Juanes`, `Juice Newton`, `Julia Michaels`, `Justin Bieber`, `Justin Quiles`, `KALEO`, `KAROL G`, `KAYTRANADA`, `KK`, `KSI`, `KYLE`, `Kacey Musgraves`, `Kane Brown`, `Kanye West`, `Karan Aujla`, `Kate Smith`, `Katy Perry`, `Kay Kyser`, `Ke$ha`, `Kehlani`, `Kelly Clarkson`, `Kenny Chesney`, `Kenny Loggins`, `Kenny Rogers`, `Kenshi Yonezu`, `Kenya Grace`, `Kevin Gates`, `Key Glock`, `Khalid`, `Kim Carnes`, `Kim Petras`, `Kimbra`, `Kina`, `King Gnu`, `Kings of Leon`, `Kingsmen`, `Kitty Kallen`, `Kodak Black`, `Kodaline`, `Kollegah`, `Kool & The Gang`, `Kungs`, `Kygo`, `Kylie Minogue`, `LE SSERAFIM`, `LISA`, `LMFAO`, `LUDMILLA`, `La Adictiva Banda San Jos\xE9 de Mesillas`, `La Oreja de Van Gogh`, `Labrinth`, `Lady Antebellum`, `Lady GaGa`, `Lainey Wilson`, `Lana Del Rey`, `Latto`, `Lauryn Hill`, `Lauv`, `League of Legends`, `Lee Brice`, `Leon Bridges`, `Leona Lewis`, `Lesley Gore`, `Leslie Odom Jr.`, `Liam Payne`, `Lifehouse`, `Lil Baby`, `Lil Dicky`, `Lil Durk`, `Lil Mosey`, `Lil Nas X`, `Lil Pump`, `Lil Skies`, `Lil Tjay`, `Lil Uzi Vert`, `Lil Yachty`, `Lil' Kim`, `Lil' Wayne`, `Lin-Manuel Miranda`, `Linkin Park`, `Lionel Richie`, `Lipps Inc`, `Lisa Loeb`, `Little Peggy March`, `Little Richard`, `Lofi Fruits Music`, `Lord Huron`, `Los Del Rio`, `Los Dos Carnales`, `Los Lobos`, `Los Temerarios`, `Los Tigres Del Norte`, `Los Tucanes De Tijuana`, `Lou Reed`, `Loud Luxury`, `Louis Jordan`, `Louis Tomlinson`, `Love Unlimited`, `Lovin' Spoonful`, `Luan Santana`, `Luciano`, `Luis Miguel`, `Luis R Conriquez`, `Lulu`, `Lunay`, `Lupe Fiasco`, `M`, `MAX`, `MC Hammer`, `MC Ryan SP`, `MKTO`, `Mabel`, `Machine Gun Kelly`, `Madison Beer`, `Madonna`, `Mahalini`, `Major Lazer`, `Mambo Kingz`, `Maneskin`, `Marco Antonio Sol\xEDs`, `Margaret Whiting`, `Maria Becerra`, `Mario`, `Mario Lanza`, `Mark Ronson`, `Maroon 5`, `Marshmello`, `Martin Garrix`, `Mary Ford`, `Mary J Blige`, `Mary J. Blige`, `Mary Wells`, `Matoma`, `Mau y Ricky`, `Meek Mill`, `Megadeth`, `Melanie`, `Melanie Martinez`, `Melendi`, `Men At Work`, `Metro Boomin`, `Michael Bubl\xE9`, `Michael Jackson`, `Michael McDonald`, `Michael Sembello`, `Miguel`, `Mike Posner`, `Miley Cyrus`, `Milky Chance`, `Minnie Riperton`, `Miracle Tones`, `Miranda Lambert`, `Mohit Chauhan`, `Mon Laferte`, `Moneybagg Yo`, `Monsta X`, `Mora`, `Morad`, `Morat`, `Mother Mother`, `Motley Crue`, `Ms. Lauryn Hill`, `Mumford & Sons`, `Muse`, `Mya`, `Myke Towers`, `NCT 127`, `NCT DREAM`, `NEFFEX`, `Nadin Amizah`, `Nancy Sinatra`, `Nat King Cole`, `Nate Smith`, `Natti Natasha`, `Nayer`, `Neil Diamond`, `Neil Sedaka`, `Nekfeu`, `Nelly`, `New Vaudeville Band`, `Next`, `Nickelback`, `Nicki Minaj`, `Nicki Nicole`, `Nicky Jam`, `Nina Simone`, `Ninho`, `Nipsey Hussle`, `Nirvana`, `Niska`, `No Doubt`, `Norah Jones`, `Normani`, `OMI`, `ONE OK ROCK`, `Oasis`, `Official HIGE DANdism`, `Offset`, `Old Dominion`, `Oliver Heldens`, `Olivia Rodrigo`, `Omah Lay`, `One Direction`, `Otis Redding`, `OutKast`, `Owl City`, `P Diddy`, `P!nk`, `PLK`, `PNL`, `Pamungkas`, `Passenger`, `Pat Boone`, `Patsy Cline`, `Patti LaBelle`, `Patti Page`, `Paul & Paula`, `Paul Revere & the Raiders`, `Paul Robeson`, `Paul Russell`, `Paul Whiteman`, `Paula Abdul`, `Peaches & Herb`, `Pearl Jam`, `Pee Wee Hunt`, `Pee Wee King`, `Pentatonix`, `Percy Faith`, `Percy Sledge`, `Peso Pluma`, `Peter Cetera`, `Peter Gabriel`, `Peter, Paul & Mary`, `Pharrell Williams`, `Pierce The Veil`, `Pineapple StormTv`, `Pink Floyd`, `Pink Sweat$`, `Piso 21`, `Pitbull`, `Plan B`, `Player`, `Polo G`, `Pop Smoke`, `Portugal. The Man`, `Pouya`, `Prince`, `Prince Royce`, `Pusha T`, `Quality Control`, `Queen`, `Quinn XCII`, `R. Kelly`, `RAF Camora`, `RAYE`, `REM`, `REO Speedwagon`, `Radiohead`, `Rag'n'Bone Man`, `Rage Against The Machine`, `Rahat Fateh Ali Khan`, `Rainbow Kitten Surprise`, `Rammstein`, `Rauw Alejandro`, `Ray Charles`, `Ray Parker Jr`, `Ray Stevens`, `Red Foley`, `Red Hot Chili Peppers`, `Red Velvet`, `Regard`, `Regina Belle`, `Reik`, `Rels B`, `Rema`, `Ricardo Arjona`, `Rich The Kid`, `Rick Astley`, `Rick Dees & his Cast of Idiots`, `Rick Ross`, `Rick Springfield`, `Ricky Martin`, `Ricky Nelson`, `Rihanna`, `Rita Ora`, `Ritchie Valens`, `Rizky Febian`, `Rob Thomas`, `Roberta Flack`, `Robin Schulz`, `Robin Thicke`, `Rod Stewart`, `Rod Wave`, `Roddy Ricch`, `Roger Miller`, `Romeo Santos`, `Rosemary Clooney`, `Roxette`, `Roy Acuff`, `Roy Orbison`, `Rudimental`, `Ruel`, `Ruth B.`, `Ryan Lewis`, `SCH`, `SEVENTEEN`, `SWV`, `Sabaton`, `Sabrina Carpenter`, `Sachet Tandon`, `Sachin-Jigar`, `Sade`, `Sam Cooke`, `Sam Feldt`, `Sam Hunt`, `Sam Smith`, `Sam The Sham & The Pharaohs`, `Sammy Davis Jr`, `Sammy Kaye`, `Santana`, `Sasha Alex Sloan`, `Savage Garden`, `Saweetie`, `Scorpions`, `Sean Kingston`, `Sean Paul`, `Sebastian Yatra`, `Sech`, `Seeb`, `Sezen Aksu`, `Sfera Ebbasta`, `Shaggy`, `Shania Twain`, `Shawn Mendes`, `Sheena Easton`, `Shinedown`, `Shubh`, `Sia`, `Sid Sriram`, `Sidhu Moose Wala`, `Silk`, `Silver Convention`, `Simon & Garfunkel`, `Sinead O'Connor`, `Sir Mix-a-Lot`, `Sister Sledge`, `Ski Mask The Slump God`, `Skillet`, `Skrillex`, `Sleeping At Last`, `Smokey Robinson`, `Snoop Dogg`, `Snow Patrol`, `Soda Stereo`, `Sonu Nigam`, `Sophie Ellis-Bextor`, `Spencer Davis Group`, `Spice Girls`, `Stan Getz`, `Starland Vocal Band`, `Stephen Sanchez`, `Steve Aoki`, `Steve Lacy`, `Steve Winwood`, `Stevie B`, `Sting`, `Stormzy`, `Strawberry Alarm Clock`, `Stray Kids`, `Stromae`, `Sublime`, `Sum 41`, `Summer Walker`, `Supertramp`, `Survivor`, `Swedish House Mafia`, `System Of A Down`, `T-Pain`, `T.I.`, `TAEYEON`, `TKKG`, `TLC`, `TOMORROW X TOGETHER`, `TOTO`, `TWICE`, `Tag Team`, `Tainy`, `Tammi Terrell`, `Tanishk Bagchi`, `Tate McRae`, `Taylor Swift`, `Tears For Fears`, `Tems`, `Tennessee Ernie Ford`, `Terence Trent D'Arby`, `Teresa Brewer`, `Terry Jacks`, `The Ames Brothers`, `The Animals`, `The B52s`, `The Bangles`, `The Beatles`, `The Black Eyed Peas`, `The Black Keys`, `The Box Tops`, `The Chainsmokers`, `The Chiffons`, `The Chordettes`, `The Clash`, `The Coasters`, `The Commodores`, `The Cowsills`, `The Cranberries`, `The Crew-Cuts`, `The Cure`, `The Detroit Spinners`, `The Diamonds`, `The Doobie Brothers`, `The Doors`, `The Drifters`, `The Emotions`, `The Eurythmics`, `The Fireballs`, `The Flamingos`, `The Foundations`, `The Four Seasons`, `The Fray`, `The Game`, `The Go Gos`, `The Goo Goo Dolls`, `The Head And The Heart`, `The Hollies`, `The Ink Spots`, `The Isley Brothers`, `The Jackson 5`, `The Kid LAROI`, `The Killers`, `The Kingston Trio`, `The Kooks`, `The Lemon Pipers`, `The Living Tombstone`, `The Lumineers`, `The Mamas & The Papas`, `The Marvelettes`, `The McCoys`, `The Mills Brothers`, `The Miracles`, `The Monkees`, `The Moody Blues`, `The National`, `The Neighbourhood`, `The Notorious B.I.G.`, `The O'Jays`, `The Offspring`, `The Osmonds`, `The Partridge Family`, `The Penguins`, `The Pet Shop Boys`, `The Platters`, `The Righteous Brothers`, `The Rolling Stones`, `The Ronettes`, `The Score`, `The Script`, `The Seekers`, `The Shangri-Las`, `The Smashing Pumpkins`, `The Staple Singers`, `The Strokes`, `The Supremes`, `The Temptations`, `The Turtles`, `The Vamps`, `The Verve`, `The Village People`, `The Weavers`, `The White Stripes`, `The Young Rascals`, `The Zombies`, `Thelma Houston`, `Thomas Rhett`, `Three Days Grace`, `Three Dog Night`, `Three Man Down`, `Timbaland`, `Timmy Trumpet`, `Toby Keith`, `Tom Jones`, `Tom Petty and the Heartbreakers`, `Tommy Dorsey`, `Tommy Edwards`, `Tommy James & the Shondells`, `Tone Loc`, `Toni Braxton`, `Topic`, `Tory Lanez`, `Tove Lo`, `Trevor Daniel`, `Trey Songz`, `Trippie Redd`, `Trueno`, `Tulsi Kumar`, `Tulus`, `Twenty One Pilots`, `Two Feet`, `Ty Dolla $ign`, `Tyga`, `Tyler Hubbard`, `U2`, `UB40`, `UZI`, `Ufo361`, `Upchurch`, `V`, `Vampire Weekend`, `Van McCoy`, `Van Morrison`, `Vance Joy`, `Vanessa Carlton`, `Vanessa Williams`, `Vera Lynn`, `Vernon Dalhart`, `Vicente Fernandez`, `Vishal-Shekhar`, `Volbeat`, `WILLOW`, `Wale`, `Wallows`, `Weezer`, `Wham!`, `Whitney Houston`, `Why Don't We`, `Wilbert Harrison`, `Wilson Phillips`, `Wiz Khalifa`, `Woody Guthrie`, `Wyclef Jean`, `XXXTENTACION`, `Xavi`, `YG`, `YNW Melly`, `YOASOBI`, `Yandel`, `Years & Years`, `Yeat`, `Yo Gotti`, `Young Dolph`, `Young Miko`, `Young Thug`, `YoungBoy Never Broke Again`, `Yung Gravy`, `Yuuri`, `Yuvan Shankar Raja`, `ZAYN`, `ZZ Top`, `Zac Brown Band`, `Zach Bryan`, `Zara Larsson`, `aespa`, `benny blanco`, `blink-182`, `d4vd`, `deadmau5`, `girl in red`, `gnash`, `iann dior`, `will.i.am`], genre: `Acid House.Acid Jazz.Acid Rock.Acoustic.Acoustic Blues.Afro-Pop.Afrobeat.Alt-Rock.Alternative.Ambient.American Trad Rock.Americana.Anime.Arena Rock.Art-Rock.Avant-Garde.Avant-Punk.Baladas y Boleros.Barbershop.Baroque.Bebop.Big Band.Black Metal.Blue Note.Bluegrass.Blues.Boogaloo.Bop.Bossa Nova.Bounce.Brazilian Funk.Breakbeat.Britpop.CCM.Cajun.Cantopop.Celtic.Celtic Folk.Chamber Music.Chant.Chanukah.Chicago Blues.Chicago House.Chicano.Children\u2019s Music.Chill.Choral.Christian.Christmas.Classical.Club.College Rock.Conjunto.Cool Jazz.Country.Crunk.Dance.Dancehall.Death Metal.Deep House.Delta Blues.Detroit Techno.Dirty South.Disco.Disney.Dixieland.Doo-wop.Downtempo.Dream Pop.Drill.Drinking Songs.Drone.Drum'n'bass.Dub.Dubstep.EDM.Early Music.East Coast Rap.Easter.Easy Listening.Eclectic.Electric Blues.Electro.Electronic.Electronica.Emo.Enka.Environmental.Ethio-jazz.Experimental.Experimental Rock.Flamenco.Folk.Folk-Rock.Forro.French Pop.Funk.Fusion.Gangsta Rap.Garage.German Folk.German Pop.Glam Rock.Gospel.Goth.Grime.Grindcore.Groove.Grunge.Hair Metal.Halloween.Happy.Hard Bop.Hard Dance.Hard Rock.Hardcore.Hardcore Punk.Hardcore Rap.Hardstyle.Healing.Heavy Metal.High Classical.Hip Hop.Holiday.Honky Tonk.House.IDM.Impressionist.Indie.Industrial.Instrumental.J-Dance.J-Idol.J-Pop.J-Punk.J-Rock.J-Ska.J-Synth.Jackin House.Jam Bands.Japanese Pop.Jazz.Jungle.K-Pop.Karaoke.Kayokyoku.Kids.Kitsch.Klezmer.Krautrock.Latin.Latin Jazz.Latin Rap.Local.Lounge.Lullabies.MPB.Mainstream Jazz.Malay.Mandopop.March.Mariachi.Mawwal.Medieval.Meditation.Metal.Metalcore.Minimal Techno.Minimalism.Modern.Motown.Mugham.Musicals.Musique Concr\xE8te.Nature.Neo-Soul.Nerdcore.New Acoustic.New Age.New Mex.New Wave.No Wave.Noise.Nordic.Novelty.OPM.Oi!.Old School Rap.Opera.Orchestral.Original Score.Outlaw Country.Pagode.Party.Piano.Polka.Pop.Pop Film.Pop Latino.Post Dubstep.Power Pop.Praise & Worship.Progressive House.Progressive Rock.Proto-punk.Psych Rock.Psychedelic.Punk.Punk Rock.Qawwali.Quiet Storm.R&B.Ragtime.Rainy Day.Rap.Reggae.Reggaeton.Regional Mexicano.Relaxation.Renaissance.Retro.Rock.Rockabilly.Rocksteady.Romance.Romantic.Roots Reggae.Roots Rock.SKA.Sad.Salsa.Samba.Second Line.Sertanejo.Shaabi.Shoegaze.Sleep.Smooth Jazz.Soft Rock.Soul.Soundtrack.Southern Gospel.Southern Rock.Space Rock.Stage And Screen.Steampunk.Summer.Surf.Swamp Pop.Swing.Synth Pop.Tango.Techno.Teen Pop.Tejano.Tex-Mex.Thanksgiving.Traditional.Trance.Trip Hop.Tropical.Underground Rap.Urban.Urban Cowboy.West Coast Rap.Western Swing.World.Worldbeat.Zydeco`.split(`.`), song_name: [`(Everything I Do) I Do it For You`, `(Ghost) Riders in the Sky`, `(I Can't Get No) Satisfaction`, `(I've Got a Gal In) Kalamazoo`, `(I've Had) the Time of My Life`, `(It's No) Sin`, `(Just Like) Starting Over`, `(Let Me Be Your) Teddy Bear`, `(Put Another Nickel In) Music! Music! Music!`, `(Sexual) Healing`, `(Sittin' On) the Dock of the Bay`, `(They Long to Be) Close to You`, `(You Keep Me) Hangin' On`, `(You're My) Soul & Inspiration`, `(Your Love Keeps Lifting Me) Higher & Higher`, `12th Street Rag`, `1999`, `19th Nervous Breakdown`, `50 Ways to Leave Your Lover`, `9 to 5`, `96 Tears`, `A Boy Named Sue`, `A Hard Day's Night`, `A String of Pearls`, `A Thousand Miles`, `A Tree in the Meadow`, `A Whiter Shade of Pale`, `A Whole New World (Aladdin's Theme)`, `A Woman in Love`, `A-Tisket A-Tasket`, `ABC`, `Abracadabra`, `Ac-cent-tchu-ate the Positive`, `Addicted to Love`, `After You've Gone`, `Afternoon Delight`, `Again`, `Against All Odds (Take a Look At Me Now)`, `Ain't Misbehavin'`, `Ain't No Mountain High Enough`, `Ain't No Sunshine`, `Ain't That a Shame`, `Airplanes`, `All Along the Watchtower`, `All I Have to Do is Dream`, `All I Wanna Do`, `All My Lovin' (You're Never Gonna Get It)`, `All Night Long (All Night)`, `All Out of Love`, `All Shook Up`, `All You Need is Love`, `Alone`, `Alone Again (Naturally)`, `Always On My Mind`, `American Pie`, `American Woman`, `Angie`, `Another Brick in the Wall (part 2)`, `Another Day in Paradise`, `Another Night`, `Another One Bites the Dust`, `Apologize`, `April Showers`, `Aquarius/Let The Sunshine In`, `Are You Lonesome Tonight?`, `Arthur's Theme (Best That You Can Do)`, `As Time Goes By`, `At Last`, `At the Hop`, `Auf Wiederseh'n Sweetheart`, `Baby Baby`, `Baby Come Back`, `Baby Got Back`, `Baby Love`, `Baby One More Time`, `Bad Day`, `Bad Girls`, `Bad Moon Rising`, `Bad Romance`, `Bad, Bad Leroy Brown`, `Baker Street`, `Ball of Confusion (That's What the World is Today)`, `Ballad of the Green Berets`, `Ballerina`, `Band On the Run`, `Band of Gold`, `Battle of New Orleans`, `Be Bop a Lula`, `Be My Baby`, `Be My Love`, `Beat It`, `Beautiful Day`, `Beauty & the Beast`, `Because I Love You (The Postman Song)`, `Because You Loved Me`, `Because of You`, `Before The Next Teardrop Falls`, `Begin the Beguine`, `Behind Closed Doors`, `Being With You`, `Believe`, `Ben`, `Bennie & the Jets`, `Besame Mucho`, `Best of My Love`, `Bette Davis Eyes`, `Big Bad John`, `Big Girls Don't Cry`, `Billie Jean`, `Bitter Sweet Symphony`, `Black Or White`, `Black Velvet`, `Blaze of Glory`, `Bleeding Love`, `Blue Suede Shoes`, `Blue Tango`, `Blueberry Hill`, `Blurred Lines`, `Body & Soul`, `Bohemian Rhapsody`, `Boogie Oogie Oogie`, `Boogie Woogie Bugle Boy`, `Boom Boom Pow`, `Born in the USA`, `Born to Be Wild`, `Born to Run`, `Boulevard of Broken Dreams`, `Brand New Key`, `Brandy (You're A Fine Girl)`, `Breaking Up is Hard to Do`, `Breathe`, `Bridge Over Troubled Water`, `Brother Louie`, `Brother, Can You Spare a Dime?`, `Brown Eyed Girl`, `Brown Sugar`, `Build Me Up Buttercup`, `Burn`, `Buttons & Bows`, `Bye Bye Love`, `Bye Bye, Blackbird`, `Bye, Bye, Bye`, `Caldonia Boogie (What Makes Your Big Head So Hard)`, `California Dreamin'`, `California Girls`, `Call Me`, `Call Me Maybe`, `Can You Feel the Love Tonight`, `Can't Buy Me Love`, `Can't Get Enough of Your Love, Babe`, `Can't Help Falling in Love`, `Candle in the Wind '97`, `Candy Man`, `Car Wash`, `Careless Whisper`, `Cars`, `Cat's in the Cradle`, `Cathy's Clown`, `Celebration`, `Centerfold`, `Chain of Fools`, `Chances Are`, `Change the World`, `Chapel of Love`, `Chattanooga Choo Choo`, `Chattanoogie Shoe-Shine Boy`, `Check On It`, `Cheek to Cheek`, `Cherish`, `Cherry Pink & Apple Blossom White`, `Cold, Cold Heart`, `Colors of the Wind`, `Come On Eileen`, `Come On-a My House`, `Come Together`, `Coming Up`, `Cracklin' Rosie`, `Crazy`, `Crazy For You`, `Crazy Little Thing Called Love`, `Crazy in Love`, `Creep`, `Crimson & Clover`, `Crocodile Rock`, `Cry`, `Cry Like a Baby`, `Crying`, `Da Doo Ron Ron (When He Walked Me Home)`, `Dance to the Music`, `Dancing Queen`, `Dancing in the Dark`, `Dancing in the Street`, `Dardanella`, `Daydream Believer`, `December 1963 (Oh What a Night)`, `Delicado`, `Dilemma`, `Disco Duck`, `Disco Lady`, `Disturbia`, `Dizzy`, `Do That to Me One More Time`, `Do Wah Diddy Diddy`, `Do Ya Think I'm Sexy?`, `Do You Love Me?`, `Don't Be Cruel`, `Don't Fence Me In`, `Don't Go Breaking My Heart`, `Don't Leave Me This Way`, `Don't Let the Stars Get in Your Eyes`, `Don't Let the Sun Go Down On Me`, `Don't Speak`, `Don't Stop 'Til You Get Enough`, `Don't Worry Be Happy`, `Don't You (Forget About Me)`, `Don't You Want Me`, `Doo Wop (That Thing)`, `Down`, `Down Hearted Blues`, `Down Under`, `Downtown`, `Dreamlover`, `Dreams`, `Drop it Like It's Hot`, `Drops of Jupiter (Tell Me)`, `Duke of Earl`, `E.T.`, `Earth Angel`, `Ebony & Ivory`, `Eight Days a Week`, `Empire State Of Mind`, `End of the Road`, `Endless Love`, `Escape (The Pina Colada Song)`, `Eve of Destruction`, `Every Breath You Take`, `Every Little Thing She Does is Magic`, `Everybody Loves Somebody`, `Everybody Wants to Rule the World`, `Everyday People`, `Eye of the Tiger`, `Faith`, `Fallin'`, `Fame`, `Family Affair`, `Fantasy`, `Fast Car`, `Feel Good Inc`, `Feel Like Making Love`, `Fire & Rain`, `Firework`, `Flashdance. What a Feeling`, `Fly Robin Fly`, `Foolish Games`, `Footloose`, `For What It's Worth (Stop, Hey What's That Sound)`, `Fortunate Son`, `Frankenstein`, `Freak Me`, `Freebird`, `Frenesi`, `Funkytown`, `Gangsta's Paradise`, `Georgia On My Mind`, `Georgy Girl`, `Get Back`, `Get Down Tonight`, `Get Off of My Cloud`, `Ghostbusters`, `Gimme Some Lovin'`, `Girls Just Wanna Have Fun`, `Give Me Everything`, `Gives You Hell`, `Glamorous`, `Glory of Love`, `Go Your Own Way`, `God Bless America`, `God Bless the Child`, `Gold Digger`, `Gonna Make You Sweat (Everybody Dance Now)`, `Good Lovin'`, `Good Times`, `Good Vibrations`, `Goodbye Yellow Brick Road`, `Goodnight, Irene`, `Got to Give it Up`, `Grease`, `Great Balls of Fire`, `Greatest Love of All`, `Green Onions`, `Green River`, `Green Tambourine`, `Grenade`, `Groove is in the Heart`, `Groovin'`, `Gypsies, Tramps & Thieves`, `Hair`, `Hang On Sloopy`, `Hanging by a Moment`, `Hanky Panky`, `Happy Days Are Here Again`, `Happy Together`, `Harbour Lights`, `Hard to Say I'm Sorry`, `Harper Valley PTA`, `Have You Ever Really Loved a Woman?`, `He'll Have to Go`, `He's So Fine`, `He's a Rebel`, `Heart of Glass`, `Heart of Gold`, `Heartbreak Hotel`, `Hello Dolly`, `Hello, I Love You, Won't You Tell Me Your Name?`, `Help Me, Rhonda`, `Help!`, `Here Without You`, `Here in My Heart`, `Hero`, `Hey Baby`, `Hey Jude`, `Hey Paula`, `Hey There`, `Hey There Delilah`, `Hey Ya!`, `Higher Love`, `Hips don't lie`, `Hit the Road, Jack`, `Hold On`, `Hollaback Girl`, `Honey`, `Honky Tonk`, `Honky Tonk Woman`, `Horse With No Name`, `Hot Child In The City`, `Hot Stuff`, `Hotel California`, `Hound Dog`, `House of the Rising Sun`, `How Deep is Your Love?`, `How Do I Live?`, `How Do You Mend a Broken Heart`, `How High the Moon`, `How Much is That Doggy in the Window?`, `How Will I Know`, `How You Remind Me`, `How to Save a Life`, `Hungry Heart`, `Hurt So Good`, `I Believe I Can Fly`, `I Can Dream, Can't I?`, `I Can Help`, `I Can See Clearly Now`, `I Can't Get Next to You`, `I Can't Get Started`, `I Can't Go For That (No Can Do)`, `I Can't Help Myself (Sugar Pie, Honey Bunch)`, `I Can't Stop Loving You`, `I Don't Want to Miss a Thing`, `I Fall to Pieces`, `I Feel Fine`, `I Feel For You`, `I Feel Love`, `I Get Around`, `I Got You (I Feel Good)`, `I Got You Babe`, `I Gotta Feeling`, `I Heard it Through the Grapevine`, `I Honestly Love You`, `I Just Called to Say I Love You`, `I Just Wanna Be Your Everything`, `I Kissed A Girl`, `I Love Rock 'n' Roll`, `I Need You Now`, `I Only Have Eyes For You`, `I Shot the Sheriff`, `I Still Haven't Found What I'm Looking For`, `I Swear`, `I Think I Love You`, `I Walk the Line`, `I Wanna Dance With Somebody (Who Loves Me)`, `I Wanna Love You`, `I Want You Back`, `I Want to Hold Your Hand`, `I Want to Know What Love Is`, `I Went to Your Wedding`, `I Will Always Love You`, `I Will Follow Him`, `I Will Survive`, `I Write the Songs`, `I'll Be Missing You`, `I'll Be There`, `I'll Make Love to You`, `I'll Never Smile Again`, `I'll Take You There`, `I'll Walk Alone`, `I'll be seeing you`, `I'm Looking Over a Four Leaf Clover`, `I'm So Lonesome I Could Cry`, `I'm Sorry`, `I'm Walking Behind You`, `I'm Your Boogie Man`, `I'm Yours`, `I'm a Believer`, `I've Heard That Song Before`, `If (They Made Me a King)`, `If I Didn't Care`, `If You Don't Know Me By Now`, `If You Leave Me Now`, `Imagine`, `In Da Club`, `In the End`, `In the Ghetto`, `In the Mood`, `In the Summertime`, `In the Year 2525 (Exordium & Terminus)`, `Incense & Peppermints`, `Indian Reservation (The Lament Of The Cherokee Reservation Indian)`, `Instant Karma`, `Iris`, `Ironic`, `Irreplaceable`, `It Had to Be You`, `It's All in the Game`, `It's My Party`, `It's Now Or Never`, `It's Still Rock 'n' Roll to Me`, `It's Too Late`, `Jack & Diane`, `Jailhouse Rock`, `Jessie's Girl`, `Jive Talkin'`, `Johnny B Goode`, `Joy to the World`, `Judy in Disguise (With Glasses)`, `Jump`, `Jumpin' Jack Flash`, `Just Dance`, `Just My Imagination (Running Away With Me)`, `Just the Way You Are`, `Kansas City`, `Karma Chameleon`, `Keep On Loving You`, `Killing Me Softly With His Song`, `King of the Road`, `Kiss`, `Kiss & Say Goodbye`, `Kiss From a Rose`, `Kiss Me`, `Kiss On My List`, `Kiss You All Over`, `Knock On Wood`, `Knock Three Times`, `Kokomo`, `Kryptonite`, `Kung Fu Fighting`, `La Bamba`, `Lady`, `Lady Marmalade (Voulez-Vous Coucher Aver Moi Ce Soir?)`, `Last Train to Clarksville`, `Layla`, `Le Freak`, `Leader of the Pack`, `Lean On Me`, `Leaving, on a Jet Plane`, `Let Me Call You Sweetheart`, `Let Me Love You`, `Let it Be`, `Let it Snow! Let it Snow! Let it Snow!`, `Let's Dance`, `Let's Get it On`, `Let's Groove`, `Let's Hear it For the Boy`, `Let's Stay Together`, `Light My Fire`, `Lights`, `Like a Prayer`, `Like a Rolling Stone`, `Like a Virgin`, `Little Darlin'`, `Little Things Mean a Lot`, `Live & Let Die`, `Livin' La Vida Loca`, `Livin' On a Prayer`, `Living For the City`, `Locked Out Of Heaven`, `Lola`, `Lonely Boy`, `Long Cool Woman in a Black Dress`, `Long Tall Sally`, `Look Away`, `Lookin' Out My Back Door`, `Lose Yourself`, `Losing My Religion`, `Louie Louie`, `Love Child`, `Love Hangover`, `Love In This Club`, `Love Is Blue (L'Amour Est Bleu)`, `Love Letters in the Sand`, `Love Me Do`, `Love Me Tender`, `Love Shack`, `Love Theme From 'A Star is Born' (Evergreen)`, `Love Train`, `Love Will Keep Us Together`, `Love is a Many Splendoured Thing`, `Love to Love You Baby`, `Love's Theme`, `Loving You`, `Low`, `Macarena`, `Mack the Knife`, `Maggie May`, `Magic`, `Magic Carpet Ride`, `Make Love to Me`, `Make it With You`, `Makin' Whoopee`, `Mama Told Me Not to Come`, `Man in the Mirror`, `Manana (Is Soon Enough For Me)`, `Maneater`, `Maniac`, `Maybellene`, `Me & Bobby McGee`, `Me & Mrs Jones`, `Memories Are Made of This`, `Mercy Mercy Me (The Ecology)`, `Mickey`, `Midnight Train to Georgia`, `Minnie the Moocher`, `Miss You`, `Miss You Much`, `Mister Sandman`, `Mmmbop`, `Mona Lisa`, `Monday Monday`, `Money For Nothing`, `Mony Mony`, `Mood Indigo`, `Moonlight Cocktail`, `Moonlight Serenade`, `More Than Words`, `More Than a Feeling`, `Morning Train (Nine to Five)`, `Mr Big Stuff`, `Mr Brightside`, `Mr Tambourine Man`, `Mrs Brown You've Got a Lovely Daughter`, `Mrs Robinson`, `Mule Train`, `Music`, `My Blue Heaven`, `My Boyfriend's Back`, `My Eyes Adored You`, `My Girl`, `My Guy`, `My Heart Will Go On`, `My Life`, `My Love`, `My Man`, `My Prayer`, `My Sharona`, `My Sweet Lord`, `Na Na Hey Hey (Kiss Him Goodbye)`, `Nature Boy`, `Near You`, `Need You Now`, `Need You Tonight`, `Never Gonna Give You Up`, `Night & Day`, `Night Fever`, `Nights in White Satin`, `No One`, `No Scrubs`, `Nobody Does it Better`, `Nothin' on You`, `Nothing Compares 2 U`, `Nothing's Gonna Stop Us Now`, `Ode To Billie Joe`, `Oh Happy Day`, `Oh My Papa (O Mein Papa)`, `Oh, Pretty Woman`, `Ol' Man River`, `Ole Buttermilk Sky`, `On Bended Knee`, `On My Own`, `On the Atchison, Topeka & the Santa Fe`, `One`, `One Bad Apple`, `One More Try`, `One O'Clock Jump`, `One Sweet Day`, `One of These Nights`, `One of Us`, `Only The Lonely (Know The Way I Feel)`, `Only You (And You Alone)`, `Open Arms`, `Over There`, `Over the Rainbow`, `Paint it Black`, `Papa Don't Preach`, `Papa Was a Rolling Stone`, `Papa's Got a Brand New Bag`, `Paper Doll`, `Paper Planes`, `Paperback Writer`, `Party Rock Anthem`, `Peg o' My Heart`, `Peggy Sue`, `Pennies From Heaven`, `Penny Lane`, `People`, `People Got to Be Free`, `Personality`, `Philadelphia Freedom`, `Physical`, `Piano Man`, `Pick Up the Pieces`, `Pistol Packin' Mama`, `Play That Funky Music`, `Please Mr Postman`, `Poker Face`, `Pon De Replay`, `Pony Time`, `Pop Muzik`, `Prisoner of Love`, `Private Eyes`, `Promiscuous`, `Proud Mary`, `Purple Haze`, `Purple Rain`, `Puttin' on the Ritz`, `Que sera sera (Whatever will be will be)`, `Queen of Hearts`, `Rag Doll`, `Rag Mop`, `Rags to Riches`, `Raindrops Keep Falling On My Head`, `Rapture`, `Ray of Light`, `Reach Out (I'll Be There)`, `Red Red Wine`, `Rehab`, `Respect`, `Return to Sender`, `Reunited`, `Revolution`, `Rhapsody in Blue`, `Rhinestone Cowboy`, `Rich Girl`, `Riders On the Storm`, `Right Back Where We Started From`, `Ring My Bell`, `Ring of Fire`, `Rock Around the Clock`, `Rock With You`, `Rock Your Baby`, `Rock the Boat`, `Rock the Casbah`, `Roll Over Beethoven`, `Roll With It`, `Rolling In The Deep`, `Rosanna`, `Roses Are Red`, `Royals`, `Ruby Tuesday`, `Rudolph, the Red-Nosed Reindeer`, `Rum & Coca-Cola`, `Runaround Sue`, `Runaway`, `Running Scared`, `Rush Rush`, `Sailing`, `Save the Best For Last`, `Save the Last Dance For Me`, `Say It Right`, `Say My Name`, `Say Say Say`, `Say You, Say Me`, `School's Out`, `Seasons in the Sun`, `Secret Love`, `Sentimental Journey`, `Sexyback`, `Sh-Boom (Life Could Be a Dream)`, `Shadow Dancing`, `Shake Down`, `Shake You Down`, `She Drives Me Crazy`, `She Loves You`, `She's a Lady`, `Shining Star`, `Shop Around`, `Shout`, `Silly Love Songs`, `Since U Been Gone`, `Sing, Sing, Sing (With A Swing)`, `Singing The Blues`, `Single Ladies (Put A Ring On It)`, `Sir Duke`, `Sixteen Tons`, `Sledgehammer`, `Sleep Walk`, `Sleepy Lagoon`, `Slow Poke`, `Smells Like Teen Spirit`, `Smoke Gets in Your Eyes`, `Smoke On the Water`, `Smoke! Smoke! Smoke! (That Cigarette)`, `Smooth`, `So Much in Love`, `Soldier Boy`, `Some Enchanted Evening`, `Some of These Days`, `Somebody That I Used to Know`, `Somebody to Love`, `Someday`, `Somethin' Stupid`, `Something`, `Soul Man`, `Spanish Harlem`, `Spill the Wine`, `Spinning Wheel`, `Spirit in the Sky`, `St George & the Dragonette`, `St Louis Blues`, `Stagger Lee`, `Stairway to Heaven`, `Stand By Me`, `Stardust`, `Stars & Stripes Forever`, `Stay (I Missed You)`, `Stayin' Alive`, `Stop! in the Name of Love`, `Stormy Weather (Keeps Rainin' All the Time)`, `Straight Up`, `Strange Fruit`, `Stranger On the Shore`, `Strangers in the Night`, `Strawberry Fields Forever`, `Streets of Philadelphia`, `Stronger`, `Stuck On You`, `Sugar Shack`, `Sugar Sugar`, `Summer in the City`, `Summertime Blues`, `Sunday, Monday or Always`, `Sunshine Superman`, `Sunshine of Your Love`, `Superstar`, `Superstition`, `Surfin' USA`, `Suspicious Minds`, `Swanee`, `Sweet Caroline (Good Times Never Seemed So Good)`, `Sweet Child O' Mine`, `Sweet Dreams (Are Made of This)`, `Sweet Georgia Brown`, `Sweet Home Alabama`, `Sweet Soul Music`, `Swinging On a Star`, `T For Texas (Blue Yodel No 1)`, `TSOP (The Sound of Philadelphia)`, `Take Me Home, Country Roads`, `Take My Breath Away`, `Take On Me`, `Take The 'A' Train`, `Take a Bow`, `Tammy`, `Tangerine`, `Tears in Heaven`, `Tears of a Clown`, `Temperature`, `Tennessee Waltz`, `Tequila`, `Tha Crossroads`, `Thank You (Falettinme be Mice Elf Again)`, `That Lucky Old Sun (Just Rolls Around Heaven All Day)`, `That Old Black Magic`, `That'll Be the Day`, `That's Amore`, `That's What Friends Are For`, `That's the Way (I Like It)`, `That's the Way Love Goes`, `The Boy is Mine`, `The Boys of Summer`, `The Christmas Song (Chestnuts Roasting On An Open Fire)`, `The End of the World`, `The First Time Ever I Saw Your Face`, `The Girl From Ipanema`, `The Glow-Worm`, `The Great Pretender`, `The Gypsy`, `The Hustle`, `The Joker`, `The Last Dance`, `The Letter`, `The Loco-Motion`, `The Long & Winding Road`, `The Love You Save`, `The Morning After`, `The Power of Love`, `The Prisoner's Song`, `The Reason`, `The Rose`, `The Sign`, `The Song From Moulin Rouge (Where Is Your Heart)`, `The Sounds of Silence`, `The Streak`, `The Sweet Escape`, `The Thing`, `The Tide is High`, `The Tracks of My Tears`, `The Twist`, `The Wanderer`, `The Way We Were`, `The Way You Look Tonight`, `The Way You Move`, `Theme From 'A Summer Place'`, `Theme From 'Greatest American Hero' (Believe It Or Not)`, `Theme From 'Shaft'`, `There goes my baby`, `These Boots Are Made For Walking`, `Third Man Theme`, `This Diamond Ring`, `This Guy's in Love With You`, `This Land is Your Land`, `This Love`, `This Ole House`, `This Used to Be My Playground`, `Three Coins in the Fountain`, `Three Times a Lady`, `Thrift Shop`, `Thriller`, `Ticket to Ride`, `Tie a Yellow Ribbon 'round the Old Oak Tree`, `Tiger Rag`, `Tighten Up`, `Tik-Toc`, `Till I Waltz Again With You`, `Till The End of Time`, `Time After Time`, `Time of the Season`, `To Sir, with Love`, `Tom Dooley`, `Tonight's the Night (Gonna Be Alright)`, `Too Close`, `Too Young`, `Tossing & Turning`, `Total Eclipse of the Heart`, `Touch Me`, `Toxic`, `Travellin' Band`, `Travellin' Man`, `Truly Madly Deeply`, `Turn! Turn! Turn! (To Everything There is a Season)`, `Tutti Frutti`, `Twist & Shout`, `Two Hearts`, `U Can't Touch This`, `U Got it Bad`, `Umbrella`, `Un-Break My Heart`, `Unbelievable`, `Unchained Melody`, `Uncle Albert (Admiral Halsey)`, `Under the Boardwalk`, `Under the Bridge`, `Unforgettable`, `Up Around the Bend`, `Up Up & Away`, `Up Where We Belong`, `Upside Down`, `Use Somebody`, `Vaya Con Dios (may God Be With You)`, `Venus`, `Vision of Love`, `Viva La Vida`, `Vogue`, `Volare`, `Wabash Cannonball`, `Waiting For a Girl Like You`, `Wake Me Up Before You Go Go`, `Wake Up Little Susie`, `Walk Don't Run`, `Walk Like a Man`, `Walk Like an Egyptian`, `Walk On By`, `Walk On the Wild Side`, `Walk This Way`, `Wannabe`, `Want Ads`, `Wanted`, `War`, `Waterfalls`, `Wayward Wind`, `We Are Family`, `We Are Young`, `We Are the Champions`, `We Are the World`, `We Belong Together`, `We Built This City`, `We Can Work it Out`, `We Didn't Start the Fire`, `We Found Love`, `We Got The Beat`, `We Will Rock You`, `We've Only Just Begun`, `Weak`, `Wedding Bell Blues`, `West End Blues`, `West End Girls`, `What Goes Around Comes Around`, `What a Fool Believes`, `What'd I Say`, `What's Going On?`, `What's Love Got to Do With It?`, `Whatcha Say`, `Wheel of Fortune`, `When Doves Cry`, `When You Wish Upon a Star`, `When a Man Loves a Woman`, `Where Did Our Love Go`, `Where is the Love?`, `Whip It`, `Whispering`, `White Christmas`, `White Rabbit`, `Whole Lotta Love`, `Whole Lotta Shakin' Goin' On`, `Whoomp! (There it Is)`, `Why Do Fools Fall in Love?`, `Why Don't You Believe Me?`, `Wichita Lineman`, `Wicked Game`, `Wild Thing`, `Wild Wild West`, `Will It Go Round In Circles`, `Will You Love Me Tomorrow`, `Winchester Cathedral`, `Wind Beneath My Wings`, `Wipe Out`, `Wishing Well`, `With Or Without You`, `Without Me`, `Without You`, `Woman`, `Won't Get Fooled Again`, `Wooly Bully`, `Working My Way Back to You`, `YMCA`, `Yakety Yak`, `Yeah!`, `Yellow Rose of Texas`, `Yesterday`, `You Ain't Seen Nothin' Yet`, `You Always Hurt the One You Love`, `You Are the Sunshine of My Life`, `You Belong With Me`, `You Belong to Me`, `You Can't Hurry Love`, `You Don't Bring Me Flowers`, `You Don't Have to Be a Star (To Be in My Show)`, `You Light Up My Life`, `You Make Me Feel Brand New`, `You Make Me Feel Like Dancing`, `You Really Got Me`, `You Send Me`, `You Sexy Thing`, `You Were Meant for Me`, `You make Me Wanna`, `You'll Never Know`, `You're Beautiful`, `You're So Vain`, `You're Still the One`, `You're the One That I Want`, `You've Got a Friend`, `You've Lost That Lovin' Feelin'`, `Your Cheatin' Heart`, `Your Song`] }, person: { bio_part: `activist.artist.author.blogger.business owner.coach.creator.designer.developer.dreamer.educator.engineer.entrepreneur.environmentalist.film lover.filmmaker.foodie.founder.friend.gamer.geek.grad.inventor.leader.model.musician.nerd.parent.patriot.person.philosopher.photographer.public speaker.scientist.singer.streamer.student.teacher.traveler.veteran.writer`.split(`.`), bio_pattern: [`{{person.bio_part}}`, `{{person.bio_part}}, {{person.bio_part}}`, `{{person.bio_part}}, {{person.bio_part}}, {{person.bio_part}}`, `{{person.bio_part}}, {{person.bio_part}}, {{person.bio_part}} {{internet.emoji}}`, `{{word.noun}} {{person.bio_supporter}}`, `{{word.noun}} {{person.bio_supporter}}  {{internet.emoji}}`, `{{word.noun}} {{person.bio_supporter}}, {{person.bio_part}}`, `{{word.noun}} {{person.bio_supporter}}, {{person.bio_part}} {{internet.emoji}}`], bio_supporter: [`advocate`, `devotee`, `enthusiast`, `fan`, `junkie`, `lover`, `supporter`], first_name: { generic: `Aaliyah.Abagail.Abbey.Abbie.Abbigail.Abby.Abdiel.Abdul.Abdullah.Abe.Abelardo.Abigail.Abigale.Abigayle.Abner.Adah.Adalberto.Adaline.Adan.Addie.Addison.Adela.Adelbert.Adele.Adelia.Adeline.Adell.Adella.Adelle.Aditya.Adolf.Adolfo.Adolph.Adolphus.Adonis.Adrain.Adriana.Adrianna.Adriel.Adrien.Afton.Aglae.Agustin.Agustina.Ahmad.Ahmed.Aida.Aidan.Aiden.Aileen.Aimee.Aisha.Aiyana.Akeem.Alaina.Alana.Alanis.Alanna.Alayna.Alba.Albertha.Albin.Albina.Alda.Alden.Alec.Aleen.Alejandra.Alejandrin.Alek.Alena.Alene.Alessandra.Alessandro.Alessia.Aletha.Alexa.Alexandre.Alexandrea.Alexandria.Alexandrine.Alexandro.Alexane.Alexanne.Alexie.Alexys.Alexzander.Alf.Alfonzo.Alford.Alfreda.Ali.Alia.Alisa.Alisha.Alivia.Aliya.Aliyah.Aliza.Alize.Allene.Allie.Ally.Alphonso.Alta.Althea.Alva.Alvah.Alvena.Alvera.Alverta.Alvina.Alvis.Alyce.Alycia.Alysa.Alysha.Alyson.Alysson.Amalia.Amani.Amara.Amari.Amaya.Ambrose.Amelie.Amely.America.Americo.Amie.Amina.Amir.Amira.Amiya.Amparo.Amya.Anabel.Anabelle.Anahi.Anais.Anastacio.Anastasia.Anderson.Andreane.Andreanne.Angel.Angeline.Angelita.Angus.Anibal.Anika.Anissa.Aniya.Aniyah.Anjali.Annabel.Annabell.Annabelle.Annalise.Annamae.Annamarie.Annetta.Ansel.Ansley.Antone.Antonetta.Antonette.Antonietta.Antonina.Antwan.Antwon.Anya.Ara.Araceli.Aracely.Arch.Archibald.Ardella.Arden.Ardith.Arely.Ari.Ariane.Arianna.Aric.Ariel.Arielle.Arjun.Arlie.Arlo.Armand.Armani.Arnaldo.Arne.Arno.Arnoldo.Arnulfo.Aron.Art.Arvel.Arvid.Arvilla.Aryanna.Asa.Asha.Ashlee.Ashleigh.Ashly.Ashlynn.Ashton.Ashtyn.Asia.Assunta.Astrid.Athena.Aubree.Audie.Audra.Audreanne.August.Augusta.Augustine.Augustus.Aurelia.Aurelie.Aurelio.Aurore.Austen.Austyn.Autumn.Ava.Avery.Avis.Axel.Ayana.Ayden.Ayla.Aylin.Baby.Bailee.Bailey.Barney.Baron.Barrett.Bart.Bartholome.Barton.Baylee.Beau.Beaulah.Bell.Bella.Belle.Benedict.Bennett.Benton.Berenice.Bernadine.Bernardo.Berneice.Bernhard.Bernie.Berniece.Bernita.Berry.Berta.Bertram.Bertrand.Beryl.Bethel.Bette.Bettie.Bettye.Bianka.Birdie.Blair.Blaise.Blaze.Bo.Bonita.Boris.Braden.Bradly.Brady.Braeden.Brain.Brando.Brandt.Brandyn.Brannon.Branson.Brant.Braulio.Braxton.Brayan.Breana.Breanna.Breanne.Brenden.Brendon.Brenna.Brennan.Brennon.Bret.Bria.Briana.Brianne.Brice.Bridgette.Bridie.Brielle.Brigitte.Brionna.Brisa.Britney.Brock.Broderick.Brody.Brook.Brooklyn.Brooks.Brown.Bryana.Bryce.Brycen.Bryon.Buck.Bud.Buddy.Buford.Bulah.Burdette.Burley.Burnice.Buster.Cade.Caden.Caesar.Caitlyn.Cale.Caleigh.Cali.Calista.Callie.Camden.Camila.Camilla.Camren.Camron.Camryn.Camylle.Candelario.Candida.Candido.Cara.Carey.Carissa.Carlee.Carleton.Carley.Carli.Carlie.Carlo.Carlotta.Carmel.Carmela.Carmella.Carmelo.Carmine.Carolanne.Carolina.Carolyne.Carson.Carter.Casandra.Casey.Casimer.Casimir.Casper.Cassandre.Cassidy.Cassie.Catalina.Caterina.Catharine.Cathrine.Cathryn.Cayla.Ceasar.Cecile.Cedrick.Celestine.Celestino.Celine.Chadd.Chadrick.Chaim.Chance.Chandler.Chanel.Chanelle.Charity.Charley.Chase.Chasity.Chauncey.Chaya.Chaz.Chelsey.Chelsie.Chesley.Chet.Cheyanne.Cheyenne.Chloe.Christ.Christa.Christelle.Christiana.Christop.Christophe.Chyna.Ciara.Cicero.Cielo.Cierra.Citlalli.Clair.Clarabelle.Clare.Clarissa.Claud.Claudie.Claudine.Clemens.Clement.Clementina.Clementine.Clemmie.Cleo.Cleora.Cleta.Cletus.Cleve.Cleveland.Clotilde.Clovis.Cloyd.Coby.Colby.Cole.Coleman.Collin.Colt.Colten.Colton.Columbus.Concepcion.Conner.Connor.Conor.Constantin.Consuelo.Cooper.Coralie.Corbin.Cordelia.Cordell.Cordia.Cordie.Corene.Corine.Cornell.Corrine.Cortez.Cortney.Coty.Courtney.Coy.Crawford.Creola.Cristal.Cristian.Cristobal.Cristopher.Cruz.Crystel.Cullen.Curt.Cydney.Cyril.Cyrus.D'angelo.Dagmar.Dahlia.Daija.Daisha.Dakota.Dallin.Dalton.Damaris.Dameon.Damian.Damien.Damion.Dana.Dandre.Dane.Dangelo.Danial.Daniela.Daniella.Danika.Dannie.Dante.Danyka.Daphne.Daphnee.Daphney.Darby.Daren.Darian.Dariana.Darien.Dario.Darion.Darius.Daron.Darrick.Darrion.Darron.Darwin.Dashawn.Dasia.Davin.Davion.Davon.Davonte.Dawson.Dax.Dayana.Dayna.Dayne.Dayton.Deangelo.Declan.Dedric.Dedrick.Dee.Deion.Deja.Dejah.Dejon.Dejuan.Delaney.Delfina.Delilah.Dell.Delmer.Delpha.Delphia.Delphine.Delta.Demarco.Demarcus.Demario.Demetris.Demetrius.Demond.Dena.Denis.Deon.Deondre.Deontae.Deonte.Dereck.Derick.Deron.Deshaun.Deshawn.Desmond.Dessie.Destany.Destin.Destinee.Destiney.Destini.Destiny.Devan.Devante.Deven.Devon.Devonte.Devyn.Dewayne.Dewitt.Diamond.Diego.Dillan.Dillon.Dimitri.Dina.Dino.Dion.Dock.Dolly.Domenic.Domenica.Domenick.Domenico.Dominique.Donato.Donavon.Donnell.Donny.Dorcas.Dorian.Dorothea.Dorris.Dortha.Dorthy.Dovie.Drake.Dudley.Dulce.Duncan.Durward.Dusty.Dylan.Earlene.Earline.Earnestine.Easter.Easton.Ebba.Eda.Edd.Eden.Edgardo.Edison.Edwardo.Edwina.Edyth.Edythe.Effie.Efrain.Efren.Einar.Eino.Eladio.Elaina.Elda.Eldon.Eldora.Eldred.Eldridge.Eleanora.Eleanore.Eleazar.Electa.Elenor.Elenora.Eleonore.Elfrieda.Eli.Elian.Eliane.Eliezer.Elinor.Elinore.Elisabeth.Elise.Eliseo.Elisha.Elissa.Eliza.Ellie.Elliot.Elliott.Ellsworth.Elmira.Elmo.Elmore.Elna.Elnora.Elody.Eloisa.Elouise.Eloy.Elroy.Else.Elta.Elton.Elva.Elvera.Elvie.Elvis.Elwin.Elwyn.Elyse.Elyssa.Elza.Emelia.Emelie.Emely.Emerald.Emerson.Emery.Emie.Emil.Emile.Emilia.Emiliano.Emilie.Emmalee.Emmanuel.Emmanuelle.Emmet.Emmie.Emmitt.Emmy.Emory.Ena.Enid.Enoch.Enola.Enos.Enrico.Ephraim.Era.Eriberto.Erich.Ericka.Erling.Erna.Ernestina.Ernie.Erwin.Eryn.Esmeralda.Esperanza.Esta.Esteban.Estefania.Estel.Estell.Estella.Estevan.Estrella.Etha.Ethan.Ethelyn.Ethyl.Ettie.Eudora.Eugenia.Eulah.Eulalia.Euna.Eusebio.Evalyn.Evangeline.Evans.Eve.Eveline.Everardo.Everette.Evert.Evie.Ewald.Ewell.Ezekiel.Ezequiel.Ezra.Fabian.Fabiola.Fae.Fanny.Fatima.Faustino.Fausto.Favian.Fay.Federico.Felicita.Felicity.Felipa.Felton.Fermin.Fern.Ferne.Fidel.Filiberto.Filomena.Finn.Fiona.Flavie.Flavio.Fleta.Fletcher.Flo.Florencio.Florian.Florida.Florine.Flossie.Floy.Ford.Forest.Foster.Francesca.Francesco.Francis.Francisca.Franco.Franz.Freddy.Frederic.Frederik.Frederique.Fredy.Freeda.Freeman.Freida.Frida.Frieda.Friedrich.Fritz.Furman.Gabe.Gabriella.Gabrielle.Gaetano.Gage.Gardner.Garett.Garfield.Garland.Garnet.Garnett.Garret.Garrick.Garrison.Garth.Gaston.Gavin.General.Genesis.Gennaro.Genoveva.Geo.Georgette.Georgiana.Georgianna.Geovanni.Geovanny.Geovany.Gerda.Gerhard.Germaine.German.Gerry.Gerson.Gia.Gianni.Gideon.Gilda.Giles.Gillian.Gino.Giovani.Giovanna.Giovanni.Giovanny.Gisselle.Giuseppe.Gladyce.Glenna.Glennie.Godfrey.Golda.Golden.Gonzalo.Gracie.Graciela.Graham.Granville.Grayce.Grayson.Green.Gregoria.Gregorio.Greta.Greyson.Griffin.Grover.Guadalupe.Gudrun.Guido.Guiseppe.Gunnar.Gunner.Gus.Gussie.Gust.Gustave.Hadley.Hailee.Hailey.Hailie.Hal.Haleigh.Haley.Halie.Halle.Hallie.Hank.Hanna.Hans.Hardy.Harley.Harmon.Harmony.Harrison.Haskell.Hassan.Hassie.Haven.Hayden.Haylee.Hayley.Haylie.Hazle.Heath.Heaven.Heber.Helena.Helene.Helga.Hellen.Helmer.Heloise.Henderson.Henri.Henriette.Hermann.Hermina.Herminia.Herminio.Hershel.Herta.Hertha.Hester.Hettie.Hilario.Hilbert.Hildegard.Hillard.Hillary.Hilma.Hilton.Hipolito.Hiram.Hobart.Holden.Hollie.Hollis.Horacio.Hortense.Hosea.Houston.Howell.Hoyt.Hudson.Hulda.Humberto.Hunter.Hyman.Ibrahim.Icie.Idell.Idella.Ignatius.Ike.Ila.Ilene.Iliana.Ima.Imani.Imelda.Immanuel.Imogene.Ines.Irwin.Isabell.Isabella.Isabelle.Isac.Isadore.Isai.Isaiah.Isaias.Isidro.Isobel.Isom.Issac.Itzel.Iva.Ivah.Ivory.Ivy.Izabella.Izaiah.Jabari.Jace.Jacey.Jacinthe.Jacinto.Jackeline.Jackie.Jacklyn.Jackson.Jacky.Jaclyn.Jacques.Jacynthe.Jada.Jade.Jaden.Jadon.Jadyn.Jaeden.Jaida.Jaiden.Jailyn.Jaime.Jairo.Jakayla.Jakob.Jaleel.Jalen.Jalon.Jalyn.Jamaal.Jamal.Jamar.Jamarcus.Jamel.Jameson.Jamey.Jamie.Jamil.Jamir.Jamison.Jammie.Jan.Janae.Janelle.Janessa.Janick.Janiya.Jannie.Jany.Jaquan.Jaquelin.Jaqueline.Jaren.Jarod.Jaron.Jarred.Jarrell.Jarret.Jarrett.Jarrod.Jarvis.Jasen.Jasmin.Jasper.Jaunita.Javon.Javonte.Jayce.Jaycee.Jayda.Jayde.Jayden.Jaydon.Jaylan.Jaylen.Jaylin.Jaylon.Jayme.Jayne.Jayson.Jazlyn.Jazmin.Jazmyn.Jazmyne.Jean.Jeanie.Jed.Jedediah.Jedidiah.Jefferey.Jeffry.Jena.Jenifer.Jennings.Jennyfer.Jensen.Jerad.Jeramie.Jeramy.Jerel.Jeremie.Jermain.Jermey.Jerod.Jeromy.Jerrell.Jerrod.Jerrold.Jess.Jessie.Jessika.Jessy.Jessyca.Jett.Jettie.Jevon.Jewel.Jewell.Jillian.Joana.Joanie.Joannie.Joanny.Joany.Joaquin.Jocelyn.Jodie.Jody.Joelle.Joesph.Johan.Johann.Johathan.Johnathon.Johnnie.Johnpaul.Johnson.Jolie.Jonas.Jonatan.Jordane.Jordi.Jordon.Jordy.Jordyn.Josefa.Joshuah.Josiah.Josiane.Josianne.Josie.Josue.Jovan.Jovani.Jovanny.Jovany.Judah.Judd.Jude.Judge.Judson.Jules.Juliana.Julianne.Julien.Juliet.Junior.Junius.Justen.Justice.Justina.Justine.Juston.Justus.Justyn.Juvenal.Juwan.Kacey.Kaci.Kacie.Kade.Kaden.Kadin.Kaela.Kaelyn.Kaia.Kailee.Kailey.Kailyn.Kaitlin.Kaitlyn.Kale.Kaleb.Kaleigh.Kaley.Kali.Kallie.Kameron.Kamille.Kamren.Kamron.Kamryn.Kane.Kareem.Karelle.Kariane.Karianne.Karina.Karine.Karlee.Karley.Karli.Karlie.Karolann.Karson.Kasandra.Kasey.Kassandra.Katarina.Katelin.Katelyn.Katelynn.Katharina.Katheryn.Kathlyn.Kathryne.Katlyn.Katlynn.Katrine.Kattie.Kavon.Kaya.Kaycee.Kayden.Kaylah.Kaylee.Kayleigh.Kayley.Kayli.Kaylie.Kaylin.Keagan.Keanu.Keara.Keaton.Keegan.Keeley.Keely.Keenan.Keira.Kellen.Kelly.Kelsi.Kelsie.Kelton.Kendall.Kendrick.Kenna.Kennedi.Kennedy.Kennith.Kenton.Kenya.Kenyatta.Kenyon.Keon.Kerry.Keshaun.Keshawn.Keven.Kevon.Keyon.Keyshawn.Khalid.Khalil.Kian.Kiana.Kianna.Kiara.Kiarra.Kiel.Kiera.Kieran.Kiley.Kim.King.Kip.Kira.Kirsten.Kirstin.Kitty.Kobe.Koby.Kody.Kolby.Kole.Korbin.Korey.Kory.Kraig.Kris.Kristian.Kristofer.Kristoffer.Krystel.Krystina.Kurtis.Kyla.Kylee.Kyleigh.Kyler.Kylie.Kyra.Lacey.Lacy.Ladarius.Lafayette.Laila.Laisha.Lambert.Lamont.Landen.Lane.Laney.Larissa.Laron.Larue.Laurel.Lauretta.Lauriane.Laurianne.Laurine.Laury.Lauryn.Lavada.Lavern.Laverna.Lavina.Lavinia.Lavon.Lavonne.Lawson.Layla.Layne.Lazaro.Lea.Leann.Leanna.Leanne.Leatha.Leda.Lee.Leif.Leila.Leilani.Lelah.Lelia.Lempi.Lemuel.Lenna.Lennie.Lenny.Lenora.Lenore.Leola.Leonardo.Leone.Leonel.Leonie.Leonor.Leonora.Leopold.Leopoldo.Leora.Lera.Lesley.Leslie.Lesly.Lessie.Leta.Letha.Letitia.Lew.Lexi.Lexie.Lexus.Lia.Liam.Liana.Libbie.Libby.Lilian.Liliana.Liliane.Lilla.Lilliana.Lilly.Lily.Lilyan.Lina.Lincoln.Linnea.Linnie.Linwood.Lisandro.Lisette.Litzy.Liza.Lizeth.Lizzie.Llewellyn.Logan.Lolita.Loma.Lon.London.Lonie.Lonny.Lonzo.Loraine.Lorenz.Lorenza.Lorine.Lorna.Lottie.Lou.Louie.Louisa.Lourdes.Louvenia.Loy.Loyal.Loyce.Luciano.Lucie.Lucienne.Lucile.Lucinda.Lucio.Lucious.Lucius.Ludie.Ludwig.Lue.Luella.Luigi.Luisa.Lukas.Lulu.Luna.Lupe.Lura.Lurline.Lyda.Lyla.Lynn.Lyric.Lysanne.Mabelle.Mac.Macey.Maci.Macie.Mackenzie.Macy.Madaline.Madalyn.Maddison.Madelyn.Madelynn.Madge.Madie.Madilyn.Madisen.Madison.Madisyn.Madonna.Madyson.Maegan.Maeve.Mafalda.Magali.Magdalen.Magdalena.Magnolia.Magnus.Maia.Maida.Maiya.Major.Makayla.Makenna.Makenzie.Malachi.Malika.Malinda.Mallie.Mallory.Malvina.Manley.Manuela.Mara.Marcel.Marcelina.Marcelino.Marcelle.Marcellus.Marcelo.Margarete.Margarett.Margaretta.Margarette.Marge.Margot.Margret.Mariah.Mariam.Mariana.Mariane.Marianna.Mariano.Maribel.Mariela.Marielle.Marietta.Marilie.Marilou.Marilyne.Marina.Marion.Marisa.Marisol.Maritza.Marjolaine.Marjory.Markus.Marlee.Marlen.Marley.Marlin.Marques.Marquis.Marquise.Martina.Martine.Maryam.Maryjane.Maryse.Mason.Mateo.Mathias.Mathilde.Matilda.Matilde.Matteo.Maud.Maude.Maudie.Mauricio.Maurine.Maverick.Mavis.Maxie.Maxime.Maximilian.Maximillia.Maximillian.Maximo.Maximus.Maxwell.Maya.Maybell.Maybelle.Maye.Maymie.Maynard.Mayra.Mazie.Mckayla.Mckenna.Mckenzie.Meagan.Meaghan.Meda.Megane.Meggie.Mekhi.Melany.Melisa.Mellie.Melvina.Melyna.Melyssa.Merl.Merlin.Merritt.Mertie.Mervin.Meta.Mia.Micaela.Micah.Michaela.Michale.Michel.Mikayla.Mikel.Milan.Miles.Milford.Miller.Millie.Milo.Mina.Minerva.Miracle.Mireille.Mireya.Misael.Missouri.Mitchel.Mittie.Modesta.Modesto.Mohamed.Mohammad.Mohammed.Moises.Mollie.Monroe.Monserrat.Monserrate.Montana.Monte.Monty.Morgan.Moriah.Mortimer.Morton.Mose.Moshe.Mossie.Mozell.Mozelle.Muhammad.Murl.Murphy.Murray.Mustafa.Mya.Myah.Mylene.Myles.Myriam.Myrl.Myrna.Myrtice.Myrtie.Myrtis.Nadia.Nakia.Name.Nannie.Naomie.Napoleon.Narciso.Nash.Nasir.Nat.Natalia.Nathanael.Nathanial.Nathen.Nayeli.Ned.Nedra.Neha.Nelda.Nella.Nelle.Nels.Neoma.Nestor.Neva.Newell.Newton.Nia.Nicholaus.Nicklaus.Nickolas.Nico.Nicola.Nicolette.Nigel.Nikita.Nikki.Nikko.Niko.Nikolas.Nils.Noble.Noe.Noelia.Noemi.Noemie.Noemy.Nola.Nolan.Nona.Norbert.Norberto.Norene.Norris.Norval.Norwood.Nova.Novella.Nya.Nyah.Nyasia.Obie.Oceane.Ocie.Octavia.Oda.Odell.Odessa.Odie.Ofelia.Okey.Ola.Olaf.Ole.Olen.Oleta.Olin.Oma.Omari.Omer.Ona.Onie.Ophelia.Oral.Oran.Oren.Orie.Orin.Orion.Orland.Orlo.Orpha.Orrin.Orval.Osbaldo.Osborne.Osvaldo.Oswald.Oswaldo.Otha.Otho.Otilia.Ottilie.Ottis.Otto.Ova.Ozella.Paige.Palma.Pansy.Paolo.Paris.Parker.Pascale.Pasquale.Pat.Patience.Pattie.Paxton.Payton.Pearlie.Pearline.Peggie.Penelope.Percival.Petra.Peyton.Phoebe.Pierce.Pierre.Pietro.Pink.Pinkie.Piper.Polly.Porter.Precious.Presley.Price.Prince.Princess.Providenci.Prudence.Queen.Queenie.Quentin.Quincy.Quinn.Quinten.Quinton.Rachelle.Rae.Raegan.Rafaela.Raheem.Rahsaan.Rahul.Raina.Raleigh.Randi.Ransom.Raoul.Raphael.Raphaelle.Rashad.Rashawn.Rasheed.Raven.Raymundo.Reagan.Reanna.Reba.Rebeca.Rebeka.Rebekah.Reece.Reed.Reese.Regan.Reggie.Reid.Reilly.Reina.Reinhold.Remington.Ressie.Reta.Retha.Retta.Reuben.Reva.Rey.Reyes.Reymundo.Reyna.Reynold.Rhea.Rhett.Rhianna.Rhiannon.Rhoda.Richie.Richmond.Rickie.Rico.Rigoberto.Riley.River.Robb.Robbie.Robin.Rocio.Rocky.Rod.Rodger.Rodrick.Rodrigo.Roel.Rogers.Rollin.Roma.Romaine.Ronaldo.Ronny.Rory.Rosalee.Rosalia.Rosalind.Rosalinda.Rosalyn.Rosamond.Rosanna.Rosario.Roscoe.Rosella.Roselyn.Rosendo.Rosetta.Rosina.Roslyn.Rossie.Rowan.Rowena.Rowland.Roxane.Royal.Royce.Rozella.Rubie.Rubye.Rupert.Russ.Russel.Rusty.Ruthe.Ruthie.Ryann.Ryder.Rylan.Rylee.Ryleigh.Ryley.Sabina.Sabryna.Sadye.Sage.Saige.Sallie.Salma.Samanta.Samara.Samir.Sammie.Samson.Sandrine.Sanford.Santa.Santina.Santino.Sarai.Sarina.Sasha.Savanah.Savanna.Savannah.Savion.Scarlett.Schuyler.Scot.Scottie.Scotty.Seamus.Sebastian.Sedrick.Selena.Selina.Selmer.Serena.Serenity.Shad.Shaina.Shakira.Shana.Shanel.Shanelle.Shania.Shanie.Shaniya.Shanna.Shannon.Shanny.Shanon.Shany.Shaylee.Shayna.Shayne.Shea.Shemar.Sheridan.Sherwood.Shyann.Shyanne.Sibyl.Sid.Sienna.Sierra.Sigmund.Sigrid.Sigurd.Silas.Sim.Simeon.Simone.Sincere.Sister.Skye.Skyla.Skylar.Sofia.Soledad.Solon.Sonny.Stan.Stanford.Stanton.Stefan.Stefanie.Stephan.Stephania.Stephany.Stephon.Sterling.Stevie.Stone.Summer.Sunny.Susana.Susanna.Sven.Syble.Sydnee.Sydney.Sydni.Sydnie.Sylvan.Tad.Talia.Talon.Tamia.Tania.Tanner.Taryn.Tate.Tatum.Tatyana.Taurean.Tavares.Taya.Teagan.Telly.Terrill.Terry.Tess.Tessie.Tevin.Thad.Thaddeus.Thalia.Thea.Theo.Theodora.Therese.Theresia.Theron.Thora.Thurman.Tia.Tiana.Tianna.Tiara.Tierra.Tillman.Timmothy.Tito.Titus.Tobin.Tod.Tomasa.Toney.Torey.Torrance.Torrey.Toy.Trace.Tracy.Travon.Tre.Tremaine.Tremayne.Trent.Trenton.Tressa.Tressie.Treva.Trever.Trevion.Trey.Trinity.Trisha.Tristian.Tristin.Triston.Trudie.Trycia.Trystan.Turner.Twila.Tyra.Tyree.Tyreek.Tyrel.Tyrell.Tyrese.Tyrique.Tyshawn.Tyson.Ubaldo.Ulices.Ulises.Una.Unique.Urban.Uriah.Uriel.Ursula.Vada.Valentin.Valentina.Valentine.Vallie.Vance.Vaughn.Veda.Velda.Vella.Velva.Vena.Verda.Verdie.Vergie.Verla.Verlie.Vern.Verner.Vernice.Vernie.Verona.Vesta.Vicenta.Vicente.Vida.Vidal.Vilma.Vince.Vincenza.Vincenzo.Vinnie.Violette.Virgie.Virginie.Vita.Vito.Viva.Viviane.Vivianne.Vivien.Vivienne.Vladimir.Waino.Waldo.Walker.Walton.Ward.Watson.Wava.Waylon.Webster.Weldon.Wellington.Werner.Westley.Weston.Wilber.Wilburn.Wiley.Wilford.Wilfredo.Wilfrid.Wilhelm.Wilhelmine.Will.Willa.Willie.Willow.Willy.Wilmer.Wilton.Winfield.Winnifred.Winona.Wyatt.Wyman.Xander.Xavier.Xzavier.Yadira.Yasmeen.Yasmin.Yasmine.Yazmin.Yesenia.Yessenia.Yoshiko.Zachariah.Zachery.Zack.Zackary.Zackery.Zakary.Zander.Zane.Zaria.Zechariah.Zelda.Zella.Zelma.Zena.Zetta.Zion.Zita.Zoe.Zoey.Zoie.Zoila.Zola.Zora.Zula`.split(`.`), female: `Ada.Adrienne.Agnes.Alberta.Alexandra.Alexis.Alice.Alicia.Alison.Allison.Alma.Alyssa.Amanda.Amber.Amelia.Amy.Ana.Andrea.Angela.Angelica.Angelina.Angie.Anita.Ann.Anna.Anne.Annette.Annie.Antoinette.Antonia.April.Arlene.Ashley.Audrey.Barbara.Beatrice.Becky.Belinda.Bernadette.Bernice.Bertha.Bessie.Beth.Bethany.Betsy.Betty.Beulah.Beverly.Billie.Blanca.Blanche.Bobbie.Bonnie.Brandi.Brandy.Brenda.Bridget.Brittany.Brooke.Camille.Candace.Candice.Carla.Carmen.Carol.Carole.Caroline.Carolyn.Carrie.Cassandra.Catherine.Cathy.Cecelia.Cecilia.Celia.Charlene.Charlotte.Chelsea.Cheryl.Christie.Christina.Christine.Christy.Cindy.Claire.Clara.Claudia.Colleen.Connie.Constance.Cora.Cristina.Crystal.Cynthia.Daisy.Danielle.Darla.Darlene.Dawn.Deanna.Debbie.Deborah.Debra.Delia.Della.Delores.Denise.Desiree.Diana.Diane.Dianna.Dianne.Dixie.Dolores.Donna.Dora.Doreen.Doris.Dorothy.Ebony.Edith.Edna.Eileen.Elaine.Eleanor.Elena.Elisa.Elizabeth.Ella.Ellen.Eloise.Elsa.Elsie.Elvira.Emily.Emma.Erica.Erika.Erin.Erma.Ernestine.Essie.Estelle.Esther.Ethel.Eula.Eunice.Eva.Evelyn.Faith.Fannie.Faye.Felicia.Flora.Florence.Frances.Freda.Gail.Gayle.Geneva.Genevieve.Georgia.Geraldine.Gertrude.Gina.Ginger.Gladys.Glenda.Gloria.Grace.Gretchen.Gwen.Gwendolyn.Hannah.Harriet.Hattie.Hazel.Heather.Heidi.Helen.Henrietta.Hilda.Holly.Hope.Ida.Inez.Irene.Iris.Irma.Isabel.Jacqueline.Jacquelyn.Jana.Jane.Janet.Janice.Janie.Janis.Jasmine.Jeanette.Jeanne.Jeannette.Jeannie.Jenna.Jennie.Jennifer.Jenny.Jessica.Jill.Jo.Joan.Joann.Joanna.Joanne.Jodi.Johanna.Josefina.Josephine.Joy.Joyce.Juana.Juanita.Judith.Judy.Julia.Julie.June.Kara.Karen.Kari.Karla.Kate.Katherine.Kathleen.Kathryn.Kathy.Katie.Katrina.Kay.Kayla.Kelley.Kelli.Kellie.Kendra.Kimberly.Krista.Kristen.Kristi.Kristie.Kristin.Kristina.Kristine.Kristy.Krystal.Lana.Latoya.Laura.Lauren.Laurie.Laverne.Leah.Leigh.Lela.Lena.Leona.Leticia.Lila.Lillian.Lillie.Linda.Lindsay.Lindsey.Lisa.Lois.Lola.Lora.Lorena.Lorene.Loretta.Lori.Lorraine.Louise.Lucia.Lucille.Lucy.Lula.Luz.Lydia.Lynda.Lynette.Lynne.Mabel.Mable.Madeline.Mae.Maggie.Mamie.Mandy.Marcella.Marcia.Margaret.Margarita.Margie.Marguerite.Maria.Marian.Marianne.Marie.Marilyn.Marjorie.Marlene.Marsha.Marta.Martha.Mary.Maryann.Mattie.Maureen.Maxine.May.Megan.Meghan.Melanie.Melba.Melinda.Melissa.Melody.Mercedes.Meredith.Michele.Michelle.Mildred.Mindy.Minnie.Miranda.Miriam.Misty.Molly.Mona.Monica.Monique.Muriel.Myra.Myrtle.Nadine.Nancy.Naomi.Natalie.Natasha.Nellie.Nettie.Nichole.Nicole.Nina.Nora.Norma.Olga.Olive.Olivia.Ollie.Opal.Ora.Pam.Pamela.Patricia.Patsy.Patti.Patty.Paula.Paulette.Pauline.Pearl.Peggy.Penny.Phyllis.Priscilla.Rachael.Rachel.Ramona.Raquel.Rebecca.Regina.Renee.Rhonda.Rita.Roberta.Robyn.Rochelle.Rosa.Rosalie.Rose.Rosemarie.Rosemary.Rosie.Roxanne.Ruby.Ruth.Sabrina.Sadie.Sally.Samantha.Sandra.Sandy.Sara.Sarah.Shari.Sharon.Shawna.Sheila.Shelia.Shelley.Shelly.Sheri.Sherri.Sherry.Sheryl.Shirley.Silvia.Sonia.Sonja.Sonya.Sophia.Sophie.Stacey.Stacy.Stella.Stephanie.Sue.Susan.Susie.Suzanne.Sylvia.Tabitha.Tamara.Tami.Tammy.Tanya.Tara.Tasha.Teresa.Teri.Terri.Thelma.Theresa.Tiffany.Tina.Toni.Tonya.Tracey.Traci.Tricia.Valerie.Vanessa.Velma.Vera.Verna.Veronica.Vicki.Vickie.Vicky.Victoria.Viola.Violet.Virginia.Vivian.Wanda.Wendy.Whitney.Wilma.Winifred.Yolanda.Yvette.Yvonne`.split(`.`), male: `Aaron.Abel.Abraham.Adam.Adrian.Al.Alan.Albert.Alberto.Alejandro.Alex.Alexander.Alfonso.Alfred.Alfredo.Allan.Allen.Alonzo.Alton.Alvin.Amos.Andre.Andres.Andrew.Andy.Angelo.Anthony.Antonio.Archie.Armando.Arnold.Arthur.Arturo.Aubrey.Austin.Barry.Ben.Benjamin.Bennie.Benny.Bernard.Bert.Bill.Billy.Blake.Bob.Bobby.Boyd.Brad.Bradford.Bradley.Brandon.Brendan.Brent.Brett.Brian.Bruce.Bryan.Bryant.Byron.Caleb.Calvin.Cameron.Carl.Carlos.Carlton.Carroll.Cary.Cecil.Cedric.Cesar.Chad.Charles.Charlie.Chester.Chris.Christian.Christopher.Clarence.Clark.Claude.Clay.Clayton.Clifford.Clifton.Clint.Clinton.Clyde.Cody.Colin.Conrad.Corey.Cornelius.Cory.Craig.Curtis.Dale.Dallas.Damon.Dan.Daniel.Danny.Darin.Darnell.Darrel.Darrell.Darren.Darrin.Darryl.Daryl.Dave.David.Dean.Delbert.Dennis.Derek.Derrick.Devin.Dewey.Dexter.Domingo.Dominic.Dominick.Don.Donald.Donnie.Doug.Douglas.Doyle.Drew.Duane.Dustin.Dwayne.Dwight.Earl.Earnest.Ed.Eddie.Edgar.Edmond.Edmund.Eduardo.Edward.Edwin.Elbert.Elias.Elijah.Ellis.Elmer.Emanuel.Emilio.Emmett.Enrique.Eric.Erick.Erik.Ernest.Ernesto.Ervin.Eugene.Evan.Everett.Felipe.Felix.Fernando.Floyd.Forrest.Francisco.Frank.Frankie.Franklin.Fred.Freddie.Frederick.Fredrick.Gabriel.Garrett.Garry.Gary.Gene.Geoffrey.George.Gerald.Gerard.Gerardo.Gilbert.Gilberto.Glen.Glenn.Gordon.Grady.Grant.Greg.Gregg.Gregory.Guillermo.Gustavo.Guy.Harold.Harry.Harvey.Hector.Henry.Herbert.Herman.Homer.Horace.Howard.Hubert.Hugh.Hugo.Ian.Ignacio.Ira.Irvin.Irving.Isaac.Ismael.Israel.Ivan.Jack.Jacob.Jake.James.Jared.Jason.Javier.Jay.Jeff.Jeffery.Jeffrey.Jerald.Jeremiah.Jeremy.Jermaine.Jerome.Jerry.Jesse.Jesus.Jim.Jimmie.Jimmy.Joe.Joel.Joey.John.Johnathan.Johnny.Jon.Jonathan.Jonathon.Jordan.Jorge.Jose.Joseph.Josh.Joshua.Juan.Julian.Julio.Julius.Justin.Karl.Keith.Kelvin.Ken.Kenneth.Kenny.Kent.Kevin.Kirk.Kristopher.Kurt.Kyle.Lamar.Lance.Larry.Laurence.Lawrence.Leland.Leo.Leon.Leonard.Leroy.Lester.Levi.Lewis.Lionel.Lloyd.Lonnie.Loren.Lorenzo.Louis.Lowell.Lucas.Luis.Luke.Luther.Lyle.Mack.Malcolm.Manuel.Marc.Marco.Marcos.Marcus.Mario.Mark.Marlon.Marshall.Martin.Marty.Marvin.Mathew.Matt.Matthew.Maurice.Max.Melvin.Merle.Michael.Micheal.Miguel.Mike.Milton.Mitchell.Morris.Moses.Myron.Nathan.Nathaniel.Neal.Neil.Nelson.Nicholas.Nick.Nicolas.Noah.Noel.Norman.Oliver.Omar.Orlando.Orville.Oscar.Otis.Owen.Pablo.Patrick.Paul.Pedro.Percy.Perry.Pete.Peter.Phil.Philip.Phillip.Preston.Rafael.Ralph.Ramiro.Ramon.Randal.Randall.Randolph.Randy.Raul.Ray.Raymond.Reginald.Rene.Rex.Ricardo.Richard.Rick.Rickey.Ricky.Robert.Roberto.Roderick.Rodney.Rodolfo.Rogelio.Roger.Roland.Rolando.Roman.Ron.Ronald.Ronnie.Roosevelt.Ross.Roy.Ruben.Rudolph.Rudy.Rufus.Russell.Ryan.Salvador.Salvatore.Sam.Sammy.Samuel.Santiago.Santos.Saul.Scott.Sean.Sergio.Seth.Shane.Shaun.Shawn.Sheldon.Sherman.Sidney.Simon.Spencer.Stanley.Stephen.Steve.Steven.Stewart.Stuart.Sylvester.Taylor.Ted.Terence.Terrance.Terrell.Terrence.Theodore.Thomas.Tim.Timmy.Timothy.Toby.Todd.Tom.Tomas.Tommie.Tommy.Tony.Travis.Trevor.Troy.Tyler.Tyrone.Van.Vernon.Victor.Vincent.Virgil.Wade.Wallace.Walter.Warren.Wayne.Wendell.Wesley.Wilbert.Wilbur.Wilfred.Willard.William.Willis.Wilson.Winston.Wm.Woodrow.Zachary`.split(`.`) }, gender: `Agender.Androgyne.Androgynous.Bigender.Cis female.Cis male.Cis man.Cis woman.Cis.Cisgender female.Cisgender male.Cisgender man.Cisgender woman.Cisgender.Demi-boy.Demi-girl.Demi-man.Demi-woman.Demiflux.Demigender.F2M.FTM.Female to male trans man.Female to male transgender man.Female to male transsexual man.Female to male.Gender fluid.Gender neutral.Gender nonconforming.Gender questioning.Gender variant.Genderflux.Genderqueer.Hermaphrodite.Intersex man.Intersex person.Intersex woman.Intersex.M2F.MTF.Male to female trans woman.Male to female transgender woman.Male to female transsexual woman.Male to female.Man.Multigender.Neither.Neutrois.Non-binary.Omnigender.Other.Pangender.Polygender.T* man.T* woman.Trans female.Trans male.Trans man.Trans person.Trans woman.Trans.Transsexual female.Transsexual male.Transsexual man.Transsexual person.Transsexual woman.Transsexual.Transgender female.Transgender person.Transmasculine.Trigender.Two* person.Two-spirit person.Two-spirit.Woman.Xenogender`.split(`.`), job_area: `Solutions.Program.Brand.Security.Research.Marketing.Directives.Implementation.Integration.Functionality.Response.Paradigm.Tactics.Identity.Markets.Group.Division.Applications.Optimization.Operations.Infrastructure.Intranet.Communications.Web.Branding.Quality.Assurance.Mobility.Accounts.Data.Creative.Configuration.Accountability.Interactions.Factors.Usability.Metrics`.split(`.`), job_descriptor: [`Lead`, `Senior`, `Direct`, `Corporate`, `Dynamic`, `Future`, `Product`, `National`, `Regional`, `District`, `Central`, `Global`, `Customer`, `Investor`, `International`, `Legacy`, `Forward`, `Internal`, `Human`, `Chief`, `Principal`], job_title_pattern: [`{{person.jobDescriptor}} {{person.jobArea}} {{person.jobType}}`], job_type: [`Supervisor`, `Associate`, `Executive`, `Liaison`, `Officer`, `Manager`, `Engineer`, `Specialist`, `Director`, `Coordinator`, `Administrator`, `Architect`, `Analyst`, `Designer`, `Planner`, `Orchestrator`, `Technician`, `Developer`, `Producer`, `Consultant`, `Assistant`, `Facilitator`, `Agent`, `Representative`, `Strategist`], last_name: { generic: `Abbott.Abernathy.Abshire.Adams.Altenwerth.Anderson.Ankunding.Armstrong.Auer.Aufderhar.Bahringer.Bailey.Balistreri.Barrows.Bartell.Bartoletti.Barton.Bashirian.Batz.Bauch.Baumbach.Bayer.Beahan.Beatty.Bechtelar.Becker.Bednar.Beer.Beier.Berge.Bergnaum.Bergstrom.Bernhard.Bernier.Bins.Blanda.Blick.Block.Bode.Boehm.Bogan.Bogisich.Borer.Bosco.Botsford.Boyer.Boyle.Bradtke.Brakus.Braun.Breitenberg.Brekke.Brown.Bruen.Buckridge.Carroll.Carter.Cartwright.Casper.Cassin.Champlin.Christiansen.Cole.Collier.Collins.Conn.Connelly.Conroy.Considine.Corkery.Cormier.Corwin.Cremin.Crist.Crona.Cronin.Crooks.Cruickshank.Cummerata.Cummings.D'Amore.Dach.Daniel.Dare.Daugherty.Davis.Deckow.Denesik.Dibbert.Dickens.Dicki.Dickinson.Dietrich.Donnelly.Dooley.Douglas.Doyle.DuBuque.Durgan.Ebert.Effertz.Emard.Emmerich.Erdman.Ernser.Fadel.Fahey.Farrell.Fay.Feeney.Feest.Feil.Ferry.Fisher.Flatley.Frami.Franecki.Franey.Friesen.Fritsch.Funk.Gerhold.Gerlach.Gibson.Gislason.Gleason.Gleichner.Glover.Goldner.Goodwin.Gorczany.Gottlieb.Goyette.Grady.Graham.Grant.Green.Greenfelder.Greenholt.Grimes.Gulgowski.Gusikowski.Gutkowski.Gutmann.Haag.Hackett.Hagenes.Hahn.Haley.Halvorson.Hamill.Hammes.Hand.Hane.Hansen.Harber.Harris.Hartmann.Harvey.Hauck.Hayes.Heaney.Heathcote.Hegmann.Heidenreich.Heller.Herman.Hermann.Hermiston.Herzog.Hessel.Hettinger.Hickle.Hilll.Hills.Hilpert.Hintz.Hirthe.Hodkiewicz.Hoeger.Homenick.Hoppe.Howe.Howell.Hudson.Huel.Huels.Hyatt.Jacobi.Jacobs.Jacobson.Jakubowski.Jaskolski.Jast.Jenkins.Jerde.Johns.Johnson.Johnston.Jones.Kassulke.Kautzer.Keebler.Keeling.Kemmer.Kerluke.Kertzmann.Kessler.Kiehn.Kihn.Kilback.King.Kirlin.Klein.Kling.Klocko.Koch.Koelpin.Koepp.Kohler.Konopelski.Koss.Kovacek.Kozey.Krajcik.Kreiger.Kris.Kshlerin.Kub.Kuhic.Kuhlman.Kuhn.Kulas.Kunde.Kunze.Kuphal.Kutch.Kuvalis.Labadie.Lakin.Lang.Langosh.Langworth.Larkin.Larson.Leannon.Lebsack.Ledner.Leffler.Legros.Lehner.Lemke.Lesch.Leuschke.Lind.Lindgren.Littel.Little.Lockman.Lowe.Lubowitz.Lueilwitz.Luettgen.Lynch.MacGyver.Macejkovic.Maggio.Mann.Mante.Marks.Marquardt.Marvin.Mayer.Mayert.McClure.McCullough.McDermott.McGlynn.McKenzie.McLaughlin.Medhurst.Mertz.Metz.Miller.Mills.Mitchell.Moen.Mohr.Monahan.Moore.Morar.Morissette.Mosciski.Mraz.Mueller.Muller.Murazik.Murphy.Murray.Nader.Nicolas.Nienow.Nikolaus.Nitzsche.Nolan.O'Connell.O'Conner.O'Hara.O'Keefe.O'Kon.O'Reilly.Oberbrunner.Okuneva.Olson.Ondricka.Orn.Ortiz.Osinski.Pacocha.Padberg.Pagac.Parisian.Parker.Paucek.Pfannerstill.Pfeffer.Pollich.Pouros.Powlowski.Predovic.Price.Prohaska.Prosacco.Purdy.Quigley.Quitzon.Rath.Ratke.Rau.Raynor.Reichel.Reichert.Reilly.Reinger.Rempel.Renner.Reynolds.Rice.Rippin.Ritchie.Robel.Roberts.Rodriguez.Rogahn.Rohan.Rolfson.Romaguera.Roob.Rosenbaum.Rowe.Ruecker.Runolfsdottir.Runolfsson.Runte.Russel.Rutherford.Ryan.Sanford.Satterfield.Sauer.Sawayn.Schaden.Schaefer.Schamberger.Schiller.Schimmel.Schinner.Schmeler.Schmidt.Schmitt.Schneider.Schoen.Schowalter.Schroeder.Schulist.Schultz.Schumm.Schuppe.Schuster.Senger.Shanahan.Shields.Simonis.Sipes.Skiles.Smith.Smitham.Spencer.Spinka.Sporer.Stamm.Stanton.Stark.Stehr.Steuber.Stiedemann.Stokes.Stoltenberg.Stracke.Streich.Stroman.Strosin.Swaniawski.Swift.Terry.Thiel.Thompson.Tillman.Torp.Torphy.Towne.Toy.Trantow.Tremblay.Treutel.Tromp.Turcotte.Turner.Ullrich.Upton.Vandervort.Veum.Volkman.Von.VonRueden.Waelchi.Walker.Walsh.Walter.Ward.Waters.Watsica.Weber.Wehner.Weimann.Weissnat.Welch.West.White.Wiegand.Wilderman.Wilkinson.Will.Williamson.Willms.Windler.Wintheiser.Wisoky.Wisozk.Witting.Wiza.Wolf.Wolff.Wuckert.Wunsch.Wyman.Yost.Yundt.Zboncak.Zemlak.Ziemann.Zieme.Zulauf`.split(`.`) }, last_name_pattern: { generic: [{ value: `{{person.last_name.generic}}`, weight: 95 }, { value: `{{person.last_name.generic}}-{{person.last_name.generic}}`, weight: 5 }] }, middle_name: { generic: `Addison.Anderson.Angel.Arden.Austin.Bailey.Bowie.Brooklyn.Cameron.Charlie.Corey.Drew.Dylan.Elliott.Finley.Gray.Greer.Hayden.Jaden.Jamie.Kai.Kendall.Kyle.Leslie.Marlowe.Micah.Monroe.Nico.Noah.North.Parker.Reagan.Reign.Rowan.Ryan.Sasha.Sawyer.Shawn.Shiloh.Skyler`.split(`.`), female: `Abigail.Adele.Alex.Alice.Alisha.Amber.Amelia.Amora.Ana\xEFs.Angelou.Anika.Anise.Annabel.Anne.Aphrodite.Aretha.Arya.Ashton.Aster.Audrey.Avery.Bailee.Bay.Belle.Beth.Billie.Blair.Blaise.Blake.Blanche.Blue.Bree.Brielle.Brienne.Brooke.Caleen.Candice.Caprice.Carelyn.Caylen.Celine.Cerise.Cia.Claire.Claudia.Clementine.Coral.Coraline.Dahlia.Dakota.Dawn.Della.Demi.Denise.Denver.Devine.Devon.Diana.Ebony.Eden.Eleanor.Elein.Elizabeth.Ellen.Elodie.Eloise.Ember.Emma.Erin.Eyre.Faith.Farrah.Fawn.Fayre.Fern.France.Francis.Frida.Genisis.Georgia.Grace.Gwen.Harley.Harper.Hazel.Helen.Hippolyta.Holly.Hope.Imani.Iowa.Ireland.Irene.Iris.Isa.Isla.Ivy.Jade.Jane.Jazz.Jean.Jess.Jett.Jo.Joan.Jolie.Jordan.Josie.Journey.Joy.Jules.Julien.Juliet.Juniper.Justice.Kali.Karma.Kat.Kate.Kennedy.Keva.Kylie.Lake.Lane.Lark.Layla.Lee.Leigh.Leona.Lexi.London.Lou.Louise.Love.Luna.Lux.Lynn.Lyric.Maddie.Mae.Marie.Matilda.Maude.Maybel.Meadow.Medusa.Mercy.Michelle.Mirabel.Morgan.Nalia.Naomi.Nova.Olive.Paige.Pax.Pearl.Penelope.Phoenix.Quinn.Rae.Rain.Raven.Ray.Raye.Rebel.Reese.Reeve.Regan.Riley.River.Robin.Rory.Rose.Royal.Ruth.Rylie.Sage.Sam.Saturn.Scout.Serena.Sky.Skylar.Sofia.Sophia.Storm.Sue.Suzanne.Sydney.Taylen.Taylor.Teagan.Tempest.Tenley.Thea.Trinity.Valerie.Venus.Vera.Violet.Willow.Winter.Xena.Zaylee.Zion.Zoe`.split(`.`), male: `Ace.Aiden.Alexander.Ander.Anthony.Asher.August.Aziel.Bear.Beckham.Benjamin.Buddy.Calvin.Carter.Charles.Christopher.Clyde.Cooper.Daniel.David.Dior.Elijah.Ellis.Emerson.Ethan.Ezra.Fletcher.Flynn.Gabriel.Grayson.Gus.Hank.Harrison.Hendrix.Henry.Houston.Hudson.Hugh.Isaac.Jack.Jackson.Jacob.Jakobe.James.Jaxon.Jaxtyn.Jayden.John.Joseph.Josiah.Jude.Julian.Karsyn.Kenji.Kobe.Kylo.Lennon.Leo.Levi.Liam.Lincoln.Logan.Louis.Lucas.Lucky.Luke.Mason.Mateo.Matthew.Maverick.Michael.Nixon.Ocean.Oliver.Otis.Otto.Owen.Ozzy.Rocky.Samuel.Sebastian.Sonny.Teddy.Theo.Theodore.Thomas.Truett.Walter.Warren.Watson.William.Wison.Wyatt.Ziggy.Zyair`.split(`.`) }, name: [{ value: `{{person.firstName}} {{person.lastName}}`, weight: 49 }, { value: `{{person.prefix}} {{person.firstName}} {{person.lastName}}`, weight: 7 }, { value: `{{person.firstName}} {{person.lastName}} {{person.suffix}}`, weight: 7 }, { value: `{{person.prefix}} {{person.firstName}} {{person.lastName}} {{person.suffix}}`, weight: 1 }], prefix: { generic: [`Dr.`], female: [`Miss`, `Mrs.`, `Ms.`], male: [`Mr.`] }, sex: [`female`, `male`], suffix: [`Jr.`, `Sr.`, `I`, `II`, `III`, `IV`, `V`, `MD`, `DDS`, `PhD`, `DVM`], western_zodiac_sign: [`Aquarius`, `Pisces`, `Aries`, `Taurus`, `Gemini`, `Cancer`, `Leo`, `Virgo`, `Libra`, `Scorpio`, `Sagittarius`, `Capricorn`] }, phone_number: { format: { human: [`!##-!##-####`, `(!##) !##-####`, `1-!##-!##-####`, `!##.!##.####`, `!##-!##-#### x###`, `(!##) !##-#### x###`, `1-!##-!##-#### x###`, `!##.!##.#### x###`, `!##-!##-#### x####`, `(!##) !##-#### x####`, `1-!##-!##-#### x####`, `!##.!##.#### x####`, `!##-!##-#### x#####`, `(!##) !##-#### x#####`, `1-!##-!##-#### x#####`, `!##.!##.#### x#####`], international: [`+1!##!######`], mobile: [`!##!######`], national: [`(!##) !##-####`] } }, science: { chemical_element: [{ symbol: `H`, name: `Hydrogen`, atomicNumber: 1 }, { symbol: `He`, name: `Helium`, atomicNumber: 2 }, { symbol: `Li`, name: `Lithium`, atomicNumber: 3 }, { symbol: `Be`, name: `Beryllium`, atomicNumber: 4 }, { symbol: `B`, name: `Boron`, atomicNumber: 5 }, { symbol: `C`, name: `Carbon`, atomicNumber: 6 }, { symbol: `N`, name: `Nitrogen`, atomicNumber: 7 }, { symbol: `O`, name: `Oxygen`, atomicNumber: 8 }, { symbol: `F`, name: `Fluorine`, atomicNumber: 9 }, { symbol: `Ne`, name: `Neon`, atomicNumber: 10 }, { symbol: `Na`, name: `Sodium`, atomicNumber: 11 }, { symbol: `Mg`, name: `Magnesium`, atomicNumber: 12 }, { symbol: `Al`, name: `Aluminium`, atomicNumber: 13 }, { symbol: `Si`, name: `Silicon`, atomicNumber: 14 }, { symbol: `P`, name: `Phosphorus`, atomicNumber: 15 }, { symbol: `S`, name: `Sulfur`, atomicNumber: 16 }, { symbol: `Cl`, name: `Chlorine`, atomicNumber: 17 }, { symbol: `Ar`, name: `Argon`, atomicNumber: 18 }, { symbol: `K`, name: `Potassium`, atomicNumber: 19 }, { symbol: `Ca`, name: `Calcium`, atomicNumber: 20 }, { symbol: `Sc`, name: `Scandium`, atomicNumber: 21 }, { symbol: `Ti`, name: `Titanium`, atomicNumber: 22 }, { symbol: `V`, name: `Vanadium`, atomicNumber: 23 }, { symbol: `Cr`, name: `Chromium`, atomicNumber: 24 }, { symbol: `Mn`, name: `Manganese`, atomicNumber: 25 }, { symbol: `Fe`, name: `Iron`, atomicNumber: 26 }, { symbol: `Co`, name: `Cobalt`, atomicNumber: 27 }, { symbol: `Ni`, name: `Nickel`, atomicNumber: 28 }, { symbol: `Cu`, name: `Copper`, atomicNumber: 29 }, { symbol: `Zn`, name: `Zinc`, atomicNumber: 30 }, { symbol: `Ga`, name: `Gallium`, atomicNumber: 31 }, { symbol: `Ge`, name: `Germanium`, atomicNumber: 32 }, { symbol: `As`, name: `Arsenic`, atomicNumber: 33 }, { symbol: `Se`, name: `Selenium`, atomicNumber: 34 }, { symbol: `Br`, name: `Bromine`, atomicNumber: 35 }, { symbol: `Kr`, name: `Krypton`, atomicNumber: 36 }, { symbol: `Rb`, name: `Rubidium`, atomicNumber: 37 }, { symbol: `Sr`, name: `Strontium`, atomicNumber: 38 }, { symbol: `Y`, name: `Yttrium`, atomicNumber: 39 }, { symbol: `Zr`, name: `Zirconium`, atomicNumber: 40 }, { symbol: `Nb`, name: `Niobium`, atomicNumber: 41 }, { symbol: `Mo`, name: `Molybdenum`, atomicNumber: 42 }, { symbol: `Tc`, name: `Technetium`, atomicNumber: 43 }, { symbol: `Ru`, name: `Ruthenium`, atomicNumber: 44 }, { symbol: `Rh`, name: `Rhodium`, atomicNumber: 45 }, { symbol: `Pd`, name: `Palladium`, atomicNumber: 46 }, { symbol: `Ag`, name: `Silver`, atomicNumber: 47 }, { symbol: `Cd`, name: `Cadmium`, atomicNumber: 48 }, { symbol: `In`, name: `Indium`, atomicNumber: 49 }, { symbol: `Sn`, name: `Tin`, atomicNumber: 50 }, { symbol: `Sb`, name: `Antimony`, atomicNumber: 51 }, { symbol: `Te`, name: `Tellurium`, atomicNumber: 52 }, { symbol: `I`, name: `Iodine`, atomicNumber: 53 }, { symbol: `Xe`, name: `Xenon`, atomicNumber: 54 }, { symbol: `Cs`, name: `Caesium`, atomicNumber: 55 }, { symbol: `Ba`, name: `Barium`, atomicNumber: 56 }, { symbol: `La`, name: `Lanthanum`, atomicNumber: 57 }, { symbol: `Ce`, name: `Cerium`, atomicNumber: 58 }, { symbol: `Pr`, name: `Praseodymium`, atomicNumber: 59 }, { symbol: `Nd`, name: `Neodymium`, atomicNumber: 60 }, { symbol: `Pm`, name: `Promethium`, atomicNumber: 61 }, { symbol: `Sm`, name: `Samarium`, atomicNumber: 62 }, { symbol: `Eu`, name: `Europium`, atomicNumber: 63 }, { symbol: `Gd`, name: `Gadolinium`, atomicNumber: 64 }, { symbol: `Tb`, name: `Terbium`, atomicNumber: 65 }, { symbol: `Dy`, name: `Dysprosium`, atomicNumber: 66 }, { symbol: `Ho`, name: `Holmium`, atomicNumber: 67 }, { symbol: `Er`, name: `Erbium`, atomicNumber: 68 }, { symbol: `Tm`, name: `Thulium`, atomicNumber: 69 }, { symbol: `Yb`, name: `Ytterbium`, atomicNumber: 70 }, { symbol: `Lu`, name: `Lutetium`, atomicNumber: 71 }, { symbol: `Hf`, name: `Hafnium`, atomicNumber: 72 }, { symbol: `Ta`, name: `Tantalum`, atomicNumber: 73 }, { symbol: `W`, name: `Tungsten`, atomicNumber: 74 }, { symbol: `Re`, name: `Rhenium`, atomicNumber: 75 }, { symbol: `Os`, name: `Osmium`, atomicNumber: 76 }, { symbol: `Ir`, name: `Iridium`, atomicNumber: 77 }, { symbol: `Pt`, name: `Platinum`, atomicNumber: 78 }, { symbol: `Au`, name: `Gold`, atomicNumber: 79 }, { symbol: `Hg`, name: `Mercury`, atomicNumber: 80 }, { symbol: `Tl`, name: `Thallium`, atomicNumber: 81 }, { symbol: `Pb`, name: `Lead`, atomicNumber: 82 }, { symbol: `Bi`, name: `Bismuth`, atomicNumber: 83 }, { symbol: `Po`, name: `Polonium`, atomicNumber: 84 }, { symbol: `At`, name: `Astatine`, atomicNumber: 85 }, { symbol: `Rn`, name: `Radon`, atomicNumber: 86 }, { symbol: `Fr`, name: `Francium`, atomicNumber: 87 }, { symbol: `Ra`, name: `Radium`, atomicNumber: 88 }, { symbol: `Ac`, name: `Actinium`, atomicNumber: 89 }, { symbol: `Th`, name: `Thorium`, atomicNumber: 90 }, { symbol: `Pa`, name: `Protactinium`, atomicNumber: 91 }, { symbol: `U`, name: `Uranium`, atomicNumber: 92 }, { symbol: `Np`, name: `Neptunium`, atomicNumber: 93 }, { symbol: `Pu`, name: `Plutonium`, atomicNumber: 94 }, { symbol: `Am`, name: `Americium`, atomicNumber: 95 }, { symbol: `Cm`, name: `Curium`, atomicNumber: 96 }, { symbol: `Bk`, name: `Berkelium`, atomicNumber: 97 }, { symbol: `Cf`, name: `Californium`, atomicNumber: 98 }, { symbol: `Es`, name: `Einsteinium`, atomicNumber: 99 }, { symbol: `Fm`, name: `Fermium`, atomicNumber: 100 }, { symbol: `Md`, name: `Mendelevium`, atomicNumber: 101 }, { symbol: `No`, name: `Nobelium`, atomicNumber: 102 }, { symbol: `Lr`, name: `Lawrencium`, atomicNumber: 103 }, { symbol: `Rf`, name: `Rutherfordium`, atomicNumber: 104 }, { symbol: `Db`, name: `Dubnium`, atomicNumber: 105 }, { symbol: `Sg`, name: `Seaborgium`, atomicNumber: 106 }, { symbol: `Bh`, name: `Bohrium`, atomicNumber: 107 }, { symbol: `Hs`, name: `Hassium`, atomicNumber: 108 }, { symbol: `Mt`, name: `Meitnerium`, atomicNumber: 109 }, { symbol: `Ds`, name: `Darmstadtium`, atomicNumber: 110 }, { symbol: `Rg`, name: `Roentgenium`, atomicNumber: 111 }, { symbol: `Cn`, name: `Copernicium`, atomicNumber: 112 }, { symbol: `Nh`, name: `Nihonium`, atomicNumber: 113 }, { symbol: `Fl`, name: `Flerovium`, atomicNumber: 114 }, { symbol: `Mc`, name: `Moscovium`, atomicNumber: 115 }, { symbol: `Lv`, name: `Livermorium`, atomicNumber: 116 }, { symbol: `Ts`, name: `Tennessine`, atomicNumber: 117 }, { symbol: `Og`, name: `Oganesson`, atomicNumber: 118 }], unit: [{ name: `meter`, symbol: `m` }, { name: `second`, symbol: `s` }, { name: `mole`, symbol: `mol` }, { name: `ampere`, symbol: `A` }, { name: `kelvin`, symbol: `K` }, { name: `candela`, symbol: `cd` }, { name: `kilogram`, symbol: `kg` }, { name: `radian`, symbol: `rad` }, { name: `hertz`, symbol: `Hz` }, { name: `newton`, symbol: `N` }, { name: `pascal`, symbol: `Pa` }, { name: `joule`, symbol: `J` }, { name: `watt`, symbol: `W` }, { name: `coulomb`, symbol: `C` }, { name: `volt`, symbol: `V` }, { name: `ohm`, symbol: `\u03A9` }, { name: `tesla`, symbol: `T` }, { name: `degree Celsius`, symbol: `\xB0C` }, { name: `lumen`, symbol: `lm` }, { name: `becquerel`, symbol: `Bq` }, { name: `gray`, symbol: `Gy` }, { name: `sievert`, symbol: `Sv` }, { name: `steradian`, symbol: `sr` }, { name: `farad`, symbol: `F` }, { name: `siemens`, symbol: `S` }, { name: `weber`, symbol: `Wb` }, { name: `henry`, symbol: `H` }, { name: `lux`, symbol: `lx` }, { name: `katal`, symbol: `kat` }] }, team: { creature: `ants.bats.bears.bees.birds.buffalo.cats.chickens.cattle.dogs.dolphins.ducks.elephants.fishes.foxes.frogs.geese.goats.horses.kangaroos.lions.monkeys.owls.oxen.penguins.people.pigs.rabbits.sheep.tigers.whales.wolves.zebras.banshees.crows.black cats.chimeras.ghosts.conspirators.dragons.dwarves.elves.enchanters.exorcists.sons.foes.giants.gnomes.goblins.gooses.griffins.lycanthropes.nemesis.ogres.oracles.prophets.sorcerors.spiders.spirits.vampires.warlocks.vixens.werewolves.witches.worshipers.zombies.druids`.split(`.`), name: [`{{location.state}} {{team.creature}}`] }, vehicle: { bicycle_type: [`Adventure Road Bicycle`, `BMX Bicycle`, `City Bicycle`, `Cruiser Bicycle`, `Cyclocross Bicycle`, `Dual-Sport Bicycle`, `Fitness Bicycle`, `Flat-Foot Comfort Bicycle`, `Folding Bicycle`, `Hybrid Bicycle`, `Mountain Bicycle`, `Recumbent Bicycle`, `Road Bicycle`, `Tandem Bicycle`, `Touring Bicycle`, `Track/Fixed-Gear Bicycle`, `Triathlon/Time Trial Bicycle`, `Tricycle`], fuel: [`Diesel`, `Electric`, `Gasoline`, `Hybrid`], manufacturer: `Aston Martin.Audi.BMW.BYD.Bentley.Bugatti.Cadillac.Chevrolet.Chrysler.Citro\xEBn.Dodge.Ferrari.Fiat.Ford.Honda.Hyundai.Jaguar.Jeep.Kia.Lamborghini.Land Rover.MG.Mahindra & Mahindra.Maruti.Maserati.Mazda.Mercedes Benz.Mini.Mitsubishi.NIO.Nissan.Peugeot.Polestar.Porsche.Renault.Rivian.Rolls Royce.Skoda.Smart.Subaru.Suzuki.Tata.Tesla.Toyota.Vauxhall.Volkswagen.Volvo`.split(`.`), model: `1.2.911.A4.A8.ATS.Accord.Alpine.Altima.Aventador.Beetle.CTS.CX-9.Camaro.Camry.Challenger.Charger.Civic.Colorado.Corvette.Countach.Cruze.Durango.El Camino.Element.Escalade.Expedition.Explorer.F-150.Fiesta.Focus.Fortwo.Golf.Grand Caravan.Grand Cherokee.Impala.Jetta.Land Cruiser.LeBaron.Malibu.Model 3.Model S.Model T.Model X.Model Y.Murcielago.Mustang.PT Cruiser.Prius.Ranchero.Roadster.Sentra.Silverado.Spyder.Taurus.V90.Volt.Wrangler.XC90.XTS`.split(`.`), type: [`Cargo Van`, `Convertible`, `Coupe`, `Crew Cab Pickup`, `Extended Cab Pickup`, `Hatchback`, `Minivan`, `Passenger Van`, `SUV`, `Sedan`, `Wagon`] }, word: { adjective: `abandoned.able.acceptable.acclaimed.accomplished.accurate.aching.acidic.actual.admired.adolescent.advanced.affectionate.afraid.aged.aggravating.aggressive.agile.agitated.agreeable.ajar.alarmed.alert.alienated.alive.all.altruistic.amazing.ambitious.ample.amused.angelic.anguished.animated.annual.another.antique.any.apprehensive.appropriate.apt.arid.artistic.ashamed.assured.astonishing.athletic.austere.authentic.authorized.avaricious.average.aware.awesome.awful.babyish.back.bad.baggy.bare.basic.beloved.beneficial.best.better.big.biodegradable.bitter.black.black-and-white.blank.blaring.bleak.blind.blond.blue.blushing.bogus.boiling.bony.boring.bossy.both.bouncy.bowed.brave.breakable.bright.brilliant.brisk.broken.brown.bruised.bulky.burdensome.burly.bustling.busy.buttery.buzzing.calculating.candid.carefree.careless.caring.cautious.cavernous.celebrated.charming.cheap.cheerful.chilly.chubby.circular.classic.clean.clear.clear-cut.close.closed.cloudy.clueless.clumsy.cluttered.coarse.colorful.colorless.colossal.comfortable.common.compassionate.competent.complete.complicated.concerned.concrete.confused.considerate.content.cool.cooperative.coordinated.corny.corrupt.courageous.courteous.crafty.crazy.creamy.creative.criminal.critical.crooked.crowded.cruel.crushing.cuddly.cultivated.cumbersome.curly.cute.damaged.damp.dapper.dark.darling.dazzling.dead.deadly.deafening.dearest.decent.decisive.deep.defenseless.defensive.deficient.definite.definitive.delectable.delicious.delirious.dense.dental.dependable.dependent.descriptive.deserted.determined.devoted.different.difficult.digital.diligent.dim.direct.dirty.discrete.disloyal.dismal.distant.distinct.distorted.doting.downright.drab.dramatic.dreary.dual.dull.dutiful.each.early.earnest.easy.ecstatic.edible.educated.elastic.elderly.electric.elegant.elementary.elliptical.eminent.emotional.empty.enchanted.enchanting.energetic.enlightened.enraged.entire.equatorial.essential.esteemed.ethical.everlasting.every.evil.exalted.excellent.excitable.excited.exhausted.exotic.expensive.experienced.expert.extra-large.extroverted.failing.faint.fair.fake.familiar.fantastic.far.far-flung.far-off.faraway.fat.fatal.fatherly.favorable.favorite.fearless.feline.filthy.fine.finished.firm.first.firsthand.fixed.flashy.flawed.flawless.flickering.flimsy.flowery.fluffy.flustered.focused.fond.foolhardy.foolish.forceful.formal.forsaken.fortunate.fragrant.frail.frank.free.french.frequent.friendly.frightened.frilly.frivolous.frizzy.front.frozen.frugal.fruitful.functional.funny.fussy.fuzzy.gaseous.general.gentle.genuine.gifted.gigantic.giving.glaring.glass.gleaming.glittering.gloomy.glorious.glossy.glum.golden.good.good-natured.gorgeous.graceful.gracious.grandiose.granular.grave.gray.great.greedy.grim.grimy.gripping.grizzled.grouchy.grounded.growing.grown.grubby.gruesome.grumpy.guilty.gullible.gummy.hairy.handsome.handy.happy.happy-go-lucky.hard-to-find.harmful.hasty.hateful.haunting.heartfelt.heavenly.heavy.hefty.helpful.helpless.hidden.hoarse.hollow.homely.honorable.honored.hopeful.hospitable.hot.huge.humble.humiliating.hungry.hurtful.husky.icy.ideal.idealistic.idolized.ignorant.ill.ill-fated.illiterate.illustrious.imaginary.imaginative.immaculate.immediate.immense.impartial.impassioned.impeccable.impish.impolite.important.impossible.impractical.impressionable.impressive.improbable.impure.inborn.incomparable.incomplete.inconsequential.indelible.indolent.inexperienced.infamous.infatuated.inferior.infinite.informal.innocent.insecure.insidious.insignificant.insistent.instructive.intelligent.intent.interesting.internal.international.intrepid.ironclad.irresponsible.jagged.jam-packed.jaunty.jealous.jittery.joyful.joyous.jubilant.judicious.juicy.jumbo.junior.juvenile.kaleidoscopic.key.knotty.knowledgeable.known.kooky.kosher.lanky.last.lasting.late.lavish.lawful.lazy.leading.lean.left.legal.light.lighthearted.likable.likely.limited.limp.limping.linear.lined.liquid.little.live.lively.livid.lone.lonely.long.long-term.lost.lovable.lovely.low.lucky.lumbering.lumpy.lustrous.mad.made-up.magnificent.majestic.major.male.mammoth.married.marvelous.massive.mature.meager.mealy.mean.measly.meaty.mediocre.medium.memorable.menacing.merry.messy.metallic.mild.milky.mindless.minor.minty.miserable.miserly.misguided.mixed.moist.monstrous.monthly.monumental.moral.motionless.muddy.muffled.multicolored.mundane.murky.mushy.musty.muted.mysterious.narrow.natural.naughty.nautical.near.neat.necessary.needy.negative.neglected.negligible.neighboring.nervous.new.next.nice.nifty.nimble.nippy.nocturnal.normal.noted.noteworthy.noxious.numb.nutritious.obedient.oblong.obvious.odd.oddball.official.oily.old.old-fashioned.only.optimal.optimistic.orange.orderly.ordinary.ornate.ornery.other.our.outgoing.outlandish.outlying.outrageous.outstanding.oval.overcooked.overdue.palatable.pale.paltry.parallel.parched.partial.passionate.pastel.peaceful.peppery.perfumed.perky.personal.pertinent.pessimistic.petty.phony.physical.pink.pitiful.plain.pleasant.pleased.pleasing.plump.pointed.pointless.polished.polite.political.poor.portly.posh.possible.potable.powerful.powerless.practical.precious.present.prestigious.pretty.pricey.prickly.primary.prime.private.probable.productive.profitable.profuse.proper.proud.prudent.punctual.puny.pure.purple.pushy.putrid.puzzled.qualified.quarrelsome.quarterly.queasy.querulous.questionable.quick.quick-witted.quiet.quintessential.quixotic.radiant.ragged.rapid.rare.raw.realistic.reasonable.recent.reckless.rectangular.red.reflecting.regal.regular.remarkable.remorseful.repentant.respectful.responsible.rewarding.rich.right.rigid.ripe.roasted.robust.rosy.rotating.rotten.rough.round.rowdy.royal.rubbery.ruddy.rundown.runny.rural.rusty.sad.salty.same.sandy.sarcastic.sardonic.scaly.scared.scary.scented.scientific.scornful.scratchy.second.second-hand.secondary.secret.self-assured.self-reliant.selfish.sentimental.separate.serene.serpentine.severe.shabby.shadowy.shady.shallow.shameful.shameless.shimmering.shiny.shocked.shoddy.short.short-term.showy.shrill.shy.sick.silent.silky.silver.similar.simple.simplistic.sinful.sizzling.skeletal.sleepy.slight.slimy.slow.slushy.small.smart.smoggy.smooth.smug.snappy.snarling.sneaky.sniveling.snoopy.sociable.soft.soggy.somber.some.sophisticated.sore.sorrowful.soulful.soupy.sour.spanish.sparkling.sparse.specific.speedy.spherical.spiffy.spirited.spiteful.splendid.spotless.square.squeaky.squiggly.stable.staid.stained.stale.standard.stark.steel.steep.sticky.stiff.stingy.stormy.straight.strange.strict.strident.striking.strong.stunning.stupendous.sturdy.stylish.subdued.submissive.substantial.subtle.suburban.sudden.sugary.sunny.super.superb.superficial.superior.supportive.sure-footed.surprised.svelte.sweet.swift.talkative.tall.tame.tangible.tasty.tattered.taut.tedious.teeming.tempting.tender.tense.tepid.terrible.that.these.thick.thin.thorny.thorough.those.thrifty.tidy.tight.timely.tinted.tiny.tired.torn.total.tough.tragic.trained.triangular.tricky.trim.trivial.troubled.true.trusting.trustworthy.trusty.turbulent.twin.ugly.ultimate.unaware.uncomfortable.uncommon.unconscious.understated.uneven.unfinished.unfit.unfortunate.unhappy.unhealthy.uniform.unimportant.unique.unkempt.unknown.unlawful.unlined.unlucky.unpleasant.unrealistic.unripe.unruly.unselfish.unsightly.unsteady.unsung.untidy.untimely.untried.untrue.unused.unusual.unwelcome.unwieldy.unwilling.unwritten.upbeat.upright.upset.urban.usable.useless.utilized.utter.vague.vain.valuable.variable.vast.velvety.vengeful.vibrant.victorious.violent.vivacious.vivid.voluminous.warlike.warm.warmhearted.warped.wasteful.waterlogged.watery.wavy.wealthy.weary.webbed.wee.weekly.weighty.weird.well-documented.well-groomed.well-lit.well-made.well-off.well-to-do.well-worn.which.whimsical.whirlwind.whispered.white.whole.whopping.wicked.wide.wide-eyed.wiggly.willing.wilted.winding.windy.winged.wise.witty.wobbly.woeful.wonderful.wordy.worldly.worse.worst.worthless.worthwhile.worthy.wrathful.wretched.writhing.wrong.wry.yearly.yellow.yellowish.young.youthful.yummy.zany.zealous.zesty`.split(`.`), adverb: `abnormally.absentmindedly.accidentally.acidly.actually.adventurously.afterwards.almost.always.angrily.annually.anxiously.arrogantly.awkwardly.badly.bashfully.beautifully.bitterly.bleakly.blindly.blissfully.boastfully.boldly.bravely.briefly.brightly.briskly.broadly.busily.calmly.carefully.carelessly.cautiously.certainly.cheerfully.clearly.cleverly.closely.coaxingly.colorfully.commonly.continually.coolly.correctly.courageously.crossly.cruelly.curiously.daily.daintily.dearly.deceivingly.deeply.defiantly.deliberately.delightfully.diligently.dimly.doubtfully.dreamily.easily.elegantly.energetically.enormously.enthusiastically.equally.especially.even.evenly.eventually.exactly.excitedly.extremely.fairly.faithfully.famously.far.fast.fatally.ferociously.fervently.fiercely.fondly.foolishly.fortunately.frankly.frantically.freely.frenetically.frightfully.fully.furiously.generally.generously.gently.gladly.gleefully.gracefully.gratefully.greatly.greedily.happily.hastily.healthily.heavily.helpfully.helplessly.highly.honestly.hopelessly.hourly.hungrily.immediately.innocently.inquisitively.instantly.intensely.intently.interestingly.inwardly.irritably.jaggedly.jealously.joshingly.jovially.joyfully.joyously.jubilantly.judgementally.justly.keenly.kiddingly.kindheartedly.kindly.kissingly.knavishly.knottily.knowingly.knowledgeably.kookily.lazily.less.lightly.likely.limply.lively.loftily.longingly.loosely.loudly.lovingly.loyally.madly.majestically.meaningfully.mechanically.merrily.miserably.mockingly.monthly.more.mortally.mostly.mysteriously.naturally.nearly.neatly.needily.nervously.never.nicely.noisily.not.obediently.obnoxiously.oddly.offensively.officially.often.only.openly.optimistically.overconfidently.owlishly.painfully.partially.patiently.perfectly.physically.playfully.politely.poorly.positively.potentially.powerfully.promptly.properly.punctually.quaintly.quarrelsomely.queasily.questionably.questioningly.quicker.quickly.quietly.quirkily.quizzically.rapidly.rarely.readily.really.reassuringly.recklessly.regularly.reluctantly.repeatedly.reproachfully.restfully.righteously.rightfully.rigidly.roughly.rudely.sadly.safely.scarcely.scarily.searchingly.sedately.seemingly.seldom.selfishly.separately.seriously.shakily.sharply.sheepishly.shrilly.shyly.silently.sleepily.slowly.smoothly.softly.solemnly.solidly.sometimes.soon.speedily.stealthily.sternly.strictly.successfully.suddenly.surprisingly.suspiciously.sweetly.swiftly.sympathetically.tenderly.tensely.terribly.thankfully.thoroughly.thoughtfully.tightly.tomorrow.too.tremendously.triumphantly.truly.truthfully.ultimately.unabashedly.unaccountably.unbearably.unethically.unexpectedly.unfortunately.unimpressively.unnaturally.unnecessarily.upbeat.upliftingly.upright.upside-down.upward.upwardly.urgently.usefully.uselessly.usually.utterly.vacantly.vaguely.vainly.valiantly.vastly.verbally.very.viciously.victoriously.violently.vivaciously.voluntarily.warmly.weakly.wearily.well.wetly.wholly.wildly.willfully.wisely.woefully.wonderfully.worriedly.wrongly.yawningly.yearly.yearningly.yesterday.yieldingly.youthfully`.split(`.`), conjunction: `after.although.and.as.because.before.but.consequently.even.finally.for.furthermore.hence.how.however.if.inasmuch.incidentally.indeed.instead.lest.likewise.meanwhile.nor.now.once.or.provided.since.so.supposing.than.that.though.till.unless.until.what.when.whenever.where.whereas.wherever.whether.which.while.who.whoever.whose.why.yet`.split(`.`), interjection: `yuck.oh.phooey.blah.boo.whoa.yowza.huzzah.boohoo.fooey.geez.pfft.ew.ah.yum.brr.hm.yahoo.aha.woot.drat.gah.meh.psst.aw.ugh.yippee.eek.gee.bah.gadzooks.duh.ha.mmm.ouch.phew.ack.uh-huh.gosh.hmph.pish.zowie.er.ick.oof.um`.split(`.`), noun: `CD.SUV.abacus.academics.accelerator.accompanist.account.accountability.acquaintance.ad.adaptation.address.adrenalin.adult.advancement.advertisement.adviser.affect.affiliate.aftermath.agreement.airbus.aircraft.airline.airmail.airman.airport.alb.alert.allegation.alliance.alligator.allocation.almighty.amendment.amnesty.analogy.angle.annual.antelope.anticodon.apparatus.appliance.approach.apricot.arcade.archaeology.armchair.armoire.asset.assist.atrium.attraction.availability.avalanche.awareness.babushka.backbone.backburn.bakeware.bandwidth.bar.barge.baritone.barracks.baseboard.basket.bathhouse.bathrobe.battle.begonia.behest.bell.bench.bend.beret.best-seller.bid.bidet.bin.birdbath.birdcage.birth.blight.blossom.blowgun.bob.bog.bonfire.bonnet.bookcase.bookend.boulevard.bourgeoisie.bowler.bowling.boyfriend.brace.bracelet.bran.breastplate.brief.brochure.brook.brush.bug.bump.bungalow.cafe.cake.calculus.cannon.cantaloupe.cap.cappelletti.captain.caption.carboxyl.cardboard.carnival.case.casement.cash.casket.cassava.castanet.catalyst.cauliflower.cellar.celsius.cemetery.ceramic.ceramics.certification.chainstay.chairperson.challenge.championship.chap.chapel.character.characterization.charlatan.charm.chasuble.cheese.cheetah.chiffonier.chops.chow.cinder.cinema.circumference.citizen.clamp.clavicle.cleaner.climb.co-producer.coal.coast.cod.coil.coin.coliseum.collaboration.collectivization.colon.colonialism.comestible.commercial.commodity.community.comparison.completion.complication.compromise.concentration.configuration.confusion.conservation.conservative.consistency.contractor.contrail.convection.conversation.cook.coordination.cop-out.cope.cork.cornet.corporation.corral.cosset.costume.couch.council.councilman.countess.courtroom.cow.creator.creature.crest.cricket.crocodile.cross-contamination.cruelty.cuckoo.curl.custody.custom.cutlet.cutover.cycle.daddy.dandelion.dash.daughter.dead.decision.deck.declaration.decongestant.decryption.deduction.deed.deer.defendant.density.department.dependency.deployment.depot.derby.descendant.descent.design.designation.desk.detective.devastation.developing.developmental.devil.diagram.digestive.digit.dime.director.disadvantage.disappointment.disclosure.disconnection.discourse.dish.disk.disposer.distinction.diver.diversity.dividend.divine.doing.doorpost.doubter.draft.draw.dream.dredger.dress.drive.drug.duffel.dulcimer.dusk.duster.dwell.e-mail.earth.ecliptic.ectoderm.edge.editor.effector.eggplant.electronics.elevation.elevator.elver.embarrassment.embossing.emergent.encouragement.entry.epic.equal.essence.eternity.ethyl.euphonium.event.exasperation.excess.executor.exhaust.expansion.expense.experience.exploration.extension.extent.exterior.eyebrow.eyeliner.farm.farmer.fat.fax.feather.fedora.fellow.fen.fencing.ferret.festival.fibre.filter.final.finding.finer.finger.fireplace.fisherman.fishery.fit.flame.flat.fledgling.flight.flint.flood.flu.fog.fold.folklore.follower.following.foodstuffs.footrest.forage.forager.forgery.fork.formamide.formation.formula.fort.fowl.fraudster.freckle.freezing.freight.fuel.fun.fund.fundraising.futon.gallery.galoshes.gastropod.gazebo.gerbil.ghost.giant.gift.giggle.glider.gloom.goat.godfather.godparent.going.goodwill.governance.government.gown.gradient.graffiti.grandpa.grandson.granny.grass.gray.gripper.grouper.guacamole.guard.guidance.guide.gym.gymnast.habit.haircut.halt.hamburger.hammock.handful.handle.handover.harp.haversack.hawk.heartache.heartbeat.heating.hello.help.hepatitis.heroine.hexagon.hierarchy.hippodrome.honesty.hoof.hope.horde.hornet.horst.hose.hospitalization.hovel.hovercraft.hubris.humidity.humor.hundred.hunger.hunt.husband.hutch.hydrant.hydrocarbon.hydrolyse.hydrolyze.hyena.hygienic.hyphenation.ice-cream.icebreaker.igloo.ignorance.illusion.impact.import.importance.impostor.in-joke.incandescence.independence.individual.information.injunction.innovation.insolence.inspection.instance.institute.instruction.instructor.integer.intellect.intent.interchange.interior.intervention.interviewer.invite.iridescence.issue.jacket.jazz.jellyfish.jet.jogging.joy.juggernaut.jump.jungle.junior.jury.kettledrum.kick.kielbasa.kinase.king.kiss.kit.knickers.knight.knitting.knuckle.label.labourer.lace.lady.lamp.language.larva.lashes.laughter.lava.lawmaker.lay.leading.league.legend.legging.legislature.lender.license.lid.lieu.lifestyle.lift.linseed.litter.loaf.lobster.longboat.lotion.lounge.louse.lox.loyalty.luck.lyre.maestro.mainstream.maintainer.majority.makeover.making.mallard.management.manner.mantua.marathon.march.marimba.marketplace.marksman.markup.marten.massage.masterpiece.mathematics.meadow.meal.meander.meatloaf.mechanic.median.membership.mentor.merit.metabolite.metal.middle.midwife.milestone.millet.minion.minister.minor.minority.mixture.mobility.molasses.mom.moment.monasticism.monocle.monster.morbidity.morning.mortise.mountain.mouser.mousse.mozzarella.muscat.mythology.napkin.necklace.nectarine.negotiation.nephew.nerve.netsuke.newsletter.newsprint.newsstand.nightlife.noon.nougat.nucleotidase.nudge.numeracy.numeric.nun.obedience.obesity.object.obligation.ocelot.octave.offset.oil.omelet.onset.opera.operating.optimal.orchid.order.ostrich.other.outlaw.outrun.outset.overcoat.overheard.overload.ownership.pacemaker.packaging.paintwork.palate.pants.pantyhose.papa.parade.parsnip.partridge.passport.pasta.patroller.pear.pearl.pecan.pendant.peninsula.pension.peony.pepper.perfection.permafrost.perp.petal.petticoat.pharmacopoeia.phrase.pick.piglet.pigpen.pigsty.pile.pillbox.pillow.pilot.pine.pinstripe.place.plain.planula.plastic.platter.platypus.pleasure.pliers.plugin.plumber.pneumonia.pocket-watch.poetry.polarisation.polyester.pomelo.pop.poppy.popularity.populist.porter.possession.postbox.precedent.premeditation.premier.premise.premium.pressure.presume.priesthood.printer.privilege.procurement.produce.programme.prohibition.promise.pronoun.providence.provider.provision.publication.publicity.pulse.punctuation.pupil.puppet.puritan.quart.quinoa.quit.railway.range.rationale.ravioli.rawhide.reach.reasoning.reboot.receptor.recommendation.reconsideration.recovery.redesign.relative.release.remark.reorganisation.repeat.replacement.reporter.representation.republican.request.requirement.reservation.resolve.resource.responsibility.restaurant.retention.retrospectivity.reward.ribbon.rim.riser.roadway.role.rosemary.roundabout.rubric.ruin.rule.runway.rust.safe.sailor.saloon.sand.sandbar.sanity.sarong.sauerkraut.saw.scaffold.scale.scarification.scenario.schedule.schnitzel.scholarship.scorn.scorpion.scout.scrap.scratch.seafood.seagull.seal.season.secrecy.secret.section.sediment.self-confidence.sermon.sesame.settler.shadowbox.shark.shipper.shore.shoulder.sideboard.siege.sightseeing.signature.silk.simple.singing.skean.skeleton.skyline.skyscraper.slide.slime.slipper.smog.smoke.sock.soliloquy.solution.solvency.someplace.sonar.sonata.sonnet.soup.soybean.space.spear.spirit.spork.sport.spring.sprinkles.squid.stall.starboard.statue.status.stay.steak.steeple.step.step-mother.sticker.stir-fry.stitcher.stock.stool.story.strait.stranger.strategy.straw.stump.subexpression.submitter.subsidy.substitution.suitcase.summary.summer.sunbeam.sundae.supplier.surface.sushi.suspension.sustenance.swanling.swath.sweatshop.swim.swine.swing.switch.switchboard.swordfish.synergy.t-shirt.tabletop.tackle.tail.tapioca.taro.tarragon.taxicab.teammate.technician.technologist.tectonics.tenant.tenement.tennis.tentacle.teriyaki.term.testimonial.testing.thigh.thongs.thorn.thread.thunderbolt.thyme.tinderbox.toaster.tomatillo.tomb.tomography.tool.tooth.toothbrush.toothpick.topsail.traditionalism.traffic.translation.transom.transparency.trash.travel.tray.trench.tribe.tributary.trick.trolley.tuba.tuber.tune-up.turret.tusk.tuxedo.typeface.typewriter.unblinking.underneath.underpants.understanding.unibody.unique.unit.utilization.valentine.validity.valley.valuable.vanadyl.vein.velocity.venom.version.verve.vestment.veto.viability.vibraphone.vibration.vicinity.video.violin.vision.vista.vol.volleyball.wafer.waist.wallaby.warming.wasabi.waterspout.wear.wedding.whack.whale.wheel.widow.wilderness.willow.window.wombat.word.worth.wriggler.yak.yarmulke.yeast.yin.yogurt.zebra.zen`.split(`.`), preposition: `a.abaft.aboard.about.above.absent.across.afore.after.against.along.alongside.amid.amidst.among.amongst.an.anenst.anti.apropos.apud.around.as.aside.astride.at.athwart.atop.barring.before.behind.below.beneath.beside.besides.between.beyond.but.by.circa.concerning.considering.despite.down.during.except.excepting.excluding.failing.following.for.forenenst.from.given.in.including.inside.into.lest.like.mid.midst.minus.modulo.near.next.notwithstanding.of.off.on.onto.opposite.out.outside.over.pace.past.per.plus.pro.qua.regarding.round.sans.save.since.than.the.through.throughout.till.times.to.toward.towards.under.underneath.unlike.until.unto.up.upon.versus.via.vice.with.within.without.worth`.split(`.`), verb: `abnegate.abscond.abseil.absolve.accentuate.accept.access.accessorise.accompany.account.accredit.achieve.acknowledge.acquire.adjourn.adjudge.admonish.adumbrate.advocate.afford.airbrush.ameliorate.amend.amount.anaesthetise.analyse.anesthetize.anneal.annex.antagonize.ape.apologise.apostrophize.appertain.appreciate.appropriate.approximate.arbitrate.archive.arraign.arrange.ascertain.ascribe.assail.atomize.attend.attest.attribute.augment.avow.axe.baa.banish.bank.baptise.battle.beard.beep.behold.belabor.bemuse.besmirch.bestride.better.bewail.bicycle.bide.bind.biodegrade.blacken.blaspheme.bleach.blend.blink.bliss.bloom.bludgeon.bobble.boggle.bolster.book.boom.bootleg.border.bore.boss.braid.brand.brandish.break.breed.broadcast.broadside.brood.browse.buck.burgeon.bus.butter.buzzing.camouflage.cannibalise.canter.cap.capitalise.capitalize.capsize.card.carouse.carp.carpool.catalog.catalyze.catch.categorise.cease.celebrate.censor.certify.char.charter.chase.chatter.chime.chip.christen.chromakey.chunder.chunter.cinch.circle.circulate.circumnavigate.clamor.clamour.claw.cleave.clinch.clinking.clone.clonk.coagulate.coexist.coincide.collaborate.colligate.colorize.colour.comb.come.commandeer.commemorate.communicate.compete.conceal.conceptualize.conclude.concrete.condense.cone.confide.confirm.confiscate.confound.confute.congregate.conjecture.connect.consign.construe.contradict.contrast.contravene.controvert.convalesce.converse.convince.convoke.coop.cop.corner.covenant.cow.crackle.cram.crank.creak.creaking.cripple.croon.cross.crumble.crystallize.culminate.culture.curry.curse.customise.cycle.dally.dampen.darn.debit.debut.decide.decode.decouple.decriminalize.deduce.deduct.deflate.deflect.deform.defrag.degenerate.degrease.delete.delight.deliquesce.demob.demobilise.democratize.demonstrate.denitrify.deny.depart.depend.deplore.deploy.deprave.depute.dereference.describe.desecrate.deselect.destock.detain.develop.devise.dial.dicker.digitize.dilate.disapprove.disarm.disbar.discontinue.disgorge.dishearten.dishonor.disinherit.dislocate.dispense.display.dispose.disrespect.dissemble.ditch.divert.dock.doodle.downchange.downshift.dowse.draft.drag.drain.dramatize.drowse.drum.dwell.economise.edge.efface.egg.eke.electrify.embalm.embed.embody.emboss.emerge.emphasise.emphasize.emulsify.encode.endow.enfold.engage.engender.enhance.enlist.enrage.enrich.enroll.entice.entomb.entrench.entwine.equate.essay.etch.eulogise.even.evince.exacerbate.exaggerate.exalt.exempt.exonerate.expatiate.explode.expostulate.extract.extricate.eyeglasses.fabricate.facilitate.factorise.factorize.fail.fall.familiarize.fashion.father.fathom.fax.federate.feminize.fence.fess.fictionalize.fiddle.fidget.fill.flash.fleck.flight.floodlight.floss.fluctuate.fluff.fly.focalise.foot.forearm.forecast.foretell.forgather.forgo.fork.form.forswear.founder.fraternise.fray.frizz.fumigate.function.furlough.fuss.gad.gallivant.galvanize.gape.garage.garrote.gasp.gestate.give.glimmer.glisten.gloat.gloss.glow.gnash.gnaw.goose.govern.grade.graduate.graft.grok.guest.guilt.gulp.gum.gurn.gust.gut.guzzle.ham.harangue.harvest.hassle.haul.haze.headline.hearten.heighten.highlight.hoick.hold.hole.hollow.holster.home.homeschool.hoot.horn.horse.hotfoot.house.hover.howl.huddle.huff.hunger.hunt.husk.hype.hypothesise.hypothesize.idle.ignite.imagineer.impact.impanel.implode.incinerate.incline.inculcate.industrialize.ingratiate.inhibit.inject.innovate.inscribe.insert.insist.inspect.institute.institutionalize.intend.intermarry.intermesh.intermix.internalise.internalize.internationalize.intrigue.inure.inveigle.inventory.investigate.irk.iterate.jaywalk.jell.jeopardise.jiggle.jive.joint.jot.jut.keel.knife.knit.know.kowtow.lack.lampoon.large.leap.lecture.legitimize.lend.libel.liberalize.license.ligate.list.lobotomise.lock.log.loose.low.lowball.machine.magnetize.major.make.malfunction.manage.manipulate.maroon.masculinize.mash.mask.masquerade.massage.masticate.materialise.matter.maul.memorise.merge.mesh.metabolise.microblog.microchip.micromanage.militate.mill.minister.minor.misappropriate.miscalculate.misfire.misjudge.miskey.mismatch.mispronounce.misread.misreport.misspend.mob.mobilise.mobilize.moisten.mooch.moor.moralise.mortar.mosh.mothball.motivate.motor.mould.mount.muddy.mummify.mutate.mystify.nab.narrate.narrowcast.nasalise.nauseate.navigate.neaten.neck.neglect.norm.notarize.object.obscure.observe.obsess.obstruct.obtrude.offend.offset.option.orchestrate.orient.orientate.outbid.outdo.outfit.outflank.outfox.outnumber.outrank.outrun.outsource.overburden.overcharge.overcook.overdub.overfeed.overload.overplay.overproduce.overreact.override.overspend.overstay.overtrain.overvalue.overwork.own.oxidise.oxidize.oxygenate.pace.pack.pale.pant.paralyse.parody.part.pause.pave.penalise.persecute.personalise.perspire.pertain.peter.pike.pillory.pinion.pip.pity.pivot.pixellate.plagiarise.plait.plan.please.pluck.ponder.popularize.portray.prance.preclude.preheat.prejudge.preregister.presell.preside.pretend.print.prioritize.probate.probe.proceed.procrastinate.profane.progress.proliferate.proofread.propound.proselytise.provision.pry.publicize.puff.pull.pulp.pulverize.purse.put.putrefy.quadruple.quaff.quantify.quarrel.quash.quaver.question.quiet.quintuple.quip.quit.rag.rally.ramp.randomize.rationalise.rationalize.ravage.ravel.react.readies.readjust.readmit.ready.reapply.rear.reassemble.rebel.reboot.reborn.rebound.rebuff.rebuild.rebuke.recede.reckon.reclassify.recompense.reconstitute.record.recount.redact.redevelop.redound.redraw.redress.reel.refer.reference.refine.reflate.refute.regulate.reiterate.rejigger.rejoin.rekindle.relaunch.relieve.remand.remark.reopen.reorient.replicate.repossess.represent.reprimand.reproach.reprove.repurpose.requite.reschedule.resort.respray.restructure.retool.retract.revere.revitalise.revoke.reword.rewrite.ride.ridge.rim.ring.rise.rival.roger.rosin.rot.rout.row.rue.rule.safeguard.sashay.sate.satirise.satirize.satisfy.saturate.savour.scale.scamper.scar.scare.scarper.scent.schematise.scheme.schlep.scoff.scoop.scope.scotch.scowl.scrabble.scram.scramble.scrape.screw.scruple.scrutinise.scuffle.scuttle.search.secularize.see.segregate.sell.sense.sensitize.sequester.serenade.serialize.serve.service.settle.sew.shaft.sham.shampoo.shanghai.shear.sheathe.shell.shinny.shirk.shoot.shoulder.shout.shovel.showboat.shred.shrill.shudder.shush.sidetrack.sign.silt.sin.singe.sit.sizzle.skateboard.ski.slake.slap.slather.sleet.slink.slip.slope.slump.smarten.smuggle.snack.sneak.sniff.snoop.snow.snowplow.snuggle.soap.solace.solder.solicit.source.spark.spattering.spectacles.spectate.spellcheck.spew.spice.spirit.splash.splay.split.splosh.splurge.spook.square.squirm.stabilise.stable.stack.stage.stake.starch.state.statement.stiffen.stigmatize.sting.stint.stoop.store.storyboard.stratify.structure.stuff.stunt.substantiate.subtract.suckle.suffice.suffocate.summarise.sun.sunbathe.sunder.sup.surge.surprise.swat.swathe.sway.swear.swelter.swerve.swill.swing.symbolise.synthesise.syringe.table.tabulate.tag.tame.tank.tankful.tarry.task.taxicab.team.telescope.tenant.terraform.terrorise.testify.think.throbbing.thump.tighten.toady.toe.tough.tousle.traduce.train.transcend.transplant.trash.treasure.treble.trek.trial.tromp.trouser.trust.tune.tut.twine.twist.typify.unbalance.uncork.uncover.underachieve.undergo.underplay.unearth.unfreeze.unfurl.unlearn.unscramble.unzip.uproot.upsell.usher.vacation.vamoose.vanish.vary.veg.venture.verify.vet.veto.volunteer.vulgarise.waft.wallop.waltz.warp.wash.waver.weary.weatherize.wedge.weep.weight.welcome.westernise.westernize.while.whine.whisper.whistle.whitewash.whup.wilt.wing.wire.wisecrack.wolf.wound.wring.writ.yak.yawn.yearn.yuppify`.split(`.`) } };
 
 // node_modules/.pnpm/@faker-js+faker@10.5.0/node_modules/@faker-js/faker/dist/locale/en.js
-var r2 = new yt({ locale: [e2, Ct] });
+var r3 = new yt({ locale: [e2, Ct] });
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/variables/dynamic.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/variables/dynamic.js
 function categoryImageUrl(category) {
-  return r2.image.urlLoremFlickr({ category });
+  return r3.image.urlLoremFlickr({ category });
 }
 var DYNAMIC_VARIABLES = {
   // Common
   $guid: {
     description: "A uuid-v4 style guid",
-    generate: () => r2.string.uuid()
+    generate: () => r3.string.uuid()
   },
   $timestamp: {
     description: "The current UNIX timestamp in seconds",
@@ -28596,149 +31999,149 @@ var DYNAMIC_VARIABLES = {
   },
   $randomUUID: {
     description: "A random 36-character UUID",
-    generate: () => r2.string.uuid()
+    generate: () => r3.string.uuid()
   },
   // Text, numbers, and colors
   $randomAlphaNumeric: {
     description: "A random alpha-numeric character",
-    generate: () => r2.string.alphanumeric(1)
+    generate: () => r3.string.alphanumeric(1)
   },
   $randomBoolean: {
     description: "A random boolean value",
-    generate: () => String(r2.datatype.boolean())
+    generate: () => String(r3.datatype.boolean())
   },
   $randomInt: {
     description: "A random integer between 0 and 1000",
-    generate: () => String(r2.number.int({ min: 0, max: 1e3 }))
+    generate: () => String(r3.number.int({ min: 0, max: 1e3 }))
   },
   $randomColor: {
     description: "A random color name",
-    generate: () => r2.color.human()
+    generate: () => r3.color.human()
   },
   $randomHexColor: {
     description: "A random hex color value",
-    generate: () => r2.color.rgb({ format: "hex" })
+    generate: () => r3.color.rgb({ format: "hex" })
   },
   $randomAbbreviation: {
     description: "A random abbreviation",
-    generate: () => r2.hacker.abbreviation()
+    generate: () => r3.hacker.abbreviation()
   },
   // Internet and IP addresses
   $randomIP: {
     description: "A random IPv4 address",
-    generate: () => r2.internet.ipv4()
+    generate: () => r3.internet.ipv4()
   },
   $randomIPV6: {
     description: "A random IPv6 address",
-    generate: () => r2.internet.ipv6()
+    generate: () => r3.internet.ipv6()
   },
   $randomMACAddress: {
     description: "A random MAC address",
-    generate: () => r2.internet.mac()
+    generate: () => r3.internet.mac()
   },
   $randomPassword: {
     description: "A random 15-character alpha-numeric password",
-    generate: () => r2.internet.password({ length: 15 })
+    generate: () => r3.internet.password({ length: 15 })
   },
   $randomLocale: {
     description: "A random two-letter language code (ISO 639-1)",
-    generate: () => r2.location.language().alpha2
+    generate: () => r3.location.language().alpha2
   },
   $randomUserAgent: {
     description: "A random user agent string",
-    generate: () => r2.internet.userAgent()
+    generate: () => r3.internet.userAgent()
   },
   $randomProtocol: {
     description: "A random internet protocol",
-    generate: () => r2.helpers.arrayElement(["http", "https"])
+    generate: () => r3.helpers.arrayElement(["http", "https"])
   },
   $randomSemver: {
     description: "A random semantic version number",
-    generate: () => r2.system.semver()
+    generate: () => r3.system.semver()
   },
   // Names
   $randomFirstName: {
     description: "A random first name",
-    generate: () => r2.person.firstName()
+    generate: () => r3.person.firstName()
   },
   $randomLastName: {
     description: "A random last name",
-    generate: () => r2.person.lastName()
+    generate: () => r3.person.lastName()
   },
   $randomFullName: {
     description: "A random first and last name",
-    generate: () => r2.person.fullName()
+    generate: () => r3.person.fullName()
   },
   $randomNamePrefix: {
     description: "A random name prefix",
-    generate: () => r2.person.prefix()
+    generate: () => r3.person.prefix()
   },
   $randomNameSuffix: {
     description: "A random name suffix",
-    generate: () => r2.person.suffix()
+    generate: () => r3.person.suffix()
   },
   // Profession
   $randomJobArea: {
     description: "A random job area",
-    generate: () => r2.person.jobArea()
+    generate: () => r3.person.jobArea()
   },
   $randomJobDescriptor: {
     description: "A random job descriptor",
-    generate: () => r2.person.jobDescriptor()
+    generate: () => r3.person.jobDescriptor()
   },
   $randomJobTitle: {
     description: "A random job title",
-    generate: () => r2.person.jobTitle()
+    generate: () => r3.person.jobTitle()
   },
   $randomJobType: {
     description: "A random job type",
-    generate: () => r2.person.jobType()
+    generate: () => r3.person.jobType()
   },
   // Phone, address, and location
   $randomPhoneNumber: {
     description: "A random ten-digit phone number",
-    generate: () => r2.phone.number({ style: "national" })
+    generate: () => r3.phone.number({ style: "national" })
   },
   $randomPhoneNumberExt: {
     description: "A random phone number with extension",
-    generate: () => `${r2.phone.number()} x${r2.string.numeric(4)}`
+    generate: () => `${r3.phone.number()} x${r3.string.numeric(4)}`
   },
   $randomCity: {
     description: "A random city name",
-    generate: () => r2.location.city()
+    generate: () => r3.location.city()
   },
   $randomStreetName: {
     description: "A random street name",
-    generate: () => r2.location.street()
+    generate: () => r3.location.street()
   },
   $randomStreetAddress: {
     description: "A random street address",
-    generate: () => r2.location.streetAddress()
+    generate: () => r3.location.streetAddress()
   },
   $randomCountry: {
     description: "A random country name",
-    generate: () => r2.location.country()
+    generate: () => r3.location.country()
   },
   $randomCountryCode: {
     description: "A random two-letter country code (ISO 3166-1 alpha-2)",
-    generate: () => r2.location.countryCode()
+    generate: () => r3.location.countryCode()
   },
   $randomLatitude: {
     description: "A random latitude coordinate",
-    generate: () => String(r2.location.latitude())
+    generate: () => String(r3.location.latitude())
   },
   $randomLongitude: {
     description: "A random longitude coordinate",
-    generate: () => String(r2.location.longitude())
+    generate: () => String(r3.location.longitude())
   },
   // Images
   $randomAvatarImage: {
     description: "A random avatar image URL",
-    generate: () => r2.image.avatar()
+    generate: () => r3.image.avatar()
   },
   $randomImageUrl: {
     description: "A URL of a random image",
-    generate: () => r2.image.url()
+    generate: () => r3.image.url()
   },
   $randomAbstractImage: {
     description: "A URL of a random abstract image",
@@ -28790,285 +32193,285 @@ var DYNAMIC_VARIABLES = {
   },
   $randomImageDataUri: {
     description: "A random image data URI",
-    generate: () => r2.image.dataUri()
+    generate: () => r3.image.dataUri()
   },
   // Finance
   $randomBankAccount: {
     description: "A random 8-digit bank account number",
-    generate: () => r2.finance.accountNumber(8)
+    generate: () => r3.finance.accountNumber(8)
   },
   $randomBankAccountName: {
     description: "A random bank account name",
-    generate: () => r2.finance.accountName()
+    generate: () => r3.finance.accountName()
   },
   $randomCreditCardMask: {
     description: "A random masked credit card number (last four digits)",
-    generate: () => r2.finance.creditCardNumber().slice(-4)
+    generate: () => r3.finance.creditCardNumber().slice(-4)
   },
   $randomBankAccountBic: {
     description: "A random BIC (Bank Identifier Code)",
-    generate: () => r2.finance.bic()
+    generate: () => r3.finance.bic()
   },
   $randomBankAccountIban: {
     description: "A random IBAN (International Bank Account Number)",
-    generate: () => r2.finance.iban()
+    generate: () => r3.finance.iban()
   },
   $randomTransactionType: {
     description: "A random transaction type",
-    generate: () => r2.helpers.arrayElement(["invoice", "payment", "deposit"])
+    generate: () => r3.helpers.arrayElement(["invoice", "payment", "deposit"])
   },
   $randomCurrencyCode: {
     description: "A random 3-letter currency code (ISO-4217)",
-    generate: () => r2.finance.currencyCode()
+    generate: () => r3.finance.currencyCode()
   },
   $randomCurrencyName: {
     description: "A random currency name",
-    generate: () => r2.finance.currencyName()
+    generate: () => r3.finance.currencyName()
   },
   $randomCurrencySymbol: {
     description: "A random currency symbol",
-    generate: () => r2.finance.currencySymbol()
+    generate: () => r3.finance.currencySymbol()
   },
   $randomBitcoin: {
     description: "A random bitcoin address",
-    generate: () => r2.finance.bitcoinAddress()
+    generate: () => r3.finance.bitcoinAddress()
   },
   // Business
   $randomCompanyName: {
     description: "A random company name",
-    generate: () => r2.company.name()
+    generate: () => r3.company.name()
   },
   $randomCompanySuffix: {
     description: "A random company suffix",
-    generate: () => r2.helpers.arrayElement(["Inc", "LLC", "Group", "Ltd", "Corp"])
+    generate: () => r3.helpers.arrayElement(["Inc", "LLC", "Group", "Ltd", "Corp"])
   },
   $randomBs: {
     description: "A random phrase of business-speak",
-    generate: () => r2.company.catchPhrase()
+    generate: () => r3.company.catchPhrase()
   },
   $randomBsAdjective: {
     description: "A random business-speak adjective",
-    generate: () => r2.company.buzzAdjective()
+    generate: () => r3.company.buzzAdjective()
   },
   $randomBsBuzz: {
     description: "A random business-speak buzzword",
-    generate: () => r2.company.buzzVerb()
+    generate: () => r3.company.buzzVerb()
   },
   $randomBsNoun: {
     description: "A random business-speak noun",
-    generate: () => r2.company.buzzNoun()
+    generate: () => r3.company.buzzNoun()
   },
   // Catchphrases
   $randomCatchPhrase: {
     description: "A random catchphrase",
-    generate: () => r2.company.catchPhrase()
+    generate: () => r3.company.catchPhrase()
   },
   $randomCatchPhraseAdjective: {
     description: "A random catchphrase adjective",
-    generate: () => r2.company.catchPhraseAdjective()
+    generate: () => r3.company.catchPhraseAdjective()
   },
   $randomCatchPhraseDescriptor: {
     description: "A random catchphrase descriptor",
-    generate: () => r2.company.catchPhraseDescriptor()
+    generate: () => r3.company.catchPhraseDescriptor()
   },
   $randomCatchPhraseNoun: {
     description: "A random catchphrase noun",
-    generate: () => r2.company.catchPhraseNoun()
+    generate: () => r3.company.catchPhraseNoun()
   },
   // Databases
   $randomDatabaseColumn: {
     description: "A random database column name",
-    generate: () => r2.database.column()
+    generate: () => r3.database.column()
   },
   $randomDatabaseType: {
     description: "A random database type",
-    generate: () => r2.database.type()
+    generate: () => r3.database.type()
   },
   $randomDatabaseCollation: {
     description: "A random database collation",
-    generate: () => r2.database.collation()
+    generate: () => r3.database.collation()
   },
   $randomDatabaseEngine: {
     description: "A random database engine",
-    generate: () => r2.database.engine()
+    generate: () => r3.database.engine()
   },
   // Dates
   $randomDateFuture: {
     description: "A random future datetime",
-    generate: () => r2.date.future().toString()
+    generate: () => r3.date.future().toString()
   },
   $randomDatePast: {
     description: "A random past datetime",
-    generate: () => r2.date.past().toString()
+    generate: () => r3.date.past().toString()
   },
   $randomDateRecent: {
     description: "A random recent datetime",
-    generate: () => r2.date.recent().toString()
+    generate: () => r3.date.recent().toString()
   },
   $randomWeekday: {
     description: "A random weekday name",
-    generate: () => r2.date.weekday()
+    generate: () => r3.date.weekday()
   },
   $randomMonth: {
     description: "A random month name",
-    generate: () => r2.date.month()
+    generate: () => r3.date.month()
   },
   // Domains, emails, and usernames
   $randomDomainName: {
     description: "A random domain name",
-    generate: () => r2.internet.domainName()
+    generate: () => r3.internet.domainName()
   },
   $randomDomainSuffix: {
     description: "A random domain suffix",
-    generate: () => r2.internet.domainSuffix()
+    generate: () => r3.internet.domainSuffix()
   },
   $randomDomainWord: {
     description: "A random unqualified domain name",
-    generate: () => r2.internet.domainWord()
+    generate: () => r3.internet.domainWord()
   },
   $randomEmail: {
     description: "A random email address",
-    generate: () => r2.internet.email()
+    generate: () => r3.internet.email()
   },
   $randomExampleEmail: {
     description: "A random email address from an example domain",
-    generate: () => r2.internet.exampleEmail()
+    generate: () => r3.internet.exampleEmail()
   },
   $randomUserName: {
     description: "A random username",
-    generate: () => r2.internet.username()
+    generate: () => r3.internet.username()
   },
   $randomUrl: {
     description: "A random URL",
-    generate: () => r2.internet.url()
+    generate: () => r3.internet.url()
   },
   // Files and directories
   $randomFileName: {
     description: "A random file name",
-    generate: () => r2.system.fileName()
+    generate: () => r3.system.fileName()
   },
   $randomFileType: {
     description: "A random file type",
-    generate: () => r2.system.fileType()
+    generate: () => r3.system.fileType()
   },
   $randomFileExt: {
     description: "A random file extension",
-    generate: () => r2.system.fileExt()
+    generate: () => r3.system.fileExt()
   },
   $randomCommonFileName: {
     description: "A random common file name",
-    generate: () => r2.system.commonFileName()
+    generate: () => r3.system.commonFileName()
   },
   $randomCommonFileType: {
     description: "A random common file type",
-    generate: () => r2.system.commonFileType()
+    generate: () => r3.system.commonFileType()
   },
   $randomCommonFileExt: {
     description: "A random common file extension",
-    generate: () => r2.system.commonFileExt()
+    generate: () => r3.system.commonFileExt()
   },
   $randomFilePath: {
     description: "A random file path",
-    generate: () => r2.system.filePath()
+    generate: () => r3.system.filePath()
   },
   $randomDirectoryPath: {
     description: "A random directory path",
-    generate: () => r2.system.directoryPath()
+    generate: () => r3.system.directoryPath()
   },
   $randomMimeType: {
     description: "A random MIME type",
-    generate: () => r2.system.mimeType()
+    generate: () => r3.system.mimeType()
   },
   // Stores
   $randomPrice: {
     description: "A random price between 0.00 and 1000.00",
-    generate: () => r2.commerce.price({ min: 0, max: 1e3 })
+    generate: () => r3.commerce.price({ min: 0, max: 1e3 })
   },
   $randomProduct: {
     description: "A random product name",
-    generate: () => r2.commerce.product()
+    generate: () => r3.commerce.product()
   },
   $randomProductAdjective: {
     description: "A random product adjective",
-    generate: () => r2.commerce.productAdjective()
+    generate: () => r3.commerce.productAdjective()
   },
   $randomProductMaterial: {
     description: "A random product material",
-    generate: () => r2.commerce.productMaterial()
+    generate: () => r3.commerce.productMaterial()
   },
   $randomProductName: {
     description: "A random product name with adjective and material",
-    generate: () => r2.commerce.productName()
+    generate: () => r3.commerce.productName()
   },
   $randomDepartment: {
     description: "A random commerce category",
-    generate: () => r2.commerce.department()
+    generate: () => r3.commerce.department()
   },
   // Grammar
   $randomNoun: {
     description: "A random noun",
-    generate: () => r2.word.noun()
+    generate: () => r3.word.noun()
   },
   $randomVerb: {
     description: "A random verb",
-    generate: () => r2.word.verb()
+    generate: () => r3.word.verb()
   },
   $randomIngverb: {
     description: "A random verb ending in -ing",
-    generate: () => `${r2.word.verb()}ing`
+    generate: () => `${r3.word.verb()}ing`
   },
   $randomAdjective: {
     description: "A random adjective",
-    generate: () => r2.word.adjective()
+    generate: () => r3.word.adjective()
   },
   $randomWord: {
     description: "A random word",
-    generate: () => r2.word.sample()
+    generate: () => r3.word.sample()
   },
   $randomWords: {
     description: "Some random words",
-    generate: () => r2.word.words()
+    generate: () => r3.word.words()
   },
   $randomPhrase: {
     description: "A random phrase",
-    generate: () => r2.lorem.sentence()
+    generate: () => r3.lorem.sentence()
   },
   // Lorem ipsum
   $randomLoremWord: {
     description: "A random word of lorem ipsum text",
-    generate: () => r2.lorem.word()
+    generate: () => r3.lorem.word()
   },
   $randomLoremWords: {
     description: "Some random words of lorem ipsum text",
-    generate: () => r2.lorem.words()
+    generate: () => r3.lorem.words()
   },
   $randomLoremSentence: {
     description: "A random sentence of lorem ipsum text",
-    generate: () => r2.lorem.sentence()
+    generate: () => r3.lorem.sentence()
   },
   $randomLoremSentences: {
     description: "A random 2 to 6 sentences of lorem ipsum text",
-    generate: () => r2.lorem.sentences({ min: 2, max: 6 })
+    generate: () => r3.lorem.sentences({ min: 2, max: 6 })
   },
   $randomLoremParagraph: {
     description: "A random paragraph of lorem ipsum text",
-    generate: () => r2.lorem.paragraph()
+    generate: () => r3.lorem.paragraph()
   },
   $randomLoremParagraphs: {
     description: "Three random paragraphs of lorem ipsum text",
-    generate: () => r2.lorem.paragraphs(3)
+    generate: () => r3.lorem.paragraphs(3)
   },
   $randomLoremText: {
     description: "A random amount of lorem ipsum text",
-    generate: () => r2.lorem.text()
+    generate: () => r3.lorem.text()
   },
   $randomLoremSlug: {
     description: "A random lorem ipsum URL slug",
-    generate: () => r2.lorem.slug()
+    generate: () => r3.lorem.slug()
   },
   $randomLoremLines: {
     description: "1 to 5 random lines of lorem ipsum text",
-    generate: () => r2.lorem.lines({ min: 1, max: 5 })
+    generate: () => r3.lorem.lines({ min: 1, max: 5 })
   }
 };
 function getDynamicVariableDescription(key) {
@@ -29083,7 +32486,7 @@ function resolveDynamicVariable(key) {
 }
 var DYNAMIC_VARIABLE_NAMES = Object.keys(DYNAMIC_VARIABLES).sort();
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/variables/tokens.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/variables/tokens.js
 var VARIABLE_NAME_CHARS = "\\w$.-";
 var VARIABLE_TOKEN_PATTERN = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g");
 function variableLookup(variables) {
@@ -29104,7 +32507,7 @@ function resolveVariable(key, variables) {
   return variableLookup(variables).get(key);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/runtime/store.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/runtime/store.js
 function createExternalStore(initial) {
   let state = initial;
   const listeners = /* @__PURE__ */ new Set();
@@ -29125,18 +32528,11 @@ function createExternalStore(initial) {
   };
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
-var DEFAULT_CODE_EDITOR_SETUP = {
-  lineNumbers: true,
-  foldGutter: true,
-  highlightActiveLine: true,
-  highlightActiveLineGutter: true
-};
-
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
 var DEFAULT_CODE_EDITOR_CONFIG = {
   theme: "default",
-  setup: DEFAULT_CODE_EDITOR_SETUP
+  setup: DEFAULT_CODE_EDITOR_SETUP,
+  fontSize: DEFAULT_CODE_EDITOR_FONT_SIZE
 };
 var GLOBAL_STORE_KEY = "__hc_codeEditorConfigStore";
 function getCodeEditorConfigStore() {
@@ -29158,6 +32554,172 @@ function useCodeEditorConfig() {
   const store = getCodeEditorConfigStore();
   const storeValue = useSyncExternalStore(store.subscribe, store.getSnapshot, store.getSnapshot);
   return contextValue ?? storeValue;
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/editorChrome.js
+var lightHighlight = HighlightStyle.define([
+  { tag: tags.propertyName, color: "#881391" },
+  { tag: tags.string, color: "#c41a16" },
+  { tag: tags.number, color: "#1c00cf" },
+  { tag: tags.bool, color: "#1c00cf" },
+  { tag: tags.null, color: "#1c00cf" },
+  { tag: tags.keyword, color: "#881391" },
+  { tag: tags.bracket, color: "var(--mac-text)" },
+  { tag: tags.punctuation, color: "var(--mac-muted)" },
+  { tag: tags.comment, color: "var(--mac-muted)", fontStyle: "italic" }
+]);
+var darkHighlight = HighlightStyle.define([
+  { tag: tags.propertyName, color: "#ff7ab2" },
+  { tag: tags.string, color: "#ff8170" },
+  { tag: tags.number, color: "#78dce8" },
+  { tag: tags.bool, color: "#78dce8" },
+  { tag: tags.null, color: "#78dce8" },
+  { tag: tags.keyword, color: "#ff7ab2" },
+  { tag: tags.bracket, color: "var(--mac-text)" },
+  { tag: tags.punctuation, color: "var(--mac-muted)" },
+  { tag: tags.comment, color: "var(--mac-muted)", fontStyle: "italic" }
+]);
+function createEditorTheme(fontSize) {
+  return EditorView.theme({
+    "&": {
+      backgroundColor: "transparent",
+      color: "var(--mac-text)"
+    },
+    ".cm-scroller": {
+      overflow: "auto",
+      fontFamily: "var(--font-mono)"
+    },
+    ".cm-content": {
+      padding: "8px 0",
+      fontFamily: "var(--font-mono)",
+      fontSize,
+      caretColor: "var(--mac-accent)"
+    },
+    ".cm-line": {
+      padding: "0 8px"
+    },
+    "&.cm-focused": {
+      outline: "none"
+    },
+    "&.cm-focused .cm-cursor": {
+      borderLeftColor: "var(--mac-accent)"
+    },
+    ".cm-selectionBackground, &.cm-focused .cm-selectionBackground, ::selection": {
+      backgroundColor: "var(--mac-selection) !important"
+    },
+    ".cm-gutters": {
+      backgroundColor: "transparent",
+      color: "var(--mac-muted)",
+      border: "none"
+    },
+    ".cm-activeLineGutter": {
+      backgroundColor: "var(--mac-selection)"
+    },
+    ".cm-activeLine": {
+      backgroundColor: "color-mix(in srgb, var(--mac-selection) 45%, transparent)"
+    },
+    ".cm-variable-token": {
+      color: "#32D2E2"
+    },
+    ".cm-slash-command": {
+      color: "var(--mac-accent)"
+    },
+    ".cm-slash-command-args": {
+      color: "var(--mac-muted)",
+      fontStyle: "italic"
+    },
+    ".cm-tooltip.cm-tooltip-hover": {
+      border: "1px solid var(--mac-separator)",
+      backgroundColor: "var(--mac-surface)",
+      borderRadius: "6px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+    },
+    ".cm-variable-tooltip": {
+      display: "flex",
+      flexDirection: "column",
+      gap: "6px",
+      padding: "8px 12px",
+      fontSize,
+      color: "var(--mac-text)"
+    },
+    ".cm-variable-tooltip-muted": {
+      color: "var(--mac-muted)"
+    },
+    ".cm-variable-tooltip-edit": {
+      alignSelf: "flex-start",
+      background: "none",
+      border: "none",
+      padding: "0",
+      cursor: "pointer",
+      fontSize,
+      color: "var(--mac-accent)"
+    },
+    ".cm-tooltip.cm-tooltip-autocomplete": {
+      border: "1px solid var(--mac-separator)",
+      backgroundColor: "var(--mac-surface)",
+      borderRadius: "6px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+      fontSize
+    },
+    ".cm-completionLabel": {
+      fontFamily: "var(--font-mono)"
+    },
+    ".cm-completionDetail": {
+      color: "var(--mac-muted)",
+      fontStyle: "normal",
+      marginLeft: "8px"
+    }
+  });
+}
+function createBuiltInSyntaxHighlighting(isDark) {
+  return syntaxHighlighting(isDark ? darkHighlight : lightHighlight);
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/slashCommandHighlighter.js
+function slashCommandHighlightPattern(commands) {
+  const names = commands.map((entry) => entry.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (names.length === 0) {
+    return /(?!)/g;
+  }
+  return new RegExp(`^(\\s*)(/(?:${names.join("|")}))([ \\t]+.*)?$`, "gm");
+}
+function createSlashCommandHighlighter(commands) {
+  const slashMatcher = new MatchDecorator({
+    regexp: slashCommandHighlightPattern(commands),
+    /**
+     * Applies accent styling to the command token and muted italic styling to args.
+     */
+    decorate: (add2, from, _to, match) => {
+      const leading = match[1] ?? "";
+      const command2 = match[2] ?? "";
+      const args = match[3];
+      const commandFrom = from + leading.length;
+      const commandTo = commandFrom + command2.length;
+      add2(commandFrom, commandTo, Decoration.mark({ class: "cm-slash-command" }));
+      if (args) {
+        add2(commandTo, commandTo + args.length, Decoration.mark({ class: "cm-slash-command-args" }));
+      }
+    }
+  });
+  return ViewPlugin.fromClass(class {
+    decorations;
+    /**
+     * Builds the initial slash-command decoration set for the editor view.
+     *
+     * @param view - CodeMirror editor view instance.
+     */
+    constructor(view) {
+      this.decorations = slashMatcher.createDeco(view);
+    }
+    /**
+     * Recomputes slash-command decorations when document content changes.
+     *
+     * @param update - View update describing what changed.
+     */
+    update(update) {
+      this.decorations = slashMatcher.updateDeco(update, this.decorations);
+    }
+  }, { decorations: (v2) => v2.decorations });
 }
 
 // node_modules/.pnpm/@uiw+codemirror-themes@4.25.10_@codemirror+language@6.12.4_@codemirror+state@6.7.0_@codemirror+view@6.43.4/node_modules/@uiw/codemirror-themes/esm/index.js
@@ -33157,7 +36719,7 @@ var xcodeDarkInit = (options) => {
 };
 var xcodeDark = xcodeDarkInit();
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
 var themeExtensions = {
   dracula,
   githubLight,
@@ -33174,112 +36736,193 @@ function getCodeEditorThemeExtension(value) {
   return themeExtensions[value];
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
-var lightHighlight = HighlightStyle.define([
-  { tag: tags.propertyName, color: "#881391" },
-  { tag: tags.string, color: "#c41a16" },
-  { tag: tags.number, color: "#1c00cf" },
-  { tag: tags.bool, color: "#1c00cf" },
-  { tag: tags.null, color: "#1c00cf" },
-  { tag: tags.keyword, color: "#881391" },
-  { tag: tags.bracket, color: "var(--mac-text)" },
-  { tag: tags.punctuation, color: "var(--mac-muted)" },
-  { tag: tags.comment, color: "var(--mac-muted)", fontStyle: "italic" }
-]);
-var darkHighlight = HighlightStyle.define([
-  { tag: tags.propertyName, color: "#ff7ab2" },
-  { tag: tags.string, color: "#ff8170" },
-  { tag: tags.number, color: "#78dce8" },
-  { tag: tags.bool, color: "#78dce8" },
-  { tag: tags.null, color: "#78dce8" },
-  { tag: tags.keyword, color: "#ff7ab2" },
-  { tag: tags.bracket, color: "var(--mac-text)" },
-  { tag: tags.punctuation, color: "var(--mac-muted)" },
-  { tag: tags.comment, color: "var(--mac-muted)", fontStyle: "italic" }
-]);
-var editorTheme = EditorView.theme({
-  "&": {
-    backgroundColor: "transparent",
-    color: "var(--mac-text)"
-  },
-  ".cm-scroller": {
-    overflow: "auto",
-    fontFamily: "var(--font-mono)"
-  },
-  ".cm-content": {
-    padding: "8px 0",
-    fontFamily: "var(--font-mono)",
-    fontSize: "14px",
-    caretColor: "var(--mac-accent)"
-  },
-  ".cm-line": {
-    padding: "0 8px"
-  },
-  "&.cm-focused": {
-    outline: "none"
-  },
-  "&.cm-focused .cm-cursor": {
-    borderLeftColor: "var(--mac-accent)"
-  },
-  ".cm-selectionBackground, &.cm-focused .cm-selectionBackground, ::selection": {
-    backgroundColor: "var(--mac-selection) !important"
-  },
-  ".cm-gutters": {
-    backgroundColor: "transparent",
-    color: "var(--mac-muted)",
-    border: "none"
-  },
-  ".cm-activeLineGutter": {
-    backgroundColor: "var(--mac-selection)"
-  },
-  ".cm-activeLine": {
-    backgroundColor: "color-mix(in srgb, var(--mac-selection) 45%, transparent)"
-  },
-  ".cm-variable-token": {
-    color: "#32D2E2"
-  },
-  ".cm-tooltip.cm-tooltip-hover": {
-    border: "1px solid var(--mac-separator)",
-    backgroundColor: "var(--mac-surface)",
-    borderRadius: "6px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
-  },
-  ".cm-variable-tooltip": {
-    display: "flex",
-    flexDirection: "column",
-    gap: "6px",
-    padding: "8px 12px",
-    fontSize: "14px",
-    color: "var(--mac-text)"
-  },
-  ".cm-variable-tooltip-muted": {
-    color: "var(--mac-muted)"
-  },
-  ".cm-variable-tooltip-edit": {
-    alignSelf: "flex-start",
-    background: "none",
-    border: "none",
-    padding: "0",
-    cursor: "pointer",
-    fontSize: "14px",
-    color: "var(--mac-accent)"
-  },
-  ".cm-tooltip.cm-tooltip-autocomplete": {
-    border: "1px solid var(--mac-separator)",
-    backgroundColor: "var(--mac-surface)",
-    borderRadius: "6px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-    fontSize: "14px"
-  },
-  ".cm-completionLabel": {
-    fontFamily: "var(--font-mono)"
-  },
-  ".cm-completionDetail": {
-    color: "var(--mac-muted)",
-    fontStyle: "normal",
-    marginLeft: "8px"
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/renderHighlightedPlaceholder.js
+var renderCache = /* @__PURE__ */ new Map();
+function buildRenderCacheKey(text, options) {
+  const slashNames = options.slashCommands?.map((command2) => command2.name).join(",") ?? "";
+  return [text, options.fontSize, String(options.isDark), options.theme, slashNames].join("\0");
+}
+function buildOffscreenPlaceholderExtensions(options) {
+  const extensions = [
+    javascript(),
+    EditorView.lineWrapping,
+    EditorView.editable.of(false),
+    EditorState.readOnly.of(true),
+    EditorView.theme({
+      "&": { backgroundColor: "transparent" },
+      ".cm-scroller": { overflow: "hidden" },
+      ".cm-content": {
+        padding: "0",
+        fontFamily: "var(--font-mono)",
+        fontSize: options.fontSize
+      },
+      ".cm-line": { padding: "0" },
+      ".cm-activeLine": { backgroundColor: "transparent" },
+      ".cm-slash-command": {
+        color: "var(--mac-accent)"
+      },
+      ".cm-slash-command-args": {
+        color: "var(--mac-muted)",
+        fontStyle: "italic"
+      }
+    })
+  ];
+  const themeExtension = getCodeEditorThemeExtension(options.theme);
+  if (themeExtension) {
+    extensions.push(themeExtension);
+  } else {
+    extensions.push(createBuiltInSyntaxHighlighting(options.isDark));
   }
-});
+  if (options.slashCommands && options.slashCommands.length > 0) {
+    extensions.push(createSlashCommandHighlighter(options.slashCommands));
+  }
+  return extensions;
+}
+function renderHighlightedPlaceholderDom(text, options) {
+  const cacheKey = buildRenderCacheKey(text, options);
+  const cached = renderCache.get(cacheKey);
+  if (cached) {
+    return cached.cloneNode(true);
+  }
+  const host = document.createElement("div");
+  host.style.cssText = "position:fixed;left:-10000px;top:0;visibility:hidden;pointer-events:none;";
+  document.body.appendChild(host);
+  const view = new EditorView({
+    state: EditorState.create({
+      doc: text,
+      extensions: buildOffscreenPlaceholderExtensions(options)
+    }),
+    parent: host
+  });
+  const wrap = document.createElement("span");
+  wrap.className = "cm-placeholder cm-syntax-placeholder";
+  wrap.style.pointerEvents = "none";
+  wrap.style.display = "inline-block";
+  wrap.style.verticalAlign = "top";
+  wrap.style.whiteSpace = "pre-wrap";
+  wrap.style.opacity = "0.55";
+  wrap.style.fontFamily = "var(--font-mono)";
+  wrap.style.fontSize = options.fontSize;
+  wrap.style.userSelect = "none";
+  wrap.style.width = "100%";
+  wrap.setAttribute("aria-hidden", "true");
+  const content2 = view.dom.querySelector(".cm-content");
+  if (content2) {
+    for (const line of content2.querySelectorAll(".cm-line")) {
+      wrap.appendChild(line.cloneNode(true));
+    }
+  }
+  view.destroy();
+  host.remove();
+  renderCache.set(cacheKey, wrap.cloneNode(true));
+  return wrap;
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxHighlightedPlaceholder.js
+var SyntaxHighlightedPlaceholderWidget = class extends WidgetType {
+  text;
+  options;
+  /**
+   * @param text - Placeholder document shown when the parent editor is empty.
+   * @param options - Highlighting and theme options shared with the parent editor.
+   */
+  constructor(text, options) {
+    super();
+    this.text = text;
+    this.options = options;
+  }
+  /**
+   * Returns statically rendered placeholder DOM without nested editor chrome.
+   */
+  toDOM() {
+    return renderHighlightedPlaceholderDom(this.text, this.options);
+  }
+  /**
+   * Prevents the placeholder layer from intercepting pointer events meant for the parent editor.
+   */
+  ignoreEvent() {
+    return true;
+  }
+};
+function shouldShowSyntaxPlaceholder(view) {
+  return view.state.doc.length === 0 && !view.hasFocus;
+}
+function buildSyntaxPlaceholderDecorations(text, options) {
+  return Decoration.set([
+    Decoration.widget({
+      widget: new SyntaxHighlightedPlaceholderWidget(text, options),
+      side: 1
+    }).range(0)
+  ]);
+}
+function createSyntaxHighlightedPlaceholder(text, options) {
+  const plugin = ViewPlugin.fromClass(class {
+    placeholder;
+    /**
+     * Initializes placeholder decorations for an empty, unfocused document.
+     *
+     * @param view - Parent CodeMirror editor view.
+     */
+    constructor(view) {
+      this.placeholder = shouldShowSyntaxPlaceholder(view) ? buildSyntaxPlaceholderDecorations(text, options) : Decoration.none;
+    }
+    /**
+     * Shows or hides the placeholder when the document, focus, or content changes.
+     *
+     * @param update - Parent view update.
+     */
+    update(update) {
+      if (!update.docChanged && !update.focusChanged) {
+        return;
+      }
+      this.placeholder = shouldShowSyntaxPlaceholder(update.view) ? buildSyntaxPlaceholderDecorations(text, options) : Decoration.none;
+    }
+    get decorations() {
+      return this.placeholder;
+    }
+  }, { decorations: (v2) => v2.decorations });
+  return [
+    plugin,
+    EditorView.contentAttributes.of({ "aria-placeholder": text }),
+    EditorView.theme({
+      ".cm-content:has(.cm-syntax-placeholder) .cm-activeLine": {
+        backgroundColor: "transparent !important"
+      }
+    })
+  ];
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxLinters.js
+function collectJavascriptSyntaxErrors(view) {
+  const diagnostics = [];
+  syntaxTree(view.state).cursor().iterate((node) => {
+    if (node.type.isError) {
+      diagnostics.push({
+        from: node.from,
+        to: node.to,
+        severity: "error",
+        message: "Syntax error"
+      });
+    }
+  });
+  return diagnostics;
+}
+function createJavascriptSyntaxLinter() {
+  return linter(collectJavascriptSyntaxErrors);
+}
+function createJsonSyntaxLinter() {
+  return linter(jsonParseLinter());
+}
+
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
+function clampSelection(docLength, selection2) {
+  const maxOffset2 = Math.max(0, docLength);
+  return {
+    anchor: Math.min(Math.max(0, selection2.anchor), maxOffset2),
+    head: Math.min(Math.max(0, selection2.head), maxOffset2)
+  };
+}
+var VIEW_STATE_DEBOUNCE_MS = 300;
 var variableMatcher = new MatchDecorator({
   regexp: new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g"),
   decoration: Decoration.mark({ class: "cm-variable-token" })
@@ -33288,21 +36931,91 @@ var variableHighlighter = ViewPlugin.fromClass(class {
   decorations;
   /**
    * Builds the initial {{variable}} decoration set for the editor view.
-   *
-   * @param view - CodeMirror editor view instance.
    */
   constructor(view) {
     this.decorations = variableMatcher.createDeco(view);
   }
   /**
    * Recomputes decorations when document content or viewport changes.
-   *
-   * @param update - View update describing what changed.
    */
   update(update) {
     this.decorations = variableMatcher.updateDeco(update, this.decorations);
   }
 }, { decorations: (v2) => v2.decorations });
+var SLASH_COMMAND_LINE_PATTERN = /^(\s*)\/(\w+)(?:[ \t]+(.*))?$/;
+function parseSlashCommandLine(lineText, lineFrom, lineNumber, commands) {
+  const match = lineText.match(SLASH_COMMAND_LINE_PATTERN);
+  if (!match) {
+    return null;
+  }
+  const command2 = match[2];
+  if (command2 == null || !commands.some((entry) => entry.name === command2)) {
+    return null;
+  }
+  const leading = match[1] ?? "";
+  const slashIndex = leading.length;
+  const from = lineFrom + slashIndex;
+  const to = lineFrom + lineText.length;
+  return {
+    command: command2,
+    args: (match[3] ?? "").trim(),
+    line: lineNumber,
+    from,
+    to
+  };
+}
+function createSlashCommandCompletionSource(commands) {
+  return (context) => {
+    const word = context.matchBefore(/^\s*\/\w*/);
+    if (!word || word.text.length === 0) {
+      return null;
+    }
+    const partial = word.text.replace(/^\s*\//, "");
+    const options = commands.filter((entry) => entry.name.startsWith(partial)).map((entry) => ({
+      label: `/${entry.name}`,
+      type: "keyword",
+      detail: entry.description,
+      apply: `/${entry.name} `
+    }));
+    if (options.length === 0) {
+      return null;
+    }
+    return { from: word.from, options };
+  };
+}
+function slashCommandEnterHandler(commands, onSlashCommand) {
+  return Prec.highest(keymap.of([
+    {
+      key: "Enter",
+      /**
+       * Opens host slash-command UI when Enter is pressed on a complete command line.
+       */
+      run: (view) => {
+        const pos = view.state.selection.main.head;
+        const line = view.state.doc.lineAt(pos);
+        const parsed = parseSlashCommandLine(line.text, line.from, line.number, commands);
+        if (!parsed) {
+          return false;
+        }
+        const coords = view.coordsAtPos(parsed.from);
+        if (!coords) {
+          return false;
+        }
+        closeCompletion(view);
+        onSlashCommand({
+          ...parsed,
+          coords: {
+            top: coords.top,
+            left: coords.left,
+            bottom: coords.bottom,
+            right: coords.right
+          }
+        });
+        return true;
+      }
+    }
+  ]));
+}
 function findVariableAtPos(doc2, pos) {
   const line = doc2.lineAt(pos);
   const pattern = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)\\s*\\}\\}`, "g");
@@ -33392,7 +37105,7 @@ function variableTooltipEscapeHandler(isOpen, onDismiss, getValidationDescribedB
     }
   });
 }
-function variableTooltip(variables, onEditVariable) {
+function variableTooltip(getVariables, getOnEditVariable) {
   return hoverTooltip((view, pos) => {
     const match = findVariableAtPos(view.state.doc, pos);
     if (!match)
@@ -33402,15 +37115,20 @@ function variableTooltip(variables, onEditVariable) {
       end: match.end,
       above: true,
       create() {
-        return { dom: buildVariableTooltipDom(match.key, variables, onEditVariable) };
+        return {
+          dom: buildVariableTooltipDom(match.key, getVariables(), getOnEditVariable())
+        };
       }
     };
   });
 }
-function CodeEditor({ value, onChange, language: language2 = "text", readOnly: readOnly2 = false, placeholder: placeholder2, minHeight = "144px", className = "", variables, onEditVariable, completionSource, themeOverride, setupOverride, id: id2, "aria-label": ariaLabel, "aria-labelledby": ariaLabelledBy, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy }) {
+var RESIZE_GRIP_PX = 16;
+function CodeEditor({ value, onChange, language: language2 = "text", readOnly: readOnly2 = false, editable: editable2, placeholder: placeholder2, placeholderHighlight = false, minHeight = "144px", height, onHeightChange, initialScrollTop, initialSelection, onViewStateChange, className = "", variables, onEditVariable, completionSource, slashCommands, onSlashCommand, lint = true, themeOverride, setupOverride, fontSize, id: id2, "aria-label": ariaLabel, "aria-labelledby": ariaLabelledBy, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy, ...props }) {
   const config15 = useCodeEditorConfig();
   const resolvedTheme = themeOverride ?? config15.theme;
   const resolvedSetup = setupOverride ?? (readOnly2 ? null : config15.setup);
+  const resolvedFontSize = normalizeCodeEditorFontSize(fontSize ?? config15.fontSize);
+  const resolvedEditable = editable2 ?? !readOnly2;
   const [isDark, setIsDark] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
   const [selectionTooltip, setSelectionTooltip] = useState(null);
   const selectionTooltipRef = useRef(selectionTooltip);
@@ -33419,39 +37137,191 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
   setSelectionTooltipRef.current = setSelectionTooltip;
   const ariaDescribedByRef = useRef(ariaDescribedBy);
   ariaDescribedByRef.current = ariaDescribedBy;
+  const onSlashCommandRef = useRef(onSlashCommand);
+  onSlashCommandRef.current = onSlashCommand;
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+  const completionSourceRef = useRef(completionSource);
+  completionSourceRef.current = completionSource;
+  const variablesRef = useRef(variables);
+  variablesRef.current = variables;
+  const onEditVariableRef = useRef(onEditVariable);
+  onEditVariableRef.current = onEditVariable;
+  const hasVariables = variables != null;
+  const hasCompletionSource = completionSource != null;
   const tooltipId = useId();
+  const wrapperRef = useRef(null);
+  const onHeightChangeRef = useRef(onHeightChange);
+  onHeightChangeRef.current = onHeightChange;
+  const isUserResizingRef = useRef(false);
+  const editorViewRef = useRef(null);
+  const onViewStateChangeRef = useRef(onViewStateChange);
+  onViewStateChangeRef.current = onViewStateChange;
+  const initialScrollTopRef = useRef(initialScrollTop);
+  initialScrollTopRef.current = initialScrollTop;
+  const initialSelectionRef = useRef(initialSelection);
+  initialSelectionRef.current = initialSelection;
+  const viewStateDebounceRef = useRef(void 0);
+  const scrollListenerCleanupRef = useRef(null);
+  const scheduleViewStateFlushRef = useRef(() => void 0);
   const getValidationDescribedBy = () => ariaDescribedByRef.current;
+  const readViewState = useCallback((view) => {
+    const selection2 = view.state.selection.main;
+    return {
+      scrollTop: Math.max(0, Math.round(view.scrollDOM.scrollTop)),
+      selection: { anchor: selection2.anchor, head: selection2.head }
+    };
+  }, []);
+  const flushViewState = useCallback(() => {
+    const view = editorViewRef.current;
+    if (!view || !onViewStateChangeRef.current) {
+      return;
+    }
+    onViewStateChangeRef.current(readViewState(view));
+  }, [readViewState]);
+  useEffect(() => {
+    scheduleViewStateFlushRef.current = () => {
+      if (viewStateDebounceRef.current) {
+        clearTimeout(viewStateDebounceRef.current);
+      }
+      viewStateDebounceRef.current = setTimeout(() => {
+        flushViewState();
+      }, VIEW_STATE_DEBOUNCE_MS);
+    };
+  }, [flushViewState]);
+  const stableOnCreateEditor = useCallback((view) => {
+    editorViewRef.current = view;
+    const restoredSelection = initialSelectionRef.current;
+    if (restoredSelection) {
+      const clamped = clampSelection(view.state.doc.length, restoredSelection);
+      view.dispatch({
+        selection: { anchor: clamped.anchor, head: clamped.head }
+      });
+    }
+    const restoredScrollTop = initialScrollTopRef.current;
+    if (restoredScrollTop != null && Number.isFinite(restoredScrollTop) && restoredScrollTop >= 0) {
+      view.scrollDOM.scrollTop = restoredScrollTop;
+    }
+    const handleScroll = () => {
+      scheduleViewStateFlushRef.current();
+    };
+    view.scrollDOM.addEventListener("scroll", handleScroll, { passive: true });
+    scrollListenerCleanupRef.current = () => {
+      view.scrollDOM.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    return () => {
+      if (viewStateDebounceRef.current) {
+        clearTimeout(viewStateDebounceRef.current);
+      }
+      scrollListenerCleanupRef.current?.();
+      scrollListenerCleanupRef.current = null;
+      flushViewState();
+      editorViewRef.current = null;
+    };
+  }, [flushViewState]);
+  useEffect(() => {
+    if (!onHeightChange) {
+      return;
+    }
+    const wrapper = wrapperRef.current;
+    if (!wrapper) {
+      return;
+    }
+    const handlePointerDown = (event) => {
+      const rect = wrapper.getBoundingClientRect();
+      const onGrip = event.clientX >= rect.right - RESIZE_GRIP_PX && event.clientY >= rect.bottom - RESIZE_GRIP_PX;
+      if (onGrip) {
+        isUserResizingRef.current = true;
+      }
+    };
+    const handlePointerUp = () => {
+      if (!isUserResizingRef.current) {
+        return;
+      }
+      isUserResizingRef.current = false;
+      const nextHeight = Math.round(wrapper.getBoundingClientRect().height);
+      onHeightChangeRef.current?.(nextHeight);
+    };
+    wrapper.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("pointerup", handlePointerUp);
+    return () => {
+      wrapper.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("pointerup", handlePointerUp);
+    };
+  }, [onHeightChange]);
+  const useHighlightedPlaceholder = Boolean(placeholderHighlight && placeholder2 && language2 === "javascript");
+  const stableOnChange = useCallback((nextValue) => {
+    onChangeRef.current?.(nextValue);
+  }, []);
+  const stableCompletionSource = useMemo(() => (context) => completionSourceRef.current?.(context) ?? null, []);
+  const getVariables = useCallback(() => variablesRef.current ?? [], []);
+  const getOnEditVariable = useCallback(() => onEditVariableRef.current, []);
+  const editorThemeExt = useMemo(() => createEditorTheme(resolvedFontSize), [resolvedFontSize]);
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => setIsDark(media.matches);
     media.addEventListener("change", handleChange);
     return () => media.removeEventListener("change", handleChange);
   }, []);
+  const viewStateSelectionListener = useMemo(() => EditorView.updateListener.of((update) => {
+    if (!onViewStateChangeRef.current || !update.selectionSet) {
+      return;
+    }
+    scheduleViewStateFlushRef.current();
+  }), []);
   const extensions = useMemo(() => {
-    const next = [EditorView.lineWrapping, editorTheme];
+    const next = [EditorView.lineWrapping, editorThemeExt];
+    if (onViewStateChange != null) {
+      next.push(viewStateSelectionListener);
+    }
     const themeExtension = getCodeEditorThemeExtension(resolvedTheme);
     if (themeExtension) {
       next.push(themeExtension);
     } else {
-      next.push(syntaxHighlighting(isDark ? darkHighlight : lightHighlight));
+      next.push(createBuiltInSyntaxHighlighting(isDark));
     }
     if (language2 === "json") {
       next.push(json());
     }
     if (language2 === "javascript") {
       next.push(javascript());
-      if (completionSource) {
+      if (slashCommands && slashCommands.length > 0) {
+        next.push(slashCommandEnterHandler(slashCommands, (trigger) => {
+          onSlashCommandRef.current?.(trigger);
+        }));
+      }
+      const completionOverrides = [];
+      if (slashCommands && slashCommands.length > 0) {
+        completionOverrides.push(createSlashCommandCompletionSource(slashCommands));
+      }
+      if (hasCompletionSource) {
+        completionOverrides.push(stableCompletionSource);
+      }
+      if (completionOverrides.length > 0) {
         next.push(autocompletion({
           activateOnTyping: true,
-          override: [completionSource]
+          override: completionOverrides
         }));
+      }
+      if (slashCommands && slashCommands.length > 0) {
+        next.push(createSlashCommandHighlighter(slashCommands));
       }
     }
     if (language2 === "shell") {
       next.push(StreamLanguage.define(shell));
     }
-    if (variables) {
-      next.push(variableHighlighter, variableTooltip(variables, onEditVariable), variableSelectionTooltip(tooltipId, (state) => {
+    if (lint) {
+      if (language2 === "json") {
+        next.push(createJsonSyntaxLinter());
+      }
+      if (language2 === "javascript") {
+        next.push(createJavascriptSyntaxLinter());
+      }
+    }
+    if (hasVariables) {
+      next.push(variableHighlighter, variableTooltip(getVariables, getOnEditVariable), variableSelectionTooltip(tooltipId, (state) => {
         setSelectionTooltipRef.current(state);
       }, getValidationDescribedBy), variableTooltipEscapeHandler(() => selectionTooltipRef.current != null, () => {
         setSelectionTooltipRef.current(null);
@@ -33471,20 +37341,38 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
     if (Object.keys(contentAttrs).length > 0) {
       next.push(EditorView.contentAttributes.of(contentAttrs));
     }
+    if (useHighlightedPlaceholder && placeholder2) {
+      next.push(...createSyntaxHighlightedPlaceholder(placeholder2, {
+        fontSize: resolvedFontSize,
+        isDark,
+        theme: resolvedTheme,
+        slashCommands
+      }));
+    }
     return next;
   }, [
+    editorThemeExt,
     resolvedTheme,
     isDark,
     language2,
-    variables,
-    onEditVariable,
-    completionSource,
+    lint,
+    hasVariables,
+    hasCompletionSource,
+    stableCompletionSource,
+    getVariables,
+    getOnEditVariable,
+    slashCommands,
+    useHighlightedPlaceholder,
+    placeholder2,
+    resolvedFontSize,
     id2,
     ariaLabel,
     ariaLabelledBy,
     ariaInvalid,
     ariaDescribedBy,
-    tooltipId
+    tooltipId,
+    onViewStateChange,
+    viewStateSelectionListener
   ]);
   const basicSetup3 = useMemo(() => {
     if (!resolvedSetup) {
@@ -33515,29 +37403,36 @@ function CodeEditor({ value, onChange, language: language2 = "text", readOnly: r
       lineNumbers: resolvedSetup.lineNumbers,
       foldGutter: resolvedSetup.foldGutter,
       highlightActiveLine: resolvedSetup.highlightActiveLine,
-      highlightActiveLineGutter: resolvedSetup.highlightActiveLineGutter
+      highlightActiveLineGutter: resolvedSetup.highlightActiveLineGutter,
+      highlightSelectionMatches: false,
+      autocompletion: false,
+      completionKeymap: false
     };
   }, [resolvedSetup, readOnly2]);
-  const wrapperClassName = readOnly2 ? `overflow-hidden rounded-md bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}` : `min-h-36 resize-y overflow-hidden rounded-md border border-separator bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] focus-within:shadow-[0_0_0_3px_color-mix(in_srgb,var(--mac-accent)_35%,transparent),inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}`;
+  const wrapperClassName = readOnly2 ? `hc-code-editor overflow-hidden rounded-lg bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}` : `hc-code-editor min-h-36 resize-y overflow-hidden rounded-lg border border-separator bg-control shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.06)] focus-within:shadow-[0_0_0_3px_color-mix(in_srgb,var(--mac-accent)_35%,transparent),inset_0_0.5px_1px_rgba(0,0,0,0.06)] app-no-drag ${className}`;
   const selectionTooltipContent = selectionTooltip ? getVariableTooltipContent(selectionTooltip.key, variables ?? []) : null;
-  return jsxs("div", { className: wrapperClassName, children: [createElement(esm_default, {
+  const wrapperStyle = height ? { height } : void 0;
+  const shouldTrackViewState = onViewStateChange != null || initialScrollTop != null || initialSelection != null;
+  return jsxs("div", { ref: wrapperRef, ...props, className: wrapperClassName, style: wrapperStyle, children: [createElement(esm_default, {
     value,
-    onChange: readOnly2 ? void 0 : onChange,
+    onChange: readOnly2 ? void 0 : stableOnChange,
     extensions,
     theme: "none",
-    editable: !readOnly2,
+    editable: resolvedEditable,
     readOnly: readOnly2,
-    placeholder: placeholder2,
+    placeholder: useHighlightedPlaceholder ? void 0 : placeholder2,
     minHeight,
-    basicSetup: basicSetup3
-  }), selectionTooltip && selectionTooltipContent && variables ? jsxs("div", { id: tooltipId, role: "tooltip", className: "pointer-events-auto fixed z-50 flex max-w-sm -translate-x-1/2 -translate-y-full flex-col gap-1.5 rounded-md border border-separator bg-surface px-3 py-2 text-[14px] text-text shadow-md app-no-drag", style: { top: selectionTooltip.top - 4, left: selectionTooltip.left }, children: [jsx("span", { className: selectionTooltipContent.muted ? "text-muted" : void 0, children: selectionTooltipContent.text }), onEditVariable ? jsx("button", { type: "button", className: "self-start text-[14px] text-accent hover:underline", "aria-label": `Edit value for ${selectionTooltip.key}`, onMouseDown: (event) => {
+    ...height ? { height: "100%" } : {},
+    basicSetup: basicSetup3,
+    ...shouldTrackViewState ? { onCreateEditor: stableOnCreateEditor } : {}
+  }), selectionTooltip && selectionTooltipContent && variables ? jsxs("div", { id: tooltipId, role: "tooltip", className: "hc-code-editor-tooltip app-no-drag pointer-events-auto fixed z-50 flex max-w-sm -translate-x-1/2 -translate-y-full flex-col gap-1.5 rounded-lg border border-separator bg-surface px-3 py-2 text-[14px] text-text shadow-md", style: { top: selectionTooltip.top - 4, left: selectionTooltip.left }, children: [jsx("span", { className: selectionTooltipContent.muted ? "hc-code-editor-tooltip-text text-muted" : "hc-code-editor-tooltip-text", children: selectionTooltipContent.text }), onEditVariable ? jsx("button", { type: "button", className: "hc-code-editor-tooltip-edit self-start text-[14px] text-accent hover:underline", "aria-label": `Edit value for ${selectionTooltip.key}`, onMouseDown: (event) => {
     event.preventDefault();
     onEditVariable();
     setSelectionTooltip(null);
   }, children: "Edit value" }) : null] }) : null] });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/http/substitute.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/http/substitute.js
 function substituteVariables2(text, runtimeVars) {
   const pattern = new RegExp(VARIABLE_TOKEN_PATTERN.source, "g");
   return text.replace(pattern, (match, key) => {
@@ -33568,7 +37463,7 @@ function substituteKeyValueRows(rows, runtimeVars) {
   }));
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.0.0_@babel+runtime@8.0.0_@codemirror+lint@6.9.7_@codemirror+search@_4a97bca4b8240b001fbe9e82dfd8384f/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
+// node_modules/.pnpm/@harborclient+sdk@1.0.33_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_f39ff3884637cfd15f954ae52c8cfc3e/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
 function hasUnsafeHeaderFieldChars(value) {
   for (let index = 0; index < value.length; index += 1) {
     const code = value.charCodeAt(index);

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pluginId": "com.harborclient.plugins.httpie",
-  "pluginVersion": "1.0.5",
+  "pluginVersion": "1.0.6",
   "algorithm": "Ed25519",
   "files": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "path": "dist/renderer.js",
-      "sha256": "dbbb2ae9242acd3ce6e8087f57be5bf11b43ef68a056a7196c2d7987ec8afdf0"
+      "sha256": "6cfcc83639205131c1b6392b875e945f56811130f3834e43312e9965448bbeac"
     },
     {
       "path": "eslint.config.mjs",
@@ -30,15 +30,15 @@
     },
     {
       "path": "manifest.json",
-      "sha256": "ee0e3c6d80aba4aa2f7c1b5afc2c0e8da0bbedbe364f2a854c7d3000a8380b93"
+      "sha256": "6ca2ff700e8cffd5e927bdaa765606a2d4a7b7695eb0108ce04340694f9c8921"
     },
     {
       "path": "package.json",
-      "sha256": "0be491f750f9f29b147b8765c311f3a27d93788f543c1b827aa87665b51693fe"
+      "sha256": "803a01cc11cc2f1a4853dbf5fda47e3806d7da60376c7ca1a1191b92401152c2"
     },
     {
       "path": "pnpm-lock.yaml",
-      "sha256": "449156f8322c200a11587acfc93237821c3958c7b757190b55592eecdd1552b4"
+      "sha256": "7d39fa1106c593779180931fdf2f068e8aa97a1111bd43df870b92c4ba9677f3"
     },
     {
       "path": "README.md",
@@ -46,7 +46,7 @@
     },
     {
       "path": "screenshot.png",
-      "sha256": "cd8020dd59c7d32e0cc766994ac6a26cc7e1c91f965f7dce60beef486d64ee6a"
+      "sha256": "328df7bd720db451b8e80f698c03c612f15eb1e91a4cfcd3fa459947f9b63757"
     },
     {
       "path": "scripts/build.mjs",
@@ -61,12 +61,16 @@
       "sha256": "3e53a3d5d692c5bfd8f063d69b2331743f8afeef3330b7e21a3b69d5daeb2ae8"
     },
     {
+      "path": "scripts/publish.sh",
+      "sha256": "272abe246e7b12684741a9eb3a26928ec7dd9a62ad4e26b95fa104c32d516412"
+    },
+    {
       "path": "scripts/render-screenshot.sh",
       "sha256": "d2fe525f530446f4f53add2abcfed2ec7f11253a7d128608781ccd18487fbb25"
     },
     {
       "path": "scripts/screenshot-marketing.html",
-      "sha256": "ca47cb1fd7a148227806e7a0de2a30493cd761ebf7fedb63745ea0d648252eba"
+      "sha256": "2a64aa2486f04caf753f0399a23d9f2eee0157a09accee6724e34971b6d2b60f"
     },
     {
       "path": "src/buildHttpie.test.ts",
@@ -89,5 +93,6 @@
       "sha256": "663c22f2cb634722bc1c1191c4808b53c89d930979d4936cb6d0a539f4476ac9"
     }
   ],
-  "signature": "UOpTdqfROJHaQveN0NCqDjTKDY43ReFKDDNoSHcziKuE7gEigBldtuLbI/J4lQUNf0bcX4AT7djU1kw/PR6YBg=="
+  "keyId": "com.harborclient.plugins.httpie",
+  "signature": "WBi8N4A0LcSX/fVebmFfyy/0/UIuIEBlgWSI7rl/UwCiF+gsoltVaG7DaFlmFUWd2lK5JfPLwCTGkYGIqKpQBQ=="
 }
