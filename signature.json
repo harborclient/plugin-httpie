@@ -46,7 +46,7 @@
     },
     {
       "path": "screenshot.png",
-      "sha256": "328df7bd720db451b8e80f698c03c612f15eb1e91a4cfcd3fa459947f9b63757"
+      "sha256": "4ddb5ab112c86c72b2e67c569ef59be0cda11e030fc028a24da99b8ecdea2b89"
     },
     {
       "path": "scripts/build.mjs",
@@ -94,5 +94,5 @@
     }
   ],
   "keyId": "com.harborclient.plugins.httpie",
-  "signature": "WBi8N4A0LcSX/fVebmFfyy/0/UIuIEBlgWSI7rl/UwCiF+gsoltVaG7DaFlmFUWd2lK5JfPLwCTGkYGIqKpQBQ=="
+  "signature": "CanXtrWC0zxXhHaMyeZSRbac2Xp9xplCfAc8NFI2OD9mIDdXI5r/VTKDF2NzcEVqFCqy4iR74zO3DP0sqVDsDg=="
 }
