@@ -12,11 +12,11 @@
     "typecheck": "tsc --noEmit",
     "screenshot": "bash scripts/render-screenshot.sh",
     "pack": "pnpm build && zip -r ../harborclient-plugin-httpie.hcp manifest.json README.md dist",
-    "plugin:sign": "node --experimental-strip-types scripts/plugin-sign.ts",
-    "plugin:verify": "node --experimental-strip-types scripts/plugin-verify.ts"
+    "sign": "node --experimental-strip-types scripts/plugin-sign.ts",
+    "verify": "node --experimental-strip-types scripts/plugin-verify.ts"
   },
   "dependencies": {
-    "@harborclient/sdk": "^1.0.33"
+    "@harborclient/sdk": "^1.0.67"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",

@@ -95,7 +95,7 @@ NODE
 )"
 
 pnpm build
-pnpm plugin:sign -- --dir . \
+pnpm sign -- --dir . \
   --private-key "$HARBORCLIENT_PLUGIN_SIGNING_KEY" \
   --key-id "$key_id"
 
