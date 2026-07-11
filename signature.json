@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "pluginId": "com.harborclient.plugins.httpie",
-  "pluginVersion": "1.0.7",
+  "pluginVersion": "1.0.8",
   "algorithm": "Ed25519",
   "files": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "path": "dist/renderer.js",
-      "sha256": "6cfcc83639205131c1b6392b875e945f56811130f3834e43312e9965448bbeac"
+      "sha256": "d6b084bb54257710ed1e2a1bce5ceb7f65911d28d723f5523522611ac8c49408"
     },
     {
       "path": "eslint.config.mjs",
@@ -30,15 +30,15 @@
     },
     {
       "path": "manifest.json",
-      "sha256": "41e2b2d8a5db672340f99fdeb84fb081cf7851e28ba444a26a4214413c0bf43c"
+      "sha256": "420056317f2fd1373beb96fc409da41113808ffbbbe317199a65515ac7578ff8"
     },
     {
       "path": "package.json",
-      "sha256": "803a01cc11cc2f1a4853dbf5fda47e3806d7da60376c7ca1a1191b92401152c2"
+      "sha256": "031e0b7d605a539610a71447a7769e716a2649ef853a1d6459cde788150d43b0"
     },
     {
       "path": "pnpm-lock.yaml",
-      "sha256": "7d39fa1106c593779180931fdf2f068e8aa97a1111bd43df870b92c4ba9677f3"
+      "sha256": "4d766df72377e9e016dc2a36e7b33b7e80292b6c872350db6025071ae2143c33"
     },
     {
       "path": "README.md",
@@ -62,7 +62,7 @@
     },
     {
       "path": "scripts/publish.sh",
-      "sha256": "272abe246e7b12684741a9eb3a26928ec7dd9a62ad4e26b95fa104c32d516412"
+      "sha256": "8a0a899d425d2d3c67f5560a54a92f080225fa022e70eac920f14c963f825c69"
     },
     {
       "path": "src/buildHttpie.test.ts",
@@ -78,7 +78,7 @@
     },
     {
       "path": "src/renderer.tsx",
-      "sha256": "3c22f2e2c23e1e451ab4b404e9f8b1653db0dcdb098609d6673e4cd079038626"
+      "sha256": "33a0e782cbe40aa0f5e1443163d3c16257d26b9588fb563fda5b329c8ea7c064"
     },
     {
       "path": "tsconfig.json",
@@ -86,5 +86,5 @@
     }
   ],
   "keyId": "com.harborclient.plugins.httpie",
-  "signature": "JMkvoesAwJnSKVhpLSlLONZbxbHizPkqokWRMeCEcULnIupvJ92AseXzxIZrb1TYctGZB6cp9Z1afVo9jtfOBw=="
+  "signature": "qLhVmRsxMHVqXnKe+nNa2EFCEmH2WcPlnkQ8KZ4siVHscki6La3Y3K8gvlBn0eVKXfBl2j0j8AhvTk5q9XWNBg=="
 }

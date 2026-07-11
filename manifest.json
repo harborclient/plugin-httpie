@@ -2,7 +2,7 @@
   "id": "com.harborclient.plugins.httpie",
   "name": "HTTPie",
   "author": "HarborClient",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "summary": "Adds a tab to the request editor that shows an equivalent `http` command for the configured request.",
   "description": "README.md",
   "categories": [
