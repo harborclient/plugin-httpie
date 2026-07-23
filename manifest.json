@@ -2,22 +2,18 @@
   "id": "com.harborclient.plugins.httpie",
   "name": "HTTPie",
   "author": "HarborClient",
-  "version": "1.0.9",
-  "summary": "Adds a tab to the request editor that shows an equivalent `http` command for the configured request.",
+  "version": "1.1.0",
+  "summary": "Adds a tab to the request editor that shows an editable `http` command and can update the request from pasted HTTPie.",
   "description": "README.md",
-  "categories": [
-    "requests"
-  ],
+  "categories": ["requests"],
   "screenshots": [
     "https://raw.githubusercontent.com/harborclient/plugin-httpie/main/screenshot.png"
   ],
   "engines": {
-    "harborclient": ">=1.8.4"
+    "harborclient": ">=2.5.6"
   },
   "renderer": "dist/renderer.js",
-  "permissions": [
-    "ui"
-  ],
+  "permissions": ["ui"],
   "contributes": {
     "requestTabs": [
       {

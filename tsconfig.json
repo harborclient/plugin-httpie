@@ -1,6 +1,4 @@
 {
   "extends": "@harborclient/sdk/tsconfig.base.json",
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

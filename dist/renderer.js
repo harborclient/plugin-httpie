@@ -1,4 +1,4 @@
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/reactHost.js
 var HOST_REACT_GLOBAL_KEY = "__HARBORCLIENT_HOST_REACT__";
 var HOST_REACT_DOM_GLOBAL_KEY = "__HARBORCLIENT_HOST_REACT_DOM__";
 var hostReact = null;
@@ -46,7 +46,7 @@ function requireHostReactDom() {
   return hostReactDom;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/react.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/react.js
 function hook(name2) {
   const react = requireHostReact();
   const fn = react[name2];
@@ -107,8 +107,24 @@ function useId() {
 function useLayoutEffect(effect, deps) {
   return hook("useLayoutEffect")(effect, deps);
 }
+function useReducer(reducer, initialArg, init) {
+  return hook("useReducer")(reducer, initialArg, init);
+}
 function createElement(type, props, ...children) {
   return hook("createElement")(type, props, ...children);
+}
+function memo(Component, propsAreEqual) {
+  let Memoized = null;
+  function LazyMemo(props) {
+    const react = requireHostReact();
+    if (Memoized === null) {
+      Memoized = react.memo(Component, propsAreEqual);
+    }
+    return react.createElement(Memoized, props);
+  }
+  const displayName = (typeof Component === "function" ? Component.displayName ?? Component.name : null) ?? "Component";
+  LazyMemo.displayName = `Memo(${displayName})`;
+  return LazyMemo;
 }
 var reactNamespace = {
   useState,
@@ -125,7 +141,9 @@ var reactNamespace = {
   useContext,
   useId,
   useLayoutEffect,
-  createElement
+  useReducer,
+  createElement,
+  memo
 };
 var defaultExport = new Proxy(reactNamespace, {
   get(target, prop, receiver) {
@@ -136,7 +154,7 @@ var defaultExport = new Proxy(reactNamespace, {
   }
 });
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/clipboard.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/clipboard.js
 async function copyToClipboard(hc, text2, options) {
   await navigator.clipboard.writeText(text2);
   if (options?.toast) {
@@ -144,7 +162,7 @@ async function copyToClipboard(hc, text2, options) {
   }
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime.js
 var Fragment = Symbol.for("@harborclient/sdk.Fragment");
 function build(type, props, key) {
   const react = requireHostReact();
@@ -3427,12 +3445,12 @@ var getDefaultConfig = () => {
 };
 var twMerge = /* @__PURE__ */ createTailwindMerge(getDefaultConfig);
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/utils.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/utils.js
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/FieldError/index.js
 function spacingClasses(spacing) {
   switch (spacing) {
     case "section":
@@ -3450,7 +3468,7 @@ function FieldError({ children, spacing = "field", roleAlert = true, className, 
   return jsx("p", { ...props, className: cn("hc-field-error text-[14px] text-danger", spacingClasses(spacing), className), role: roleAlert ? "alert" : void 0, children });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/Button/index.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/Button/index.js
 var BUTTON_BASE = "inline-flex cursor-pointer items-center rounded-full app-no-drag";
 var VARIANT_CLASSES = {
   primary: cn(BUTTON_BASE, "min-h-[32px] justify-center border border-transparent bg-accent px-3 py-1 text-[15px] font-medium text-white shadow-sm hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"),
@@ -3465,7 +3483,7 @@ function Button({ variant = "primary", className, type = "button", innerRef, ...
   return jsx("button", { ref: innerRef, type, className: cn("hc-button", VARIANT_CLASSES[variant], className), ...props });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/forms/classes.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/forms/classes.js
 var field = "rounded-lg border border-separator bg-field px-2.5 py-1.5 text-text app-no-drag";
 var surfaceField = "w-full rounded-lg border border-separator bg-field px-3 py-2.5 text-[15px] text-text";
 function mergeFieldClasses(variant, className, rootClass) {
@@ -3473,18 +3491,18 @@ function mergeFieldClasses(variant, className, rootClass) {
   return result === "" ? void 0 : result;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/forms/Input.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/forms/Input.js
 function Input({ ref, variant = "control", type, className, ...props }) {
   const resolvedVariant = type === "checkbox" || type === "radio" ? "plain" : variant;
   return jsx("input", { ref, type, className: mergeFieldClasses(resolvedVariant, className, "hc-input"), ...props });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/react-dom.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/react-dom.js
 function createPortal(children, container, key) {
   return requireHostReactDom().createPortal(children, container, key);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/portalToBody.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/portalToBody.js
 function portalToBody(node) {
   if (typeof document === "undefined") {
     throw new Error("portalToBody requires a DOM document");
@@ -3492,7 +3510,7 @@ function portalToBody(node) {
   return createPortal(node, document.body);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime-host.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/jsx-runtime-host.js
 import * as React from "react";
 function build2(type, props, key) {
   const { children, ...rest } = props ?? {};
@@ -7361,7 +7379,7 @@ var FontAwesomeIcon = React2.forwardRef((props, ref) => {
 FontAwesomeIcon.displayName = "FontAwesomeIcon";
 var DEFAULT_CLASSNAMES = `${LAYER_CLASSES.default} ${STYLE_CLASSES.fixedWidth}`;
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/FaIcon/index.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/FaIcon/index.js
 function FaIcon({ icon: icon3, className = "h-3.5 w-3.5", title, ...props }) {
   return createElement(FontAwesomeIcon, {
     ...props,
@@ -35005,7 +35023,7 @@ var ReactCodeMirror = /* @__PURE__ */ forwardRef2((props, ref) => {
 ReactCodeMirror.displayName = "CodeMirror";
 var esm_default = ReactCodeMirror;
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/ui/codeEditorSettings.js
 var DEFAULT_CODE_EDITOR_FONT_SIZE = "16px";
 var MIN_CODE_EDITOR_FONT_SIZE_PX = 14;
 var DEFAULT_CODE_EDITOR_SETUP = {
@@ -36923,7 +36941,7 @@ var e3 = { airline: { airline: [{ name: `Aegean Airlines`, iataCode: `A3` }, { n
 // node_modules/.pnpm/@faker-js+faker@10.5.0/node_modules/@faker-js/faker/dist/locale/en.js
 var r4 = new yt({ locale: [e3, Ct] });
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/variables/dynamic.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/variables/dynamic.js
 function categoryImageUrl(category) {
   return r4.image.urlLoremFlickr({ category });
 }
@@ -37430,7 +37448,7 @@ function resolveDynamicVariable(key) {
 }
 var DYNAMIC_VARIABLE_NAMES = Object.keys(DYNAMIC_VARIABLES).sort();
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/variables/filters.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/variables/filters.js
 var FILTERS = {
   upper: (value) => value.toUpperCase(),
   lower: (value) => value.toLowerCase(),
@@ -37465,7 +37483,7 @@ function applyFilters(value, filters) {
   return current;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/variables/tokens.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/variables/tokens.js
 var VARIABLE_NAME_CHARS = "\\w$.-";
 var VARIABLE_TOKEN_PATTERN = new RegExp(`\\{\\{\\s*([${VARIABLE_NAME_CHARS}]+)(\\s*\\|\\s*[${VARIABLE_NAME_CHARS}]+)*\\s*\\}\\}`, "g");
 var VALID_NAME_PATTERN = new RegExp(`^[${VARIABLE_NAME_CHARS}]+$`);
@@ -37570,7 +37588,7 @@ function substituteVariablesFromMap(text2, runtimeVars) {
   return substituteWithResolver(text2, (key) => runtimeVars[key]);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/VariableTooltip/dom.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/VariableTooltip/dom.js
 var COPY_ICON_PATH = "M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z";
 var CHECK_ICON_PATH = "M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z";
 function createTooltipIcon(path) {
@@ -37641,7 +37659,7 @@ function buildVariableTooltipDom(key, variables, onEditVariable) {
   return dom2;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/VariableTooltip/VariableTooltipValue.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/VariableTooltip/VariableTooltipValue.js
 function VariableTooltipValue({ value, variableKey, muted, onClose }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -37657,7 +37675,7 @@ function VariableTooltipValue({ value, variableKey, muted, onClose }) {
   }, onClick: onClose, children: jsx(FaIcon, { icon: faXmark, className: "h-4 w-4" }) })] });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/runtime/store.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/runtime/store.js
 function createExternalStore(initial2) {
   let state = initial2;
   const listeners = /* @__PURE__ */ new Set();
@@ -37678,7 +37696,7 @@ function createExternalStore(initial2) {
   };
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/config.js
 var DEFAULT_CODE_EDITOR_CONFIG = {
   theme: "default",
   setup: DEFAULT_CODE_EDITOR_SETUP,
@@ -37706,7 +37724,7 @@ function useCodeEditorConfig() {
   return contextValue ?? storeValue;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/editorChrome.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/editorChrome.js
 var lightHighlight = HighlightStyle.define([
   { tag: tags.propertyName, color: "#881391" },
   { tag: tags.string, color: "#c41a16" },
@@ -37871,7 +37889,7 @@ function createBuiltInSyntaxHighlighting(isDark) {
   return syntaxHighlighting(isDark ? darkHighlight : lightHighlight);
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/slashCommandHighlighter.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/slashCommandHighlighter.js
 function slashCommandHighlightPattern(commands) {
   const names = commands.map((entry) => entry.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   if (names.length === 0) {
@@ -41915,7 +41933,7 @@ var xcodeDarkInit = (options) => {
 };
 var xcodeDark = xcodeDarkInit();
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/themes.js
 var themeExtensions = {
   dracula,
   githubLight,
@@ -41932,7 +41950,7 @@ function getCodeEditorThemeExtension(value) {
   return themeExtensions[value];
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/renderHighlightedPlaceholder.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/renderHighlightedPlaceholder.js
 var renderCache = /* @__PURE__ */ new Map();
 function buildRenderCacheKey(text2, options) {
   const slashNames = options.slashCommands?.map((command2) => command2.name).join(",") ?? "";
@@ -42014,7 +42032,7 @@ function renderHighlightedPlaceholderDom(text2, options) {
   return wrap;
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxHighlightedPlaceholder.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxHighlightedPlaceholder.js
 var SyntaxHighlightedPlaceholderWidget = class extends WidgetType {
   text;
   options;
@@ -42181,7 +42199,7 @@ function createSyntaxHighlightedPlaceholder(text2, options) {
   ];
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxLinters.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/syntaxLinters.js
 var LINT_IDLE_TIMEOUT_MS = 500;
 function scheduleIdle(callback, timeout) {
   if (typeof requestIdleCallback === "function") {
@@ -42221,7 +42239,7 @@ function createJsonSyntaxLinter() {
   return linter(jsonParseLinter());
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/components/CodeEditor/index.js
 function clampSelection(docLength, selection2) {
   const maxOffset2 = Math.max(0, docLength);
   return {
@@ -43086,7 +43104,7 @@ function CodeEditor({ value, onChange: onChange2, language: language2 = "text", 
   }, children: "Edit value" }) : null] }) : null, selectionActionToolbarNode ? portalToBody(selectionActionToolbarNode) : null] });
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/http/substitute.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/http/substitute.js
 function substituteVariables2(text2, runtimeVars) {
   return substituteVariablesFromMap(text2, runtimeVars);
 }
@@ -43109,7 +43127,7 @@ function substituteKeyValueRows(rows, runtimeVars) {
   }));
 }
 
-// node_modules/.pnpm/@harborclient+sdk@1.1.29_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_6cedb8c58a7bb167327e43a8b58d23cb/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
+// node_modules/.pnpm/@harborclient+sdk@1.1.32_@babel+runtime@8.0.0_@codemirror+search@6.7.1_@codemirror+them_5d0a3fe23267ed084f37da459d11d659/node_modules/@harborclient/sdk/dist/http/resolveRequest.js
 function hasUnsafeHeaderFieldChars(value) {
   for (let index = 0; index < value.length; index += 1) {
     const code = value.charCodeAt(index);
@@ -43366,42 +43384,489 @@ function buildHttpieCommand(context) {
   return parts.join(" ");
 }
 
+// src/parseHttpie.ts
+var HTTP_METHODS = /* @__PURE__ */ new Set([
+  "GET",
+  "POST",
+  "PUT",
+  "PATCH",
+  "DELETE",
+  "HEAD",
+  "OPTIONS",
+  "TRACE",
+  "CONNECT"
+]);
+var HttpieParseError = class extends Error {
+  /**
+   * Creates a parse failure with a user-facing message.
+   *
+   * @param message - Human-readable parse error.
+   */
+  constructor(message) {
+    super(message);
+    this.name = "HttpieParseError";
+  }
+};
+function joinContinuations(input) {
+  return input.replace(/\r\n/g, "\n").split("\n").map((line) => line.trimEnd()).reduce((acc, line, index, lines) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      return acc;
+    }
+    const continues = line.endsWith("\\");
+    const segment = continues ? line.slice(0, -1).trimEnd() : trimmed;
+    const separator = acc && !acc.endsWith(" ") ? " " : "";
+    const next = `${acc}${separator}${segment}`;
+    if (continues && index < lines.length - 1) {
+      return next;
+    }
+    return next;
+  }, "").trim();
+}
+function tokenize2(command2) {
+  const tokens = [];
+  let current = "";
+  let quote = null;
+  let i3 = 0;
+  while (i3 < command2.length) {
+    const char = command2[i3];
+    if (quote === "'") {
+      if (char === "'") {
+        if (command2.slice(i3, i3 + 4) === `'\\''`) {
+          current += "'";
+          i3 += 4;
+          continue;
+        }
+        quote = null;
+        i3 += 1;
+        continue;
+      }
+      current += char;
+      i3 += 1;
+      continue;
+    }
+    if (quote === '"') {
+      if (char === "\\" && i3 + 1 < command2.length) {
+        current += command2[i3 + 1];
+        i3 += 2;
+        continue;
+      }
+      if (char === '"') {
+        quote = null;
+        i3 += 1;
+        continue;
+      }
+      current += char;
+      i3 += 1;
+      continue;
+    }
+    if (char === "'" || char === '"') {
+      quote = char;
+      i3 += 1;
+      continue;
+    }
+    if (/\s/.test(char)) {
+      if (current) {
+        tokens.push(current);
+        current = "";
+      }
+      i3 += 1;
+      continue;
+    }
+    current += char;
+    i3 += 1;
+  }
+  if (quote) {
+    throw new HttpieParseError("Unbalanced quotes in HTTPie command.");
+  }
+  if (current) {
+    tokens.push(current);
+  }
+  return tokens;
+}
+function takeArg(tokens, index, flag) {
+  const value = tokens[index + 1];
+  if (value === void 0) {
+    throw new HttpieParseError(`Missing value for ${flag}.`);
+  }
+  return { value, nextIndex: index + 2 };
+}
+function basicAuthHeader(userpass) {
+  return `Basic ${globalThis.btoa(userpass)}`;
+}
+function isRequestItem(token) {
+  if (token.includes("==") || token.includes(":=") || token.includes("@")) {
+    return true;
+  }
+  if (token.includes("://")) {
+    return false;
+  }
+  const colon2 = token.indexOf(":");
+  if (colon2 > 0) {
+    return true;
+  }
+  const eq = token.indexOf("=");
+  if (eq > 0) {
+    return true;
+  }
+  return false;
+}
+function parseRequestItem(token) {
+  const eqEq = token.indexOf("==");
+  if (eqEq > 0) {
+    return {
+      kind: "query",
+      key: token.slice(0, eqEq),
+      value: token.slice(eqEq + 2)
+    };
+  }
+  const colonEq = token.indexOf(":=");
+  if (colonEq > 0) {
+    return {
+      kind: "json",
+      key: token.slice(0, colonEq),
+      value: token.slice(colonEq + 2)
+    };
+  }
+  const at3 = token.indexOf("@");
+  if (at3 > 0 && !token.includes("://")) {
+    const eq2 = token.indexOf("=");
+    if (eq2 === -1 || at3 < eq2) {
+      return {
+        kind: "file",
+        key: token.slice(0, at3),
+        path: token.slice(at3 + 1)
+      };
+    }
+  }
+  const eq = token.indexOf("=");
+  if (eq > 0 && !token.includes("://")) {
+    return {
+      kind: "data",
+      key: token.slice(0, eq),
+      value: token.slice(eq + 1)
+    };
+  }
+  if (token.includes("://")) {
+    return null;
+  }
+  const colon2 = token.indexOf(":");
+  if (colon2 > 0) {
+    return {
+      kind: "header",
+      key: token.slice(0, colon2).trim(),
+      value: token.slice(colon2 + 1).trim()
+    };
+  }
+  return null;
+}
+function serializeUrlEncoded(rows) {
+  return JSON.stringify(rows);
+}
+function serializeMultipart(parts) {
+  return JSON.stringify(parts);
+}
+function inferBodyType(options) {
+  if (options.hasMultipart) {
+    return "multipart";
+  }
+  if (options.hasForm) {
+    return "urlencoded";
+  }
+  if (options.hasJsonFields) {
+    return "json";
+  }
+  if (options.rawBody == null || !options.rawBody.trim()) {
+    return "none";
+  }
+  try {
+    JSON.parse(options.rawBody);
+    return "json";
+  } catch {
+    return "text";
+  }
+}
+function parseJsonFieldValue(raw) {
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return raw;
+  }
+}
+function parseHttpie(input) {
+  const flattened2 = joinContinuations(input);
+  if (!flattened2) {
+    throw new HttpieParseError("HTTPie command is empty.");
+  }
+  const tokens = tokenize2(flattened2);
+  if (tokens.length === 0) {
+    throw new HttpieParseError("HTTPie command is empty.");
+  }
+  const first = tokens[0]?.toLowerCase();
+  if (first !== "http" && first !== "https") {
+    throw new HttpieParseError("Command must start with http or https.");
+  }
+  let method;
+  let url;
+  const headers = {};
+  const queryParams = [];
+  const urlEncodedRows = [];
+  const formParts = [];
+  const jsonFields = {};
+  let hasJsonFields = false;
+  let formMode = false;
+  let multipartMode = false;
+  let rawBody = null;
+  let hasFileItems = false;
+  let hasDataItems = false;
+  let i3 = 1;
+  while (i3 < tokens.length) {
+    const token = tokens[i3];
+    if (token === "-f" || token === "--form") {
+      formMode = true;
+      i3 += 1;
+      continue;
+    }
+    if (token === "--multipart") {
+      multipartMode = true;
+      i3 += 1;
+      continue;
+    }
+    if (token === "-j" || token === "--json") {
+      i3 += 1;
+      continue;
+    }
+    if (token === "--raw") {
+      const { value, nextIndex } = takeArg(tokens, i3, token);
+      rawBody = value;
+      hasDataItems = true;
+      i3 = nextIndex;
+      continue;
+    }
+    if (token === "-a" || token === "--auth") {
+      const { value, nextIndex } = takeArg(tokens, i3, token);
+      headers.Authorization = basicAuthHeader(value);
+      i3 = nextIndex;
+      continue;
+    }
+    if (token === "-A" || token === "--auth-type" || token === "--session" || token === "--session-read-only" || token === "--timeout" || token === "--proxy" || token === "-o" || token === "--output" || token === "-d" || token === "--download" || token === "--max-redirects" || token === "--style" || token === "-p" || token === "--print" || token === "--pretty" || token === "-c" || token === "--cert" || token === "--cert-key" || token === "--verify") {
+      i3 += 2;
+      continue;
+    }
+    if (token === "-v" || token === "--verbose" || token === "--all" || token === "--follow" || token === "--offline" || token === "-b" || token === "--body" || token === "-h" || token === "--headers" || token === "-m" || token === "--stream" || token === "--ignore-stdin" || token === "-I" || token === "--ignore-netrc" || token === "--chunked" || token === "--compress" || token === "--continue" || token === "-S" || token === "--check-status") {
+      i3 += 1;
+      continue;
+    }
+    if (token.startsWith("-")) {
+      const next = tokens[i3 + 1];
+      if (next && !next.startsWith("-") && next !== url) {
+        i3 += 2;
+      } else {
+        i3 += 1;
+      }
+      continue;
+    }
+    if (!url && !method && HTTP_METHODS.has(token.toUpperCase()) && token === token.toUpperCase()) {
+      method = token.toUpperCase();
+      i3 += 1;
+      continue;
+    }
+    if (!url && !isRequestItem(token)) {
+      url = token;
+      i3 += 1;
+      continue;
+    }
+    const item = parseRequestItem(token);
+    if (!item) {
+      if (!url) {
+        url = token;
+        i3 += 1;
+        continue;
+      }
+      throw new HttpieParseError(`Unexpected argument: ${token}`);
+    }
+    if (item.kind === "query") {
+      if (item.key.trim()) {
+        queryParams.push({ key: item.key.trim(), value: item.value, enabled: true });
+      }
+      i3 += 1;
+      continue;
+    }
+    if (item.kind === "header") {
+      if (item.key) {
+        headers[item.key] = item.value;
+      }
+      i3 += 1;
+      continue;
+    }
+    if (item.kind === "file") {
+      hasFileItems = true;
+      hasDataItems = true;
+      if (item.key.trim()) {
+        formParts.push({
+          key: item.key.trim(),
+          value: "",
+          enabled: true,
+          type: "file",
+          files: [item.path]
+        });
+      }
+      i3 += 1;
+      continue;
+    }
+    if (item.kind === "json") {
+      hasJsonFields = true;
+      hasDataItems = true;
+      if (item.key.trim()) {
+        jsonFields[item.key.trim()] = parseJsonFieldValue(item.value);
+      }
+      i3 += 1;
+      continue;
+    }
+    hasDataItems = true;
+    if (item.key.trim()) {
+      if (formMode || multipartMode) {
+        formParts.push({
+          key: item.key.trim(),
+          value: item.value,
+          enabled: true,
+          type: "text",
+          files: []
+        });
+        urlEncodedRows.push({ key: item.key.trim(), value: item.value, enabled: true });
+      } else {
+        hasJsonFields = true;
+        jsonFields[item.key.trim()] = item.value;
+      }
+    }
+    i3 += 1;
+  }
+  if (!url) {
+    throw new HttpieParseError("HTTPie command is missing a URL.");
+  }
+  const hasMultipart = multipartMode || hasFileItems;
+  const hasForm = formMode && !hasMultipart;
+  let body = "";
+  if (hasMultipart) {
+    body = serializeMultipart(formParts);
+  } else if (hasForm) {
+    body = serializeUrlEncoded(urlEncodedRows);
+  } else if (hasJsonFields) {
+    body = JSON.stringify(jsonFields);
+  } else if (rawBody != null) {
+    body = rawBody;
+  }
+  const bodyType = inferBodyType({
+    hasMultipart,
+    hasForm,
+    hasJsonFields,
+    rawBody: hasMultipart || hasForm || hasJsonFields ? body : rawBody
+  });
+  if (!method) {
+    method = hasDataItems || rawBody != null && rawBody.length > 0 ? "POST" : "GET";
+  }
+  const payload = {
+    method,
+    url,
+    headers,
+    body,
+    bodyType: bodyType === "none" && !body ? "none" : bodyType
+  };
+  if (queryParams.length > 0) {
+    payload.params = queryParams.map((row) => ({ key: row.key, value: row.value }));
+  }
+  return payload;
+}
+
 // src/HttpieTab.tsx
 function HttpieTab({ context, hc }) {
   const command2 = useMemo(() => buildHttpieCommand(context), [context]);
+  const [draftText, setDraftText] = useState(command2);
   const [copyError, setCopyError] = useState(null);
+  const [updateError, setUpdateError] = useState(null);
+  const [updating, setUpdating] = useState(false);
+  const updatingRef = useRef(false);
+  useEffect(() => {
+    setDraftText(command2);
+    setUpdateError(null);
+  }, [command2]);
   const handleCopy = async () => {
     setCopyError(null);
     try {
-      await copyToClipboard(hc, command2, { toast: "Copied to clipboard" });
+      await copyToClipboard(hc, draftText, { toast: "Copied to clipboard" });
     } catch {
       setCopyError("Failed to copy");
     }
   };
+  const handleUpdate = async () => {
+    if (updatingRef.current) {
+      return;
+    }
+    setUpdateError(null);
+    setUpdating(true);
+    updatingRef.current = true;
+    try {
+      const payload = parseHttpie(draftText);
+      await hc.host.applyRequestDraft(payload);
+      hc.ui.showToast("Request updated from HTTPie");
+    } catch (error) {
+      const message = error instanceof HttpieParseError ? error.message : error instanceof Error ? error.message : "Failed to update request from HTTPie";
+      setUpdateError(message);
+    } finally {
+      setUpdating(false);
+      updatingRef.current = false;
+    }
+  };
+  const handleBlur = () => {
+    if (draftText === command2 || updatingRef.current) {
+      return;
+    }
+    void handleUpdate();
+  };
+  const dirty = draftText !== command2;
+  const errorMessage = updateError ?? copyError;
+  const errorId = updateError ? "httpie-update-error" : "httpie-copy-error";
   return /* @__PURE__ */ jsxs("div", { className: "flex flex-col gap-2", style: { minHeight: "320px" }, children: [
-    /* @__PURE__ */ jsx("div", { className: "flex shrink-0 items-center justify-end", children: /* @__PURE__ */ jsx(
-      Button,
-      {
-        variant: "secondary",
-        "aria-label": "Copy HTTPie command",
-        onClick: () => {
-          void handleCopy();
-        },
-        children: "Copy"
-      }
-    ) }),
+    /* @__PURE__ */ jsxs("div", { className: "flex shrink-0 items-center justify-end gap-2", children: [
+      /* @__PURE__ */ jsx(
+        Button,
+        {
+          variant: "secondary",
+          "aria-label": "Update request from HTTPie command",
+          disabled: updating || !dirty,
+          onClick: () => {
+            void handleUpdate();
+          },
+          children: updating ? "Updating\u2026" : "Update"
+        }
+      ),
+      /* @__PURE__ */ jsx(
+        Button,
+        {
+          variant: "secondary",
+          "aria-label": "Copy HTTPie command",
+          onClick: () => {
+            void handleCopy();
+          },
+          children: "Copy"
+        }
+      )
+    ] }),
     /* @__PURE__ */ jsx(
       CodeEditor,
       {
-        value: command2,
+        value: draftText,
+        onChange: setDraftText,
+        onBlur: handleBlur,
         language: "shell",
-        readOnly: true,
         minHeight: "280px",
         className: "flex-1",
-        "aria-label": "HTTPie command"
+        "aria-label": "HTTPie command",
+        "aria-invalid": Boolean(updateError),
+        "aria-describedby": errorMessage ? errorId : void 0
       }
     ),
-    /* @__PURE__ */ jsx(FieldError, { id: "httpie-copy-error", roleAlert: true, children: copyError })
+    /* @__PURE__ */ jsx(FieldError, { id: errorId, roleAlert: true, children: errorMessage })
   ] });
 }
 

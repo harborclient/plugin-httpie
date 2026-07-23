@@ -11,6 +11,7 @@ function sampleContext(overrides: Partial<RequestTabContext> = {}): RequestTabCo
   const base: RequestTabContext = {
     readOnly: true,
     response: null,
+    requestKey: 'GET https://example.com',
     collectionAuth: {
       type: 'none',
       basic: { username: '', password: '' },

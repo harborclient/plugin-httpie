@@ -16,7 +16,7 @@
     "verify": "node --experimental-strip-types scripts/plugin-verify.ts"
   },
   "dependencies": {
-    "@harborclient/sdk": "^1.1.29"
+    "@harborclient/sdk": "^1.1.32"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",
